@@ -1,31 +1,28 @@
-## STEAMPUNK
-A subgenre of science fiction that revolves around retrofuturistic technology inspired by 19th century technology. 
+## FUNCTIONAL
+android device must be capable of running Java
 
-## PC
-Player-controlled character.
+## USABILITY
+glossary (glossary.md) for terms and definitions
+documentation detailing information on how to play the game
+documentation detailing information about the game and its aspects
+all dialogue options should be short and still be able to show what it'll do
 
-## STATS
-A numerical lists detailing the PC information. Higher stats generally means a stronger character. 
-Damage - how much damage you can do per turn. 
-Armor - how much damage you can take in total.
-Defense - decreases damage taken per turn.
-Stealth - ability to hide from enemies.
-Luck - increase chances of positive-events happening.
+## RELIABILITY
+implement a save/load system 
 
-## COMBAT
-Turn-based fighting sequence between the player-controlled character and AI-controlled characters. Each turn is dictated by the player choosing from a pool of possible actions followed by the enemy(s) picking next. Combat is usually finished when either party reaches 0 armor or 0 health, or achieving another requirement.
+## PERFORMANCE
+don't be slow lmao
 
-## ARMOR and HEALTH
-Each character, player-controlled and AI-controlled, have a specific amount of armor/health (player-controlled characters will only have armor) and will die once it reaches 0. Player-controlled armor can be regained through resting and other events.
+## SUPPORTABILITY
+should be available and easily-accessed for:
+future updates
+fixing bugs
 
-## LEVELS
-A numerical scale detailing how much experience the PC hass gain. Each new level grants increase armor to the PC and generally opens up new options in the form of pets, locations, etc.
+## IMPLEMENTATION
+English-only
 
-## PETS
-A friendly AI companion that boosts PC stats and can offer unique benefits.
+## INTERFACE
+all GUI should be runnable on any (within reason) android devices
 
-## SHOPPING
-A shop that offers items, pets, and service in exchange for currency (gears).
-
-## GEARS
-Currency.
+## LEGAL
+none.
