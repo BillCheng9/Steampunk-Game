@@ -19,7 +19,7 @@ Turn-based fighting sequence between the player-controlled character and AI-cont
 Each character, player-controlled and AI-controlled, have a specific amount of armor/health (player-controlled characters will only have armor) and will die once it reaches 0. Player-controlled armor can be regained through resting and other events.
 
 ## LEVELS
-A numerical scale detailing how much experience the PC hass gain. Each new level grants increase armor to the PC and generally opens up new options in the form of pets, locations, etc.
+A numerical scale detailing how much experience the PC hass gain. Each new level opens up new options in the form of pets, locations, etc. Each level up also allows the player to permanently increase stats of their choosing.
 
 ## PETS
 A friendly AI companion that boosts PC stats and can offer unique benefits.
@@ -28,4 +28,4 @@ A friendly AI companion that boosts PC stats and can offer unique benefits.
 A shop that offers items, pets, and service in exchange for currency (gears).
 
 ## GEARS
-Currency.
+Currency in the world.
