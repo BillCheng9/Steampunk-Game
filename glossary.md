@@ -1,3 +1,6 @@
+# GLOSSARY
+A list of terms and definitions that a player would need to know in order to understand and navigate this game.
+
 ## STEAMPUNK
 A subgenre of science fiction that revolves around retrofuturistic technology inspired by 19th century technology. 
 
@@ -5,27 +8,27 @@ A subgenre of science fiction that revolves around retrofuturistic technology in
 Player-controlled character.
 
 ## STATS
-A numerical lists detailing the PC information. Higher stats generally means a stronger character. 
-Damage - how much damage you can do per turn. 
-Armor - how much damage you can take in total.
-Defense - decreases damage taken per turn.
-Stealth - ability to hide from enemies.
-Luck - increase chances of positive-events happening.
+A numerical set detailing character information. Higher stats generally means a stronger character.\
+DAMAGE/DMG - how much damage you can do per turn.\
+STABILITY/STA (HEALTH/HP) - how much damage you can take in total. If the PC reaches 0 stability, it is game over.\
+DEFENSE/DEF - decreases damage taken from attacks.\
+STEALTH/STE - ability to hide from enemies and sneak during events.\
+LUCK/LUC - increase chances of positive-events happening.\
 
 ## COMBAT
-Turn-based fighting sequence between the player-controlled character and AI-controlled characters. Each turn is dictated by the player choosing from a pool of possible actions followed by the enemy(s) picking next. Combat is usually finished when either party reaches 0 armor or 0 health, or achieving another requirement.
+Turn-based fighting sequence between the player-controlled character and AI-controlled characters. Each turn is dictated by the player choosing from a pool of possible actions followed by the enemy(s) picking next. Combat is usually finished when one party reaches 0 STABILITY or 0 HEALTH, or achieving another requirement.
 
-## ARMOR and HEALTH
-Each character, player-controlled and AI-controlled, have a specific amount of armor/health (player-controlled characters will only have armor) and will die once it reaches 0. Player-controlled armor can be regained through resting and other events.
+## STABILITY and HEALTH
+Each character, player-controlled and AI-controlled, have a specific amount of STABILITY/HEALTH (player-controlled characters will only have STABILITY) and will die once it reaches 0. Player-controlled armor can be regained through resting and other events.
 
 ## LEVELS
-A numerical scale detailing how much experience the PC hass gain. Each new level opens up new options in the form of pets, locations, etc. Each level up also allows the player to permanently increase stats of their choosing.
+A numerical scale detailing how much experience the PC has gained. Each new level opens up new options in the form of PETS, locations, etc. Each level up also allows the player to permanently increase stats of their choosing.
 
 ## PETS
 A friendly AI companion that boosts PC stats and can offer unique benefits.
 
 ## SHOPPING
-A shop that offers items, pets, and service in exchange for currency (gears).
+A shop that offers items, PETS, and service in exchange for GEARS.
 
 ## GEARS
 Currency in the world.
