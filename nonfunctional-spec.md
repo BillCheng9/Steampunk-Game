@@ -12,37 +12,25 @@
 2) an autosave feature that makes sure that the player doesn't lose much progress in case of crashes or external issues
 
 ## PERFORMANCE
-don't be slow lmao
+1) graphical interface needs to be efficiently implemented to minimize any potential loading times
 
 ## SUPPORTABILITY
-should be available and easily-accessed for:
-future updates
-fixing bugs
+1) should be scalable
+2) colorblind-mode for the GUI should follow industry standard
+3) program should be suitable for updates and patches
+4) each section of the game should be tested thoroughly to make sure no bugs can happen
 
 ## IMPLEMENTATION
-English-only
+1) game has to be in English
+2) must work on Java and Android environments
+3) graphical interface must work on android environments
+4) music should work 
 
 ## INTERFACE
-all GUI should be runnable on any (within reason) android devices
+1) none
 
 ## LEGAL
-none.
+1) all music used in game should be free-to-use
 
-
-## UML TEST
-
-@startuml
-
-skin rose
-title Finalize sale
-
-start
-:Validate __payment__;
-:Record **payment**;
-:Print //receipt//;
-:Hand receipt to ""customer"";
-stop
-
-@enduml
 
 
