@@ -28,15 +28,21 @@ all GUI should be runnable on any (within reason) android devices
 ## LEGAL
 none.
 
+
+## UML TEST
+
 @startuml
+
 skin rose
 title Finalize sale
+
 start
 :Validate __payment__;
 :Record **payment**;
 :Print //receipt//;
 :Hand receipt to ""customer"";
 stop
+
 @enduml
 
 
