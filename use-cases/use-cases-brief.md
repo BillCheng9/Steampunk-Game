@@ -1,5 +1,9 @@
+##Color Code
+Player: Lavender
+CPU: Pink
+
 ## Player
-1) Combat
+1) Execute Combat
 ```plantuml
 <style>
 diamond {
@@ -19,7 +23,7 @@ endwhile (Combat End)
 stop
 ```
 
-2) Character Movement
+2) Move Character
 ```plantuml
 <style>
 diamond {
@@ -41,7 +45,7 @@ endwhile (Event)
 stop
 ```
 
-3) Dialogue Input
+3) Read Dialogue
 ```plantuml
 <style>
 diamond {
@@ -62,7 +66,7 @@ endwhile (Dialogue End)
 stop
 ```
 
-4) Pets System
+4) Choose Pet
 ```plantuml
 <style>
 diamond {
@@ -70,7 +74,7 @@ diamond {
 }
 </style>
 
-title Pets
+title Choose Pet
 
 start
 
@@ -81,7 +85,7 @@ start
 stop
 ```
 
-5) Button Selection
+5) Button Selecting
 ```plantuml
 <style>
 diamond {
@@ -89,7 +93,7 @@ diamond {
 }
 </style>
 
-title Button Selection
+title Button Selecting
 
 start
 
@@ -101,7 +105,7 @@ start
 stop
 ```
 
-6) Leveling System
+6) Leveling
 ```plantuml
 <style>
 diamond {
@@ -109,7 +113,7 @@ diamond {
 }
 </style>
 
-title Leveling Up
+title Leveling
 
 start
 
@@ -121,9 +125,11 @@ start
 stop
 ```
 
+7) Interface with Menu
+
 ## System/Program
 
-1) Responsive Changes
+1) Respond to Changes
 ```plantuml
 <style>
 diamond {
@@ -143,7 +149,7 @@ stop
 @enduml
 ```
 
-2) Random Events
+2) Play Random Event
 ```plantuml
 <style>
 diamond {
