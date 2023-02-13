@@ -102,14 +102,66 @@ stop
 ```
 
 6) Leveling System
+```plantuml
+<style>
+diamond {
+  BackgroundColor White
+}
+</style>
 
-7) Character Creation
+title Leveling Up
 
+start
+
+#pink:Congratulatory message, base increase to all stats;
+#pink:Display categories to add level point to;
+#lavender:Select category;
+#pink:Modify category stat, increase exp threshold;
+
+stop
+```
 
 ## System/Program
-1) Maintenance of Stats and Game Values\
 
-2) Responsive Changes\
+1) Responsive Changes
+```plantuml
+<style>
+diamond {
+  BackgroundColor White
+}
+</style>
 
-3) Random Events\
+title Responsive Changes
+
+start
+
+#lavender:Some input;
+#pink:Reads input, calls and modifies related object;
+
+
+stop
+@enduml
+```
+
+2) Random Events
+```plantuml
+<style>
+diamond {
+  BackgroundColor White
+}
+</style>
+
+title Random Events
+
+start
+
+if (Random Number) then (Event)
+#pink:Calls event method (Considers environment);
+#lavender:Player response to event;
+#pink:Applies effects of event;
+else (No corresponding)
+endif
+
+stop
+```
 
