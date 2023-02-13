@@ -1,7 +1,45 @@
 ## Player
-1) Combat\
+1) Combat
+```plantuml
+<style>
+diamond {
+  BackgroundColor White
+}
+</style>
 
-2) Character Movement\
+title Combat Brief
+
+start
+
+while (Combat)
+#lavender:Player input;
+#pink:CPU response;
+endwhile (Combat End)
+
+stop
+```
+
+2) Character Movement
+```plantuml
+<style>
+diamond {
+  BackgroundColor White
+}
+</style>
+
+title Movement
+
+start
+
+while (Movement)
+#pink:Computer outputs map;
+#lavender:Player input;
+#pink:Map update;
+#pink:Checks for random event/encounter;
+endwhile (Event)
+
+stop
+```
 
 3) Dialogue Input\
 
@@ -15,11 +53,7 @@
 ## System/Program
 1) Maintenance of Stats and Game Values\
 
-2) Responsive Story\
+2) Responsive Changes\
 
-3) Combat\
-
-4) Responsive Random Events\
-
-5) Responsive and Changing of Areas\
+3) Random Events\
 
