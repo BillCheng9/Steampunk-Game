@@ -23,6 +23,7 @@ line robot that was thrown away after defects in its system were detected. Gener
 
 ### PLAYER 
 1) choose an option in either the dialogue, combat, and shops
+2) moving through the map
 
 ### SYSTEM 
 1) interpret player input
@@ -46,13 +47,13 @@ actor "Game System" <<system>> as gameSystem
 
 ' list all use cases in package
 package "Steampunk Game" {
-usecase "Combat" as combat
-usecase "Dialogue Input" as dialInput
+usecase "Start Combat" as combat
+usecase "Input Dialogue" as dialInput
 usecase "Implement Pet" as petSystem
-usecase "Button Selection" as butSelection
+usecase "Select Button" as butSelection
 usecase "Level Up" as levelSystem
-usecase "Responsive Changes" as resChange
-usecase "Random Events" as RNG
+usecase "Responsively Change Output" as resChange
+usecase "Trigger Random Events" as RNG
 usecase "Move Through Map" as charMove
 }
 
