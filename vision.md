@@ -32,3 +32,69 @@ line robot that was thrown away after defects in its system were detected. Gener
 5) shops: correctly add pets to player inventory and implement services that the player bought 
 6) relay information back to player for next input
 7) keep and maintain all values and stats of both the game and characters
+
+```plantuml
+
+@startuml
+
+
+' human actors
+actor "Player" as player
+
+' system actors
+actor "Game System" <<system>> as gameSystem
+
+' list all use cases in package
+package "Steampunk Game" {
+usecase "Combat" as combat
+usecase "Dialogue Input" as dialInput
+usecase "Implement Pet" as petSystem
+usecase "Button Selection" as butSelection
+usecase "Level Up" as levelSystem
+usecase "Responsive Changes" as resChange
+usecase "Random Events" as RNG
+usecase "Move Through Map" as charMove
+}
+
+' list relationships between actors and use cases
+
+' Loop
+gameSystem -up-> player #line:teal;line.bold
+
+' Combat
+player -down-> combat #line:green
+combat -right->  resChange #line:red;line.bold
+combat -down-> gameSystem #line:blue
+
+' Dialogue Input
+player -down-> dialInput #line:green
+dialInput -> resChange #line:red;line.bold
+
+' Character Movement
+charMove -> resChange #line:red;line.bold
+
+' Pets System
+player -down-> petSystem #line:green
+petSystem -down-> gameSystem #line:blue
+
+' Random Events
+gameSystem -up-> RNG #line:green
+RNG -right-> resChange #line:red;line.bold
+resChange -up-> player #line:green
+
+' Button Selection
+player -down-> butSelection #line:green
+butSelection -left-> charMove #line:red;line.bold
+butSelection <-right-> resChange #line:red;line.bold
+butSelection -right-> dialInput #line:red;line.bold
+
+' Leveling System
+player -down-> levelSystem #line:green
+levelSystem -down-> gameSystem #line:blue
+
+' Responsive Changes
+gameSystem <-up-> resChange #line:green
+
+@enduml
+
+```
