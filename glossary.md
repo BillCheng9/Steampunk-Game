@@ -25,10 +25,13 @@ Each character, player-controlled and AI-controlled, have a specific amount of S
 A numerical scale detailing how much experience the PC has gained. Each new level opens up new options in the form of PETS, locations, etc. Each level up also allows the player to permanently increase stats of their choosing.
 
 ## PETS
-A friendly AI companion that boosts PC stats and can offer unique benefits.
+Friendly AI companions that boost PC stats and offer unique benefits.
 
 ## SHOPPING
 A shop that offers items, PETS, and service in exchange for GEARS.
 
 ## GEARS
 Currency in the world.
+
+## MAIN MENU
+Screen where all information is displayed. This include a map of the player's location, stats and currency, levels, and such.
