@@ -19,7 +19,7 @@ diamond {
 }
 </style>
 
-title Combat
+title Execute Combat
 
 start
 while (Both Alive?) is (Yes)

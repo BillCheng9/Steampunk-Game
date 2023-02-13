@@ -85,7 +85,7 @@ start
 stop
 ```
 
-5) Button Selecting
+5) Select Button
 ```plantuml
 <style>
 diamond {
@@ -93,7 +93,7 @@ diamond {
 }
 </style>
 
-title Button Selecting
+title Select Button
 
 start
 
