@@ -1,4 +1,2 @@
-1) Create character class
-    - Define key variables
-2) Create main menu
-3) Create basic movement
+1) Create main menu
+2) Create movement
