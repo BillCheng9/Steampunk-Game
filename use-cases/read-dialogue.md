@@ -1,4 +1,4 @@
-#Dialogue Input
+#Read Dialogue
 
 Brief description:
 1) System outputs dialogue
@@ -18,7 +18,7 @@ diamond {
 }
 </style>
 
-title Dialogue Input
+title Read Dialogue
 
 start
 while (More Dialogue?) is (yes)
