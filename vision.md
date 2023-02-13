@@ -47,14 +47,14 @@ actor "Game System" <<system>> as gameSystem
 
 ' list all use cases in package
 package "Steampunk Game" {
-usecase "Start Combat" as combat
-usecase "Input Dialogue" as dialInput
-usecase "Implement Pet" as petSystem
+usecase "Execute Combat" as combat
+usecase "Read Dialogue" as dialInput
+usecase "Choose Pet" as petSystem
 usecase "Select Button" as butSelection
-usecase "Level Up" as levelSystem
-usecase "Responsively Change Output" as resChange
-usecase "Trigger Random Events" as RNG
-usecase "Move Through Map" as charMove
+usecase "Leveling" as levelSystem
+usecase "Respond to Changes" as resChange
+usecase "Play Random Events" as RNG
+usecase "Move Character" as charMove
 }
 
 ' list relationships between actors and use cases
