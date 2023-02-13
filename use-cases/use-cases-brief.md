@@ -15,11 +15,8 @@
 ## System/Program
 1) Maintenance of Stats and Game Values\
 
-2) Responsive Story\
+2) Responsive Changes\
 
-3) Combat\
+3) Random Events\
 
-4) Responsive Random Events\
-
-5) Responsive and Changing of Areas\
 
