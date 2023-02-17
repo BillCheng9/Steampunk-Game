@@ -127,6 +127,26 @@ stop
 
 7) Interface with Menu
 
+```plantuml
+<style>
+diamond {
+  BackgroundColor White
+}
+</style>
+
+title Leveling
+
+start
+
+while (Game)
+#pink:Display "Home" Screen;
+#lavender:Input movement, inventory, etc.;
+#pink:Call corresponding method;
+endwhile (Quit)
+
+stop
+```
+
 ## System/Program
 
 1) Respond to Changes
