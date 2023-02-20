@@ -1,10 +1,4 @@
 ```plantuml
-<style>
-diamond {
-  BackgroundColor White
-}
-</style>
-
 hide Menu
 hide empty methods
 
@@ -15,7 +9,9 @@ class Player{
 Gears
 Experience
 }
-class Enemy{
+interface Enemy{
+}
+class CurrentEnemy{
 }
 class Statistics{
 Defense
@@ -25,9 +21,10 @@ Health
 
 ' associations
 Combat "1" - "1" Player : \tUpdates\t\t
-Combat "1" -left- "1" Enemy : \tUpdated-by\t\t
+CurrentEnemy "1" -up- "1" Enemy : Implements\t
+Combat "1" -left- "1" CurrentEnemy : \tUpdated-by\t\t
 Player "1" -down- "1" Statistics : Describes\t\t
-Enemy "1" -down- "1" Statistics : Described-by\t\t
+CurrentEnemy "1" -down- "1" Statistics : Described-by\t\t
 Player "1" -up- "1" Inventory : Contained-in\t
 Player "1" -down- "1" Result : Updated-by\t
 ```
