@@ -1,2 +1,1 @@
-1) Create main menu
-2) Create movement
+1) Create a working model of Execute Combat with class placeholder values
