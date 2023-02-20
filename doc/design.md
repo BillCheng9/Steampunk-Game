@@ -13,6 +13,7 @@ class Combat{
 }
 class Player{
 Gears
+Experience
 }
 class Enemy{
 }
