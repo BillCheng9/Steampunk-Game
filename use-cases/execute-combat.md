@@ -9,8 +9,8 @@ Random short attacks: Quantity and exact effect of attacks vary based on enemy
 Charges long attack: Strong enemies and bosses may be able to contribute charge towards a large attack that will be more powerful  
 Stat increase: Enemies may increase a specific stat for the rest of combat  
 ## Combat End: Victory, Defeat  
-Victory: If the enemy's armor reaches 0, victory dialogue and gears gain  
-Defeat: If player's armor reaches 0, defeat dialogue and gears loss. Possible screen blackout.  
+Victory: If the enemy's health reaches 0, victory dialogue and gain gears 
+Defeat: If player's health reaches 0, defeat dialogue and lose gears. Possible screen blackout.  
 
 ```plantuml
 <style>
