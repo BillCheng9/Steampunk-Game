@@ -52,4 +52,11 @@ public class Player {
         }
         return false;
     }
+
+    public boolean healthCheck() {
+        if (health <= 0) {
+            return false;
+        }
+        return true;
+    }
 }

@@ -5,4 +5,6 @@ public interface Enemy {
     public String charge_attack();
 
     public String increase_stat();
+
+    public boolean healthCheck();
 }
