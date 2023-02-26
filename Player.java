@@ -13,11 +13,11 @@ public class Player {
         System.out.println("You decide to do a light attack.\n");
         int value = (int)(Math.random() * 100);
         if (value <= 9) {
-            System.out.println("The enemy dodges your light attack!");
+            System.out.println("The enemy dodges your light attack!\n");
             return 0;
         }
         else {
-            System.out.println("You landed a light attack!");
+            System.out.println("You landed a light attack!\n");
             return damage;
         }
     }
@@ -26,11 +26,11 @@ public class Player {
         System.out.println("You decide to do a heavy attack.\n");
         int value = (int)(Math.random() * 100);
         if (value <= 24) {
-            System.out.println("The enemy dodges your heavy attack!");
+            System.out.println("The enemy dodges your heavy attack!\n");
             return 0;
         }
         else {
-            System.out.println("You landed a heavy attack!");
+            System.out.println("You landed a heavy attack!\n");
             return (int)(damage * 1.5);
         }
     }
