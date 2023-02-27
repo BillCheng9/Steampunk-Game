@@ -2,13 +2,13 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 public class Combat {
 
-//    public void endCombat(int value) {
-//        if (value == 0) {
-//            System.out.print("Your mechanic body can't handle the stress of the fight anymore. Your cores start to fail...GAME OVER!\n");
-//        } else {
-//            System.out.print("You defeated your enemy!\n");
-//        }
-//    }
+    public void endCombat(int value) {
+        if (value == 0) {
+            dialogue.fight_lose;
+        } else {
+            dialogue.fight_win;
+        }
+    }
 
     public static void main(String args[]) throws InterruptedException {
 
@@ -16,12 +16,13 @@ public class Combat {
         Combat fight = new Combat();
         Worker bad = new Worker();
 
-//        System.out.println("You engaged a fight against " + bad.name + "!\n");
-//        TimeUnit.SECONDS.sleep(1);
-//
-//        System.out.println("Player Stability: " + hero.health + "\n");
-//        System.out.println(bad.name + "'s Stability: " + bad.health + "\n");
-//        TimeUnit.SECONDS.sleep(1);
+        System.out.println("You engaged a fight against " + bad.name + "!\n");
+        TimeUnit.SECONDS.sleep(1);
+
+        System.out.println("Player Stability: " + hero.health + "\n");
+        System.out.println(bad.name + " Stability: " + bad.health + "\n");
+        System.out.println(bad.name + "'s Stability: " + bad.health + "\n");
+        TimeUnit.SECONDS.sleep(1);
 
         while ( (hero.healthCheck()) && (bad.healthCheck()) ) {
 
@@ -78,6 +79,7 @@ public class Combat {
 
             TimeUnit.SECONDS.sleep(1);
             System.out.println("Player Stability: " + hero.health + "\n");
+            System.out.println(bad.name + " Stability: " + bad.health + "\n");
             System.out.println(bad.name + "'s Stability': " + bad.health + "\n");
 
             // enemy inputs
@@ -116,6 +118,7 @@ public class Combat {
 
             TimeUnit.SECONDS.sleep(1);
             System.out.println("Player Stability: " + hero.health + "\n");
+            System.out.println(bad.name + " Stability: " + bad.health + "\n");
             System.out.println(bad.name + "'s Stability': " + bad.health + "\n");
             TimeUnit.SECONDS.sleep(1);
 
