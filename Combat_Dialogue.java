@@ -18,4 +18,6 @@ public class Combat_Dialogue {
     public void health(String s, int h) {
         System.out.println(s + " Stability: " + h);
     }
+
+
 }
