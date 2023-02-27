@@ -36,6 +36,16 @@ public class Combat {
                 dialogue.print("invalid");
                 action = scanner.nextLine().toUpperCase();
             }
+
+//            Strength actionStrenght = Strength.LIGHT;
+//
+//            if (actionStrenght == Strength.HEAVY){
+//
+//            }
+//
+//            if (action.equals("LIGHT")) actionStrenght = Strength.LIGHT;
+
+
             if ( (action.equals("LIGHT")) || (action.equals("HEAVY")) ) {
                 if (action.equals("LIGHT")) {
                     int value = hero.attack1();
