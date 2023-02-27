@@ -30,6 +30,10 @@ public class Combat {
             System.out.println("What do you want to do? (LIGHT, HEAVY, PET, INVENTORY, FLEE)\n");
             String action = scanner.nextLine().toUpperCase();
 
+            while( (!action.equals("LIGHT")) && (!action.equals("HEAVY")) && (!action.equals("PET")) && (!action.equals("INVENTORY")) && (!action.equals("FLEE")) ) {
+                System.out.println("Please pick a valid input. (LIGHT, HEAVY, PET, INVENTORY, FLEE) \n");
+                action = scanner.nextLine().toUpperCase();
+            }
             if ( (action.equals("LIGHT")) || (action.equals("HEAVY")) ) {
                 if (action.equals("LIGHT")) {
                     int value = hero.attack1();
