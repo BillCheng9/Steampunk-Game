@@ -55,6 +55,9 @@ public class Player {
             System.out.println("You successfully ran away from the enemy!\n");
             return true;
         }
+        else {
+            System.out.println("The enemy catches up to you!\n");
+        }
         return false;
     }
 

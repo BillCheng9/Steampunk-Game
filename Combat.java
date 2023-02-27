@@ -20,7 +20,7 @@ public class Combat {
         TimeUnit.SECONDS.sleep(1);
 
         System.out.println("Player Stability: " + hero.health + "\n");
-        System.out.println(bad.name + " Health: " + bad.health + "\n");
+        System.out.println(bad.name + "'s Stability: " + bad.health + "\n");
         TimeUnit.SECONDS.sleep(1);
 
         while ( (hero.healthCheck()) && (bad.healthCheck()) ) {
@@ -78,7 +78,7 @@ public class Combat {
 
             TimeUnit.SECONDS.sleep(1);
             System.out.println("Player Stability: " + hero.health + "\n");
-            System.out.println(bad.name + " Health: " + bad.health + "\n");
+            System.out.println(bad.name + "'s Stability': " + bad.health + "\n");
 
             // enemy inputs
             int enemyRNG = (int)(Math.random() * 100);
@@ -116,7 +116,7 @@ public class Combat {
 
             TimeUnit.SECONDS.sleep(1);
             System.out.println("Player Stability: " + hero.health + "\n");
-            System.out.println(bad.name + " Health: " + bad.health + "\n");
+            System.out.println(bad.name + "'s Stability': " + bad.health + "\n");
             TimeUnit.SECONDS.sleep(1);
 
         }
