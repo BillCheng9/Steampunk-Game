@@ -1,3 +1,5 @@
+import java.util.concurrent.TimeUnit;
+
 public class Player {
     public int experience, gears, health, defense, damage;
     public Player(){
@@ -9,10 +11,11 @@ public class Player {
         gears = 5;
     }
 
-    public int attack1() {
+    public int attack1() throws InterruptedException {
         System.out.println("You decide to do a light attack.\n");
+        TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
-        if (value <= 9) {
+        if (value > 89) {
             System.out.println("The enemy dodges your light attack!\n");
             return 0;
         }
@@ -22,10 +25,11 @@ public class Player {
         }
     }
 
-    public int attack2() {
+    public int attack2() throws InterruptedException {
         System.out.println("You decide to do a heavy attack.\n");
+        TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
-        if (value <= 24) {
+        if (value > 73) {
             System.out.println("The enemy dodges your heavy attack!\n");
             return 0;
         }
@@ -43,8 +47,9 @@ public class Player {
         System.out.println("You decide to use your pet's ability.\n");
     }
 
-    public boolean flee() {
+    public boolean flee() throws InterruptedException {
         System.out.println("You decide to run away.\n");
+        TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value >= 69) {
             System.out.println("You successfully ran away from the enemy!\n");

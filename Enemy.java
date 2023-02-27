@@ -1,10 +1,10 @@
 public interface Enemy {
 
-    public String short_attack();
+    public int short_attack() throws InterruptedException;
 
-    public String charge_attack();
+    public int charge_attack() throws InterruptedException;
 
-    public String increase_stat();
+    public void increase_stat();
 
     public boolean healthCheck();
 }

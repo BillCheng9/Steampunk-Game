@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 public class Combat {
 
     public void endCombat(int value) {
@@ -9,17 +10,20 @@ public class Combat {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws InterruptedException {
 
         Player hero = new Player();
         Combat fight = new Combat();
         Worker bad = new Worker();
 
         System.out.println("You engaged a fight against " + bad.name + "!\n");
+        TimeUnit.SECONDS.sleep(1);
+
+        System.out.println("Player Stability: " + hero.health + "\n");
+        System.out.println(bad.name + " Health: " + bad.health + "\n");
+        TimeUnit.SECONDS.sleep(1);
 
         while ( (hero.healthCheck()) && (bad.healthCheck()) ) {
-            System.out.println("Player Stability: " + hero.health + "\n");
-            System.out.println("Enemy Health: " + bad.health + "\n");
 
             // player inputs
             Scanner scanner = new Scanner(System.in);
@@ -68,7 +72,48 @@ public class Combat {
                 break;
             }
 
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("Player Stability: " + hero.health + "\n");
+            System.out.println(bad.name + " Health: " + bad.health + "\n");
+
             // enemy inputs
+            int enemyRNG = (int)(Math.random() * 100);
+            if (enemyRNG > 79) {
+                bad.increase_stat();
+            }
+            else if (enemyRNG > 60) {
+                int value = bad.charge_attack();
+                if (value > 0) {
+                    int dmgValue = value - hero.defense;
+                    if (dmgValue < 1) {
+                        hero.health--;
+                        System.out.println(bad.name + " dealt 1 heavy damage to you!\n");
+                    }
+                    else {
+                        hero.health -= dmgValue;
+                        System.out.println(bad.name + " dealt " + dmgValue + " heavy damage to you!\n");
+                    }
+                }
+            }
+            else {
+                int value = bad.short_attack();
+                if (value > 0) {
+                    int dmgValue = value - hero.defense;
+                    if (dmgValue < 1) {
+                        hero.health--;
+                        System.out.println(bad.name + " dealt 1 damage to you!\n");
+                    }
+                    else {
+                        hero.health -= dmgValue;
+                        System.out.println(bad.name + "dealt " + dmgValue + " damage to you!\n");
+                    }
+                }
+            }
+
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("Player Stability: " + hero.health + "\n");
+            System.out.println(bad.name + " Health: " + bad.health + "\n");
+            TimeUnit.SECONDS.sleep(1);
 
         }
 
