@@ -126,12 +126,12 @@ public class Combat {
 
         }
 
-        if (!hero.healthCheck()) {
-            fight.endCombat(0);
-        }
-        else if (!bad.healthCheck()) {
-            fight.endCombat(1);
-        }
+//        if (!hero.healthCheck()) {
+//            fight.endCombat(0);
+//        }
+//        else if (!bad.healthCheck()) {
+//            fight.endCombat(1);
+//        }
 
     }
 }
