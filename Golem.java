@@ -6,37 +6,40 @@ public class Golem implements Enemy{
     int health = 20;
     int damage = 10;
     public int short_attack() throws InterruptedException {
-        System.out.println("Golem swings wildly at you\n");
+        System.out.println("Steam Golem swings wildly at you!\n");
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value > 70) {
-            System.out.println("You dodge the golem's fist\n");
+            System.out.println("You dodge the Steam Golem's fist!\n");
             return 0;
         }
         else {
-            System.out.println("You get hit by the Worker Bot!\n");
+            System.out.println("You got punched hard by the Steam Golem!!\n");
             return damage;
         }
     }
 
     public int charge_attack() throws InterruptedException {
-        System.out.println("Worker Bot decides to charge up a powerful attack!\n");
+        System.out.println("Steam Golem begins spinning his arms!\n");
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value > 49) {
-            System.out.println("You dodge the Worker Bot's powerful attack!!\n");
+            System.out.println("You dodge the Steam Golem's windmill attack!\n");
             return 0;
         }
         else {
-            System.out.println("You get slammed by the Worker Bot!\n");
+            System.out.println("You got slammed by the Steam Golem's windmill attack!\n");
             return (int)(damage * 2);
         }
     }
 
     public void increase_stat(){
-        System.out.println("Worker Bot decides to power up!\n");
-        damage++;
-        health++;
+        System.out.println("Steam Golem moves its bulky armor to its arms!\n");
+        damage += 5;
+        defense -= 5;
+        if (defense < 0) {
+            defense = 0;
+        }
     }
 
     public boolean healthCheck() {
