@@ -2,21 +2,23 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 public class Combat {
 
+    Player hero = new Player();
+    Combat fight = new Combat();
+    Worker bad = new Worker();
+    Combat_Dialogue dialogue = new Combat_Dialogue(hero, bad);
     public void endCombat(int value) {
         if (value == 0) {
-            dialogue.fight_lose;
+            dialogue.print("lose");
         } else {
-            dialogue.fight_win;
+            dialogue.print("win");
         }
     }
 
     public static void main(String args[]) throws InterruptedException {
 
-        Player hero = new Player();
-        Combat fight = new Combat();
-        Worker bad = new Worker();
 
-        System.out.println("You engaged a fight against " + bad.name + "!\n");
+
+        System.out.println( + "!\n");
         TimeUnit.SECONDS.sleep(1);
 
         System.out.println("Player Stability: " + hero.health + "\n");
