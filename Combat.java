@@ -17,6 +17,7 @@ public class Combat {
         Combat fight = new Combat();
         Worker bad = new Worker();
         Combat_Dialogue dialogue = new Combat_Dialogue(hero, bad);
+
         dialogue.print("start");
         TimeUnit.SECONDS.sleep(1);
 

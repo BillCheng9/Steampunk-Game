@@ -9,7 +9,7 @@ public class Combat_Dialogue {
         this.e = e;
         Diamap.put("lose", "Your mechanic body can't handle the stress of the fight anymore. Your cores start to fail...GAME OVER!");
         Diamap.put("win", "You defeated your enemy!");
-        Diamap.put("start", "You engaged a fight against " + e.name);
+        Diamap.put("start", "You engaged a fight against " + e.getName());
     }
 
     public void print(String s) {
