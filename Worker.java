@@ -45,4 +45,8 @@ public class Worker implements Enemy{
         }
         return true;
     }
+
+    public String getName() {
+        return name;
+    }
 }

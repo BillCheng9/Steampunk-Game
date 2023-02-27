@@ -9,9 +9,9 @@ public class Combat_Dialogue {
         this.e = e;
         Diamap.put("lose", "Your mechanic body can't handle the stress of the fight anymore. Your cores start to fail...GAME OVER!");
         Diamap.put("win", "You defeated your enemy!");
-        Diamap.put("start", "You engaged a fight against " + e.name);
         Diamap.put("prompt", "What do you want to do? (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
         Diamap.put("invalid", "Please pick a valid input. (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
+        Diamap.put("start", "You engaged a fight against " + e.getName());
     }
 
     public void print(String s) {
@@ -20,4 +20,5 @@ public class Combat_Dialogue {
     public void health(String s, int h) {
         System.out.println(s + " Stability: " + h);
     }
+
 }

@@ -48,4 +48,8 @@ public class Golem implements Enemy{
         }
         return true;
     }
+
+    public String getName(){
+        return name;
+    }
 }
