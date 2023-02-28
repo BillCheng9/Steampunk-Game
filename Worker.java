@@ -46,6 +46,19 @@ public class Worker implements Enemy{
         return true;
     }
 
+    public int attacked(int value){
+        if (value > 0) {
+            int dmgValue = value - defense;
+            if (dmgValue < 1) {
+                health--;
+                return 1;
+            } else {
+                return health -= dmgValue;
+            }
+        }
+        else return 0;
+    }
+
     public String getName() {
         return name;
     }

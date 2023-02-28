@@ -1,6 +1,6 @@
 import java.util.concurrent.TimeUnit;
 
-public class Golem implements Enemy{
+/*public class Golem implements Enemy{
     String name = "Steam Golem";
     int defense = 10;
     int health = 20;
@@ -52,4 +52,4 @@ public class Golem implements Enemy{
     public String getName(){
         return name;
     }
-}
+}*/
