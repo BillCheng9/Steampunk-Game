@@ -9,20 +9,20 @@ public class Combat_Dialogue {
     public Combat_Dialogue (Player p, Enemy e){
         this.p = p;
         this.e = e;
-        dialogue.put("lose", "Your mechanic body can't handle the stress of the fight anymore. Your cores start to fail...GAME OVER!");
-        dialogue.put("win", "You defeated your enemy!");
-        dialogue.put("prompt", "What do you want to do? (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
-        dialogue.put("invalid", "Please pick a valid input. (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
-        dialogue.put("start", "You engaged a fight against " + e.getName());
-        dialogue.put("damage", "You hit the enemy for ");
-        dialogue.put("enemy", "Enemy hit you for ");
+        dialogue.put("lose", "YOUR MECHANIC BODY CAN'T HANDLE THE STRESS OF THE FIGHT ANYMORE. YOUR CORES START TO FAIL. GAME OVER!");
+        dialogue.put("win", "YOU DEFEATED YOUR ENEMY!");
+        dialogue.put("prompt", "WHAT DO YOU WANT TO DO? (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
+        dialogue.put("invalid", "PLEASE PICK A VALID INPUT. (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
+        dialogue.put("start", "YOU ENGAGED A FIGHT AGAINST " + e.getName() + "!");
+        dialogue.put("damage", "YOU HIT THE ENEMY FOR ");
+        dialogue.put("enemy", "ENEMY HIT YOU FOR ");
     }
 
     public void print(String s) {
         System.out.println(dialogue.get(s));
     }
     public void health(String s, int h) {
-        System.out.println(s + " Stability: " + h);
+        System.out.println(s + " STABILITY: " + h);
     }
 
     public static void main(String args[]) throws InterruptedException{
@@ -63,10 +63,10 @@ public class Combat_Dialogue {
 
             switch (executeAction){
                 case LIGHT:
-                    System.out.println(output.dialogue.get("damage") + current.Light_Attack(hero, bad));
+                    System.out.println(output.dialogue.get("damage") + current.Light_Attack(hero, bad) + " DAMAGE!");
                     break;
                 case HEAVY:
-                    System.out.println(output.dialogue.get("damage") + current.Heavy_Attack(hero, bad));
+                    System.out.println(output.dialogue.get("damage") + current.Heavy_Attack(hero, bad) + " DAMAGE!");
                     break;
                 case PET:
                     hero.triggerPet();
