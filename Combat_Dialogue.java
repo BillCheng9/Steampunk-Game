@@ -9,11 +9,11 @@ public class Combat_Dialogue {
     public Combat_Dialogue (Player p, Enemy e){
         this.p = p;
         this.e = e;
-        dialogue.put("lose", "YOUR MECHANIC BODY CAN'T HANDLE THE STRESS OF THE FIGHT ANYMORE. YOUR CORES START TO FAIL. GAME OVER!");
-        dialogue.put("win", "YOU DEFEATED YOUR ENEMY!");
-        dialogue.put("prompt", "WHAT DO YOU WANT TO DO? (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
-        dialogue.put("invalid", "PLEASE PICK A VALID INPUT. (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
-        dialogue.put("start", "YOU ENGAGED A FIGHT AGAINST " + e.getName() + "!");
+        dialogue.put("lose", "YOUR MECHANIC BODY CAN'T HANDLE THE STRESS OF THE FIGHT ANYMORE. YOUR CORES START TO FAIL. GAME OVER!\n");
+        dialogue.put("win", "YOU DEFEATED YOUR ENEMY!\n");
+        dialogue.put("prompt", "WHAT DO YOU WANT TO DO? (LIGHT, HEAVY, PET, INVENTORY, FLEE)\n");
+        dialogue.put("invalid", "PLEASE PICK A VALID INPUT. (LIGHT, HEAVY, PET, INVENTORY, FLEE)\n");
+        dialogue.put("start", "YOU ENGAGED A FIGHT AGAINST " + e.getName() + "!\n");
         dialogue.put("damage", "YOU HIT THE ENEMY FOR ");
         dialogue.put("enemy", "ENEMY HIT YOU FOR ");
     }
@@ -30,6 +30,8 @@ public class Combat_Dialogue {
 
         Player hero = new Player();
         Worker bad = new Worker();
+        
+
         Combat_Dialogue output = new Combat_Dialogue(hero, bad);
         Combat current = new Combat(output);
         boolean fled = false;
