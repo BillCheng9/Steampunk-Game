@@ -12,51 +12,51 @@ public class Player {
     }
 
     public int attack1() throws InterruptedException {
-        System.out.println("You decide to do a light attack.\n");
+        System.out.println("YOU DECIDE TO DO A LIGHT ATTACK.\n");
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value > 89) {
-            System.out.println("The enemy dodges your light attack!\n");
+            System.out.println("THE ENEMY DODGES YOUR LIGHT ATTACK\n");
             return 0;
         }
         else {
-            System.out.println("You landed a light attack!\n");
+            System.out.println("YOU LANDED A LIGHT ATTACK!\n");
             return damage;
         }
     }
 
     public int attack2() throws InterruptedException {
-        System.out.println("You decide to do a heavy attack.\n");
+        System.out.println("YOU DECIDE TO DO A HEAVY ATTACK.\n");
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value > 73) {
-            System.out.println("The enemy dodges your heavy attack!\n");
+            System.out.println("THE ENEMY DODGES YOUR HEAVY ATTACK!\n");
             return 0;
         }
         else {
-            System.out.println("You landed a heavy attack!\n");
+            System.out.println("YOU LANDED A HEAVY ATTACK!\n");
             return (int)(damage * 1.5);
         }
     }
 
     public void accessInv() {
-        System.out.println("You decide to open your inventory.\n");
+        System.out.println("YOU DECIDE TO OPEN YOUR INVENTORY.\n");
     }
 
     public void triggerPet() {
-        System.out.println("You decide to use your pet's ability.\n");
+        System.out.println("YOU DECIDE TO USE YOUR PET'S ABILITY.\n");
     }
 
     public boolean flee() throws InterruptedException {
-        System.out.println("You decide to run away.\n");
+        System.out.println("YOU DECIDE TO RUN AWAY.\n");
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value >= 69) {
-            System.out.println("You successfully ran away from the enemy!\n");
+            System.out.println("YOU SUCCESSFULLY RUN AWAY!\n");
             return true;
         }
         else {
-            System.out.println("The enemy catches up to you!\n");
+            System.out.println("THE ENEMY CATCHES UP TO YOU!\n");
         }
         return false;
     }

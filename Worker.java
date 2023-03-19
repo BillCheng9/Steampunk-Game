@@ -5,8 +5,10 @@ public class Worker implements Enemy{
     int defense = 5;
     int health = 5;
     int damage = 5;
+
     public int short_attack() throws InterruptedException {
         System.out.println("WORKER BOT DECIDES TO ATTACK YOU!\n");
+
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value > 70) {
