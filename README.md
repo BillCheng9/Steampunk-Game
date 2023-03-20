@@ -1,5 +1,5 @@
-Version 0.1 - Combat Update:
-    3/20/2023
+Version 0.1 - Combat Update (3/20/2023):
+
     In version 0.1, implementing a working version of the combat simulation that takes in stats from both the enemy and the player, player input, and returns a responsive UI was the main focus. There are currently 4 enemy types that work:
 
         Worker Bot - standard mechanic servant that are now hostile
