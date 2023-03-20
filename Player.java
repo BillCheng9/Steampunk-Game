@@ -11,57 +11,53 @@ public class Player {
         gears = 5;
     }
 
+    Player_Dialogue d = new Player_Dialogue();
+
     public int attack1() throws InterruptedException {
-        System.out.println("YOU DECIDE TO DO A LIGHT ATTACK.\n");
+        d.displayPAL();
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value > 84) {
-            System.out.println("THE ENEMY DODGES YOUR LIGHT ATTACK\n");
+            d.displayPML();
             return 0;
         }
         else {
-            System.out.println("YOU LANDED A LIGHT ATTACK!\n");
+            d.displayPHL();
             return damage;
         }
     }
 
     public int attack2() throws InterruptedException {
-        System.out.println("YOU DECIDE TO DO A HEAVY ATTACK.\n");
+        d.displayPAH();
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value > 74) {
-            System.out.println("THE ENEMY DODGES YOUR HEAVY ATTACK!\n");
+            d.displayPMH();
             return 0;
         }
         else {
-            System.out.println("YOU LANDED A HEAVY ATTACK!\n");
+            d.displayPHH();
             return (int)(damage * 1.5);
         }
     }
 
-    public void accessInv() {
-        System.out.println("YOU DECIDE TO OPEN YOUR INVENTORY.\n");
+    public void accessInv() throws InterruptedException {
+        d.displayInv();
     }
 
-    public void triggerPet() {
-        System.out.println("YOU DECIDE TO USE YOUR PET'S ABILITY.\n");
+    public void triggerPet() throws InterruptedException {
+        d.displayPet();
     }
 
     public boolean flee() throws InterruptedException {
-        System.out.println("YOU DECIDE TO RUN AWAY.\n");
+        d.displayFlee();
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
-        if (value >= 69) {
-            return true;
-        }
-        return false;
+        return value >= 69;
     }
 
     public boolean healthCheck() {
-        if (health <= 0) {
-            return false;
-        }
-        return true;
+        return health > 0;
     }
 
     public int attacked(int e_dmg) {
