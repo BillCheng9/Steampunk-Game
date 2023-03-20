@@ -5,33 +5,33 @@ public class Golem implements Enemy{
     int damage = 10;
     Combat_Dialogue d = new Combat_Dialogue(this);
     public int short_attack() throws InterruptedException {
-        d.print("e_attack_L");
+        d.displayEAL();
         int value = (int)(Math.random() * 100);
         if (value > 70) {
-            d.print("e_miss_L");
+            d.displayEML();
             return 0;
         }
         else {
-            d.print("e_hit_L");
+            d.displayEHL();
             return damage;
         }
     }
 
     public int charge_attack() throws InterruptedException {
-        d.print("e_attack_H");
+        d.displayEAH();
         int value = (int)(Math.random() * 100);
         if (value > 49) {
-            d.print("e_miss_H");
+            d.displayEMH();
             return 0;
         }
         else {
-            d.print("e_hit_H");
-            return (int)(damage * 2);
+            d.displayEHH();
+            return damage * 2;
         }
     }
 
     public void increase_stat() throws InterruptedException {
-        d.print("golem_special");
+        d.displayGolem_S();
         damage += 5;
         defense -= 5;
         if (defense < 0) {
@@ -40,10 +40,7 @@ public class Golem implements Enemy{
     }
 
     public boolean healthCheck() {
-        if (health <= 0) {
-            return false;
-        }
-        return true;
+        return health > 0;
     }
 
     public String getName(){
