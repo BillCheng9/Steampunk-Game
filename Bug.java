@@ -5,41 +5,38 @@ public class Bug implements Enemy{
     int damage = 2;
     Combat_Dialogue d = new Combat_Dialogue(this);
     public int short_attack() throws InterruptedException {
-        d.print("e_attack_L");
+        d.displayEAL();
         int value = (int)(Math.random() * 100);
         if (value > 79) {
-            d.print("e_miss_L");
+            d.displayEML();
             return 0;
         }
         else {
-            d.print("e_hit_L");
-            return (int)(damage / 2);
+            d.displayEHL();
+            return damage / 2;
         }
     }
 
     public int charge_attack() throws InterruptedException {
-        d.print("e_attack_H");
+        d.displayEAH();
         int value = (int)(Math.random() * 100);
         if (value > 59) {
-            d.print("e_miss_H");
+            d.displayEMH();
             return 0;
         }
         else {
-            d.print("e_hit_H");
+            d.displayEHH();
             return (int)(damage * 1.3);
         }
     }
 
     public void increase_stat() throws InterruptedException {
-        d.print("bug_special");
+        d.displayBug_S();
         damage += 3;
     }
 
     public boolean healthCheck() {
-        if (health <= 0) {
-            return false;
-        }
-        return true;
+        return health > 0;
     }
 
     public int attacked(int value){
