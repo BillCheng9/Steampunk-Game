@@ -7,41 +7,38 @@ public class Worker implements Enemy{
 
     public int short_attack() throws InterruptedException {
         int value = (int)(Math.random() * 100);
-        d.print("e_attack_L");
+        d.displayEAL();
         if (value > 70) {
-            d.print("e_miss_L");
+            d.displayEML();
             return 0;
         }
         else {
-            d.print("e_hit_L");
+            d.displayEHL();
             return damage;
         }
     }
 
     public int charge_attack() throws InterruptedException {
         int value = (int)(Math.random() * 100);
-        d.print("e_attack_H");
+        d.displayEAH();
         if (value > 49) {
-            d.print("e_miss_H");
+            d.displayEMH();
             return 0;
         }
         else {
-            d.print("e_hit_H");
-            return (int)(damage * 2);
+            d.displayEHH();
+            return damage * 2;
         }
     }
 
     public void increase_stat() throws InterruptedException {
-        d.print("worker_special");
+        d.displayWorker_S();
         damage++;
         health++;
     }
 
     public boolean healthCheck() {
-        if (health <= 0) {
-            return false;
-        }
-        return true;
+        return health > 0;
     }
 
     public int getHealth() { return health; }
