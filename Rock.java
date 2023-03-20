@@ -6,7 +6,7 @@ public class Rock implements Enemy{
     Combat_Dialogue d = new Combat_Dialogue(this);
 
     public int short_attack() throws InterruptedException {
-        d.print("rock_move");
+        d.displayRock_M();
         return 0;
     }
 
@@ -15,17 +15,14 @@ public class Rock implements Enemy{
     }
 
     public void increase_stat() throws InterruptedException {
-        d.print("rock_special");
+        d.displayRock_S();
         health += 5;
     }
 
     public int getHealth() { return health; }
 
     public boolean healthCheck() {
-        if (health <= 0) {
-            return false;
-        }
-        return true;
+        return health > 0;
     }
 
     public int attacked(int value){
