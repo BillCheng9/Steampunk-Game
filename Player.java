@@ -15,7 +15,7 @@ public class Player {
         System.out.println("YOU DECIDE TO DO A LIGHT ATTACK.\n");
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
-        if (value > 89) {
+        if (value > 84) {
             System.out.println("THE ENEMY DODGES YOUR LIGHT ATTACK\n");
             return 0;
         }
@@ -29,7 +29,7 @@ public class Player {
         System.out.println("YOU DECIDE TO DO A HEAVY ATTACK.\n");
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
-        if (value > 73) {
+        if (value > 74) {
             System.out.println("THE ENEMY DODGES YOUR HEAVY ATTACK!\n");
             return 0;
         }
@@ -52,11 +52,7 @@ public class Player {
         TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value >= 69) {
-            System.out.println("YOU SUCCESSFULLY RUN AWAY!\n");
             return true;
-        }
-        else {
-            System.out.println("THE ENEMY CATCHES UP TO YOU!\n");
         }
         return false;
     }
@@ -66,5 +62,19 @@ public class Player {
             return false;
         }
         return true;
+    }
+
+    public int attacked(int e_dmg) {
+        if (e_dmg > 0) {
+            int dmgValue = e_dmg - defense;
+            if (dmgValue <= 1) {
+                health--;
+                return 1;
+            } else {
+                health -= dmgValue;
+                return dmgValue;
+            }
+        }
+        else return 0;
     }
 }

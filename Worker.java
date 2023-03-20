@@ -1,42 +1,38 @@
-import java.util.concurrent.TimeUnit;
-
 public class Worker implements Enemy{
     String name = "WORKER BOT";
     int defense = 5;
     int health = 5;
     int damage = 5;
+    Combat_Dialogue d = new Combat_Dialogue(this);
 
     public int short_attack() throws InterruptedException {
-        System.out.println("WORKER BOT DECIDES TO ATTACK YOU!\n");
-
-        TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
+        d.print("e_attack_L");
         if (value > 70) {
-            System.out.println("YOU DODGE THE WORKER BOT'S SWING!\n");
+            d.print("e_miss_L");
             return 0;
         }
         else {
-            System.out.println("YOU GET HIT BY THE WORKER BOT!\n");
+            d.print("e_hit_L");
             return damage;
         }
     }
 
     public int charge_attack() throws InterruptedException {
-        System.out.println("WORKER BOT DECIDES TO CHARGE UP A POWERFUL ATTACK!\n");
-        TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
+        d.print("e_attack_H");
         if (value > 49) {
-            System.out.println("YOU DODGE THE WORKER BOT'S POWERFUL ATTACK!\n");
+            d.print("e_miss_H");
             return 0;
         }
         else {
-            System.out.println("YOU GET SLAMMED BY THE WORKER BOT!\n");
+            d.print("e_hit_H");
             return (int)(damage * 2);
         }
     }
 
-    public void increase_stat(){
-        System.out.println("WORKER BOT DECIDES TO POWER UP!\n");
+    public void increase_stat() throws InterruptedException {
+        d.print("worker_special");
         damage++;
         health++;
     }
@@ -48,14 +44,17 @@ public class Worker implements Enemy{
         return true;
     }
 
+    public int getHealth() { return health; }
+
     public int attacked(int value){
         if (value > 0) {
             int dmgValue = value - defense;
-            if (dmgValue < 1) {
+            if (dmgValue <= 1) {
                 health--;
                 return 1;
             } else {
-                return health -= dmgValue;
+                health -= dmgValue;
+                return dmgValue;
             }
         }
         else return 0;

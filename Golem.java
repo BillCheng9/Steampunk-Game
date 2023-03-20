@@ -1,40 +1,37 @@
-import java.util.concurrent.TimeUnit;
-
 public class Golem implements Enemy{
     String name = "STEAM GOLEM";
     int defense = 10;
     int health = 20;
     int damage = 10;
+    Combat_Dialogue d = new Combat_Dialogue(this);
     public int short_attack() throws InterruptedException {
-        System.out.println("STEAM GOLEM SWINGS WILDLY AT YOU!\n");
-        TimeUnit.SECONDS.sleep(1);
+        d.print("e_attack_L");
         int value = (int)(Math.random() * 100);
         if (value > 70) {
-            System.out.println("YOU DODGE THE STEAM GOLEM'S FIST!\n");
+            d.print("e_miss_L");
             return 0;
         }
         else {
-            System.out.println("YOU GET PUNCHED HARD BY THE STEAM GOLEM!\n");
+            d.print("e_hit_L");
             return damage;
         }
     }
 
     public int charge_attack() throws InterruptedException {
-        System.out.println("STEAM GOLEM BEGINS SWINGING HIS ARMS!\n");
-        TimeUnit.SECONDS.sleep(1);
+        d.print("e_attack_H");
         int value = (int)(Math.random() * 100);
         if (value > 49) {
-            System.out.println("YOU DODGE THE STEAM GOLEM'S WINDMILL ATTACK!\n");
+            d.print("e_miss_H");
             return 0;
         }
         else {
-            System.out.println("YOU GOT SLAMMED BY THE STEAM GOLEM'S WINDMILL ATTACK!\n");
+            d.print("e_hit_H");
             return (int)(damage * 2);
         }
     }
 
-    public void increase_stat(){
-        System.out.println("STEAM GOLEM SHIFTS ITS PROTECTIVE ARMOR TO ITS FISTS!\n");
+    public void increase_stat() throws InterruptedException {
+        d.print("golem_special");
         damage += 5;
         defense -= 5;
         if (defense < 0) {
@@ -52,16 +49,18 @@ public class Golem implements Enemy{
     public String getName(){
         return name;
     }
+    public int getHealth() { return health; }
 
     @Override
     public int attacked(int value) {
         if (value > 0) {
             int dmgValue = value - defense;
-            if (dmgValue < 1) {
+            if (dmgValue <= 1) {
                 health--;
                 return 1;
             } else {
-                return health -= dmgValue;
+                health -= dmgValue;
+                return dmgValue;
             }
         }
         else {

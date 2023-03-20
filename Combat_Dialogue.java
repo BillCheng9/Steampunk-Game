@@ -6,89 +6,60 @@ public class Combat_Dialogue {
     public Player p;
     public Enemy e;
     Map<String, String> dialogue = new HashMap<>();
-    public Combat_Dialogue (Player p, Enemy e){
-        this.p = p;
+    public Combat_Dialogue (Enemy e){
         this.e = e;
-        dialogue.put("lose", "YOUR MECHANIC BODY CAN'T HANDLE THE STRESS OF THE FIGHT ANYMORE. YOUR CORES START TO FAIL. GAME OVER!\n");
-        dialogue.put("win", "YOU DEFEATED YOUR ENEMY!\n");
-        dialogue.put("prompt", "WHAT DO YOU WANT TO DO? (LIGHT, HEAVY, PET, INVENTORY, FLEE)\n");
-        dialogue.put("invalid", "PLEASE PICK A VALID INPUT. (LIGHT, HEAVY, PET, INVENTORY, FLEE)\n");
-        dialogue.put("start", "YOU ENGAGED A FIGHT AGAINST " + e.getName() + "!\n");
-        dialogue.put("damage", "YOU HIT THE ENEMY FOR ");
-        dialogue.put("enemy", "ENEMY HIT YOU FOR ");
+        dialogue.put("start", "YOU ENGAGED A FIGHT AGAINST " + e.getName() + "!");
+        dialogue.put("e_attack_L", e.getName() + " DECIDES TO ATTACK YOU!");
+        dialogue.put("e_miss_L", "YOU DODGE THE " + e.getName() + "'S LIGHT ATTACK!");
+        dialogue.put("e_hit_L", "YOU GET HIT BY THE " + e.getName() + "'S LIGHT ATTACK!");
+        dialogue.put("e_attack_H", e.getName() + " DECIDES TO CHARGE UP A POWERFUL ATTACK!");
+        dialogue.put("e_miss_H", "YOU DODGE THE " + e.getName() + "'S HEAVY ATTACK!");
+        dialogue.put("e_hit_H", "YOU GET HIT BY THE " + e.getName() + "'S HEAVY ATTACK!");
+        dialogue.put("bug_special", "IRON ANT SHARPENS ITS METALLIC MANDIBLES!");
+        dialogue.put("worker_special", "WORKER BOT POWERS UP!");
+        dialogue.put("golem_special", "STEAM GOLEM SHIFTS ITS METALLIC ARMOR TO ITS FISTS!");
+        dialogue.put("rock_special", "THE ROCK SOMEHOW GROWS LARGER?!");
+        dialogue.put("rock_start", "A ROCK STANDS IN YOUR WAY");
+        dialogue.put("rock_move", "IT'S A LITERAL ROCK. IT CAN'T HURT YOU!");
     }
 
-    public void print(String s) {
-        System.out.println(dialogue.get(s));
-    }
-    public void health(String s, int h) {
-        System.out.println(s + " STABILITY: " + h);
+    public Combat_Dialogue () {
+        dialogue.put("prompt", "WHAT DO YOU WANT TO DO? (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
+        dialogue.put("invalid", "PLEASE PICK A VALID INPUT. (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
+        dialogue.put("lose", "YOUR MECHANIC BODY CAN'T HANDLE THE STRESS OF THE FIGHT ANYMORE. YOUR CORES START TO FAIL. GAME OVER!");
+        dialogue.put("win", "YOU DEFEATED YOUR ENEMY!");
+        dialogue.put("flee_f", "THE ENEMY CATCHES UP TO YOU!");
+        dialogue.put("flee_t", "YOU SUCCESSFULLY RUN AWAY!");
+        dialogue.put("finish", "YOU LIVE TO FIGHT ANOTHER DAY!");
+
     }
 
-    public static void main(String args[]) throws InterruptedException{
+    public Combat_Dialogue (Player p, Enemy e, int dmg) {
+        dialogue.put("enemy", "ENEMY HIT YOU FOR " + dmg);
+        dialogue.put("damage", "YOU HIT THE ENEMY FOR " + dmg);
+    }
+
+    public String grabInput() {
         Scanner scanner = new Scanner(System.in);
+        String action = scanner.nextLine().toUpperCase();
+        return action;
+    }
 
-        Player hero = new Player();
-        Worker bad = new Worker();
-        
-
-        Combat_Dialogue output = new Combat_Dialogue(hero, bad);
-        Combat current = new Combat(output);
-        boolean fled = false;
-
-        output.print("start");
+    public void print(String s) throws InterruptedException {
+        System.out.println(dialogue.get(s) + "\n");
         TimeUnit.SECONDS.sleep(1);
+    }
 
-        output.health("Player", hero.health);
-        output.health(bad.name, bad.health);
+    public void displayLoss() throws InterruptedException {
+        System.out.println(dialogue.get("lose") + "\n");
         TimeUnit.SECONDS.sleep(1);
+    }
 
-        while ( (hero.healthCheck()) && (bad.healthCheck()) ) {
-
-            // player input
-            output.print("prompt");
-            String action = scanner.nextLine().toUpperCase();
-
-            //invalid input case
-            while ((!action.equals("LIGHT")) && (!action.equals("HEAVY")) && (!action.equals("PET")) && (!action.equals("INVENTORY")) && (!action.equals("FLEE"))) {
-                output.print("invalid");
-                action = scanner.nextLine().toUpperCase();
-            }
-
-            Input executeAction;
-
-            if (action.equals("LIGHT")) executeAction = Input.LIGHT;
-            else if (action.equals("HEAVY")) executeAction = Input.HEAVY;
-            else if (action.equals("PET")) executeAction = Input.PET;
-            else if (action.equals("INVENTORY")) executeAction = Input.INVENTORY;
-            else executeAction = Input.FLEE;
-
-            switch (executeAction){
-                case LIGHT:
-                    System.out.println(output.dialogue.get("damage") + current.Light_Attack(hero, bad) + " DAMAGE!");
-                    break;
-                case HEAVY:
-                    System.out.println(output.dialogue.get("damage") + current.Heavy_Attack(hero, bad) + " DAMAGE!");
-                    break;
-                case PET:
-                    hero.triggerPet();
-                    break;
-                case INVENTORY:
-                    hero.accessInv();
-                    break;
-                case FLEE:
-                    hero.flee();
-                    fled = true;
-                    break;
-            }
-            if (fled) break;
-
-            TimeUnit.SECONDS.sleep(1);
-            output.health("Player", hero.health);
-            output.health(bad.name, bad.health);
-            TimeUnit.SECONDS.sleep(1);
-        }
-
+    public void pHealth(int h) {
+        System.out.println("PLAYER STABILITY: " + h);
+    }
+    public void eHealth(String s, int h) {
+        System.out.println(e.getName() + "'S STABILITY: " + h);
     }
 
 }
