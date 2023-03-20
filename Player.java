@@ -15,7 +15,6 @@ public class Player {
 
     public int attack1() throws InterruptedException {
         d.displayPAL();
-        TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value > 84) {
             d.displayPML();
@@ -29,7 +28,6 @@ public class Player {
 
     public int attack2() throws InterruptedException {
         d.displayPAH();
-        TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         if (value > 74) {
             d.displayPMH();
@@ -51,7 +49,6 @@ public class Player {
 
     public boolean flee() throws InterruptedException {
         d.displayFlee();
-        TimeUnit.SECONDS.sleep(1);
         int value = (int)(Math.random() * 100);
         return value >= 69;
     }
