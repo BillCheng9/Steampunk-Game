@@ -8,12 +8,12 @@ public class Combat_Dialogue {
     public Combat_Dialogue (Enemy e){
         this.e = e;
         dialogue.put("start", "YOU ENGAGED A FIGHT AGAINST " + e.getName() + "!");
-        dialogue.put("e_attack_L", e.getName() + " DECIDES TO ATTACK YOU!");
-        dialogue.put("e_miss_L", "YOU DODGE THE " + e.getName() + "'S LIGHT ATTACK!");
-        dialogue.put("e_hit_L", "YOU GET HIT BY THE " + e.getName() + "'S LIGHT ATTACK!");
-        dialogue.put("e_attack_H", e.getName() + " DECIDES TO CHARGE UP A POWERFUL ATTACK!");
-        dialogue.put("e_miss_H", "YOU DODGE THE " + e.getName() + "'S HEAVY ATTACK!");
-        dialogue.put("e_hit_H", "YOU GET HIT BY THE " + e.getName() + "'S HEAVY ATTACK!");
+        dialogue.put("e_attack_l", e.getName() + " DECIDES TO ATTACK YOU!");
+        dialogue.put("e_miss_l", "YOU DODGE THE " + e.getName() + "'S LIGHT ATTACK!");
+        dialogue.put("e_hit_l", "YOU GET HIT BY THE " + e.getName() + "'S LIGHT ATTACK!");
+        dialogue.put("e_attack_h", e.getName() + " DECIDES TO CHARGE UP A POWERFUL ATTACK!");
+        dialogue.put("e_miss_h", "YOU DODGE THE " + e.getName() + "'S HEAVY ATTACK!");
+        dialogue.put("e_hit_h", "YOU GET HIT BY THE " + e.getName() + "'S HEAVY ATTACK!");
         dialogue.put("bug_special", "IRON ANT SHARPENS ITS METALLIC MANDIBLES!");
         dialogue.put("worker_special", "WORKER BOT POWERS UP!");
         dialogue.put("golem_special", "STEAM GOLEM SHIFTS ITS METALLIC ARMOR TO ITS FISTS!");
