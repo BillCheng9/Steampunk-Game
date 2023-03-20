@@ -3,7 +3,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Combat_Dialogue {
 
-    public Player p;
     public Enemy e;
     Map<String, String> dialogue = new HashMap<>();
     public Combat_Dialogue (Enemy e){
@@ -19,7 +18,6 @@ public class Combat_Dialogue {
         dialogue.put("worker_special", "WORKER BOT POWERS UP!");
         dialogue.put("golem_special", "STEAM GOLEM SHIFTS ITS METALLIC ARMOR TO ITS FISTS!");
         dialogue.put("rock_special", "THE ROCK SOMEHOW GROWS LARGER?!");
-        dialogue.put("rock_start", "A ROCK STANDS IN YOUR WAY");
         dialogue.put("rock_move", "IT'S A LITERAL ROCK. IT CAN'T HURT YOU!");
     }
 
@@ -34,31 +32,125 @@ public class Combat_Dialogue {
 
     }
 
-    public Combat_Dialogue (Player p, Enemy e, int dmg) {
-        dialogue.put("enemy", "ENEMY HIT YOU FOR " + dmg);
-        dialogue.put("damage", "YOU HIT THE ENEMY FOR " + dmg);
+    public Combat_Dialogue (int dmg) {
+        dialogue.put("enemy", "ENEMY HIT YOU FOR " + dmg + " DAMAGE!");
+        dialogue.put("damage", "YOU HIT THE ENEMY FOR " + dmg + " DAMAGE!");
     }
 
     public String grabInput() {
         Scanner scanner = new Scanner(System.in);
-        String action = scanner.nextLine().toUpperCase();
-        return action;
+        return scanner.nextLine().toUpperCase();
     }
 
-    public void print(String s) throws InterruptedException {
-        System.out.println(dialogue.get(s) + "\n");
+    public void displayStart() throws InterruptedException {
+        System.out.println(dialogue.get("start") + "\n");
         TimeUnit.SECONDS.sleep(1);
     }
 
-    public void displayLoss() throws InterruptedException {
+    public void displayEAL() throws InterruptedException {
+        System.out.println(dialogue.get("e_attack_l") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayEML() throws InterruptedException {
+        System.out.println(dialogue.get("e_miss_l") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayEHL() throws InterruptedException {
+        System.out.println(dialogue.get("e_hit_l") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayEAH() throws InterruptedException {
+        System.out.println(dialogue.get("e_attack_h") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayEMH() throws InterruptedException {
+        System.out.println(dialogue.get("e_miss_h") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayEHH() throws InterruptedException {
+        System.out.println(dialogue.get("e_hit_h") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayBug_S() throws InterruptedException {
+        System.out.println(dialogue.get("bug_special") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayWorker_S() throws InterruptedException {
+        System.out.println(dialogue.get("worker_special") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayRock_S() throws InterruptedException {
+        System.out.println(dialogue.get("rock_special") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayRock_M() throws InterruptedException {
+        System.out.println(dialogue.get("rock_move") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayGolem_S() throws InterruptedException {
+        System.out.println(dialogue.get("golem_special") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayPrompt() throws InterruptedException {
+        System.out.println(dialogue.get("prompt") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayInvalid() throws InterruptedException {
+        System.out.println(dialogue.get("invalid") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayLose() throws InterruptedException {
         System.out.println(dialogue.get("lose") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayWin() throws InterruptedException {
+        System.out.println(dialogue.get("win") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayFlee_F() throws InterruptedException {
+        System.out.println(dialogue.get("flee_f") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayFlee_T() throws InterruptedException {
+        System.out.println(dialogue.get("flee_t") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayFinish() throws InterruptedException {
+        System.out.println(dialogue.get("Finish") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayEnemy() throws InterruptedException {
+        System.out.println(dialogue.get("enemy") + "\n");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    public void displayDamage() throws InterruptedException {
+        System.out.println(dialogue.get("damage") + "\n");
         TimeUnit.SECONDS.sleep(1);
     }
 
     public void pHealth(int h) {
         System.out.println("PLAYER STABILITY: " + h);
     }
-    public void eHealth(String s, int h) {
+    public void eHealth(int h) {
         System.out.println(e.getName() + "'S STABILITY: " + h);
     }
 
