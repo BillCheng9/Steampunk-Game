@@ -1,3 +1,5 @@
+package com.example.steampunkgame;
+
 public class Rock implements Enemy{
     String name = "LITERAL ROCK";
     int defense = 1;

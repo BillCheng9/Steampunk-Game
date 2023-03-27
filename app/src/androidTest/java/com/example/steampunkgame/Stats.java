@@ -1,3 +1,5 @@
+package com.example.steampunkgame;
+
 public class Stats {
     private int defense, health, damage;
 
