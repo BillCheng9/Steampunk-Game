@@ -100,23 +100,20 @@ public class Combat{
             inputD.eHealth(e.getHealth());
 
             // enemy turn
-            int eVal = (int) (Math.random() * 10);
-            if (eVal <= 44) {
-                val = e.short_attack();
-                if (val > 0) {
-                    int res = p.attacked(val);
-                    Combat_Dialogue dmg = new Combat_Dialogue(res);
-                    dmg.displayEnemy();
-                }
-            } else if (eVal <= 74) {
-                val = e.charge_attack();
-                if (val > 0) {
-                    int res = p.attacked(val);
-                    Combat_Dialogue dmg = new Combat_Dialogue(res);
-                    dmg.displayEnemy();
-                }
-            } else {
-                e.increase_stat();
+            int eVal = e.pickAttack();
+            int dmgVal;
+            if (eVal == 0) {
+                dmgVal = e.short_attack();
+                int res = p.attacked(dmgVal);
+                Combat_Dialogue dmg = new Combat_Dialogue(res);
+                dmg.displayEnemy();
+
+            }
+            else if (eVal == 1) {
+                dmgVal = e.charge_attack();
+                int res = p.attacked(dmgVal);
+                Combat_Dialogue dmg = new Combat_Dialogue(res);
+                dmg.displayEnemy();
             }
         }
 

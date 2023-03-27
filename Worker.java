@@ -57,6 +57,18 @@ public class Worker implements Enemy{
         else return 0;
     }
 
+    public int pickAttack() throws InterruptedException {
+        int eVal = (int) (Math.random() * 10);
+        if (eVal <= 44) {
+            return 0;
+        } else if (eVal <= 74) {
+            return 1;
+        } else {
+            this.increase_stat();
+            return -1;
+        }
+    }
+
     public String getName() {
         return name;
     }

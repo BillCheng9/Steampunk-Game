@@ -37,9 +37,14 @@ public class Combat_Dialogue {
         dialogue.put("damage", "YOU HIT THE ENEMY FOR " + dmg + " DAMAGE!");
     }
 
-    public String grabInput() {
+    public String grabInput() throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine().toUpperCase();
+        String action = scanner.nextLine().toUpperCase();
+        while ( (!action.equals("LIGHT")) && (!action.equals("HEAVY")) && (!action.equals("FLEE")) && (!action.equals("PET")) && (!action.equals("INVENTORY")) ){
+            displayInvalid();
+            action = this.grabInput();
+        }
+        return action;
     }
 
     public void displayStart() throws InterruptedException {

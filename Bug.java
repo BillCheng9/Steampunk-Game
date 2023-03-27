@@ -53,6 +53,18 @@ public class Bug implements Enemy{
         else return 0;
     }
 
+    public int pickAttack() throws InterruptedException {
+        int eVal = (int) (Math.random() * 10);
+        if (eVal <= 44) {
+            return 0;
+        } else if (eVal <= 74) {
+            return 1;
+        } else {
+            this.increase_stat();
+            return -1;
+        }
+    }
+
     public int getHealth() { return health; }
 
     public String getName() {
