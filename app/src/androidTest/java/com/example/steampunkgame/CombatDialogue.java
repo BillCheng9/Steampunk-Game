@@ -155,9 +155,9 @@ public class CombatDialogue {
     }
 
     public void combatResult(String s) throws InterruptedException {
-        if (s.equals("LOSE")) System.out.println(dialogue.get("Finish") + "\n");
+        if (s.equals("LOSE")) System.out.println(dialogue.get("lose") + "\n");
         else if (s.equals("WIN")) System.out.println(dialogue.get("win") + "\n");
-        else System.out.println(dialogue.get("Finish") + "\n");
+        else System.out.println(dialogue.get("finish") + "\n");
         TimeUnit.SECONDS.sleep(1);
     }
 
