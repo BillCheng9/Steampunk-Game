@@ -1,4 +1,4 @@
-
+package com.example.steampunkgame;
 
 /**
  * Combat is the controller class we will be using for this game. Current iteration interacts with the view model

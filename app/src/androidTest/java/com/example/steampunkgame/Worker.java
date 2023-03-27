@@ -1,3 +1,5 @@
+package com.example.steampunkgame;
+
 public class Worker implements Enemy{
     String name = "WORKER BOT";
     int defense = 5;

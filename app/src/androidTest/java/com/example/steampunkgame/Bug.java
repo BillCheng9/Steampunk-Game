@@ -1,3 +1,5 @@
+package com.example.steampunkgame;
+
 public class Bug implements Enemy{
     String name = "IRON ANT";
     int defense = 1;

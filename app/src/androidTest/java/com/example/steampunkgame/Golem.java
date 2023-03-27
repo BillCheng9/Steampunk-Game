@@ -1,3 +1,5 @@
+package com.example.steampunkgame;
+
 public class Golem implements Enemy{
     String name = "STEAM GOLEM";
     int defense = 10;
