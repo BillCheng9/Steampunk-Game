@@ -1,20 +1,18 @@
 import static java.lang.System.exit;
 
+/**
+ * Combat is the controller class we will be using for this game. Current iteration interacts with the view model
+ * CombatDialogue to retrieve player inputs. Combat will run until Player dies, enemy dies, or Player flees
+ */
 public class Combat{
 
     public Combat() {
 
     }
 
-    public String getInput() throws InterruptedException {
+    public Input getInput() throws InterruptedException {
         Combat_Dialogue inputD = new Combat_Dialogue();
-        inputD.displayPrompt();
-        String action = inputD.grabInput();
-        while ( (!action.equals("LIGHT")) && (!action.equals("HEAVY")) && (!action.equals("FLEE")) && (!action.equals("PET")) && (!action.equals("INVENTORY")) ){
-            inputD.displayInvalid();
-            action = inputD.grabInput();
-        }
-        return action;
+        return inputD.grabInput();
     }
 
     public int combatTurn(Player p, Enemy e) throws InterruptedException {
@@ -33,24 +31,8 @@ public class Combat{
             inputD.eHealth(e.getHealth());
 
             // player turn
-            String input = getInput();
-            switch (input) {
-                case "LIGHT":
-                    executeAction = Input.LIGHT;
-                    break;
-                case "HEAVY":
-                    executeAction = Input.HEAVY;
-                    break;
-                case "PET":
-                    executeAction = Input.PET;
-                    break;
-                case "INVENTORY":
-                    executeAction = Input.INVENTORY;
-                    break;
-                default:
-                    executeAction = Input.FLEE;
-                    break;
-            }
+            executeAction = getInput();
+
             switch(executeAction) {
                 case LIGHT:
                     val = p.attack1();

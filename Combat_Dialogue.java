@@ -36,15 +36,35 @@ public class Combat_Dialogue {
         dialogue.put("enemy", "ENEMY HIT YOU FOR " + dmg + " DAMAGE!");
         dialogue.put("damage", "YOU HIT THE ENEMY FOR " + dmg + " DAMAGE!");
     }
-
-    public String grabInput() throws InterruptedException {
+    public Input grabInput() throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
+        displayPrompt();
         String action = scanner.nextLine().toUpperCase();
         while ( (!action.equals("LIGHT")) && (!action.equals("HEAVY")) && (!action.equals("FLEE")) && (!action.equals("PET")) && (!action.equals("INVENTORY")) ){
             displayInvalid();
-            action = this.grabInput();
+            action = scanner.nextLine().toUpperCase();
         }
-        return action;
+        Input executeAction;
+
+        switch (action) {
+            case "LIGHT":
+                executeAction = Input.LIGHT;
+                break;
+            case "HEAVY":
+                executeAction = Input.HEAVY;
+                break;
+            case "PET":
+                executeAction = Input.PET;
+                break;
+            case "INVENTORY":
+                executeAction = Input.INVENTORY;
+                break;
+            default:
+                executeAction = Input.FLEE;
+                break;
+        }
+
+        return executeAction;
     }
 
     public void displayStart() throws InterruptedException {
