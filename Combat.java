@@ -95,16 +95,19 @@ public class Combat{
             int dmgVal;
             if (eVal == 0) {
                 dmgVal = e.short_attack();
-                int res = p.attacked(dmgVal);
-                Combat_Dialogue dmg = new Combat_Dialogue(res);
-                dmg.displayEnemy();
-
+                if (dmgVal != 0) {
+                    int res = p.attacked(dmgVal);
+                    Combat_Dialogue dmg = new Combat_Dialogue(res);
+                    dmg.displayEnemy();
+                }
             }
             else if (eVal == 1) {
                 dmgVal = e.charge_attack();
-                int res = p.attacked(dmgVal);
-                Combat_Dialogue dmg = new Combat_Dialogue(res);
-                dmg.displayEnemy();
+                if (dmgVal != 0) {
+                    int res = p.attacked(dmgVal);
+                    Combat_Dialogue dmg = new Combat_Dialogue(res);
+                    dmg.displayEnemy();
+                }
             }
         }
 
