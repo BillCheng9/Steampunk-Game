@@ -1,11 +1,16 @@
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-public class Combat_Dialogue {
+/**
+ * User interface for the entire game. Contains dialogue maps for both enemy and system messages. Current iteration
+ * contains a combat prompt method. Contains many display methods that withdraw and print strings from the dialogue
+ * map.
+ */
+public class CombatDialogue {
 
     public Enemy e;
     Map<String, String> dialogue = new HashMap<>();
-    public Combat_Dialogue (Enemy e){
+    public CombatDialogue (Enemy e){
         this.e = e;
         dialogue.put("start", "YOU ENGAGED A FIGHT AGAINST " + e.getName() + "!");
         dialogue.put("e_attack_l", e.getName() + " DECIDES TO ATTACK YOU!");
@@ -21,7 +26,7 @@ public class Combat_Dialogue {
         dialogue.put("rock_move", "IT'S A LITERAL ROCK. IT CAN'T HURT YOU!");
     }
 
-    public Combat_Dialogue () {
+    public CombatDialogue () {
         dialogue.put("prompt", "WHAT DO YOU WANT TO DO? (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
         dialogue.put("invalid", "PLEASE PICK A VALID INPUT. (LIGHT, HEAVY, PET, INVENTORY, FLEE)");
         dialogue.put("lose", "YOUR MECHANIC BODY CAN'T HANDLE THE STRESS OF THE FIGHT ANYMORE. YOUR CORES START TO FAIL. GAME OVER!");
@@ -32,7 +37,7 @@ public class Combat_Dialogue {
 
     }
 
-    public Combat_Dialogue (int dmg) {
+    public CombatDialogue (int dmg) {
         dialogue.put("enemy", "ENEMY HIT YOU FOR " + dmg + " DAMAGE!");
         dialogue.put("damage", "YOU HIT THE ENEMY FOR " + dmg + " DAMAGE!");
     }

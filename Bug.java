@@ -3,7 +3,7 @@ public class Bug implements Enemy{
     int defense = 1;
     int health = 3;
     int damage = 2;
-    Combat_Dialogue d = new Combat_Dialogue(this);
+    CombatDialogue d = new CombatDialogue(this);
     public int short_attack() throws InterruptedException {
         d.displayEAL();
         int value = (int)(Math.random() * 100);

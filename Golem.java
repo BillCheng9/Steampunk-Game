@@ -3,7 +3,7 @@ public class Golem implements Enemy{
     int defense = 10;
     int health = 20;
     int damage = 10;
-    Combat_Dialogue d = new Combat_Dialogue(this);
+    CombatDialogue d = new CombatDialogue(this);
     public int short_attack() throws InterruptedException {
         d.displayEAL();
         int value = (int)(Math.random() * 100);

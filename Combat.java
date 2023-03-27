@@ -16,7 +16,7 @@ public class Combat{
      * @return an enum Input that represents a player action
      */
     public Input getInput() throws InterruptedException {
-        Combat_Dialogue inputD = new Combat_Dialogue();
+        CombatDialogue inputD = new CombatDialogue();
         return inputD.grabInput();
     }
 
@@ -28,8 +28,8 @@ public class Combat{
      * @return result of combat: Win, lose, flee
      */
     public String combatTurn(Player p, Enemy e) throws InterruptedException {
-        Combat_Dialogue inputD = new Combat_Dialogue(e);
-        Combat_Dialogue inputD2 = new Combat_Dialogue();
+        CombatDialogue inputD = new CombatDialogue(e);
+        CombatDialogue inputD2 = new CombatDialogue();
         inputD.displayStart();
         Input executeAction;
         int val;
@@ -49,7 +49,7 @@ public class Combat{
                     val = p.attack1();
                     if (val > 0) {
                         int res = e.attacked(val);
-                        Combat_Dialogue dmg = new Combat_Dialogue(res);
+                        CombatDialogue dmg = new CombatDialogue(res);
                         dmg.displayDamage();
                     }
                     break;
@@ -57,7 +57,7 @@ public class Combat{
                     val = p.attack2();
                     if (val > 0) {
                         int res = e.attacked(val);
-                        Combat_Dialogue dmg = new Combat_Dialogue(res);
+                        CombatDialogue dmg = new CombatDialogue(res);
                         dmg.displayDamage();
                     }
                     break;
@@ -97,7 +97,7 @@ public class Combat{
                 dmgVal = e.short_attack();
                 if (dmgVal != 0) {
                     int res = p.attacked(dmgVal);
-                    Combat_Dialogue dmg = new Combat_Dialogue(res);
+                    CombatDialogue dmg = new CombatDialogue(res);
                     dmg.displayEnemy();
                 }
             }
@@ -105,7 +105,7 @@ public class Combat{
                 dmgVal = e.charge_attack();
                 if (dmgVal != 0) {
                     int res = p.attacked(dmgVal);
-                    Combat_Dialogue dmg = new Combat_Dialogue(res);
+                    CombatDialogue dmg = new CombatDialogue(res);
                     dmg.displayEnemy();
                 }
             }
@@ -129,7 +129,7 @@ public class Combat{
         Player p = new Player();
         Combat combat = new Combat();
         Enemy e;
-        Combat_Dialogue textD = new Combat_Dialogue();
+        CombatDialogue textD = new CombatDialogue();
 
         // picks random enemy to fight
         int eVal = (int)(Math.random() * 4);
