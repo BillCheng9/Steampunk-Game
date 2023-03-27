@@ -3,7 +3,7 @@ public class Worker implements Enemy{
     int defense = 5;
     int health = 5;
     int damage = 5;
-    Combat_Dialogue d = new Combat_Dialogue(this);
+    CombatDialogue d = new CombatDialogue(this);
 
     public int short_attack() throws InterruptedException {
         int value = (int)(Math.random() * 100);

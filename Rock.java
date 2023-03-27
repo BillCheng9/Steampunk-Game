@@ -3,7 +3,7 @@ public class Rock implements Enemy{
     int defense = 1;
     int health = 23;
     int damage = 0;
-    Combat_Dialogue d = new Combat_Dialogue(this);
+    CombatDialogue d = new CombatDialogue(this);
 
     public int short_attack() throws InterruptedException {
         d.displayRock_M();
