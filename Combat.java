@@ -1,4 +1,4 @@
-import static java.lang.System.exit;
+
 
 /**
  * Combat is the controller class we will be using for this game. Current iteration interacts with the view model
@@ -10,17 +10,28 @@ public class Combat{
 
     }
 
+    /**
+     *  Returns an enum Input that is used in the combatTurn method. Calls the grabInput method in the CombatDialogue
+     *  class and returns the corresponding Input.
+     * @return an enum Input that represents a player action
+     */
     public Input getInput() throws InterruptedException {
         Combat_Dialogue inputD = new Combat_Dialogue();
         return inputD.grabInput();
     }
 
-    public int combatTurn(Player p, Enemy e) throws InterruptedException {
+    /**
+     * Returns a String corresponding to the result of combat. Uses the getInput method to loop combat until
+     * an exit condition is reached.
+     * @param p a Player object
+     * @param e a randomly generated Enemy object
+     * @return result of combat: Win, lose, flee
+     */
+    public String combatTurn(Player p, Enemy e) throws InterruptedException {
         Combat_Dialogue inputD = new Combat_Dialogue(e);
         Combat_Dialogue inputD2 = new Combat_Dialogue();
         inputD.displayStart();
         Input executeAction;
-        int retval = -1;
         int val;
 
         // loop
@@ -60,7 +71,6 @@ public class Combat{
                     fled = p.flee();
                     if (fled) {
                         inputD2.displayFlee_T();
-                        retval = 2;
                         break;
                     }
                     else {
@@ -74,8 +84,7 @@ public class Combat{
 
             // if enemy is dead
             if (!e.healthCheck()) {
-                retval = 1;
-                return retval;
+                return "WIN";
             }
 
             inputD.pHealth(p.health);
@@ -101,12 +110,16 @@ public class Combat{
 
         // if player is dead
         if (!p.healthCheck()) {
-            retval = 0;
-            return retval;
+            return "LOSS";
         }
-        return retval;
+        return "FINISH";
     }
 
+    /**
+     * Main method for the controller class. Randomly generates an enemy for combat, then calls the combatTurn method
+     * to return combat until conclusion is reached. Calls the view class to print an output based on the result of
+     * combatTurn.
+     */
     public static void main(String[] args) throws InterruptedException {
 
         // initializes objects
@@ -114,7 +127,6 @@ public class Combat{
         Combat combat = new Combat();
         Enemy e;
         Combat_Dialogue textD = new Combat_Dialogue();
-        int val = -1;
 
         // picks random enemy to fight
         int eVal = (int)(Math.random() * 4);
@@ -130,7 +142,7 @@ public class Combat{
                 e = new Rock();
                 break;
 
-            // golem
+            // Golem
             case 3:
                 e = new Golem();
                 break;
@@ -140,18 +152,7 @@ public class Combat{
                 e = new Worker();
         }
 
-        if (val == -1) {
-            val = combat.combatTurn(p, e);
-            if (val == 0) {
-                textD.displayLose();
-                exit(0);
-            } else if (val == 1) {
-                textD.displayWin();
-            } else if (val == 2) {
-                textD.displayFinish();
-            }
-        }
-
+        textD.combatResult(combat.combatTurn(p, e));
     }
 
 }

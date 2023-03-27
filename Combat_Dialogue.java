@@ -137,16 +137,6 @@ public class Combat_Dialogue {
         TimeUnit.SECONDS.sleep(1);
     }
 
-    public void displayLose() throws InterruptedException {
-        System.out.println(dialogue.get("lose") + "\n");
-        TimeUnit.SECONDS.sleep(1);
-    }
-
-    public void displayWin() throws InterruptedException {
-        System.out.println(dialogue.get("win") + "\n");
-        TimeUnit.SECONDS.sleep(1);
-    }
-
     public void displayFlee_F() throws InterruptedException {
         System.out.println(dialogue.get("flee_f") + "\n");
         TimeUnit.SECONDS.sleep(1);
@@ -157,8 +147,10 @@ public class Combat_Dialogue {
         TimeUnit.SECONDS.sleep(1);
     }
 
-    public void displayFinish() throws InterruptedException {
-        System.out.println(dialogue.get("Finish") + "\n");
+    public void combatResult(String s) throws InterruptedException {
+        if (s.equals("LOSE")) System.out.println(dialogue.get("Finish") + "\n");
+        else if (s.equals("WIN")) System.out.println(dialogue.get("win") + "\n");
+        else System.out.println(dialogue.get("Finish") + "\n");
         TimeUnit.SECONDS.sleep(1);
     }
 
