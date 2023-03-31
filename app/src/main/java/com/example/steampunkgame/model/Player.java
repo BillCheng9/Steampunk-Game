@@ -2,6 +2,10 @@ package com.example.steampunkgame.model;
 
 public class Player {
     public int experience, gears, health, defense, damage;
+
+    /**
+     * Creates a Player entity with (temporary) numbers for stats
+     */
     public Player(){
         //Placeholder values for first iteration
         health = 5;
@@ -11,6 +15,11 @@ public class Player {
         gears = 5;
     }
 
+    /**
+     * Calculates whether or not the Player hits a light attack
+     *
+     * @return A 0 if the attack misses or any number > 0 indicating a hit and the hit damage
+     */
     public int attack1() {
         int value = (int)(Math.random() * 100);
         if (value > 84) {
@@ -21,6 +30,11 @@ public class Player {
         }
     }
 
+    /**
+     * Calculates whether or not the Player hits a heavy attack
+     *
+     * @return A 0 if the attack misses or any number > 0 indicating a hit and the hit damage
+     */
     public int attack2() {
         int value = (int)(Math.random() * 100);
         if (value > 74) {
@@ -31,21 +45,43 @@ public class Player {
         }
     }
 
+    /**
+     * Opens up the Player inventory and allows the User to equip/unequip different items and pets
+     */
     public void accessInv() {
     }
 
+    /**
+     * Activate the Player's Pet Ability corresponding to the Pet currently equipped
+     */
     public void triggerPet() {
     }
 
+    /**
+     * Calculates whether or not the Player successfully flees
+     *
+     * @return True if the player successfully flees, False if not
+     */
     public boolean flee() {
         int value = (int)(Math.random() * 100);
         return value >= 69;
     }
 
+    /**
+     * Checks to see if the Player has no health left
+     *
+     * @return True if player still has >0 health, False if not
+     */
     public boolean healthCheck() {
         return health > 0;
     }
 
+    /**
+     * Calculates how much damage is done to the Player after an Enemy attack
+     *
+     * @param e_dmg The damage value taken from the Enemy's attack
+     * @return A number indicating how much damage the Player taken from the Enemy attack
+     */
     public int attacked(int e_dmg) {
         if (e_dmg > 0) {
             int dmgValue = e_dmg - defense;
