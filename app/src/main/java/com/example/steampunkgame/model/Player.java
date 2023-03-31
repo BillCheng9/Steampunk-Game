@@ -1,6 +1,4 @@
 package com.example.steampunkgame.model;
-import com.example.steampunkgame.Player_Dialogue;
-import java.util.concurrent.TimeUnit;
 
 public class Player {
     public int experience, gears, health, defense, damage;
@@ -13,44 +11,33 @@ public class Player {
         gears = 5;
     }
 
-    Player_Dialogue d = new Player_Dialogue();
-
-    public int attack1() throws InterruptedException {
-        d.displayPAL();
+    public int attack1() {
         int value = (int)(Math.random() * 100);
         if (value > 84) {
-            d.displayPML();
             return 0;
         }
         else {
-            d.displayPHL();
             return damage;
         }
     }
 
-    public int attack2() throws InterruptedException {
-        d.displayPAH();
+    public int attack2() {
         int value = (int)(Math.random() * 100);
         if (value > 74) {
-            d.displayPMH();
             return 0;
         }
         else {
-            d.displayPHH();
             return (int)(damage * 1.5);
         }
     }
 
-    public void accessInv() throws InterruptedException {
-        d.displayInv();
+    public void accessInv() {
     }
 
-    public void triggerPet() throws InterruptedException {
-        d.displayPet();
+    public void triggerPet() {
     }
 
-    public boolean flee() throws InterruptedException {
-        d.displayFlee();
+    public boolean flee() {
         int value = (int)(Math.random() * 100);
         return value >= 69;
     }

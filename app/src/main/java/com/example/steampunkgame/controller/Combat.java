@@ -7,6 +7,7 @@ import com.example.steampunkgame.Input;
 import com.example.steampunkgame.model.Player;
 import com.example.steampunkgame.model.Rock;
 import com.example.steampunkgame.model.Worker;
+import com.example.steampunkgame.view.Player_Dialogue;
 
 /**
  * Combat is the controller class we will be using for this game. Current iteration interacts with the view model
@@ -38,6 +39,7 @@ public class Combat{
     public String combatTurn(Player p, Enemy e) throws InterruptedException {
         CombatDialogue inputD = new CombatDialogue(e);
         CombatDialogue inputD2 = new CombatDialogue();
+        Player_Dialogue pDia = new Player_Dialogue();
         inputD.displayStart();
         Input executeAction;
         int val;
@@ -54,28 +56,41 @@ public class Combat{
 
             switch(executeAction) {
                 case LIGHT:
+                    pDia.displayPAL();
                     val = p.attack1();
                     if (val > 0) {
+                        pDia.displayPHL();
                         int res = e.attacked(val);
                         CombatDialogue dmg = new CombatDialogue(res);
                         dmg.displayDamage();
+                    }
+                    else {
+                        pDia.displayPML();
                     }
                     break;
                 case HEAVY:
+                    pDia.displayPAH();
                     val = p.attack2();
                     if (val > 0) {
+                        pDia.displayPHH();
                         int res = e.attacked(val);
                         CombatDialogue dmg = new CombatDialogue(res);
                         dmg.displayDamage();
                     }
+                    else {
+                        pDia.displayPMH();
+                    }
                     break;
                 case PET:
+                    pDia.displayPet();
                     p.triggerPet();
                     break;
                 case INVENTORY:
+                    pDia.displayInv();
                     p.accessInv();
                     break;
                 case FLEE:
+                    pDia.displayFlee();
                     fled = p.flee();
                     if (fled) {
                         inputD2.displayFlee_T();
@@ -101,20 +116,55 @@ public class Combat{
             // enemy turn
             int eVal = e.pickAttack();
             int dmgVal;
+            // light attack
             if (eVal == 0) {
+                inputD.displayEAL();
                 dmgVal = e.short_attack();
                 if (dmgVal != 0) {
+                    inputD.displayEHL();
                     int res = p.attacked(dmgVal);
                     CombatDialogue dmg = new CombatDialogue(res);
                     dmg.displayEnemy();
                 }
+                else {
+                    inputD.displayEML();
+                }
             }
+            // heavy attack
             else if (eVal == 1) {
+                inputD.displayEAH();
                 dmgVal = e.charge_attack();
                 if (dmgVal != 0) {
+                    inputD.displayEMH();
                     int res = p.attacked(dmgVal);
                     CombatDialogue dmg = new CombatDialogue(res);
                     dmg.displayEnemy();
+                }
+                else {
+                    inputD.displayEHH();
+                }
+            }
+            // charge up
+            else if (eVal == -1) {
+                String enemyType = e.getName();
+                switch(enemyType) {
+                    case "IRON ANT":
+                        inputD.displayBug_S();
+                        break;
+
+                    // rock
+                    case "LITERAL ROCK":
+                        inputD.displayRock_S();
+                        break;
+
+                    // golem
+                    case "STEAM GOLEM":
+                        inputD.displayGolem_S();
+                        break;
+
+                    // default-worker bot
+                    default:
+                        inputD.displayWorker_S();
                 }
             }
         }
@@ -145,12 +195,12 @@ public class Combat{
         switch (eVal) {
             // iron ant
             case 1:
-                e = (Enemy) new Bug();
+                e = new Bug();
                 break;
 
             // rock
             case 2:
-                e = (Enemy) new Rock();
+                e = new Rock();
                 break;
 
             // golem

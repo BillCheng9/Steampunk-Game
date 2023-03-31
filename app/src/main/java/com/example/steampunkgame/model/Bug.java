@@ -1,40 +1,31 @@
 package com.example.steampunkgame.model;
-import com.example.steampunkgame.view.CombatDialogue;
 
 public class Bug implements Enemy {
     String name = "IRON ANT";
     int defense = 1;
     int health = 3;
     int damage = 2;
-    CombatDialogue d = new CombatDialogue(this);
-    public int short_attack() throws InterruptedException {
-        d.displayEAL();
+    public int short_attack() {
         int value = (int)(Math.random() * 100);
         if (value > 79) {
-            d.displayEML();
             return 0;
         }
         else {
-            d.displayEHL();
             return damage / 2;
         }
     }
 
-    public int charge_attack() throws InterruptedException {
-        d.displayEAH();
+    public int charge_attack() {
         int value = (int)(Math.random() * 100);
         if (value > 59) {
-            d.displayEMH();
             return 0;
         }
         else {
-            d.displayEHH();
             return (int)(damage * 1.3);
         }
     }
 
-    public void increase_stat() throws InterruptedException {
-        d.displayBug_S();
+    public void increase_stat() {
         damage += 3;
     }
 
@@ -56,7 +47,7 @@ public class Bug implements Enemy {
         else return 0;
     }
 
-    public int pickAttack() throws InterruptedException {
+    public int pickAttack() {
         int eVal = (int) (Math.random() * 10);
         if (eVal <= 44) {
             return 0;

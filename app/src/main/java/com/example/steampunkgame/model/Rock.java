@@ -1,25 +1,20 @@
 package com.example.steampunkgame.model;
 
-import com.example.steampunkgame.view.CombatDialogue;
-
 public class Rock implements Enemy{
     String name = "LITERAL ROCK";
     int defense = 1;
     int health = 23;
     int damage = 0;
-    CombatDialogue d = new CombatDialogue(this);
 
-    public int short_attack() throws InterruptedException {
-        d.displayRock_M();
+    public int short_attack() {
         return 0;
     }
 
-    public int charge_attack() throws InterruptedException {
+    public int charge_attack() {
         return short_attack();
     }
 
-    public void increase_stat() throws InterruptedException {
-        d.displayRock_S();
+    public void increase_stat() {
         health += 5;
     }
 
@@ -43,12 +38,10 @@ public class Rock implements Enemy{
         else return 0;
     }
 
-    public int pickAttack() throws InterruptedException {
+    public int pickAttack() {
         int eVal = (int) (Math.random() * 10);
-        if (eVal <= 44) {
+        if (eVal <= 74) {
             return 0;
-        } else if (eVal <= 74) {
-            return 1;
         } else {
             this.increase_stat();
             return -1;

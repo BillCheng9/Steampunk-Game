@@ -1,4 +1,4 @@
-package com.example.steampunkgame;
+package com.example.steampunkgame.view;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
