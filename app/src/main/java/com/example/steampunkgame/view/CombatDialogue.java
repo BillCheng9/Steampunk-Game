@@ -1,4 +1,6 @@
-package com.example.steampunkgame;
+package com.example.steampunkgame.view;
+import com.example.steampunkgame.model.Enemy;
+import com.example.steampunkgame.Input;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;

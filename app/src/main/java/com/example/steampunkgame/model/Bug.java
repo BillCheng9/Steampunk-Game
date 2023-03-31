@@ -1,6 +1,7 @@
-package com.example.steampunkgame;
+package com.example.steampunkgame.model;
+import com.example.steampunkgame.view.CombatDialogue;
 
-public class Bug implements Enemy{
+public class Bug implements Enemy {
     String name = "IRON ANT";
     int defense = 1;
     int health = 3;

@@ -1,6 +1,7 @@
-package com.example.steampunkgame;
+package com.example.steampunkgame.model;
+import com.example.steampunkgame.view.CombatDialogue;
 
-public class Worker implements Enemy{
+public class Worker implements Enemy {
     String name = "WORKER BOT";
     int defense = 5;
     int health = 5;

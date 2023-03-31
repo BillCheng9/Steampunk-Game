@@ -1,5 +1,5 @@
-package com.example.steampunkgame;
-
+package com.example.steampunkgame.model;
+import com.example.steampunkgame.Player_Dialogue;
 import java.util.concurrent.TimeUnit;
 
 public class Player {

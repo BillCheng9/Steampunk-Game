@@ -1,4 +1,12 @@
-package com.example.steampunkgame;
+package com.example.steampunkgame.controller;
+import com.example.steampunkgame.model.Bug;
+import com.example.steampunkgame.view.CombatDialogue;
+import com.example.steampunkgame.model.Enemy;
+import com.example.steampunkgame.model.Golem;
+import com.example.steampunkgame.Input;
+import com.example.steampunkgame.model.Player;
+import com.example.steampunkgame.model.Rock;
+import com.example.steampunkgame.model.Worker;
 
 /**
  * Combat is the controller class we will be using for this game. Current iteration interacts with the view model
@@ -137,15 +145,15 @@ public class Combat{
         switch (eVal) {
             // iron ant
             case 1:
-                e = new Bug();
+                e = (Enemy) new Bug();
                 break;
 
             // rock
             case 2:
-                e = new Rock();
+                e = (Enemy) new Rock();
                 break;
 
-            // Golem
+            // golem
             case 3:
                 e = new Golem();
                 break;

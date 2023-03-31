@@ -1,4 +1,4 @@
-package com.example.steampunkgame;
+package com.example.steampunkgame.model;
 
 public interface Enemy {
 
