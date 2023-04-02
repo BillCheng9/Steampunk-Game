@@ -33,34 +33,41 @@ Player "1" -down- "1" Result : Updated-by\t
 ## SEQUENCE DIAGRAM
 ```plantuml
 
-participant ": Player" as player
-participant ": System" as system
-participant ": Enemy" as enemy
+participant ": View" as view
+participant ": Controller" as control
+participant ": Model" as model
 
-player -> system : inputValues(Player.Stats)
-enemy -> system : inputValues(Enemy.Stats)
+model -> control : Import Player Stats
+control -> model : Picks enemy
+model -> control : Import Enemy Stats
+control -> view :Send Enemy Information
+view -> control : Display Enemy
 
-activate player
-activate system
-activate enemy
+activate view
+activate control
+activate model
 
-system -> player : updateUI(Player.Moves)
-player -> system : doInput(Player.Moves)
+loop Until Combat End
+control -> view : Send Current Health Update
+view -> control : Display Player and Enemy Health
+control -> view : Asks for player input
+view -> control : Validates and returns input
+control -> model : Executes Input
+model -> control : Sends Action Result
 
-system -> system : checkStats(Player.Stats, Enemy.Stats)
+control -> control : Check For End
 
-system -> enemy : pickMove(Enemy.Moves)
-enemy -> system : doInput(Enemy.Moves)
+control -> model : Executes Random Enemy Input
+model -> control : Sends Action Result
 
-system -> system : checkStats(Player.Stats, Enemy.Stats)
+control -> control : Check For End
+end
 
-player <-> system : repeat
-system <-> enemy : repeat
+deactivate view
+deactivate control
+deactivate model
 
-deactivate player
-deactivate system
-deactivate enemy
-
-system -> player : updateUI(Combat.Results)
-system -> player : updateStats(Combat.Results)
+control -> view : Report Combat End
+view -> control : Display Combat Results
+control -> model : Update Stats
 ```
