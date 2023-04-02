@@ -2,6 +2,11 @@ package com.example.steampunkgame.model;
 
 public interface Enemy {
 
+    String name = null;
+    int health = 0;
+    int damage = 0;
+    int defense = 0;
+
     /**
      * Getter method for Enemy's name
      * @return Enemy's name

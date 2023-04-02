@@ -1,7 +1,10 @@
 package com.example.steampunkgame.model;
+import com.example.steampunkgame.model.PetTypes.Drone;
+import com.example.steampunkgame.model.Pet;
 
 public class Player {
     public int experience, gears, health, defense, damage;
+    public String petAbility, pet;
 
     /**
      * Creates a Player entity with (temporary) numbers for stats
@@ -13,7 +16,11 @@ public class Player {
         damage = 5;
         experience = 5;
         gears = 5;
+        petAbility = null;
+        pet = "F.A.S. Drone";
     }
+
+    Pet p = new Drone();
 
     /**
      * Calculates whether or not the Player hits a light attack
@@ -55,6 +62,7 @@ public class Player {
      * Activate the Player's Pet Ability corresponding to the Pet currently equipped
      */
     public void triggerPet() {
+        petAbility = p.petAbility();
     }
 
     /**
