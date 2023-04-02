@@ -1,8 +1,8 @@
 - Migrate to Android DONE
-- Add javadoc comments
+- Add javadoc comments DONE
 - Requirements Analysis Update
 - Add character ancestor class
-- Update sequence diagrams
-- Update class diagram
-- Remove interface connection to non-controller classes
+- Update sequence diagrams DONE
+- Update class diagram DONE
+- Remove interface connection to non-controller classes DONE
 - Reorganize folders DONE
