@@ -1,39 +1,46 @@
-package com.example.steampunkgame.model;
+package com.example.steampunkgame.model.EnemyTypes;
+import com.example.steampunkgame.model.Enemy;
 
-public class Rock implements Enemy{
-    String name = "LITERAL ROCK";
+public class Bug implements Enemy {
+    String name = "IRON ANT";
     int defense = 1;
-    int health = 23;
-    int damage = 0;
+    int health = 3;
+    int damage = 2;
 
     /**
-     * Returns 0
-     * @return 0
+     * Calculates chance of hitting Player with an Enemy's light attack and the damage it does
+     * @return 0 if missed, any number >0 if hit for damage
      */
     public int short_attack() {
-        return 0;
+        int value = (int)(Math.random() * 100);
+        if (value > 79) {
+            return 0;
+        }
+        else {
+            return damage / 2;
+        }
     }
 
     /**
-     * Returns short_attack()
-     * @return 0
+     * Calculates chance of hitting Player with an Enemy's heavy attack and the damage it does
+     * @return 0 if missed, any number >0 if hit for damage
      */
     public int charge_attack() {
-        return short_attack();
+        int value = (int)(Math.random() * 100);
+        if (value > 59) {
+            return 0;
+        }
+        else {
+            return (int)(damage * 1.3);
+        }
     }
 
     /**
-     * Increase Enemy's health by 5
+     * Increase Enemy's damage by 3
      */
     public void increase_stat() {
-        health += 5;
+        damage += 3;
     }
-
-    /**
-     * Checks Enemy's health
-     * @return True if health>0, False if not
-     */
-    public int getHealth() { return health; }
 
     /**
      * Checks Enemy's health
@@ -68,13 +75,21 @@ public class Rock implements Enemy{
      */
     public int pickAttack() {
         int eVal = (int) (Math.random() * 10);
-        if (eVal <= 74) {
+        if (eVal <= 44) {
             return 0;
+        } else if (eVal <= 74) {
+            return 1;
         } else {
             this.increase_stat();
             return -1;
         }
     }
+
+    /**
+     * Checks Enemy's health
+     * @return True if health>0, False if not
+     */
+    public int getHealth() { return health; }
 
     /**
      * Returns Enemy's name

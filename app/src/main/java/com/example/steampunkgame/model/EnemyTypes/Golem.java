@@ -1,4 +1,5 @@
-package com.example.steampunkgame.model;
+package com.example.steampunkgame.model.EnemyTypes;
+import com.example.steampunkgame.model.Enemy;
 
 public class Golem implements Enemy{
     String name = "STEAM GOLEM";

@@ -1,12 +1,12 @@
 package com.example.steampunkgame.controller;
-import com.example.steampunkgame.model.Bug;
+import com.example.steampunkgame.model.EnemyTypes.Bug;
 import com.example.steampunkgame.view.CombatDialogue;
 import com.example.steampunkgame.model.Enemy;
-import com.example.steampunkgame.model.Golem;
+import com.example.steampunkgame.model.EnemyTypes.Golem;
 import com.example.steampunkgame.Input;
 import com.example.steampunkgame.model.Player;
-import com.example.steampunkgame.model.Rock;
-import com.example.steampunkgame.model.Worker;
+import com.example.steampunkgame.model.EnemyTypes.Rock;
+import com.example.steampunkgame.model.EnemyTypes.Worker;
 import com.example.steampunkgame.view.PlayerDialogue;
 
 /**
