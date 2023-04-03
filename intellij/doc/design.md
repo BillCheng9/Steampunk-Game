@@ -114,41 +114,47 @@ Combat "0" -down- "1" PlayerDialogue : Outputs
 ## SEQUENCE DIAGRAM
 ```plantuml
 
-participant ": View" as view
-participant ": Controller" as control
-participant ": Model" as model
 
-model -> control : Import Player Stats
-control -> model : Picks enemy
-model -> control : Import Enemy Stats
-control -> view :Send Enemy Information
-view -> control : Display Enemy
+participant "User" as user
+participant "View" as view
+participant "Controller" as control
+participant "Enemy" as enemy
+participant "Player" as player
 
+control -> enemy : getName()
+control -> view : displayStart()
+view -> user : Display Start Info
+
+loop p.healthCheck() && e.healthCheck()
 activate view
 activate control
-activate model
+activate player
+activate enemy
+activate user
 
-loop Until Combat End
-control -> view : Send Current Health Update
-view -> control : Display Player and Enemy Health
-control -> view : Asks for player input
-view -> control : Validates and returns input
-control -> model : Executes Input
-model -> control : Sends Action Result
+control -> view : pHealth(int)
+view -> user : Display Player Health
+control -> view : eHealth(int)
+view -> user : Display Enemy Health
 
-control -> control : Check For End
+control -> view : Input : grabInput()
+view -> user : Display Prompt
+user -> view : Return Action String
+view -> control : Input executeAction
 
-control -> model : Executes Random Enemy Input
-model -> control : Sends Action Result
+control -> view : pHealth(int)
+view -> user : Display Player Health
+control -> view : eHealth(int)
+view -> user : Display Enemy Health
 
-control -> control : Check For End
+control -> enemy : pickAttack()
 end
 
 deactivate view
 deactivate control
 deactivate model
 
-control -> view : Report Combat End
-view -> control : Display Combat Results
-control -> model : Update Stats
+control -> view : combatResult(combat)
+view -> user : Display Combat Results
+control -> player : Update Stats
 ```
