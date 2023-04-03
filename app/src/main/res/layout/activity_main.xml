@@ -117,4 +117,44 @@
         app:layout_constraintStart_toEndOf="@+id/playerSlashExp"
         tools:layout_editor_absoluteY="44dp" />
 
+    <Button
+        android:id="@+id/lightAttackBTN"
+        android:layout_width="150sp"
+        android:layout_height="75sp"
+        android:text="light"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <Button
+        android:id="@+id/petBTN"
+        android:layout_width="150sp"
+        android:layout_height="75sp"
+        android:text="meow"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="453dp" />
+
+    <Button
+        android:id="@+id/heavyAttackBTN"
+        android:layout_width="150sp"
+        android:layout_height="75sp"
+        android:text="heavy"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="355dp" />
+
+    <Button
+        android:id="@+id/invBTN"
+        android:layout_width="150sp"
+        android:layout_height="75sp"
+        android:text="Bag"
+        tools:layout_editor_absoluteX="198dp"
+        tools:layout_editor_absoluteY="528dp" />
+
+    <Button
+        android:id="@+id/fleeBTN"
+        android:layout_width="150sp"
+        android:layout_height="75sp"
+        android:text="Run"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="602dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
