@@ -4,15 +4,117 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="28dp"
+    tools:layout_editor_absoluteY="0dp">
 
     <TextView
+        android:id="@+id/playerHealthText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:autoText="false"
+        android:fontFamily="casual"
+        android:text="Health: "
+        android:textSize="14sp"
+        app:autoSizeTextType="none"
+        app:layout_constraintBottom_toTopOf="@+id/playerDefenseText"
+        app:layout_constraintEnd_toStartOf="@+id/playerHealthCur"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <TextView
+        android:id="@+id/playerHealthCur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/playerDefenseText"
+        app:layout_constraintEnd_toStartOf="@+id/playerSlashHealth"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/playerSlashHealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contextClickable="false"
+        android:fontFamily="casual"
+        android:text="/"
+        app:layout_constraintBottom_toTopOf="@+id/playerDefenseText"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="55dp" />
+
+    <TextView
+        android:id="@+id/playerHealthMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="5"
+        app:layout_constraintStart_toEndOf="@+id/playerSlashHealth"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/playerDefenseNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="0"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="22dp" />
+
+    <TextView
+        android:id="@+id/playerDefenseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="Defense: "
+        app:layout_constraintBottom_toTopOf="@+id/pExpText"
+        app:layout_constraintEnd_toStartOf="@+id/playerDefenseNum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerHealthText" />
+
+    <TextView
+        android:id="@+id/pExpCur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/playerSlashExp"
+        tools:layout_editor_absoluteY="44dp" />
+
+    <TextView
+        android:id="@+id/pExpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="Exp: "
+        app:layout_constraintEnd_toStartOf="@+id/pExpCur"
+        tools:layout_editor_absoluteY="44dp" />
+
+    <TextView
+        android:id="@+id/playerSlashExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="/"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="44dp" />
+
+    <TextView
+        android:id="@+id/pExpMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="50"
+        app:layout_constraintStart_toEndOf="@+id/playerSlashExp"
+        tools:layout_editor_absoluteY="44dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

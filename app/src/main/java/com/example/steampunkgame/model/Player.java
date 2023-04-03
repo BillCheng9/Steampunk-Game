@@ -1,9 +1,9 @@
 package com.example.steampunkgame.model;
+
 import com.example.steampunkgame.model.PetTypes.Drone;
-import com.example.steampunkgame.model.Pet;
 
 public class Player {
-    public int experience, gears, health, defense, damage;
+    public int experience, gears, health, defense, damage, maxHealth, trueDefense;
     public String petAbility, pet;
 
     /**
@@ -11,8 +11,10 @@ public class Player {
      */
     public Player(){
         //Placeholder values for first iteration
-        health = 5;
-        defense = 5;
+        health = maxHealth;
+        maxHealth = 5;
+        defense = trueDefense;
+        trueDefense = 5;
         damage = 5;
         experience = 5;
         gears = 5;
