@@ -152,7 +152,9 @@ end
 
 deactivate view
 deactivate control
-deactivate model
+deactivate enemy
+deactivate user
+deactivate player
 
 control -> view : combatResult(combat)
 view -> user : Display Combat Results
