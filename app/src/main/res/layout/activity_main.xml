@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:layout_editor_absoluteX="28dp"
-    tools:layout_editor_absoluteY="0dp">
+    tools:layout_editor_absoluteX="-1dp"
+    tools:layout_editor_absoluteY="15dp">
 
     <TextView
         android:id="@+id/playerHealthText"
@@ -119,42 +119,57 @@
 
     <Button
         android:id="@+id/lightAttackBTN"
-        android:layout_width="150sp"
-        android:layout_height="75sp"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:layout_marginBottom="2dp"
         android:text="light"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="280dp" />
-
-    <Button
-        android:id="@+id/petBTN"
-        android:layout_width="150sp"
-        android:layout_height="75sp"
-        android:text="meow"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="453dp" />
-
-    <Button
-        android:id="@+id/heavyAttackBTN"
-        android:layout_width="150sp"
-        android:layout_height="75sp"
-        android:text="heavy"
-        tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="355dp" />
-
-    <Button
-        android:id="@+id/invBTN"
-        android:layout_width="150sp"
-        android:layout_height="75sp"
-        android:text="Bag"
-        tools:layout_editor_absoluteX="198dp"
-        tools:layout_editor_absoluteY="528dp" />
+        app:layout_constraintBottom_toTopOf="@+id/heavyAttackBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/fleeBTN"
-        android:layout_width="150sp"
-        android:layout_height="75sp"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:layout_marginBottom="16dp"
         android:text="Run"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="602dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/petBTN"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:layout_marginBottom="2dp"
+        android:text="meow"
+        app:layout_constraintBottom_toTopOf="@+id/invBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/heavyAttackBTN"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:layout_marginBottom="2dp"
+        android:text="heavy"
+        app:layout_constraintBottom_toTopOf="@+id/petBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/invBTN"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:layout_marginBottom="2dp"
+        android:text="Bag"
+        app:layout_constraintBottom_toTopOf="@+id/fleeBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
