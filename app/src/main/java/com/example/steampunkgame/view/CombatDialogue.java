@@ -1,4 +1,7 @@
 package com.example.steampunkgame.view;
+
+import static com.example.steampunkgame.Input.LIGHT;
+
 import com.example.steampunkgame.model.Enemy;
 import com.example.steampunkgame.Input;
 
@@ -58,12 +61,14 @@ public class CombatDialogue {
         dialogue.put("damage", "YOU HIT THE ENEMY FOR " + dmg + " DAMAGE!");
     }
 
+
     /**
      * Asks User for input and checks if it is a valid input or not
      * @return a valid Enum Input
      * @throws InterruptedException
      */
     public Input grabInput() throws InterruptedException {
+
         Scanner scanner = new Scanner(System.in);
         displayPrompt();
         String action = scanner.nextLine().toUpperCase();
@@ -75,7 +80,7 @@ public class CombatDialogue {
 
         switch (action) {
             case "LIGHT":
-                executeAction = Input.LIGHT;
+                executeAction = LIGHT;
                 break;
             case "HEAVY":
                 executeAction = Input.HEAVY;
