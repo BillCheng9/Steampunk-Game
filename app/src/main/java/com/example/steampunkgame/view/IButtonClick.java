@@ -2,7 +2,7 @@ package com.example.steampunkgame.view;
 
 import android.view.View;
 
-public interface ICombatView {
+public interface IButtonClick {
 
     View getRootView();
 }
