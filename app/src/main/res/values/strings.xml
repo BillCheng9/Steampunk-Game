@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Steampunk Game</string>
+    <string name="lightAttackBTN">LIGHT ATTACK</string>
+    <string name="heavyAttackBTN">HEAVY ATTACK</string>
+    <string name="fleeBTN">RUN AWAY</string>
+    <string name="invBTN">OPEN BAG</string>
+    <string name="petBTN">USE YOUR PET</string>
 </resources>

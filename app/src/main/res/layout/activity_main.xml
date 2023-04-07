@@ -8,168 +8,69 @@
     tools:layout_editor_absoluteX="-1dp"
     tools:layout_editor_absoluteY="15dp">
 
-    <TextView
-        android:id="@+id/playerHealthText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoText="false"
-        android:fontFamily="casual"
-        android:text="Health: "
-        android:textSize="14sp"
-        app:autoSizeTextType="none"
-        app:layout_constraintBottom_toTopOf="@+id/playerDefenseText"
-        app:layout_constraintEnd_toStartOf="@+id/playerHealthCur"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="195dp" />
-
-    <TextView
-        android:id="@+id/playerHealthCur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="0"
-        app:layout_constraintBottom_toTopOf="@+id/playerDefenseText"
-        app:layout_constraintEnd_toStartOf="@+id/playerSlashHealth"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/playerSlashHealth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contextClickable="false"
-        android:fontFamily="casual"
-        android:text="/"
-        app:layout_constraintBottom_toTopOf="@+id/playerDefenseText"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="55dp" />
-
-    <TextView
-        android:id="@+id/playerHealthMax"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="5"
-        app:layout_constraintStart_toEndOf="@+id/playerSlashHealth"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <TextView
-        android:id="@+id/playerDefenseNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="0"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="22dp" />
-
-    <TextView
-        android:id="@+id/playerDefenseText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="Defense: "
-        app:layout_constraintBottom_toTopOf="@+id/pExpText"
-        app:layout_constraintEnd_toStartOf="@+id/playerDefenseNum"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerHealthText" />
-
-    <TextView
-        android:id="@+id/pExpCur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="0"
-        app:layout_constraintEnd_toStartOf="@+id/playerSlashExp"
-        tools:layout_editor_absoluteY="44dp" />
-
-    <TextView
-        android:id="@+id/pExpText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="Exp: "
-        app:layout_constraintEnd_toStartOf="@+id/pExpCur"
-        tools:layout_editor_absoluteY="44dp" />
-
-    <TextView
-        android:id="@+id/playerSlashExp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="/"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="44dp" />
-
-    <TextView
-        android:id="@+id/pExpMax"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="50"
-        app:layout_constraintStart_toEndOf="@+id/playerSlashExp"
-        tools:layout_editor_absoluteY="44dp" />
-
-    <Button
-        android:id="@+id/lightAttackBTN"
-        android:layout_width="200sp"
-        android:layout_height="60sp"
-        android:layout_marginBottom="2dp"
-        android:text="light"
-        app:layout_constraintBottom_toTopOf="@+id/heavyAttackBTN"
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="90dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 
-    <Button
-        android:id="@+id/fleeBTN"
-        android:layout_width="200sp"
-        android:layout_height="60sp"
-        android:layout_marginBottom="16dp"
-        android:text="Run"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="408dp"
+        android:layout_height="340dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/petBTN"
-        android:layout_width="200sp"
-        android:layout_height="60sp"
-        android:layout_marginBottom="2dp"
-        android:text="meow"
-        app:layout_constraintBottom_toTopOf="@+id/invBTN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/heavyAttackBTN"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/heavyAttackBTN" />
 
-    <Button
-        android:id="@+id/heavyAttackBTN"
-        android:layout_width="200sp"
-        android:layout_height="60sp"
-        android:layout_marginBottom="2dp"
-        android:text="heavy"
-        app:layout_constraintBottom_toTopOf="@+id/petBTN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/lightAttackBTN"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/lightAttackBTN" />
 
-    <Button
-        android:id="@+id/invBTN"
-        android:layout_width="200sp"
-        android:layout_height="60sp"
-        android:layout_marginBottom="2dp"
-        android:text="Bag"
-        app:layout_constraintBottom_toTopOf="@+id/fleeBTN"
+        <Button
+            android:id="@+id/petBTN"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/petBTN" />
+
+        <Button
+            android:id="@+id/invBTN"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/invBTN" />
+
+        <Button
+            android:id="@+id/fleeBTN"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/fleeBTN" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="410dp"
+        android:layout_height="92dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
