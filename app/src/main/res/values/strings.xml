@@ -5,4 +5,8 @@
     <string name="fleeBTN">RUN AWAY</string>
     <string name="invBTN">OPEN BAG</string>
     <string name="petBTN">USE YOUR PET</string>
+    <string name="dialogueText">PLACEHOLDER</string>
+    <string name="healthText">PLACEHOLDER</string>
+    <string name="armorText">PLACEHOLDER</string>
+    <string name="gearText">PLACEHOLDER</string>
 </resources>
