@@ -5,156 +5,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:layout_editor_absoluteX="28dp"
-    tools:layout_editor_absoluteY="0dp">
+    tools:layout_editor_absoluteX="-1dp"
+    tools:layout_editor_absoluteY="15dp">
 
-    <TextView
-        android:id="@+id/playerHealthText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoText="false"
-        android:fontFamily="casual"
-        android:text="Health: "
-        android:textSize="14sp"
-        app:autoSizeTextType="none"
-        app:layout_constraintBottom_toTopOf="@+id/playerDefenseText"
-        app:layout_constraintEnd_toStartOf="@+id/playerHealthCur"
-        app:layout_constraintHorizontal_bias="0.0"
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="195dp" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="408dp"
+        android:layout_height="340dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:id="@+id/playerHealthCur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="0"
-        app:layout_constraintBottom_toTopOf="@+id/playerDefenseText"
-        app:layout_constraintEnd_toStartOf="@+id/playerSlashHealth"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/heavyAttackBTN"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/heavyAttackBTN" />
 
-    <TextView
-        android:id="@+id/playerSlashHealth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contextClickable="false"
-        android:fontFamily="casual"
-        android:text="/"
-        app:layout_constraintBottom_toTopOf="@+id/playerDefenseText"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="55dp" />
+        <Button
+            android:id="@+id/lightAttackBTN"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/lightAttackBTN" />
 
-    <TextView
-        android:id="@+id/playerHealthMax"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="5"
-        app:layout_constraintStart_toEndOf="@+id/playerSlashHealth"
-        tools:layout_editor_absoluteY="0dp" />
+        <Button
+            android:id="@+id/petBTN"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/petBTN" />
 
-    <TextView
-        android:id="@+id/playerDefenseNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="0"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="22dp" />
+        <Button
+            android:id="@+id/invBTN"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/invBTN" />
 
-    <TextView
-        android:id="@+id/playerDefenseText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="Defense: "
-        app:layout_constraintBottom_toTopOf="@+id/pExpText"
-        app:layout_constraintEnd_toStartOf="@+id/playerDefenseNum"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerHealthText" />
+        <Button
+            android:id="@+id/fleeBTN"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/fleeBTN" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/pExpCur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="0"
-        app:layout_constraintEnd_toStartOf="@+id/playerSlashExp"
-        tools:layout_editor_absoluteY="44dp" />
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="404dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:id="@+id/pExpText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="Exp: "
-        app:layout_constraintEnd_toStartOf="@+id/pExpCur"
-        tools:layout_editor_absoluteY="44dp" />
-
-    <TextView
-        android:id="@+id/playerSlashExp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="/"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="44dp" />
-
-    <TextView
-        android:id="@+id/pExpMax"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="50"
-        app:layout_constraintStart_toEndOf="@+id/playerSlashExp"
-        tools:layout_editor_absoluteY="44dp" />
-
-    <Button
-        android:id="@+id/lightAttackBTN"
-        android:layout_width="150sp"
-        android:layout_height="75sp"
-        android:text="light"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="280dp" />
-
-    <Button
-        android:id="@+id/petBTN"
-        android:layout_width="150sp"
-        android:layout_height="75sp"
-        android:text="meow"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="453dp" />
-
-    <Button
-        android:id="@+id/heavyAttackBTN"
-        android:layout_width="150sp"
-        android:layout_height="75sp"
-        android:text="heavy"
-        tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="355dp" />
-
-    <Button
-        android:id="@+id/invBTN"
-        android:layout_width="150sp"
-        android:layout_height="75sp"
-        android:text="Bag"
-        tools:layout_editor_absoluteX="198dp"
-        tools:layout_editor_absoluteY="528dp" />
-
-    <Button
-        android:id="@+id/fleeBTN"
-        android:layout_width="150sp"
-        android:layout_height="75sp"
-        android:text="Run"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="602dp" />
+        <TextView
+            android:id="@+id/dialogueText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/dialogueText" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
