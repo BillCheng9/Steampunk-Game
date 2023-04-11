@@ -1,7 +1,5 @@
 package com.example.steampunkgame.view;
 
-import static com.example.steampunkgame.Input.LIGHT;
-
 import com.example.steampunkgame.model.Enemy;
 import com.example.steampunkgame.Input;
 
@@ -80,7 +78,7 @@ public class CombatDialogue {
 
         switch (action) {
             case "LIGHT":
-                executeAction = LIGHT;
+                executeAction = Input.LIGHT;
                 break;
             case "HEAVY":
                 executeAction = Input.HEAVY;

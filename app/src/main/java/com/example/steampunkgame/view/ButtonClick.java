@@ -1,13 +1,12 @@
 package com.example.steampunkgame.view;
+
 import android.content.Context;
-import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 
 import com.example.steampunkgame.databinding.ActivityMainBinding;
-import com.google.android.material.snackbar.Snackbar;
 
 public class ButtonClick implements IButtonClick {
 

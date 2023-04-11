@@ -1,4 +1,4 @@
-package com.example.steampunkgame;
+package com.example.steampunkgame.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
