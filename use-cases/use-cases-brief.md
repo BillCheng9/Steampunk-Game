@@ -83,6 +83,18 @@ start
 stop
 ```
 
+5) Store
+```plantuml
+title Store
+
+start
+#pink:Display store options;
+#lavender:Selects purchase;
+#pink:Applies effects;
+#pink:Removes from store;
+stop
+```
+
 
 ## System/Program
 
