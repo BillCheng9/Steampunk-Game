@@ -3,6 +3,7 @@ package edu.vassar.cmpu203.nextgenpos.controller;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Bug;
@@ -17,7 +18,7 @@ import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.view.ICombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.PlayerDialogue;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ICombatScreen{
 
     CombatButton lightButton;
     CombatButton heavyButton;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     PlayerDialogue playerDialogue;
     Combat combat;
     Enemy e;
+    String attType = "NULL";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,14 +76,33 @@ public class MainActivity extends AppCompatActivity {
 
         CombatScreen combatScreen = new CombatScreen(this, new ICombatScreen.Listener() {
             @Override
-            public void onBTNClick(String name) {
+            public void lightClick() {
+
+            }
+
+            @Override
+            public void heavyClick() {
+            }
+
+            @Override
+            public void petClick() {
+            }
+
+            @Override
+            public void invClick() {
+            }
+
+            @Override
+            public void fleeClick() {
             }
         }, p, e);
 
         // combat turn
         // 1. display start
         combatScreen.DisplayStart();
-        while (combat.CombatTurn(p, e, combatScreen)) {
+        combat.CombatChecker(p, e, combatScreen);
+
+        /*while (combat.CombatTurn(p, e, combatScreen)) {
             // 2. player goes first
             combatScreen.DisplayPlayerAttack("LIGHT", 5, 1);
             e.attacked(5);
@@ -89,8 +110,10 @@ public class MainActivity extends AppCompatActivity {
             combatScreen.renewStat(p, e);
             // 4. enemy goes next
             // 5. renew stats
-        }
+        }*/
 
-        setContentView(combatScreen.getRootView());
+        this.setContentView(combatScreen.getRootView());
     }
+
+
 }

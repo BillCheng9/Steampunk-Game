@@ -31,15 +31,30 @@ public class Combat {
         return inputD.grabInput();
     }
 
-    public boolean CombatTurn(Player p, Enemy e, CombatScreen combatScreen) {
+    public boolean CombatChecker(Player p, Enemy e, CombatScreen combatScreen) {
         if ( (!p.healthCheck()) || (!e.healthCheck()) ) {
             combatScreen.Clickable(false);
+            //combatScreen.Clickable(false);
             return false;
         }
         else {
             combatScreen.Clickable(true);
             return true;
         }
+    }
+    public void CombatTurn (Player p, Enemy e, String attType, CombatScreen combatScreen) {
+        int dmgValue = 0;
+        int hitValue = 0;
+        if (attType.equals("LIGHT")) {
+            hitValue = p.attack1();
+        }
+        if (attType.equals("HEAVY")) {
+            hitValue = p.attack2();
+        }
+        if (dmgValue > 0) {
+            dmgValue = e.attacked(hitValue);
+        }
+        combatScreen.DisplayPlayerAttack(attType, dmgValue, hitValue);
     }
 
     /**

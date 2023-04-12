@@ -2,11 +2,16 @@ package edu.vassar.cmpu203.nextgenpos.view;
 
 import android.view.View;
 
+import edu.vassar.cmpu203.nextgenpos.model.Enemy;
+import edu.vassar.cmpu203.nextgenpos.model.Player;
+
 public interface ICombatScreen {
 
     interface Listener {
-        void onBTNClick(String name);
+        void lightClick();
+        void heavyClick();
+        void petClick();
+        void invClick();
+        void fleeClick();
     }
-
-    View getRootView();
 }

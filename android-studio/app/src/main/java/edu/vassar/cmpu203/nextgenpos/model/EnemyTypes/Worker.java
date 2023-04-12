@@ -3,9 +3,9 @@ import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 
 public class Worker implements Enemy {
     String name = "WORKER BOT";
-    int defense = 5;
-    int health = 5;
-    int damage = 5;
+    int defense = 2;
+    int health = 7;
+    int damage = 2;
 
     /**
      * Calculates chance of hitting Player with an Enemy's light attack and the damage it does
@@ -50,10 +50,15 @@ public class Worker implements Enemy {
     public boolean healthCheck() { return health > 0; }
 
     /**
-     * Checks Enemy's health
-     * @return True if health>0, False if not
+     * Get Enemy's health
+     * @return Enemy's health
      */
-    public int getHealth() { return health; }
+    public int getHealth() {
+        if (health < 0) {
+            health = 0;
+        }
+        return health;
+    }
 
     /**
      * Getter method for Enemy's armor

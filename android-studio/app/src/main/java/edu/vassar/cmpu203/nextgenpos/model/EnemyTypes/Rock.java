@@ -31,10 +31,15 @@ public class Rock implements Enemy{
     }
 
     /**
-     * Checks Enemy's health
-     * @return True if health>0, False if not
+     * Get Enemy's health
+     * @return Enemy's health
      */
-    public int getHealth() { return health; }
+    public int getHealth() {
+        if (health < 0) {
+            health = 0;
+        }
+        return health;
+    }
 
     /**
      * Getter method for Enemy's armor

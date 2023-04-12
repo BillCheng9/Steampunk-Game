@@ -3,9 +3,9 @@ import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 
 public class Golem implements Enemy{
     String name = "STEAM GOLEM";
-    int defense = 10;
-    int health = 20;
-    int damage = 10;
+    int defense = 8;
+    int health = 15;
+    int damage = 4;
 
     /**
      * Calculates chance of hitting Player with an Enemy's light attack and the damage it does
@@ -63,10 +63,15 @@ public class Golem implements Enemy{
     }
 
     /**
-     * Checks Enemy's health
-     * @return True if health>0, False if not
+     * Get Enemy's health
+     * @return Enemy's health
      */
-    public int getHealth() { return health; }
+    public int getHealth() {
+        if (health < 0) {
+            health = 0;
+        }
+        return health;
+    }
 
     /**
      * Getter method for Enemy's armor

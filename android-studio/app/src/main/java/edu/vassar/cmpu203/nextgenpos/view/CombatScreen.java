@@ -27,12 +27,14 @@ public class CombatScreen implements ICombatScreen {
     CombatDialogue combatDialogue;
     PlayerDialogue playerDialogue;
     CombatDialogue combatEnemyDialogue;
+    String attType = "NONE";
 
     public CombatScreen(Context context, @NonNull Listener listener, Player p, Enemy e) {
 
         // instantiate
         this.binding = ActivityMainBinding.inflate(LayoutInflater.from(context));
         this.listener = listener;
+
         dialogue = new PlayerDialogue();
         healthBar = new StatBar("HEALTH", p.health, p.maxHealth);
         armorBar = new StatBar("ARMOR", -1, p.defense);
@@ -57,31 +59,35 @@ public class CombatScreen implements ICombatScreen {
         this.binding.lightAttackBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                CombatScreen.this.listener.lightClick();
                 CombatScreen.this.binding.dialogueText.setText(playerDialogue.displayPAL());
-                listener.onBTNClick("LIGHT");
             }
         });
         this.binding.heavyAttackBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                CombatScreen.this.listener.heavyClick();
                 CombatScreen.this.binding.dialogueText.setText(playerDialogue.displayPAH());
             }
         });
         this.binding.fleeBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                CombatScreen.this.listener.fleeClick();
                 CombatScreen.this.binding.dialogueText.setText(playerDialogue.displayFlee());
             }
         });
         this.binding.invBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CombatScreen.this.binding.dialogueText.setText(playerDialogue.displayInv());
+                CombatScreen.this.listener.invClick();
+                CombatScreen.this.binding.dialogueText.setText(playerDialogue.displayInv());;
             }
         });
         this.binding.petBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                CombatScreen.this.listener.petClick();
                 CombatScreen.this.binding.dialogueText.setText(playerDialogue.displayPet());
             }
         });
@@ -97,11 +103,20 @@ public class CombatScreen implements ICombatScreen {
         CombatDialogue damageDialogue = new CombatDialogue(dmg);
         if (type.equals("LIGHT")) {
             if (success > 0) {
-                text += playerDialogue.displayPHL() + " ";
+                text += playerDialogue.displayPHL();
                 text += damageDialogue.displayDamage();
             }
             else if (success < 1) {
                 text += playerDialogue.displayPML();
+            }
+        }
+        if (type.equals("HEAVY")) {
+            if (success > 0) {
+                text += playerDialogue.displayPHH() + " ";
+                text += damageDialogue.displayDamage();
+            }
+            else if (success < 1) {
+                text += playerDialogue.displayPMH();
             }
         }
         this.binding.dialogueText.setText(text);
@@ -122,7 +137,7 @@ public class CombatScreen implements ICombatScreen {
         CombatScreen.this.binding.invBTN.setClickable(clickable);
     }
 
-    public void renewStat(Player p, Enemy e) {
+    public void renewStats(Player p, Enemy e) {
         healthBar = new StatBar("HEALTH", p.health, p.maxHealth);
         armorBar = new StatBar("ARMOR", -1, p.defense);
         expBar = new StatBar("EXPERIENCE", -1, p.experience);
