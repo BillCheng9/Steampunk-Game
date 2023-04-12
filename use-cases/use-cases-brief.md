@@ -23,29 +23,7 @@ endwhile (Combat End)
 stop
 ```
 
-2) Move Character
-```plantuml
-<style>
-diamond {
-  BackgroundColor White
-}
-</style>
-
-title Movement
-
-start
-
-while (Movement)
-#pink:Computer outputs map;
-#lavender:Player input;
-#pink:Map update;
-#pink:Checks for random event/encounter;
-endwhile (Event)
-
-stop
-```
-
-3) Read Dialogue
+2) Read Dialogue
 ```plantuml
 <style>
 diamond {
@@ -66,7 +44,7 @@ endwhile (Dialogue End)
 stop
 ```
 
-4) Choose Pet
+3) Choose Pet
 ```plantuml
 <style>
 diamond {
@@ -85,7 +63,7 @@ start
 stop
 ```
 
-5) Select Button
+4) Select Button
 ```plantuml
 <style>
 diamond {
@@ -105,7 +83,7 @@ start
 stop
 ```
 
-6) Leveling
+5) Leveling
 ```plantuml
 <style>
 diamond {
@@ -125,51 +103,10 @@ start
 stop
 ```
 
-7) Interface with Menu
-
-```plantuml
-<style>
-diamond {
-  BackgroundColor White
-}
-</style>
-
-title Leveling
-
-start
-
-while (Game)
-#pink:Display "Home" Screen;
-#lavender:Input movement, inventory, etc.;
-#pink:Call corresponding method;
-endwhile (Quit)
-
-stop
-```
 
 ## System/Program
 
-1) Respond to Changes
-```plantuml
-<style>
-diamond {
-  BackgroundColor White
-}
-</style>
-
-title Responsive Changes
-
-start
-
-#lavender:Some input;
-#pink:Reads input, calls and modifies related object;
-
-
-stop
-@enduml
-```
-
-2) Play Random Event
+1) Play Random Event
 ```plantuml
 <style>
 diamond {
