@@ -83,26 +83,6 @@ start
 stop
 ```
 
-5) Leveling
-```plantuml
-<style>
-diamond {
-  BackgroundColor White
-}
-</style>
-
-title Leveling
-
-start
-
-#pink:Congratulatory message, base increase to all stats;
-#pink:Display categories to add level point to;
-#lavender:Select category;
-#pink:Modify category stat, increase exp threshold;
-
-stop
-```
-
 
 ## System/Program
 
@@ -128,3 +108,20 @@ endif
 stop
 ```
 
+2) Leveling
+```plantuml
+<style>
+diamond {
+  BackgroundColor White
+}
+</style>
+
+title Leveling
+
+start
+
+#pink:Congratulatory message, base increase to all stats;
+#pink:Modify category stat, increase exp threshold;
+
+stop
+```
