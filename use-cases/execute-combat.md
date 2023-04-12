@@ -1,4 +1,4 @@
-## Player Combat System: Attack #1, Attack #2, Open Inventory, Flee, Activate Pet
+## Player Combat System: Attack \#1, Attack \#2, Open Inventory, Flee, Activate Pet
 Attack #1: Inflicts damage/effect on opponent based on slotted attack  
 Attack #2: Inflicts damage/effect on opponent based on slotted attack  
 Open Inventory: Choose from all available consumables
