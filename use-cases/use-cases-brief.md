@@ -86,29 +86,7 @@ stop
 
 ## System/Program
 
-1) Play Random Event
-```plantuml
-<style>
-diamond {
-  BackgroundColor White
-}
-</style>
-
-title Random Events
-
-start
-
-if (Random Number) then (Event)
-#pink:Calls event method (Considers environment);
-#lavender:Player response to event;
-#pink:Applies effects of event;
-else (No corresponding)
-endif
-
-stop
-```
-
-2) Leveling
+1) Leveling
 ```plantuml
 <style>
 diamond {
