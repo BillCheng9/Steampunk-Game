@@ -21,6 +21,11 @@ Victory: If the enemy's health reaches 0, victory dialogue and gain gears
 
 Defeat: If player's health reaches 0, defeat dialogue and lose gears. Possible screen blackout.  
 
+### Color Code
+
+    Player: Lavender
+    CPU: Pink
+
 ```plantuml
 <style>
 diamond {

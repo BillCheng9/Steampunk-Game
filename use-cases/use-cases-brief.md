@@ -1,6 +1,7 @@
-##Color Code
-Player: Lavender
-CPU: Pink
+### Color Code
+
+    Player: Lavender
+    CPU: Pink
 
 ## Player
 1) Execute Combat

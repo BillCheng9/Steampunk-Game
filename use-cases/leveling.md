@@ -9,6 +9,11 @@ Result:
     1) Player class base stats increased
     2) Exp threshold increased
 
+### Color Code
+
+    Player: Lavender
+    CPU: Pink
+
 ```plantuml
 
 title Leveling

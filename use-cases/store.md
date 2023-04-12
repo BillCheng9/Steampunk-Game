@@ -6,7 +6,11 @@ Items purchased will be removed from the Store object if non-consumable
 
 Consumables will be added to player inventory
 
+### Color Code
 
+    Player: Lavender
+    CPU: Pink
+    
 ```plantuml
 <style>
 diamond {

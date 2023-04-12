@@ -20,6 +20,11 @@ Help: Opens up the help menu
 ## Help Menu Button System: ##
 Exit: Returns to start menu
 
+### Color Code
+
+    Player: Lavender
+    CPU: Pink
+
 ```plantuml
 <style>
 diamond {
