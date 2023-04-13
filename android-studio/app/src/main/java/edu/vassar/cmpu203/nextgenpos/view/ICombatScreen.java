@@ -14,4 +14,6 @@ public interface ICombatScreen {
         void invClick();
         void fleeClick();
     }
+
+    View getRootView();
 }

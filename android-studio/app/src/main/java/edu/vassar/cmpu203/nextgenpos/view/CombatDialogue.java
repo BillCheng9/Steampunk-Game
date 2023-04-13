@@ -159,7 +159,7 @@ public class CombatDialogue {
      *
      * @return
      */
-    public String displayEHH() throws InterruptedException {
+    public String displayEHH()  {
         return dialogue.get("e_hit_h");
     }
 
@@ -177,7 +177,7 @@ public class CombatDialogue {
      *
      * @return
      */
-    public String displayWorker_S() throws InterruptedException {
+    public String displayWorker_S(){
         return dialogue.get("worker_special");
     }
 
@@ -186,7 +186,7 @@ public class CombatDialogue {
      *
      * @return
      */
-    public String displayRock_S() throws InterruptedException {
+    public String displayRock_S() {
         return dialogue.get("rock_special");
     }
 
@@ -242,6 +242,13 @@ public class CombatDialogue {
      */
     public String displayFlee_T(){
         return dialogue.get("flee_t");
+    }
+
+    public String displayLose() {
+        return dialogue.get("lose");
+    }
+    public String displayWin() {
+        return dialogue.get("win");
     }
 
     /**

@@ -36,29 +36,25 @@ public interface Enemy {
     /**
      * Calculates chance of hitting Player with an Enemy's light attack and the damage it does
      * @return 0 if missed, any number >0 if hit for damage
-     * @throws InterruptedException
      */
-    int short_attack() throws InterruptedException;
+    int short_attack();
 
     /**
      * Calculates chance of hitting Player with an Enemy's heavy attack and the damage it does
      * @return 0 if missed, any number >0 if hit for damage
-     * @throws InterruptedException
      */
-    int charge_attack() throws InterruptedException;
+    int charge_attack();
 
     /**
      * Increase Enemy's stats based on specific rules of each Enemy type
-     * @throws InterruptedException
      */
-    void increase_stat() throws InterruptedException;
+    void increase_stat();
 
     /**
      * Picks a random Attack
      * @return Integer indicating which move Enemy will take: 0 for light attack, 1 for heavy attack, -1 for charge
-     * @throws InterruptedException
      */
-    int pickAttack() throws InterruptedException;
+    int pickAttack();
 
     /**
      * Checks Enemy's health
