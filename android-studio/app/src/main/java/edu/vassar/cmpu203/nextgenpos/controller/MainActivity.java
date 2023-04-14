@@ -28,11 +28,9 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     Player p;
     CombatDialogue combatDialogue;
     PlayerDialogue playerDialogue;
-    Combat combat;
     Enemy e;
     ICombatScreen combatScreen;
     CombatScreen cScreen;
-    int turn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         // instantiate combat and player dialogue
         this.combatDialogue = new CombatDialogue();
         this.playerDialogue = new PlayerDialogue();
-        this.combat = new Combat();
 
         // instantiate buttons
         this.lightButton = new CombatButton("LIGHT");
@@ -78,24 +75,10 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         this.combatScreen = new CombatScreen(this, this, p, e);
         cScreen.DisplayStart();
         this.setContentView(cScreen.getRootView());
-
-        //EnemyTurn();
-        turn = 1;
-        BeginCombat();
-        //this.setContentView(combatScreen.getRootView());
     }
 
-    private void BeginCombat() {
-        while ( (p.healthCheck() && e.healthCheck()) ) {
-            // player turn
-            if (turn == 1) {
-                cScreen.Clickable(true);
-            }
-            // enemy turn
-            else if (turn == 0) {
-                EnemyTurn();
-            }
-        }
+    private void HealthChecker() {
+        // check for health
         if ( !e.healthCheck()) {
             cScreen.DisplayEndWin();
             cScreen.Clickable(false);
@@ -135,8 +118,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             cScreen.renewEHealth(e);
             cScreen.renewEArmor(e);
         }
-        turn = 1;
         cScreen.Clickable(true);
+        HealthChecker();
     }
 
     @Override
@@ -151,7 +134,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             cScreen.DisplayPlayerAttack("LIGHT", 0, 0);
         }
         cScreen.Clickable(false);
-        turn = 0;
+        HealthChecker();
+        EnemyTurn();
     }
 
     @Override
@@ -166,7 +150,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             cScreen.DisplayPlayerAttack("HEAVY", 0, 0);
         }
         cScreen.Clickable(false);
-        turn = 0;
+        HealthChecker();
+        EnemyTurn();
     }
 
     @Override
@@ -188,7 +173,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         }
         cScreen.DisplayFlee(check);
         cScreen.Clickable(false);
-        turn = 0;
+        HealthChecker();
+        EnemyTurn();
     }
 
 }
