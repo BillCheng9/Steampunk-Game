@@ -31,7 +31,7 @@ public class ButtonClickTest {
     @Test
     public void testLightAttack(){
         onView(withId(R.id.lightAttackBTN)).perform(click());
-        onView(withId(R.id.lightAttackBTN)).check(matches(withText("YOU DECIDE TO DO A LIGHT ATTACK!")));
+        onView(withId(R.id.lightAttackBTN)).check(matches(ViewMatchers.withSubstring("YOU DECIDE TO DO A LIGHT ATTACK!")));
     }
     @Test
     public void testHeavyAttack(){
