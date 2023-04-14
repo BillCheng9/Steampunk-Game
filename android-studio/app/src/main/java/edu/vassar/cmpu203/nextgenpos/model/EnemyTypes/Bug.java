@@ -6,6 +6,8 @@ public class Bug implements Enemy {
     int defense = 1;
     int health = 3;
     int damage = 2;
+    int exp = 5;
+    int gear = 3;
 
     /**
      * Calculates chance of hitting Player with an Enemy's light attack and the damage it does
@@ -48,6 +50,26 @@ public class Bug implements Enemy {
      */
     public boolean healthCheck() {
         return health > 0;
+    }
+
+    /**
+     * Getter method for exp
+     *
+     * @return exp
+     */
+    @Override
+    public int getExp() {
+        return exp;
+    }
+
+    /**
+     * Getter method for gear
+     *
+     * @return gear
+     */
+    @Override
+    public int getGear() {
+        return gear;
     }
 
     /**

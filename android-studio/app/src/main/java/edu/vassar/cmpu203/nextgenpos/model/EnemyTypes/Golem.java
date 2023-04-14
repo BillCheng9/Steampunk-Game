@@ -6,6 +6,8 @@ public class Golem implements Enemy{
     int defense = 8;
     int health = 15;
     int damage = 4;
+    int gear = 6;
+    int exp = 15;
 
     /**
      * Calculates chance of hitting Player with an Enemy's light attack and the damage it does
@@ -52,6 +54,26 @@ public class Golem implements Enemy{
      */
     public boolean healthCheck() {
         return health > 0;
+    }
+
+    /**
+     * Getter method for exp
+     *
+     * @return exp
+     */
+    @Override
+    public int getExp() {
+        return exp;
+    }
+
+    /**
+     * Getter method for gear
+     *
+     * @return gear
+     */
+    @Override
+    public int getGear() {
+        return gear;
     }
 
     /**

@@ -6,6 +6,8 @@ public class Worker implements Enemy {
     int defense = 2;
     int health = 7;
     int damage = 2;
+    int gear = 5;
+    int exp = 8;
 
     /**
      * Calculates chance of hitting Player with an Enemy's light attack and the damage it does
@@ -48,6 +50,26 @@ public class Worker implements Enemy {
      * @return True if health>0, False if not
      */
     public boolean healthCheck() { return health > 0; }
+
+    /**
+     * Getter method for exp
+     *
+     * @return exp
+     */
+    @Override
+    public int getExp() {
+        return exp;
+    }
+
+    /**
+     * Getter method for gear
+     *
+     * @return gear
+     */
+    @Override
+    public int getGear() {
+        return gear;
+    }
 
     /**
      * Get Enemy's health

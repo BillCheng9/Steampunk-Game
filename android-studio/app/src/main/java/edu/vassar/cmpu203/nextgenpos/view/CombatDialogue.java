@@ -62,48 +62,19 @@ public class CombatDialogue {
         dialogue.put("damage", "YOU HIT THE ENEMY FOR " + dmg + " DAMAGE!");
     }
 
-
     /**
-     * Asks User for input and checks if it is a valid input or not
-     * @return a valid Enum Input
-     * @throws InterruptedException
+     * HashMap for onEnd dialogue
+     * @param gear gear value
+     * @param exp exp value
      */
-    public Input grabInput() throws InterruptedException {
-
-        Scanner scanner = new Scanner(System.in);
-        displayPrompt();
-        String action = scanner.nextLine().toUpperCase();
-        while ( (!action.equals("LIGHT")) && (!action.equals("HEAVY")) && (!action.equals("FLEE")) && (!action.equals("PET")) && (!action.equals("INVENTORY")) ){
-            displayInvalid();
-            action = scanner.nextLine().toUpperCase();
-        }
-        Input executeAction;
-
-        switch (action) {
-            case "LIGHT":
-                executeAction = Input.LIGHT;
-                break;
-            case "HEAVY":
-                executeAction = Input.HEAVY;
-                break;
-            case "PET":
-                executeAction = Input.PET;
-                break;
-            case "INVENTORY":
-                executeAction = Input.INVENTORY;
-                break;
-            default:
-                executeAction = Input.FLEE;
-                break;
-        }
-
-        return executeAction;
+    public CombatDialogue (int gear, int exp) {
+        dialogue.put("onEnd", "YOU GAIN " + gear + " GEARS AND " + exp + " EXPERIENCE!");
     }
 
     /**
      * Start dialogue
      *
-     * @return
+     * @return dialogue corresponding to start
      */
     public String displayStart(){
         return dialogue.get("start");
@@ -112,7 +83,7 @@ public class CombatDialogue {
     /**
      * Enemy tries to use light attack dialogue
      *
-     * @return
+     * @return dialogue corresponding to enemy attack light
      */
     public String displayEAL() {
         return dialogue.get("e_attack_l");
@@ -121,7 +92,7 @@ public class CombatDialogue {
     /**
      * Enemy miss light attack dialogue
      *
-     * @return
+     * @return dialogue corresponding to enemy miss light
      */
     public String displayEML() {
         return dialogue.get("e_miss_l");
@@ -130,7 +101,7 @@ public class CombatDialogue {
     /**
      * Enemy hit light attack dialogue
      *
-     * @return
+     * @return dialogue corresponding to enemy hit light
      */
     public String displayEHL(){
         return dialogue.get("e_hit_l");
@@ -139,7 +110,7 @@ public class CombatDialogue {
     /**
      * Enemy tries a heavy attack dialogue
      *
-     * @return
+     * @return dialogue corresponding to enemy attack heavy
      */
     public String displayEAH() {
         return dialogue.get("e_attack_h");
@@ -148,7 +119,7 @@ public class CombatDialogue {
     /**
      * Enemy miss heavy attack dialogue
      *
-     * @return
+     * @return dialogue corresponding to enemy miss heavy
      */
     public String displayEMH() {
         return dialogue.get("e_miss_h");
@@ -157,7 +128,7 @@ public class CombatDialogue {
     /**
      * Enemy hits heavy attack dialogue
      *
-     * @return
+     * @return dialogue corresponding to enemy hit heavy
      */
     public String displayEHH()  {
         return dialogue.get("e_hit_h");
@@ -166,7 +137,7 @@ public class CombatDialogue {
     /**
      * Iron Ant's charge move dialogue
      *
-     * @return
+     * @return dialogue corresponding to bug special
      */
     public String displayBug_S() {
         return dialogue.get("bug_special");
@@ -175,7 +146,7 @@ public class CombatDialogue {
     /**
      * Worker Bot's charge move dialogue
      *
-     * @return
+     * @return dialogue corresponding to worker special
      */
     public String displayWorker_S(){
         return dialogue.get("worker_special");
@@ -184,7 +155,7 @@ public class CombatDialogue {
     /**
      * Literal Rock's charge move dialogue
      *
-     * @return
+     * @return dialogue corresponding to rock special
      */
     public String displayRock_S() {
         return dialogue.get("rock_special");
@@ -193,7 +164,7 @@ public class CombatDialogue {
     /**
      * Literal Rock's attack dialogue
      *
-     * @return
+     * @return dialogue corresponding to rock miss
      */
     public String displayRock_M() {
         return dialogue.get("rock_move");
@@ -202,7 +173,7 @@ public class CombatDialogue {
     /**
      * Steam Golem's charge move dialogue
      *
-     * @return
+     * @return dialogue corresponding to golem special
      */
     public String displayGolem_S() {
         return dialogue.get("golem_special");
@@ -211,25 +182,16 @@ public class CombatDialogue {
     /**
      * Ask for input dialogue
      *
-     * @return
+     * @return dialogue corresponding to prompt
      */
     public String displayPrompt() {
         return dialogue.get("prompt");
     }
 
     /**
-     * Input is invalid dialogue
-     *
-     * @return
-     */
-    public String displayInvalid() {
-        return dialogue.get("invalid");
-    }
-
-    /**
      * Flee is not successful dialogue
      *
-     * @return
+     * @returndialogue corresponding to flee fail
      */
     public String displayFlee_F() {
         return dialogue.get("flee_f");
@@ -238,46 +200,51 @@ public class CombatDialogue {
     /**
      * Flee is successful dialogue
      *
-     * @return
+     * @return dialogue corresponding to flee success
      */
     public String displayFlee_T(){
         return dialogue.get("flee_t");
     }
 
+    /**
+     * Player loses the fight
+     * @return dialogue corresponding to lose
+     */
     public String displayLose() {
         return dialogue.get("lose");
     }
+
+    /**
+     * Player wins the fight
+     * @return dialogue corresponding to win
+     */
     public String displayWin() {
         return dialogue.get("win");
     }
 
     /**
-     * Finished combat dialogue
-     * @throws InterruptedException
-     */
-    public void combatResult(String s) throws InterruptedException {
-        if (s.equals("LOSE")) System.out.println(dialogue.get("lose") + "\n");
-        else if (s.equals("WIN")) System.out.println(dialogue.get("win") + "\n");
-        else System.out.println(dialogue.get("finish") + "\n");
-        TimeUnit.SECONDS.sleep(1);
-    }
-
-    /**
-     * Show Enemy encounter dialogue
-     *
-     * @return
-     */
-    public String displayEnemy() {
-        return dialogue.get("enemy");
-    }
-
-    /**
      * Show Player and Enemy hit damage dialogue
      *
-     * @return
+     * @return dialogue corresponding to damage
      */
     public String displayDamage() {
         return dialogue.get("damage");
     }
 
+    /**
+     * Show Player and Enemy hit damage dialogue
+     *
+     * @return dialogue corresponding to damage
+     */
+    public String displayEnemyDamage() {
+        return dialogue.get("enemy");
+    }
+
+    /**
+     * Show onEnd dialogue
+     * @return dialogue corresponding to onEnd
+     */
+    public String displayOnEnd() {
+        return dialogue.get("onEnd");
+    }
 }

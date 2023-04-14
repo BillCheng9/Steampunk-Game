@@ -105,4 +105,9 @@ public class Player {
         }
         else return 0;
     }
+
+    public void onEnd(int gear, int exp) {
+        gears += gear;
+        experience += exp;
+    }
 }

@@ -31,6 +31,14 @@ public class CombatScreen implements ICombatScreen {
     PlayerDialogue playerDialogue;
     CombatDialogue combatEnemyDialogue;
     CombatDialogue damageDialogue;
+
+    /**
+     * Constructor for CombatScreen
+     * @param context context from UI screen
+     * @param listener listener for onClick
+     * @param p Player
+     * @param e Enemy
+     */
     public CombatScreen(Context context, Listener listener, Player p, Enemy e) {
 
         // instantiate
@@ -64,6 +72,7 @@ public class CombatScreen implements ICombatScreen {
                 int dmg;
                 listener.dialogueClick();}
         });
+
         // button onclick
         this.binding.lightAttackBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,17 +106,35 @@ public class CombatScreen implements ICombatScreen {
         });
     }
 
-    public void DisplayStart() {
+    /**
+     * Sets dialogueText to start text
+     */
+    public void displayStart() {
         String text = combatEnemyDialogue.displayStart() + " " + combatDialogue.displayPrompt();
         this.binding.dialogueText.setText(text);
     }
-    public void DisplayContinueText() {
+
+    /**
+     * Sets dialogueContinue to continue text
+     */
+    public void displayContinueText() {
         this.binding.dialogueContinue.setText("CLICK TO CONTINUE!");
     }
-    public void RemoveContinueText() {
+
+    /**
+     * Sets dialogueContinue to empty
+     */
+    public void removeContinueText() {
         this.binding.dialogueContinue.setText("");
     }
-    public void DisplayPlayerAttack(String type, int dmg, int hit) {
+
+    /**
+     * Sets dialogueText to Player attack
+     * @param type attack type
+     * @param dmg damage value
+     * @param hit hit chance
+     */
+    public void displayPlayerAttack(String type, int dmg, int hit) {
         String text = "";
         if (type.equals("LIGHT")) {
             text += playerDialogue.displayPAL() + " ";
@@ -134,19 +161,31 @@ public class CombatScreen implements ICombatScreen {
         this.binding.dialogueText.setText(text);
     }
 
-    public void DisplayPet(String type, int dmg) {
+    /**
+     * Sets dialogueText to Pet (not implemented)
+     * @param type Pet type
+     * @param dmg damage
+     */
+    public void displayPet(String type, int dmg) {
         String text ="";
         text += "NOT IMPLEMENTED YET. TOO BAD TOO SAD!";
         this.binding.dialogueText.setText(text);
     }
 
-    public void DisplayInv() {
+    /**
+     * Sets dialogueText to Inventory (not implemented)
+     */
+    public void displayInv() {
         String text ="";
         text += "NOT IMPLEMENTED YET. TOO BAD TOO SAD!";
         this.binding.dialogueText.setText(text);
     }
 
-    public void DisplayFlee(boolean check) {
+    /**
+     * Sets dialogueText to Flee
+     * @param check flee chance
+     */
+    public void displayFlee(boolean check) {
         String text ="";
         text += playerDialogue.displayFlee() + " ";
         if (check) {
@@ -158,7 +197,14 @@ public class CombatScreen implements ICombatScreen {
         this.binding.dialogueText.setText(text);
     }
 
-    public void DisplayEnemyAttack(String type, int dmg, int hit, Enemy e) {
+    /**
+     * Sets dialogueText to Enemy attack
+     * @param type attack type
+     * @param dmg damage value
+     * @param hit hit chance
+     * @param e Enemy type
+     */
+    public void displayEnemyAttack(String type, int dmg, int hit, Enemy e) {
         String text = "";
         String name = e.getName();
         if (name.equals("LITERAL ROCK")) {
@@ -175,7 +221,7 @@ public class CombatScreen implements ICombatScreen {
                 if (hit > 0) {
                     text += combatEnemyDialogue.displayEHL() + " ";
                     damageDialogue = new CombatDialogue(dmg);
-                    text += damageDialogue.displayDamage();
+                    text += damageDialogue.displayEnemyDamage();
                 }
                 else if (hit == 0) {
                     text += combatEnemyDialogue.displayEML();
@@ -186,7 +232,7 @@ public class CombatScreen implements ICombatScreen {
                 if (hit > 0) {
                     text += combatEnemyDialogue.displayEHH() + " ";
                     damageDialogue = new CombatDialogue(dmg);
-                    text += damageDialogue.displayDamage();
+                    text += damageDialogue.displayEnemyDamage();
                 }
                 else if (hit == 0) {
                     text += combatEnemyDialogue.displayEMH();
@@ -207,16 +253,35 @@ public class CombatScreen implements ICombatScreen {
         text += " " + combatDialogue.displayPrompt();
         this.binding.dialogueText.setText(text);
     }
-    public void DisplayEndLose() {
+
+    /**
+     * Sets dialogueText to Lose
+     */
+    public void displayEndLose() {
         this.binding.dialogueText.setText(combatDialogue.displayLose());
     }
-    public void DisplayEndWin() {
-        this.binding.dialogueText.setText(combatDialogue.displayWin());
+
+    /**
+     * Sets dialogueText to Win
+     */
+    public void displayEndWin(int gear, int exp) {
+        CombatDialogue endDialogue = new CombatDialogue(gear, exp);
+        String text = combatDialogue.displayWin() + " " + endDialogue.displayOnEnd();
+        this.binding.dialogueText.setText(text);
     }
 
+    /**
+     * Sets dialogueClickable clickability
+     * @param clickable boolean
+     */
     public void dialogueClickable(boolean clickable) {
         CombatScreen.this.binding.dialogueArea.setClickable(clickable);
     }
+
+    /**
+     * Sets buttons clickability
+     * @param clickable boolean
+     */
     public void buttonClickable(boolean clickable) {
         CombatScreen.this.binding.lightAttackBTN.setClickable(clickable);
         CombatScreen.this.binding.heavyAttackBTN.setClickable(clickable);
@@ -225,19 +290,48 @@ public class CombatScreen implements ICombatScreen {
         CombatScreen.this.binding.invBTN.setClickable(clickable);
     }
 
+    /**
+     * Refreshes Enemy Health stats
+     * @param e Enemy type
+     */
     public void renewEHealth(Enemy e) {
         eHealthBar = new eHealthStat(e.getName() + " HEALTH", e.getHealth());
         this.binding.enemyHealthText.setText(eHealthBar.toString());
     }
+
+    /**
+     * Refreshes Enemy Armor stats
+     * @param e Enemy type
+     */
     public void renewEArmor(Enemy e) {
         eArmorBar = new eArmorStat(e.getName() + " ARMOR", e.getDefense());
         this.binding.enemyArmorText.setText(eArmorBar.toString());
     }
+
+    /**
+     * Refreshes Player Health stats
+     * @param p Player
+     */
     public void renewHealth(Player p) {
         healthBar = new HealthStat(p.health, p.maxHealth);
         this.binding.healthText.setText(healthBar.toString());
     }
 
+    /**
+     * Refreshes Player Exp and Gear stats
+     * @param p Player
+     */
+    public void renewExpGear(Player p) {
+        expBar = new ExpStat(p.experience);
+        gearBar = new GearStat(p.gears);
+        this.binding.gearText.setText(gearBar.toString());
+        this.binding.expText.setText(expBar.toString());
+    }
+
+    /**
+     * Gets the rootView
+     * @return root view
+     */
     public View getRootView() {
         return binding.getRoot();
     }

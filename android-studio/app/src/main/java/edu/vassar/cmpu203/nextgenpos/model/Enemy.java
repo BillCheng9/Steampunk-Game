@@ -6,6 +6,8 @@ public interface Enemy {
     int health = 0;
     int damage = 0;
     int defense = 0;
+    int exp = 0;
+    int gear = 0;
 
     /**
      * Getter method for Enemy's name
@@ -61,4 +63,16 @@ public interface Enemy {
      * @return True if health>0, False if not
      */
     boolean healthCheck();
+
+    /**
+     * Getter method for exp
+     * @return exp
+     */
+    int getExp();
+
+    /**
+     * Getter method for gear
+     * @return gear
+     */
+    int getGear();
 }

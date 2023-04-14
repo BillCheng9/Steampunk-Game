@@ -10,7 +10,6 @@ import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Golem;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Rock;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Worker;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
-import edu.vassar.cmpu203.nextgenpos.model.UI.CombatButton;
 import edu.vassar.cmpu203.nextgenpos.model.UI.DialogueBar;
 import edu.vassar.cmpu203.nextgenpos.view.CombatDialogue;
 import edu.vassar.cmpu203.nextgenpos.view.CombatScreen;
@@ -18,12 +17,6 @@ import edu.vassar.cmpu203.nextgenpos.view.ICombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.PlayerDialogue;
 
 public class MainActivity extends AppCompatActivity implements ICombatScreen.Listener {
-
-    CombatButton lightButton;
-    CombatButton heavyButton;
-    CombatButton fleeButton;
-    CombatButton invButton;
-    CombatButton petButton;
     DialogueBar dialogueBar;
     Player p;
     CombatDialogue combatDialogue;
@@ -32,6 +25,10 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     ICombatScreen combatScreen;
     CombatScreen cScreen;
 
+    /**
+     * onCreate method that dictates the rootview and all functions to be started on start
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +40,6 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         this.playerDialogue = new PlayerDialogue();
 
         // instantiate buttons
-        this.lightButton = new CombatButton("LIGHT");
-        this.heavyButton = new CombatButton("HEAVY");
-        this.fleeButton = new CombatButton("RUN AWAY");
-        this.invButton = new CombatButton("OPEN BAG");
-        this.petButton = new CombatButton("USE PET");
 
         // instantiate dialogue bar
         this.dialogueBar = new DialogueBar();
@@ -72,120 +64,153 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
                 e = new Worker();
         }
         cScreen = new CombatScreen(this, this, p, e);
-        this.combatScreen = new CombatScreen(this, this, p, e);
+        //this.combatScreen = new CombatScreen(this, this, p, e);
         cScreen.dialogueClickable(false);
-        cScreen.DisplayStart();
+        cScreen.displayStart();
         this.setContentView(cScreen.getRootView());
     }
 
-    private void HealthChecker() {
+    /**
+     * Checks Player and Enemy health, sets buttonClickable if any are dead and displays correct end message
+     */
+    private void healthChecker() {
         // check for health
         if ( !e.healthCheck()) {
-            cScreen.DisplayEndWin();
+            cScreen.removeContinueText();
+            int gear = e.getGear();
+            int exp = e.getExp();
+            p.onEnd(e.getGear(), e.getExp());
+            cScreen.renewExpGear(p);
+            cScreen.displayEndWin(gear, exp);
             cScreen.buttonClickable(false);
         }
         else if ( !p.healthCheck() ) {
-            cScreen.DisplayEndLose();
+            cScreen.displayEndLose();
             cScreen.buttonClickable(false);
         }
     }
 
-    private void EnemyTurn() {
+    /**
+     * Logic for Enemy turn, and sets buttonClickable to true
+     */
+    private void enemyTurn() {
         cScreen.dialogueClickable(false);
-        cScreen.RemoveContinueText();
+        cScreen.removeContinueText();
         int eAtkChoice = e.pickAttack();
         if (eAtkChoice == 0) {
             int hit = e.short_attack();
             if (hit > 0) {
                 int dmg = p.attacked(hit);
-                cScreen.DisplayEnemyAttack("LIGHT", dmg, hit, e);
+                cScreen.displayEnemyAttack("LIGHT", dmg, hit, e);
                 cScreen.renewHealth(p);
             }
             else if (hit == 0) {
-                cScreen.DisplayEnemyAttack("LIGHT", 0, 0, e);
+                cScreen.displayEnemyAttack("LIGHT", 0, 0, e);
             }
         }
         else if (eAtkChoice == 1) {
             int hit = e.charge_attack();
             if (hit > 0) {
                 int dmg = p.attacked(hit);
-                cScreen.DisplayEnemyAttack("HEAVY", dmg, hit, e);
+                cScreen.displayEnemyAttack("HEAVY", dmg, hit, e);
                 cScreen.renewHealth(p);
             }
             else if (hit == 0) {
-                cScreen.DisplayEnemyAttack("HEAVY", 0, 0, e);
+                cScreen.displayEnemyAttack("HEAVY", 0, 0, e);
             }
         }
         else if (eAtkChoice == -1) {
-            cScreen.DisplayEnemyAttack("CHARGE", 0, 0, e);
+            cScreen.displayEnemyAttack("CHARGE", 0, 0, e);
             cScreen.renewEHealth(e);
             cScreen.renewEArmor(e);
         }
         cScreen.buttonClickable(true);
-        HealthChecker();
+        healthChecker();
     }
 
+    /**
+     * lightClick method that calls Player's light attack and sets buttonClickable to false
+     */
     @Override
     public void lightClick() {
         int val = p.attack1();
         if (val > 0) {
             int dmg = e.attacked(val);
-            cScreen.DisplayPlayerAttack("LIGHT", dmg, val);
+            cScreen.displayPlayerAttack("LIGHT", dmg, val);
             cScreen.renewEHealth(e);
         }
         else {
-            cScreen.DisplayPlayerAttack("LIGHT", 0, 0);
+            cScreen.displayPlayerAttack("LIGHT", 0, 0);
         }
         cScreen.buttonClickable(false);
-        HealthChecker();
+        healthChecker();
         continueClick();
     }
 
+    /**
+     * heavyClick method that calls Player's light attack and sets buttonClickable to false
+     */
     @Override
     public void heavyClick() {
         int val = p.attack2();
         if (val > 0) {
             int dmg = e.attacked(val);
-            cScreen.DisplayPlayerAttack("HEAVY", dmg, val);
+            cScreen.displayPlayerAttack("HEAVY", dmg, val);
             cScreen.renewEHealth(e);
         }
         else {
-            cScreen.DisplayPlayerAttack("HEAVY", 0, 0);
+            cScreen.displayPlayerAttack("HEAVY", 0, 0);
         }
         cScreen.buttonClickable(false);
-        HealthChecker();
+        healthChecker();
         continueClick();
     }
 
+    /**
+     * petClick method that calls Player's pet ability
+     */
     @Override
     public void petClick() {
-        cScreen.DisplayPet("NONE", -1);
+        cScreen.displayPet("NONE", -1);
     }
 
+    /**
+     * invClick method that calls Player's inventory
+     */
     @Override
     public void invClick() {
-        cScreen.DisplayInv();
+        cScreen.displayInv();
 
     }
 
+    /**
+     * fleeClick method that calls Player's flee move and sets buttonClickable to false
+     */
     @Override
     public void fleeClick() {
         boolean check = p.flee();
         if (check) {
             cScreen.buttonClickable(false);
         }
-        cScreen.DisplayFlee(check);
+        cScreen.displayFlee(check);
         cScreen.buttonClickable(false);
         continueClick();
     }
+
+    /**
+     * makes dialogueCLickable true and displays the continue text
+     */
     public void continueClick() {
         cScreen.dialogueClickable(true);
-        cScreen.DisplayContinueText();
+        cScreen.displayContinueText();
     }
 
+    /**
+     * dialogueClick method that calls EnemyTurn
+     */
     @Override
     public void dialogueClick() {
-        EnemyTurn();
+        enemyTurn();
     }
 
 }

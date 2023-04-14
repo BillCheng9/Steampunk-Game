@@ -6,6 +6,8 @@ public class Rock implements Enemy{
     int defense = 1;
     int health = 23;
     int damage = 0;
+    int gear = 0;
+    int exp = 1;
 
     /**
      * Returns 0
@@ -57,6 +59,26 @@ public class Rock implements Enemy{
      */
     public boolean healthCheck() {
         return health > 0;
+    }
+
+    /**
+     * Getter method for exp
+     *
+     * @return exp
+     */
+    @Override
+    public int getExp() {
+        return exp;
+    }
+
+    /**
+     * Getter method for gear
+     *
+     * @return gear
+     */
+    @Override
+    public int getGear() {
+        return gear;
     }
 
     /**
