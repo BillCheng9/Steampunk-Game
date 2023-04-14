@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         }
         cScreen = new CombatScreen(this, this, p, e);
         this.combatScreen = new CombatScreen(this, this, p, e);
+        cScreen.dialogueClickable(false);
         cScreen.DisplayStart();
         this.setContentView(cScreen.getRootView());
     }
@@ -81,15 +82,16 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         // check for health
         if ( !e.healthCheck()) {
             cScreen.DisplayEndWin();
-            cScreen.Clickable(false);
+            cScreen.buttonClickable(false);
         }
         else if ( !p.healthCheck() ) {
             cScreen.DisplayEndLose();
-            cScreen.Clickable(false);
+            cScreen.buttonClickable(false);
         }
     }
 
     private void EnemyTurn() {
+        cScreen.dialogueClickable(false);
         int eAtkChoice = e.pickAttack();
         if (eAtkChoice == 0) {
             int hit = e.short_attack();
@@ -118,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             cScreen.renewEHealth(e);
             cScreen.renewEArmor(e);
         }
-        cScreen.Clickable(true);
+        cScreen.buttonClickable(true);
         HealthChecker();
     }
 
@@ -133,9 +135,9 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         else {
             cScreen.DisplayPlayerAttack("LIGHT", 0, 0);
         }
-        cScreen.Clickable(false);
+        cScreen.buttonClickable(false);
         HealthChecker();
-        EnemyTurn();
+        continueClick();
     }
 
     @Override
@@ -149,9 +151,9 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         else {
             cScreen.DisplayPlayerAttack("HEAVY", 0, 0);
         }
-        cScreen.Clickable(false);
+        cScreen.buttonClickable(false);
         HealthChecker();
-        EnemyTurn();
+        continueClick();
     }
 
     @Override
@@ -169,11 +171,19 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     public void fleeClick() {
         boolean check = p.flee();
         if (check) {
-            cScreen.Clickable(false);
+            cScreen.buttonClickable(false);
         }
         cScreen.DisplayFlee(check);
-        cScreen.Clickable(false);
-        HealthChecker();
+        cScreen.buttonClickable(false);
+        continueClick();
+    }
+    public void continueClick() {
+        cScreen.dialogueClickable(true);
+        cScreen.DisplayContinueText();
+    }
+
+    @Override
+    public void dialogueClick() {
         EnemyTurn();
     }
 

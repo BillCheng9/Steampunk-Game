@@ -74,7 +74,7 @@ public class Bug implements Enemy {
      * @return Integer indicating which move Enemy will take: 0 for light attack, 1 for heavy attack, -1 for charge
      */
     public int pickAttack() {
-        int eVal = (int) (Math.random() * 10);
+        int eVal = (int) (Math.random() * 100);
         if (eVal <= 44) {
             return 0;
         } else if (eVal <= 74) {

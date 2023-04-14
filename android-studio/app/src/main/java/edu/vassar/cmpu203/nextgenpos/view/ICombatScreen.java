@@ -13,6 +13,7 @@ public interface ICombatScreen {
         void petClick();
         void invClick();
         void fleeClick();
+        void dialogueClick();
     }
 
     View getRootView();

@@ -57,6 +57,13 @@ public class CombatScreen implements ICombatScreen {
         this.binding.enemyHealthText.setText(eHealthBar.toString());
         this.binding.enemyArmorText.setText(eArmorBar.toString());
 
+        // dialogue onclick
+        this.binding.dialogueArea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int dmg;
+                listener.dialogueClick();}
+        });
         // button onclick
         this.binding.lightAttackBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +100,9 @@ public class CombatScreen implements ICombatScreen {
     public void DisplayStart() {
         String text = combatEnemyDialogue.displayStart() + " " + combatDialogue.displayPrompt();
         this.binding.dialogueText.setText(text);
+    }
+    public void DisplayContinueText() {
+        this.binding.dialogueContinue.setText("CLICK TO CONTINUE!");
     }
     public void DisplayPlayerAttack(String type, int dmg, int hit) {
         String text = "";
@@ -205,13 +215,8 @@ public class CombatScreen implements ICombatScreen {
         this.binding.dialogueText.setText(combatDialogue.displayWin());
     }
 
-    public void Clickable(boolean clickable) {
+    public void dialogueClickable(boolean clickable) {
         CombatScreen.this.binding.dialogueArea.setClickable(clickable);
-        CombatScreen.this.binding.lightAttackBTN.setClickable(clickable);
-        CombatScreen.this.binding.heavyAttackBTN.setClickable(clickable);
-        CombatScreen.this.binding.fleeBTN.setClickable(clickable);
-        CombatScreen.this.binding.petBTN.setClickable(clickable);
-        CombatScreen.this.binding.invBTN.setClickable(clickable);
     }
     public void buttonClickable(boolean clickable) {
         CombatScreen.this.binding.lightAttackBTN.setClickable(clickable);
