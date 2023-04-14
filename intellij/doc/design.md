@@ -4,12 +4,19 @@ hide Menu
 hide empty methods
 
 ' classes
-class Combat{
+class MainActivity{
 ...
 --
-Combat()
-+getInput() : Input
-+combatTurn() : String
+onCreate(Bundle)
++healthChecker()
++enemyTurn()
++lightClick()
++heavyClick()
++petClick()
++invClick()
++fleeClick()
++continueClick()
++dialogueClick()
 }
 class CombatDialogue{
 Enemy
@@ -89,31 +96,53 @@ class Bug{}
 class Golem{}
 class Rock{}
 class Worker{}
-enum Input{
-LIGHT
-HEAVY
-PET
-INVENTORY
-FLEE
-}
 
 Enemy <|.. Bug
 Enemy <|.. Golem
 Enemy <|.. Rock
 Enemy <|.. Worker
 
+class CombatScreen{
+Binding
+Listener
+Dialogue
+Stat Bar
+Dialogue Bar
+Combat Dialogue
+Player Dialogue
+Combat Enemy Dialogue
+Damage Dialogue
+--
+CombatScreen(Context, Listener, Player, Enemy)
+}
+interface StatBar{
+Name
+Max
+--
+getName() : String
+getCur() : Int
+getmax() : Int
+toString() : String
+}
+
+StatBar <|.. ArmorStat
+StatBar <|.. ExpStat
+StatBar <|.. GearStat
+StatBar <|.. HealthStat
+StatBar <|.. eArmorStat
+StatBar <|.. eHealthStat
+
 CombatDialogue -> Enemy
-Combat "0" -down- "1" Player : Contains
-Combat "0" -down- "1" Enemy : Contains
-Combat "0" .down-> "1" CombatDialogue : Input From
-Combat -left-> Input
-CombatDialogue -left-> Input
-Combat "0" -down- "1" PlayerDialogue : Outputs
+MainActivity "0" -up- "1" Player : Contains
+MainActivity "0" -down- "1" Enemy : Contains
+MainActivity "0" .left-> "1" CombatDialogue : Input From
+MainActivity "0" -up- "1" PlayerDialogue : Outputs
+CombatScreen "0" -down- "1" StatBar : Contains
+MainActivity "0" -right- "1" CombatScreen : Displays
 ```
 
 ## SEQUENCE DIAGRAM
 ```plantuml
-
 
 participant "User" as user
 participant "View" as view
@@ -121,42 +150,48 @@ participant "Controller" as control
 participant "Enemy" as enemy
 participant "Player" as player
 
-control -> enemy : getName()
+control -> view : dialogueClickable(false)
 control -> view : displayStart()
-view -> user : Display Start Info
+view -> user : Display Combat Menu
+user -> view : Clicks Action Button
 
-loop p.healthCheck() && e.healthCheck()
-activate view
-activate control
-activate player
-activate enemy
-activate user
-
-control -> view : pHealth(int)
-view -> user : Display Player Health
-control -> view : eHealth(int)
-view -> user : Display Enemy Health
-
-control -> view : Input : grabInput()
-view -> user : Display Prompt
-user -> view : Return Action String
-view -> control : Input executeAction
-
-control -> view : pHealth(int)
-view -> user : Display Player Health
-control -> view : eHealth(int)
-view -> user : Display Enemy Health
-
-control -> enemy : pickAttack()
+group Light Attack
+view -> control : lightAttackBTN
+control -> player : p.attack1()
+group Hit
+control -> enemy : e.attacked()
+control -> view : displayPlayerAttack()
+control -> view : renewEHealth()
+end
+group Miss
+control -> view : displayPlayerAttack()
+end
+control -> enemy : e.healthCheck()
+control -> player : p.healthCheck()
 end
 
-deactivate view
-deactivate control
-deactivate enemy
-deactivate user
-deactivate player
+group Heavy Attack
+view -> control : heavyAttackBTN
+control -> player : p.attack2()
+group Hit
+control -> enemy : e.attacked()
+control -> view : displayPlayerAttack()
+control -> view : renewEHealth()
+end
+group Miss
+control -> view : displayPlayerAttack()
+end
+control -> enemy : e.healthCheck()
+control -> player : p.healthCheck()
+end
 
-control -> view : combatResult(combat)
-view -> user : Display Combat Results
-control -> player : Update Stats
+group Flee
+view -> control : fleeBTN
+control -> player : p.flee(0
+control -> view : DisplayFlee(boolean)
+view -> user : Displays Flee Result
+end
+
+control -> view : displayEndWin()
+view -> user : Displays End Screen
 ```
