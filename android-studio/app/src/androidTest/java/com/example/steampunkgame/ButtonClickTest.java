@@ -50,7 +50,7 @@ public class ButtonClickTest {
     @Test
     public void testFlee(){
         Espresso.onView(ViewMatchers.withId(R.id.fleeBTN)).perform(ViewActions.click());
-        dialogueScreen.check(matches(ViewMatchers.withSubstring("")));
+        dialogueScreen.check(matches(ViewMatchers.withSubstring("YOU DECIDE TO RUN AWAY")));
     }
 
     /*@Test
