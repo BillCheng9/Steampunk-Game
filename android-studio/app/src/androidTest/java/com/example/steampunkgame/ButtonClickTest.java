@@ -30,7 +30,8 @@ public class ButtonClickTest {
 
     @Test
     public void testLightAttack(){
-        Espresso.onView(ViewMatchers.withId(R.id.lightAttackBTN)).perform(ViewActions.click());
+        onView(withId(R.id.lightAttackBTN)).perform(click());
+        onView(withId(R.id.lightAttackBTN)).check(matches(withText("YOU DECIDE TO DO A LIGHT ATTACK!")));
     }
     @Test
     public void testHeavyAttack(){
