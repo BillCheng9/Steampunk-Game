@@ -32,7 +32,7 @@ public class ButtonClickTest {
     @Test
     public void testLightAttack(){
         onView(withId(R.id.lightAttackBTN)).perform(click());
-        dialogueScreen.check(matches(ViewMatchers.withSubstring("WHAT DO YOU WANT TO DO")));
+        dialogueScreen.check(matches(ViewMatchers.withSubstring("YOU DECIDE TO DO A LIGHT ATTACK")));
     }
 
     /**
@@ -41,7 +41,7 @@ public class ButtonClickTest {
     @Test
     public void testHeavyAttack(){
         Espresso.onView(ViewMatchers.withId(R.id.heavyAttackBTN)).perform(ViewActions.click());
-        dialogueScreen.check(matches(ViewMatchers.withSubstring("")));
+        dialogueScreen.check(matches(ViewMatchers.withSubstring("YOU DECIDE TO DO A HEAVY ATTACK")));
     }
 
     /**
