@@ -104,6 +104,9 @@ public class CombatScreen implements ICombatScreen {
     public void DisplayContinueText() {
         this.binding.dialogueContinue.setText("CLICK TO CONTINUE!");
     }
+    public void RemoveContinueText() {
+        this.binding.dialogueContinue.setText("");
+    }
     public void DisplayPlayerAttack(String type, int dmg, int hit) {
         String text = "";
         if (type.equals("LIGHT")) {
@@ -153,10 +156,6 @@ public class CombatScreen implements ICombatScreen {
             text += combatDialogue.displayFlee_F();
         }
         this.binding.dialogueText.setText(text);
-    }
-
-    public void DisplayPrompt() {
-        this.binding.dialogueText.setText(combatDialogue.displayPrompt());
     }
 
     public void DisplayEnemyAttack(String type, int dmg, int hit, Enemy e) {

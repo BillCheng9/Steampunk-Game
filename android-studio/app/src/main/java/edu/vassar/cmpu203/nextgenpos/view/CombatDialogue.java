@@ -26,17 +26,17 @@ public class CombatDialogue {
     public CombatDialogue (Enemy e){
         this.e = e;
         dialogue.put("start", "YOU ENGAGED A FIGHT AGAINST " + e.getName() + "!");
-        dialogue.put("e_attack_l", e.getName() + " DECIDES TO ATTACK YOU!");
+        dialogue.put("e_attack_l", "THE " + e.getName() + " DECIDES TO ATTACK YOU!");
         dialogue.put("e_miss_l", "YOU DODGE THE " + e.getName() + "'S LIGHT ATTACK!");
         dialogue.put("e_hit_l", "YOU GET HIT BY THE " + e.getName() + "'S LIGHT ATTACK!");
-        dialogue.put("e_attack_h", e.getName() + " DECIDES TO CHARGE UP A POWERFUL ATTACK!");
+        dialogue.put("e_attack_h", "THE " + e.getName() + " DECIDES TO CHARGE UP A POWERFUL ATTACK!");
         dialogue.put("e_miss_h", "YOU DODGE THE " + e.getName() + "'S HEAVY ATTACK!");
         dialogue.put("e_hit_h", "YOU GET HIT BY THE " + e.getName() + "'S HEAVY ATTACK!");
         dialogue.put("bug_special", "IRON ANT SHARPENS ITS METALLIC MANDIBLES!");
         dialogue.put("worker_special", "WORKER BOT POWERS UP!");
         dialogue.put("golem_special", "STEAM GOLEM SHIFTS ITS METALLIC ARMOR TO ITS FISTS!");
         dialogue.put("rock_special", "THE ROCK SOMEHOW GROWS LARGER?!");
-        dialogue.put("rock_move", "IT'S A LITERAL ROCK. IT CAN'T HURT YOU!");
+        dialogue.put("rock_move", "IT'S A LITERAL ROCK. IT CAN'T HURT YOU...");
     }
 
     /**

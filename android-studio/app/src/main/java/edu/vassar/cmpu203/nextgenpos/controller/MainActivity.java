@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
 
     private void EnemyTurn() {
         cScreen.dialogueClickable(false);
+        cScreen.RemoveContinueText();
         int eAtkChoice = e.pickAttack();
         if (eAtkChoice == 0) {
             int hit = e.short_attack();
