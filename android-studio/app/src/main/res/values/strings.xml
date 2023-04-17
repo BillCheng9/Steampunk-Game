@@ -16,4 +16,7 @@
     <string name="enemyHealthText" />
     <string name="enemyArmorText" />
     <string name="dialogueContinue" />
+    <string name="startBTN">START</string>
+    <string name="helpBTN">HELP</string>
+    <string name="startTitle">STEAMOCRACY</string>
 </resources>
