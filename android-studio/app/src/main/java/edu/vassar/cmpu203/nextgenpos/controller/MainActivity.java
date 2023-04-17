@@ -213,4 +213,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         enemyTurn();
     }
 
+    public void startClick(){}
+
+    public void helpClick(){}
 }

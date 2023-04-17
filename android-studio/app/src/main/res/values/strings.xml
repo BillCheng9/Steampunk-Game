@@ -27,4 +27,8 @@
     <string name="mainMenuGearText" />
     <string name="mainMenuExpText" />
 
+    <!-- home menu screen -->
+    <string name="startBTN">START</string>
+    <string name="helpBTN">HELP</string>
+    <string name="startTitle">STEAMOCRACY</string>
 </resources>
