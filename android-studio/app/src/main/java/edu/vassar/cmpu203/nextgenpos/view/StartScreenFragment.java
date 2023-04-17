@@ -4,16 +4,16 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import edu.vassar.cmpu203.nextgenpos.databinding.StartScreenBinding;
+import edu.vassar.cmpu203.nextgenpos.databinding.FragmentStartScreenBinding;
 
-public class StartScreen implements IStartScreen{
+public class StartScreenFragment implements IStartScreen{
 
-    StartScreenBinding binding;
+    FragmentStartScreenBinding binding;
     Listener listener;
 
-    public StartScreen(Context context, Listener listener){
+    public StartScreenFragment(Context context, Listener listener){
         this.listener = listener;
-        this.binding = StartScreenBinding.inflate(LayoutInflater.from(context));
+        this.binding = FragmentStartScreenBinding.inflate(LayoutInflater.from(context));
 
         this.binding.startBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,8 +31,8 @@ public class StartScreen implements IStartScreen{
     }
 
     public void buttonClickable(boolean clickable) {
-        StartScreen.this.binding.startBTN.setClickable(clickable);
-        StartScreen.this.binding.helpBTN.setClickable(clickable);
+        StartScreenFragment.this.binding.startBTN.setClickable(clickable);
+        StartScreenFragment.this.binding.helpBTN.setClickable(clickable);
     }
 
     public View getRootView(){
