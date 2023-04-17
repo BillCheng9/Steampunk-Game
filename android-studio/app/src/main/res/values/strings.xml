@@ -3,6 +3,7 @@
     <!-- general -->
     <string name="app_name">STEAMOCRACY</string>
 
+    <!-- combat screen -->
     <string name="lightAttackBTN">LIGHT ATTACK</string>
     <string name="heavyAttackBTN">HEAVY ATTACK</string>
     <string name="fleeBTN">RUN AWAY</string>
@@ -16,4 +17,14 @@
     <string name="enemyHealthText" />
     <string name="enemyArmorText" />
     <string name="dialogueContinue" />
+
+    <!-- main menu screen -->
+    <string name="continueBTN">ONWARDS</string>
+    <string name="storeBTN">GO TO WORKSHOP</string>
+    <string name="mainMenuDialogueText"></string>
+    <string name="mainMenuHealthText" />
+    <string name="mainMenuArmorText" />
+    <string name="mainMenuGearText" />
+    <string name="mainMenuExpText" />
+
 </resources>

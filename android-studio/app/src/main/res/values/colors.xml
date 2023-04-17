@@ -8,5 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="steampunkYellow">#FDD978</color>
+    <color name="steampunkYellowFade">#A6FDD978</color>
     <color name="steampunkBlue">#80ACAA</color>
+    <color name="steampunkBlueFade">#A680ACAA</color>
 </resources>
