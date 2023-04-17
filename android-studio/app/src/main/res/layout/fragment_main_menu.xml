@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainMenu">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="edu.vassar.cmpu203.nextgenpos.view.MainMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/statsArea"
+            android:layout_width="412dp"
+            android:layout_height="142dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/dialogueArea"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/healthText2"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/healthText" />
+
+            <TextView
+                android:id="@+id/armorText2"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/armorText" />
+
+            <TextView
+                android:id="@+id/gearText2"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/gearText" />
+
+            <TextView
+                android:id="@+id/expText2"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="@string/expText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialogueArea"
+            android:layout_width="412dp"
+            android:layout_height="97dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/buttonSelection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/statsArea">
+
+            <TextView
+                android:id="@+id/mainMenuDialogueText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/mainMenuDialogueText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonSelection"
+            android:layout_width="410dp"
+            android:layout_height="492dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="64sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialogueArea">
+
+            <Button
+                android:id="@+id/continueBTN"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginBottom="16sp"
+                android:text="@string/continueBTN"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/storeBTN"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:text="@string/storeBTN"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
