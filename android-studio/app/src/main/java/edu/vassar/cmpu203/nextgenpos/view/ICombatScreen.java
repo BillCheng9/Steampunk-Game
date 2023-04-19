@@ -44,4 +44,5 @@ public interface ICombatScreen {
      * @return root view
      */
     View getRootView();
+
 }

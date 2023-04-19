@@ -12,7 +12,7 @@ import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Worker;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.model.UI.DialogueBar;
 import edu.vassar.cmpu203.nextgenpos.view.CombatDialogue;
-import edu.vassar.cmpu203.nextgenpos.view.CombatScreen;
+import edu.vassar.cmpu203.nextgenpos.view.CombatScreenFragment;
 import edu.vassar.cmpu203.nextgenpos.view.FragFactory;
 import edu.vassar.cmpu203.nextgenpos.view.ICombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.IMainMenu;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     PlayerDialogue playerDialogue;
     Enemy e;
     ICombatScreen combatScreen;
-    CombatScreen cScreen;
+    CombatScreenFragment cScreen;
     IMainView mainView;
 
     /**
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
 
         // instantiate dialogue bar
         this.dialogueBar = new DialogueBar();
-        cScreen = new CombatScreen(this, this, p, enemyPicker());
+        cScreen = new CombatScreenFragment(this, this, p, enemyPicker());
         cScreen.dialogueClickable(false);
         cScreen.displayStart();
 
@@ -244,7 +244,17 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         enemyTurn();
     }
 
-    public void startClick(){}
+    public void startClick(){
+        startGame();
+    }
 
     public void helpClick(){}
+
+    /**
+     * starts the game
+     */
+    @Override
+    public void startGame() {
+        this.mainView.displayFragment(new CombatScreenFragment(this, this, p, e), true, "combat");
+    }
 }
