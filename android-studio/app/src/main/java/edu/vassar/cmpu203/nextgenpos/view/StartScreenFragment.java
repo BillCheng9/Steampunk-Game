@@ -35,7 +35,7 @@ public class StartScreenFragment extends Fragment implements IStartScreen{
         this.binding.startBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StartScreenFragment.this.listener.startClick();
+                listener.startClick();
             }
         });
 
