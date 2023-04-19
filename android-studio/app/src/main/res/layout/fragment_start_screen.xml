@@ -22,12 +22,10 @@
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="33dp"
         android:text="@string/startTitle"
         android:textAlignment="center"
         android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/startTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

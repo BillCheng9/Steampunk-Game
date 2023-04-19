@@ -64,14 +64,6 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
         combatEnemyDialogue = new CombatDialogue(e);
         playerDialogue = new PlayerDialogue();
 
-        // initiate stat bar
-        this.binding.healthText.setText(healthBar.toString());
-        this.binding.armorText.setText(armorBar.toString());
-        this.binding.expText.setText(expBar.toString());
-        this.binding.gearText.setText(gearBar.toString());
-        this.binding.enemyHealthText.setText(eHealthBar.toString());
-        this.binding.enemyArmorText.setText(eArmorBar.toString());
-
     }
 
     /**
@@ -311,7 +303,15 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
         return this.binding.getRoot();
     }
 
-    public void OnViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        // initiate stat bar
+        this.binding.healthText.setText(healthBar.toString());
+        this.binding.armorText.setText(armorBar.toString());
+        this.binding.expText.setText(expBar.toString());
+        this.binding.gearText.setText(gearBar.toString());
+        this.binding.enemyHealthText.setText(eHealthBar.toString());
+        this.binding.enemyArmorText.setText(eArmorBar.toString());
         // dialogue onclick
         this.binding.dialogueArea.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         // first time launching app should open start screen
         if (savedInstanceState == null) {
             this.mainView.displayFragment(new StartScreenFragment(this, this), false, "start");
+            //this.mainView.displayFragment(new CombatScreenFragment(this, this, p, e), false, "combat");
         }
 
     }
