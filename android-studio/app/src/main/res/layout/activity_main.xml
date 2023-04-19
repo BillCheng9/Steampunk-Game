@@ -9,6 +9,17 @@
     tools:layout_editor_absoluteX="-1dp"
     tools:layout_editor_absoluteY="15dp">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="edu.vassar.cmpu203.nextgenpos.view.CombatScreenFragment"
+        android:layout_width="410dp"
+        android:layout_height="913dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/buttonSelection"
         android:layout_width="408dp"
