@@ -17,7 +17,7 @@ import edu.vassar.cmpu203.nextgenpos.model.StatTypes.ExpStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.GearStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.HealthStat;
 
-public class MainMenuFragment extends Fragment implements IMainMenu{
+public class MainMenuFragment implements IMainMenu{
 
     FragmentMainMenuBinding binding;
     Listener listener;
@@ -60,13 +60,6 @@ public class MainMenuFragment extends Fragment implements IMainMenu{
                 listener.workshopClick();
             }
         });
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_menu, container, false);
     }
 
     /**

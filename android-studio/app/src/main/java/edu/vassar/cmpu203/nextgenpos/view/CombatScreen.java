@@ -1,17 +1,10 @@
 package edu.vassar.cmpu203.nextgenpos.view;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import edu.vassar.cmpu203.nextgenpos.databinding.ActivityMainBinding;
-import edu.vassar.cmpu203.nextgenpos.databinding.MainBinding;
 import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.ArmorStat;
@@ -22,7 +15,7 @@ import edu.vassar.cmpu203.nextgenpos.model.StatTypes.eArmorStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.eHealthStat;
 import edu.vassar.cmpu203.nextgenpos.model.UI.DialogueBar;
 
-public class CombatScreenFragment extends Fragment implements ICombatScreen {
+public class CombatScreen implements ICombatScreen {
 
     ActivityMainBinding binding;
     Listener listener;
@@ -45,10 +38,11 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
      * @param p Player
      * @param e Enemy
      */
-    public CombatScreenFragment(Listener listener, Player p, Enemy e) {
+    public CombatScreen(Context context, Listener listener, Player p, Enemy e) {
 
         // instantiate
         this.listener = listener;
+        this.binding = ActivityMainBinding.inflate(LayoutInflater.from(context));
 
         dialogue = new PlayerDialogue();
         healthBar = new HealthStat(p.health, p.maxHealth);
@@ -61,6 +55,56 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
         combatDialogue = new CombatDialogue();
         combatEnemyDialogue = new CombatDialogue(e);
         playerDialogue = new PlayerDialogue();
+
+        // initiate stat bar
+        this.binding.healthText.setText(healthBar.toString());
+        this.binding.armorText.setText(armorBar.toString());
+        this.binding.expText.setText(expBar.toString());
+        this.binding.gearText.setText(gearBar.toString());
+        this.binding.enemyHealthText.setText(eHealthBar.toString());
+        this.binding.enemyArmorText.setText(eArmorBar.toString());
+
+        displayStart();
+
+        // dialogue onclick
+        this.binding.dialogueArea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int dmg;
+                listener.dialogueClick();}
+        });
+
+        // button onclick
+        this.binding.lightAttackBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.lightClick();
+            }
+        });
+        this.binding.heavyAttackBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CombatScreen.this.listener.heavyClick();
+            }
+        });
+        this.binding.fleeBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CombatScreen.this.listener.fleeClick();
+            }
+        });
+        this.binding.invBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CombatScreen.this.listener.invClick();
+            }
+        });
+        this.binding.petBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CombatScreen.this.listener.petClick();
+            }
+        });
 
     }
 
@@ -233,7 +277,7 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
      * @param clickable boolean
      */
     public void dialogueClickable(boolean clickable) {
-        CombatScreenFragment.this.binding.dialogueArea.setClickable(clickable);
+        CombatScreen.this.binding.dialogueArea.setClickable(clickable);
     }
 
     /**
@@ -241,11 +285,11 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
      * @param clickable boolean
      */
     public void buttonClickable(boolean clickable) {
-        CombatScreenFragment.this.binding.lightAttackBTN.setClickable(clickable);
-        CombatScreenFragment.this.binding.heavyAttackBTN.setClickable(clickable);
-        CombatScreenFragment.this.binding.fleeBTN.setClickable(clickable);
-        CombatScreenFragment.this.binding.petBTN.setClickable(clickable);
-        CombatScreenFragment.this.binding.invBTN.setClickable(clickable);
+        CombatScreen.this.binding.lightAttackBTN.setClickable(clickable);
+        CombatScreen.this.binding.heavyAttackBTN.setClickable(clickable);
+        CombatScreen.this.binding.fleeBTN.setClickable(clickable);
+        CombatScreen.this.binding.petBTN.setClickable(clickable);
+        CombatScreen.this.binding.invBTN.setClickable(clickable);
     }
 
     /**
@@ -286,75 +330,8 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
         this.binding.expText.setText(expBar.toString());
     }
 
-    /**
-     * OnCreateView() overrides method of the same name from superclass. It's purpose is to
-     * inflate the xml layout associated with the fragment.
-     * @param inflater object to use to inflate the xml layout (create actual graphical widgets out of the xml declarations)
-     * @param container where the graphical widgets will be placed
-     * @param savedInstanceState any saved state information to be restored (null if none exists)
-     * @return the root of the layout that has just been inflated
-     */
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        this.binding = ActivityMainBinding.inflate(inflater);
+    public View getRootView() {
         return this.binding.getRoot();
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        // initiate stat bar
-        this.binding.healthText.setText(healthBar.toString());
-        this.binding.armorText.setText(armorBar.toString());
-        this.binding.expText.setText(expBar.toString());
-        this.binding.gearText.setText(gearBar.toString());
-        this.binding.enemyHealthText.setText(eHealthBar.toString());
-        this.binding.enemyArmorText.setText(eArmorBar.toString());
-
-        displayStart();
-
-        // dialogue onclick
-        this.binding.dialogueArea.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int dmg;
-                listener.dialogueClick();}
-        });
-
-        // button onclick
-        /*this.binding.lightAttackBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listener.lightClick();
-            }
-        });*/
-        this.binding.lightAttackBTN.setOnClickListener((View clickedView) -> {
-            CombatScreenFragment.this.listener.lightClick();
-        });
-        this.binding.heavyAttackBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CombatScreenFragment.this.listener.heavyClick();
-            }
-        });
-        this.binding.fleeBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CombatScreenFragment.this.listener.fleeClick();
-            }
-        });
-        this.binding.invBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CombatScreenFragment.this.listener.invClick();
-            }
-        });
-        this.binding.petBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CombatScreenFragment.this.listener.petClick();
-            }
-        });
     }
 
 }

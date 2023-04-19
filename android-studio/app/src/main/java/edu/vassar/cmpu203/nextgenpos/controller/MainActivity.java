@@ -14,15 +14,12 @@ import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Worker;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.model.UI.DialogueBar;
 import edu.vassar.cmpu203.nextgenpos.view.CombatDialogue;
-import edu.vassar.cmpu203.nextgenpos.view.CombatScreenFragment;
-import edu.vassar.cmpu203.nextgenpos.view.FragFactory;
+import edu.vassar.cmpu203.nextgenpos.view.CombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.ICombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.IMainMenu;
-import edu.vassar.cmpu203.nextgenpos.view.IMainView;
 import edu.vassar.cmpu203.nextgenpos.view.IStartScreen;
-import edu.vassar.cmpu203.nextgenpos.view.MainView;
 import edu.vassar.cmpu203.nextgenpos.view.PlayerDialogue;
-import edu.vassar.cmpu203.nextgenpos.view.StartScreenFragment;
+import edu.vassar.cmpu203.nextgenpos.view.StartScreen;
 
 public class MainActivity extends AppCompatActivity implements ICombatScreen.Listener, IMainMenu.Listener, IStartScreen.Listener {
     DialogueBar dialogueBar;
@@ -31,9 +28,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     PlayerDialogue playerDialogue;
     Enemy e;
     ICombatScreen combatScreen;
-    CombatScreenFragment cScreen;
-    StartScreenFragment sScreen;
-    IMainView mainView;
+    CombatScreen cScreen;
+    StartScreen sScreen;
 
     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -43,11 +39,6 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        // set the fragment factory
-        getSupportFragmentManager().setFragmentFactory(new FragFactory(this));
-
-        // recreate any fragments that was there before
         super.onCreate(savedInstanceState);
 
         // instantiate player: maxHealth, trueDefense, damage, experience, gears, pet
@@ -58,20 +49,11 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
 
         // instantiate dialogue bar
         this.dialogueBar = new DialogueBar();
-        cScreen = new CombatScreenFragment(this, p, enemyPicker());
-        //cScreen.dialogueClickable(false);
-        //cScreen.displayStart();
+        cScreen = new CombatScreen(this, this, p, enemyPicker());
+        sScreen = new StartScreen(this, this);
 
-        sScreen = new StartScreenFragment(this, this);
-
-        this.mainView = new MainView(this);
-        this.setContentView(mainView.getRootView());
-        this.mainView.displayFragment(new CombatScreenFragment(this, p, enemyPicker()), false, "combat");
-
-        // first time launching app should open start screen
-        //if (savedInstanceState == null) {
-            //this.mainView.displayFragment(new StartScreenFragment(this, this), false, "start");
-            //this.mainView.displayFragment(new CombatScreenFragment(this, p, e), false, "combat");
+        //this.setContentView(sScreen.getRootView());
+        this.setContentView(cScreen.getRootView());
         }
 
     /**
@@ -251,17 +233,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     }
 
     public void startClick(){
-        transaction.replace(R.id.fragmentContainerView, cScreen);
-        transaction.addToBackStack(null);
     }
 
     public void helpClick(){}
-
-    /**
-     * starts the game
-     */
-    @Override
-    public void startGame() {
-        this.mainView.displayFragment(new CombatScreenFragment(this, p, e), true, "combat");
-    }
 }

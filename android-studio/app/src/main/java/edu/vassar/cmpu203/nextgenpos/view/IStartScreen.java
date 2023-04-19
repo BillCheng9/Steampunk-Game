@@ -15,10 +15,5 @@ public interface IStartScreen {
          * Continues to the help menu
          */
         void helpClick();
-
-        /**
-         * starts the game
-         */
-        void startGame();
     }
 }
