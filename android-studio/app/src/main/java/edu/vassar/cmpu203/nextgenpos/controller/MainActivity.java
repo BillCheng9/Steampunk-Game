@@ -58,22 +58,21 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
 
         // instantiate dialogue bar
         this.dialogueBar = new DialogueBar();
-        cScreen = new CombatScreenFragment(this, this, p, enemyPicker());
-        cScreen.dialogueClickable(false);
-        cScreen.displayStart();
+        cScreen = new CombatScreenFragment(this, p, enemyPicker());
+        //cScreen.dialogueClickable(false);
+        //cScreen.displayStart();
 
         sScreen = new StartScreenFragment(this, this);
 
         this.mainView = new MainView(this);
         this.setContentView(mainView.getRootView());
+        this.mainView.displayFragment(new CombatScreenFragment(this, p, enemyPicker()), false, "combat");
 
         // first time launching app should open start screen
-        if (savedInstanceState == null) {
-            this.mainView.displayFragment(new StartScreenFragment(this, this), false, "start");
-            this.mainView.displayFragment(new CombatScreenFragment(this, this, p, e), false, "combat");
+        //if (savedInstanceState == null) {
+            //this.mainView.displayFragment(new StartScreenFragment(this, this), false, "start");
+            //this.mainView.displayFragment(new CombatScreenFragment(this, p, e), false, "combat");
         }
-
-    }
 
     /**
      * Picks a random enemy
@@ -263,6 +262,6 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      */
     @Override
     public void startGame() {
-        this.mainView.displayFragment(new CombatScreenFragment(this, this, p, e), true, "combat");
+        this.mainView.displayFragment(new CombatScreenFragment(this, p, e), true, "combat");
     }
 }

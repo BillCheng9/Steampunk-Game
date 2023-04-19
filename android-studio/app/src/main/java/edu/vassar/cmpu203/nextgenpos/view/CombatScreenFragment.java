@@ -41,16 +41,14 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
 
     /**
      * Constructor for CombatScreen
-     * @param context context from UI screen
      * @param listener listener for onClick
      * @param p Player
      * @param e Enemy
      */
-    public CombatScreenFragment(Context context, Listener listener, Player p, Enemy e) {
+    public CombatScreenFragment(Listener listener, Player p, Enemy e) {
 
         // instantiate
         this.listener = listener;
-        this.binding = ActivityMainBinding.inflate(LayoutInflater.from(context));
 
         dialogue = new PlayerDialogue();
         healthBar = new HealthStat(p.health, p.maxHealth);
@@ -304,7 +302,7 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         // initiate stat bar
         this.binding.healthText.setText(healthBar.toString());
         this.binding.armorText.setText(armorBar.toString());
@@ -312,6 +310,9 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
         this.binding.gearText.setText(gearBar.toString());
         this.binding.enemyHealthText.setText(eHealthBar.toString());
         this.binding.enemyArmorText.setText(eArmorBar.toString());
+
+        displayStart();
+
         // dialogue onclick
         this.binding.dialogueArea.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -321,11 +322,14 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
         });
 
         // button onclick
-        this.binding.lightAttackBTN.setOnClickListener(new View.OnClickListener() {
+        /*this.binding.lightAttackBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.lightClick();
             }
+        });*/
+        this.binding.lightAttackBTN.setOnClickListener((View clickedView) -> {
+            CombatScreenFragment.this.listener.lightClick();
         });
         this.binding.heavyAttackBTN.setOnClickListener(new View.OnClickListener() {
             @Override
