@@ -17,7 +17,7 @@ import edu.vassar.cmpu203.nextgenpos.model.StatTypes.ExpStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.GearStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.HealthStat;
 
-public class MainMenu extends Fragment implements IMainMenu{
+public class MainMenuFragment extends Fragment implements IMainMenu{
 
     FragmentMainMenuBinding binding;
     Listener listener;
@@ -27,11 +27,11 @@ public class MainMenu extends Fragment implements IMainMenu{
     GearStat gearBar;
 
 
-    public MainMenu() {
+    public MainMenuFragment() {
         // Required empty public constructor
     }
 
-    public MainMenu(Context context, Listener listener, Player p) {
+    public MainMenuFragment(Context context, Listener listener, Player p) {
 
         // instantiate
         this.listener = listener;

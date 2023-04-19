@@ -20,7 +20,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id=""
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="33dp"
