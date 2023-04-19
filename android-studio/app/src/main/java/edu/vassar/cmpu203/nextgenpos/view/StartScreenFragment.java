@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.button.MaterialButton;
+
 import edu.vassar.cmpu203.nextgenpos.databinding.FragmentStartScreenBinding;
 
 public class StartScreenFragment extends Fragment implements IStartScreen{
@@ -51,6 +53,6 @@ public class StartScreenFragment extends Fragment implements IStartScreen{
     }
 
     public void test() {
-        StartScreenFragment.this.binding.startBTN.setText("TEST");
+        this.binding.startBTN.setText("TEST");
     }
 }

@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         cScreen.dialogueClickable(false);
         cScreen.displayStart();
 
+        sScreen = new StartScreenFragment(this, this);
+
         this.mainView = new MainView(this);
         this.setContentView(mainView.getRootView());
 
