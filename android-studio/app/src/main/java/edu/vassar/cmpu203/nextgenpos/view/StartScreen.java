@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 
 import edu.vassar.cmpu203.nextgenpos.databinding.FragmentStartScreenBinding;
 
-public class StartScreen extends Fragment implements IStartScreen{
+public class StartScreen implements IStartScreen{
 
     FragmentStartScreenBinding binding;
     Listener listener;

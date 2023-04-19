@@ -1,15 +1,10 @@
 package edu.vassar.cmpu203.nextgenpos.view;
 
 import android.content.Context;
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
-import edu.vassar.cmpu203.nextgenpos.R;
 import edu.vassar.cmpu203.nextgenpos.databinding.FragmentMainMenuBinding;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.ArmorStat;
@@ -17,7 +12,7 @@ import edu.vassar.cmpu203.nextgenpos.model.StatTypes.ExpStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.GearStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.HealthStat;
 
-public class MainMenuFragment implements IMainMenu{
+public class MainMenu implements IMainMenu{
 
     FragmentMainMenuBinding binding;
     Listener listener;
@@ -27,11 +22,11 @@ public class MainMenuFragment implements IMainMenu{
     GearStat gearBar;
 
 
-    public MainMenuFragment() {
+    public MainMenu() {
         // Required empty public constructor
     }
 
-    public MainMenuFragment(Context context, Listener listener, Player p) {
+    public MainMenu(Context context, Listener listener, Player p) {
 
         // instantiate
         this.listener = listener;
