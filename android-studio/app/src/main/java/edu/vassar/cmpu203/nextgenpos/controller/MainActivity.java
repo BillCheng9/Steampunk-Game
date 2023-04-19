@@ -3,7 +3,9 @@ package edu.vassar.cmpu203.nextgenpos.controller;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
+import edu.vassar.cmpu203.nextgenpos.R;
 import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Bug;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Golem;
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     CombatScreenFragment cScreen;
     StartScreenFragment sScreen;
     IMainView mainView;
+
+    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
     /**
      * onCreate method that dictates the rootview and all functions to be started on start
@@ -249,7 +253,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     }
 
     public void startClick(){
-        sScreen.test();
+        transaction.replace(R.id.fragmentContainerView, cScreen);
+        transaction.addToBackStack(null);
     }
 
     public void helpClick(){}
