@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import edu.vassar.cmpu203.nextgenpos.databinding.ActivityMainBinding;
@@ -71,45 +72,6 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
         this.binding.enemyHealthText.setText(eHealthBar.toString());
         this.binding.enemyArmorText.setText(eArmorBar.toString());
 
-        // dialogue onclick
-        this.binding.dialogueArea.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int dmg;
-                listener.dialogueClick();}
-        });
-
-        // button onclick
-        this.binding.lightAttackBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listener.lightClick();
-            }
-        });
-        this.binding.heavyAttackBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CombatScreenFragment.this.listener.heavyClick();
-            }
-        });
-        this.binding.fleeBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CombatScreenFragment.this.listener.fleeClick();
-            }
-        });
-        this.binding.invBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CombatScreenFragment.this.listener.invClick();
-            }
-        });
-        this.binding.petBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CombatScreenFragment.this.listener.petClick();
-            }
-        });
     }
 
     /**
@@ -349,14 +311,46 @@ public class CombatScreenFragment extends Fragment implements ICombatScreen {
         return this.binding.getRoot();
     }
 
+    public void OnViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        // dialogue onclick
+        this.binding.dialogueArea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int dmg;
+                listener.dialogueClick();}
+        });
 
-    /**
-     * Gets the rootView
-     * @return root view
-     */
-    public View getRootView() {
-        return binding.getRoot();
+        // button onclick
+        this.binding.lightAttackBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.lightClick();
+            }
+        });
+        this.binding.heavyAttackBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CombatScreenFragment.this.listener.heavyClick();
+            }
+        });
+        this.binding.fleeBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CombatScreenFragment.this.listener.fleeClick();
+            }
+        });
+        this.binding.invBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CombatScreenFragment.this.listener.invClick();
+            }
+        });
+        this.binding.petBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CombatScreenFragment.this.listener.petClick();
+            }
+        });
     }
-
 
 }

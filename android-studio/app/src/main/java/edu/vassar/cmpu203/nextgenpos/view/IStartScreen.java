@@ -21,6 +21,4 @@ public interface IStartScreen {
          */
         void startGame();
     }
-
-    View getRootView();
 }

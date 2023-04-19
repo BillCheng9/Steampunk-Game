@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     Enemy e;
     ICombatScreen combatScreen;
     CombatScreenFragment cScreen;
+    StartScreenFragment sScreen;
     IMainView mainView;
 
     /**
@@ -245,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     }
 
     public void startClick(){
-        startGame();
+        sScreen.test();
     }
 
     public void helpClick(){}

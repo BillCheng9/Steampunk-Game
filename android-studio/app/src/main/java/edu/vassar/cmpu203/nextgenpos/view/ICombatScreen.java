@@ -39,10 +39,4 @@ public interface ICombatScreen {
         void dialogueClick();
     }
 
-    /**
-     * Gets rootView
-     * @return root view
-     */
-    View getRootView();
-
 }
