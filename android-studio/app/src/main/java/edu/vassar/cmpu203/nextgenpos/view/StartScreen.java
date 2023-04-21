@@ -6,16 +6,16 @@ import android.view.View;
 
 import androidx.fragment.app.Fragment;
 
-import edu.vassar.cmpu203.nextgenpos.databinding.FragmentStartScreenBinding;
+import edu.vassar.cmpu203.nextgenpos.databinding.StartScreenBinding;
 
 public class StartScreen implements IStartScreen{
 
-    FragmentStartScreenBinding binding;
+    StartScreenBinding binding;
     Listener listener;
 
     public StartScreen(Context context, Listener listener){
         this.listener = listener;
-        this.binding = FragmentStartScreenBinding.inflate(LayoutInflater.from(context));
+        this.binding = StartScreenBinding.inflate(LayoutInflater.from(context));
 
         this.binding.startBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +39,7 @@ public class StartScreen implements IStartScreen{
 
 
     public View getRootView() {
-        return binding.getRoot();
+        return this.binding.getRoot();
     }
+
 }

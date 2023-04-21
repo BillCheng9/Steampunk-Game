@@ -3,9 +3,7 @@ package edu.vassar.cmpu203.nextgenpos.controller;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
-import edu.vassar.cmpu203.nextgenpos.R;
 import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Bug;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Golem;
@@ -17,11 +15,10 @@ import edu.vassar.cmpu203.nextgenpos.view.CombatDialogue;
 import edu.vassar.cmpu203.nextgenpos.view.CombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.ICombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.IMainMenu;
-import edu.vassar.cmpu203.nextgenpos.view.IStartScreen;
 import edu.vassar.cmpu203.nextgenpos.view.PlayerDialogue;
 import edu.vassar.cmpu203.nextgenpos.view.StartScreen;
 
-public class MainActivity extends AppCompatActivity implements ICombatScreen.Listener, IMainMenu.Listener, IStartScreen.Listener {
+public class MainActivity extends AppCompatActivity implements ICombatScreen.Listener, IMainMenu.Listener {
     DialogueBar dialogueBar;
     Player p;
     CombatDialogue combatDialogue;
@@ -30,8 +27,6 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     ICombatScreen combatScreen;
     CombatScreen cScreen;
     StartScreen sScreen;
-
-    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
     /**
      * onCreate method that dictates the rootview and all functions to be started on start
@@ -50,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         // instantiate dialogue bar
         this.dialogueBar = new DialogueBar();
         cScreen = new CombatScreen(this, this, p, enemyPicker());
-        sScreen = new StartScreen(this, this);
 
         //this.setContentView(sScreen.getRootView());
         this.setContentView(cScreen.getRootView());
