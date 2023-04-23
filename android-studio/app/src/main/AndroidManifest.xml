@@ -16,6 +16,10 @@
             android:exported="true">
         </activity>
         <activity
+            android:name=".controller.HelpActivity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".controller.StartMenuActivity"
             android:exported="true"
             >

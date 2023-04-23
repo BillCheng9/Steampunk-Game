@@ -7,6 +7,9 @@
 
     <LinearLayout
         android:id="@+id/itemScreen"
+        android:gravity="center"
+        android:paddingStart="8sp"
+        android:paddingEnd="8sp"
         android:layout_width="match_parent"
         android:layout_height="630dp"
         android:orientation="vertical"
@@ -23,15 +26,18 @@
 
             <TextView
                 android:id="@+id/textArmorPlating1"
+                android:gravity="center"
+                android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/item_armorPlate1" />
 
             <TextView
                 android:id="@+id/defArmorPlating1"
+                android:textSize="14sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="@string/desc_armorPlate1" />
         </LinearLayout>
 
         <LinearLayout
@@ -42,9 +48,18 @@
 
             <TextView
                 android:id="@+id/textArmorPlating2"
+                android:textSize="18sp"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/item_armorPlate2" />
+
+            <TextView
+                android:id="@+id/defArmorPlating2"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_armorPlate2" />
         </LinearLayout>
 
 
@@ -56,9 +71,18 @@
 
             <TextView
                 android:id="@+id/textArmorPlating3"
+                android:textSize="18sp"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/item_armorPlate3" />
+
+            <TextView
+                android:id="@+id/defArmorPlating3"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_armorPlate3" />
         </LinearLayout>
 
         <LinearLayout
@@ -69,9 +93,18 @@
 
             <TextView
                 android:id="@+id/textGauntlets1"
+                android:textSize="18sp"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/item_gauntlets1" />
+
+            <TextView
+                android:id="@+id/defGauntlets1"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_gauntlets1" />
         </LinearLayout>
 
         <LinearLayout
@@ -82,9 +115,18 @@
 
             <TextView
                 android:id="@+id/textGauntlets2"
+                android:textSize="18sp"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/item_gauntlets2" />
+
+            <TextView
+                android:id="@+id/defGauntlets2"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_gauntlets2" />
         </LinearLayout>
 
         <LinearLayout
@@ -95,9 +137,18 @@
 
             <TextView
                 android:id="@+id/textNanites1"
+                android:textSize="18sp"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/item_nanites1" />
+
+            <TextView
+                android:id="@+id/defNanites1"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_nanites1" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,9 +159,18 @@
 
             <TextView
                 android:id="@+id/textNanites2"
+                android:textSize="18sp"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/item_nanites2" />
+
+            <TextView
+                android:id="@+id/defNanites2"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_nanites2" />
         </LinearLayout>
 
         <LinearLayout
@@ -121,22 +181,18 @@
 
             <TextView
                 android:id="@+id/textNanites3"
+                android:textSize="18sp"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/item_nanites3" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/implants1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textImplants1"
+                android:id="@+id/defNanites3"
+                android:textSize="14sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/item_implants1" />
+                android:text="@string/desc_nanites3" />
         </LinearLayout>
 
         <LinearLayout
@@ -147,9 +203,18 @@
 
             <TextView
                 android:id="@+id/textIllegal1"
+                android:textSize="18sp"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/item_illegal1" />
+
+            <TextView
+                android:id="@+id/defIllegal1"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_illegal1" />
         </LinearLayout>
     </LinearLayout>
 
