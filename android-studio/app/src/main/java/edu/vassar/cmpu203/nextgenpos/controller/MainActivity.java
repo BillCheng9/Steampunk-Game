@@ -1,5 +1,6 @@
 package edu.vassar.cmpu203.nextgenpos.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -186,8 +187,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      */
     @Override
     public void invClick() {
-        cScreen.displayInv();
-
+        switchActivitiesInventory();
     }
 
     /**
@@ -231,4 +231,9 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     }
 
     public void helpClick(){}
+
+    private void switchActivitiesInventory() {
+        Intent switchActivityIntent = new Intent(this, InventoryActivity.class);
+        startActivity(switchActivityIntent);
+    }
 }

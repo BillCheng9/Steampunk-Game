@@ -27,4 +27,8 @@ public class Inventory implements IInventory {
         Inventory.this.binding.sword.setClickable(clickable);
     }
 
+    public View getRootView() {
+        return this.binding.getRoot();
+    }
+
 }
