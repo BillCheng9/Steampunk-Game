@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        getSupportActionBar().hide();
         // instantiate player: maxHealth, trueDefense, damage, experience, gears, pet
         this.p = new Player(10, 5, 3, 0, 25, "None");
         // instantiate combat and player dialogue
