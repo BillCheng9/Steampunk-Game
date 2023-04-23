@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/itemScreen"
+        android:layout_width="match_parent"
+        android:layout_height="630dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/armorPlating1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textArmorPlating1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_armorPlate1" />
+
+            <TextView
+                android:id="@+id/defArmorPlating1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/armorPlating2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textArmorPlating2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_armorPlate2" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/armorPlating3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textArmorPlating3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_armorPlate3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gauntlets1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textGauntlets1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_gauntlets1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gauntlets2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textGauntlets2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_gauntlets2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nanites1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textNanites1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_nanites1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nanites2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textNanites2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_nanites2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nanites3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textNanites3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_nanites3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/implants1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textImplants1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_implants1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/illegal1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textIllegal1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_illegal1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonSection"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/backBTN" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

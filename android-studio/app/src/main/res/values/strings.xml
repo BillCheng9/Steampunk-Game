@@ -31,4 +31,18 @@
     <string name="startBTN">START</string>
     <string name="helpBTN">HELP</string>
     <string name="startTitle">STEAMOCRACY</string>
+
+    <!-- help menu screen -->
+    <string name="backBTN">BACK</string>
+    <string name="item_armorPlate1">ARMOR PLATES</string>
+    <string name="desc_armorPlate1">SIMPLE ARMOR PLATING MADE FROM STEEL. OFFERS A LOWLY +1 TO DEFENSE STATS.</string>
+    <string name="item_gauntlets1">MECHA-GAUNTLETS</string>
+    <string name="item_nanites1">XT-1 NANITES</string>
+    <string name="item_armorPlate2">DENSE ALLOY PLATES</string>
+    <string name="item_gauntlets2">CBA IMPLANTS</string>
+    <string name="item_nanites2">XT-3 NANITES</string>
+    <string name="item_implants1">CQC SIMULATION IMPLANTS</string>
+    <string name="item_illegal1">ILLEGAL CYBERNETIC ENHANCEMENTS</string>
+    <string name="item_armorPlate3">GOLD-TITANIUM PLATES</string>
+    <string name="item_nanites3">XT-PROTO NANITES</string>
 </resources>
