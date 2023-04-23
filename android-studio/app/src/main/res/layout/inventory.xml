@@ -8,7 +8,7 @@
     tools:layout_editor_absoluteY="0dp">
 
     <Button
-        android:id="@+id/sword"
+        android:id="@+id/steelPlates"
         android:layout_width="100dp"
         android:layout_height="99dp"
         android:layout_weight="1"
@@ -17,8 +17,8 @@
         android:scaleType="centerInside"
         app:icon="@drawable/_218741"
         app:iconSize="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/sword2"
-        app:layout_constraintEnd_toStartOf="@+id/sword3"
+        app:layout_constraintBottom_toTopOf="@+id/xt1Nanites"
+        app:layout_constraintEnd_toStartOf="@+id/tunstenPlates"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inventoryText"
@@ -27,7 +27,7 @@
         tools:text="sword" />
 
     <Button
-        android:id="@+id/sword2"
+        android:id="@+id/xt1Nanites"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_weight="1"
@@ -36,17 +36,17 @@
         android:scaleType="centerInside"
         app:icon="@drawable/_218741"
         app:iconSize="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/sword9"
-        app:layout_constraintEnd_toStartOf="@+id/sword4"
+        app:layout_constraintBottom_toTopOf="@+id/mechaGauntlets"
+        app:layout_constraintEnd_toStartOf="@+id/xt3Nanites"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sword"
+        app:layout_constraintTop_toBottomOf="@+id/steelPlates"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints"
         tools:text="sword" />
 
     <Button
-        android:id="@+id/sword3"
+        android:id="@+id/tunstenPlates"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_weight="1"
@@ -55,17 +55,17 @@
         android:scaleType="centerInside"
         app:icon="@drawable/_218741"
         app:iconSize="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/sword4"
-        app:layout_constraintEnd_toStartOf="@+id/sword5"
+        app:layout_constraintBottom_toTopOf="@+id/xt3Nanites"
+        app:layout_constraintEnd_toStartOf="@+id/chromiumPlates"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sword"
+        app:layout_constraintStart_toEndOf="@+id/steelPlates"
         app:layout_constraintTop_toBottomOf="@+id/inventoryText"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints"
         tools:text="sword" />
 
     <Button
-        android:id="@+id/sword4"
+        android:id="@+id/xt3Nanites"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_weight="1"
@@ -74,17 +74,17 @@
         android:scaleType="centerInside"
         app:icon="@drawable/_218741"
         app:iconSize="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/sword8"
-        app:layout_constraintEnd_toStartOf="@+id/sword6"
+        app:layout_constraintBottom_toTopOf="@+id/cbaImplants"
+        app:layout_constraintEnd_toStartOf="@+id/xtpNanites"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sword2"
-        app:layout_constraintTop_toBottomOf="@+id/sword3"
+        app:layout_constraintStart_toEndOf="@+id/xt1Nanites"
+        app:layout_constraintTop_toBottomOf="@+id/tunstenPlates"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints"
         tools:text="sword" />
 
     <Button
-        android:id="@+id/sword5"
+        android:id="@+id/chromiumPlates"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_weight="1"
@@ -93,17 +93,17 @@
         android:scaleType="centerInside"
         app:icon="@drawable/_218741"
         app:iconSize="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/sword6"
+        app:layout_constraintBottom_toTopOf="@+id/xtpNanites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sword3"
+        app:layout_constraintStart_toEndOf="@+id/tunstenPlates"
         app:layout_constraintTop_toBottomOf="@+id/inventoryText"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints"
         tools:text="sword" />
 
     <Button
-        android:id="@+id/sword6"
+        android:id="@+id/xtpNanites"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_weight="1"
@@ -112,17 +112,17 @@
         android:scaleType="centerInside"
         app:icon="@drawable/_218741"
         app:iconSize="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/sword7"
+        app:layout_constraintBottom_toTopOf="@+id/ice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sword4"
-        app:layout_constraintTop_toBottomOf="@+id/sword5"
+        app:layout_constraintStart_toEndOf="@+id/xt3Nanites"
+        app:layout_constraintTop_toBottomOf="@+id/chromiumPlates"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints"
         tools:text="sword" />
 
     <Button
-        android:id="@+id/sword7"
+        android:id="@+id/ice"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_weight="1"
@@ -134,14 +134,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sword8"
-        app:layout_constraintTop_toBottomOf="@+id/sword6"
+        app:layout_constraintStart_toEndOf="@+id/cbaImplants"
+        app:layout_constraintTop_toBottomOf="@+id/xtpNanites"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints"
         tools:text="sword" />
 
     <Button
-        android:id="@+id/sword8"
+        android:id="@+id/cbaImplants"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_weight="1"
@@ -151,16 +151,16 @@
         app:icon="@drawable/_218741"
         app:iconSize="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/sword7"
+        app:layout_constraintEnd_toStartOf="@+id/ice"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sword9"
-        app:layout_constraintTop_toBottomOf="@+id/sword4"
+        app:layout_constraintStart_toEndOf="@+id/mechaGauntlets"
+        app:layout_constraintTop_toBottomOf="@+id/xt3Nanites"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints"
         tools:text="sword" />
 
     <Button
-        android:id="@+id/sword9"
+        android:id="@+id/mechaGauntlets"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_weight="1"
@@ -170,10 +170,10 @@
         app:icon="@drawable/_218741"
         app:iconSize="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/sword8"
+        app:layout_constraintEnd_toStartOf="@+id/cbaImplants"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sword2"
+        app:layout_constraintTop_toBottomOf="@+id/xt1Nanites"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints"
         tools:text="sword" />
