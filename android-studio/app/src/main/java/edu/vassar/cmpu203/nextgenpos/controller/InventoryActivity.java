@@ -26,51 +26,74 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
     }
 
     /**
-     * Displays item 1 details
+     * Brings up steel armor plates details
      */
     @Override
-    public void item1Click() {
+    public void plates1Click() {
 
     }
 
+    /**
+     *
+     */
     @Override
-    public void item2Click() {
+    public void plates2Click() {
 
     }
 
+    /**
+     *
+     */
     @Override
-    public void item3Click() {
+    public void plates3Click() {
 
     }
 
+    /**
+     *
+     */
     @Override
-    public void item4Click() {
+    public void nanites1Click() {
 
     }
 
+    /**
+     *
+     */
     @Override
-    public void item5Click() {
+    public void nanites2Click() {
 
     }
 
+    /**
+     *
+     */
     @Override
-    public void item6Click() {
+    public void nanites3Click() {
 
     }
 
+    /**
+     *
+     */
     @Override
-    public void item7Click() {
+    public void gauntlets1Click() {
 
     }
 
+    /**
+     *
+     */
     @Override
-    public void item8Click() {
+    public void implants1CLick() {
 
     }
 
+    /**
+     *
+     */
     @Override
-    public void item9Click() {
+    public void illegal1Click() {
 
     }
-
 }

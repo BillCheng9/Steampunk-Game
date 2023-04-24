@@ -6,22 +6,22 @@ public interface IInventory {
         /**
          * Brings up item 1 details
          */
-        void item1Click();
+        void plates1Click();
 
-        void item2Click();
+        void plates2Click();
 
-        void item3Click();
+        void plates3Click();
 
-        void item4Click();
+        void nanites1Click();
 
-        void item5Click();
+        void nanites2Click();
 
-        void item6Click();
+        void nanites3Click();
 
-        void item7Click();
+        void gauntlets1Click();
 
-        void item8Click();
+        void implants1CLick();
 
-        void item9Click();
+        void illegal1Click();
     }
 }

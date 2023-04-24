@@ -1,6 +1,5 @@
 package edu.vassar.cmpu203.nextgenpos.model;
 
-import edu.vassar.cmpu203.nextgenpos.model.PetTypes.Drone;
 
 public class Player {
     public int experience, gears, health, defense, damage, maxHealth, trueDefense;
@@ -18,8 +17,6 @@ public class Player {
         this.damage = damage;
         this.experience = experience;
     }
-
-    Pet p = new Drone();
 
     /**
      * Calculates whether or not the Player hits a light attack

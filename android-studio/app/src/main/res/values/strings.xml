@@ -34,24 +34,29 @@
 
     <!-- help menu screen -->
     <string name="backBTN">BACK</string>
+
     <string name="item_armorPlate1">STEEL ARMOR PLATES</string>
     <string name="desc_armorPlate1">SIMPLE ARMOR PLATING MADE FROM STEEL. OFFERS A LOWLY +1 TO ARMOR.</string>
-    <string name="item_gauntlets1">MECHA-GAUNTLETS</string>
-    <string name="desc_gauntlets1">GAUNTLETS MADE WITH SHARPENED STEEL TO ENHANCE FIGHTING CAPABILITIES. OFFERS A +1 TO DAMAGE.</string>
-    <string name="item_nanites1">XT-1 NANITES</string>
-    <string name="desc_nanites1">A SET OF NANITES THAT INCREASES CORE EFFICIENCY. OFFERS A +2 TO MAX HEALTH.</string>
     <string name="item_armorPlate2">TUNGSTEN-STEEL PLATES</string>
     <string name="desc_armorPlate2">ADVANCED ARMOR PLATING MADE FROM STRONG TUNGSTEN-STEEL ALLOY. OFFERS A +2 TO ARMOR.</string>
-    <string name="item_gauntlets2">CBA IMPLANTS</string>
-    <string name="desc_gauntlets2">IMPLANTS THAT PROVIDE AN EXTRA BOOST OF STRENGTH TO THE GAUNTLETS BY IMPLEMENTING GAS PISTONS. OFFERS A +2 TO DAMAGE.</string>
-    <string name="item_nanites2">XT-3 NANITES</string>
-    <string name="desc_nanites2">A SET OF NANITES THAT GREATLY INCREASES CORE EFFICIENCY AND STABILITY. OFFERS A +5 TO MAX HEALTH.</string>
-    <string name="item_implants1">CQC SIMULATION IMPLANTS</string>
-    <string name="desc_implants1">MILITARY-GRADE IMPLANTS THAT INSTALLS UCO-SO COMBAT PROCEDURES. OFFERS A +2 TO DAMAGE AND +1 TO ARMOR.</string>
-    <string name="item_illegal1">ILLEGAL CYBERNETIC ENHANCEMENTS</string>
-    <string name="desc_illegal1">ILLEGAL ENHANCEMENTS FOUND ON THE BLACK MARKET. OFFERS RANDOM BUFFS/DEBUFFS.</string>
     <string name="item_armorPlate3">CHROMIUM-TITANIUM PLATES</string>
     <string name="desc_armorPlate3">ADVANCED ARMOR PLATING MADE FROM STRONG CHROMIUM-TITANIUM ALLOY. OFFERS A +3 TO ARMOR.</string>
+
+    <string name="item_gauntlets1">MECHA-GAUNTLETS</string>
+    <string name="desc_gauntlets1">GAUNTLETS MADE WITH SHARPENED STEEL TO ENHANCE FIGHTING CAPABILITIES. OFFERS A +1 TO DAMAGE.</string>
+    <string name="item_gauntlets2">CBA IMPLANTS</string>
+    <string name="desc_gauntlets2">IMPLANTS THAT PROVIDE AN EXTRA BOOST OF STRENGTH TO THE GAUNTLETS BY IMPLEMENTING GAS PISTONS. OFFERS A +2 TO DAMAGE.</string>
+
+    <string name="item_nanites1">XT-1 NANITES</string>
+    <string name="desc_nanites1">A SET OF NANITES THAT INCREASES CORE EFFICIENCY. OFFERS A +2 TO MAX HEALTH.</string>
+    <string name="item_nanites2">XT-3 NANITES</string>
+    <string name="desc_nanites2">A SET OF NANITES THAT GREATLY INCREASES CORE EFFICIENCY AND STABILITY. OFFERS A +5 TO MAX HEALTH.</string>
     <string name="item_nanites3">XT-PROTO NANITES</string>
     <string name="desc_nanites3">A SET OF STATE-OF-THE-ART NANITES THAT PROVIDES OVERCLOCKING CAPABILITY FOR THE STANDARD CORES. OFFERS A +9 TO MAX HEALTH.</string>
-</resources>
+
+    <string name="item_implants1">CQC SIMULATION IMPLANTS</string>
+    <string name="desc_implants1">MILITARY-GRADE IMPLANTS THAT INSTALLS UCO-SO COMBAT PROCEDURES. OFFERS A +2 TO DAMAGE AND +1 TO ARMOR.</string>
+
+    <string name="item_illegal1">ILLEGAL CYBERNETIC ENHANCEMENTS</string>
+    <string name="desc_illegal1">ILLEGAL ENHANCEMENTS FOUND ON THE BLACK MARKET. OFFERS 10% INCREASE IN LOOTED GEARS.</string>
+   </resources>

@@ -18,55 +18,55 @@ public class Inventory implements IInventory {
         this.binding.steelPlates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.item1Click();
+                listener.plates1Click();
             }
         });
-        this.binding.tunstenPlates.setOnClickListener(new View.OnClickListener() {
+        this.binding.tungstenPlates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.item2Click();
+                listener.plates2Click();
             }
         });
         this.binding.chromiumPlates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.item3Click();
+                listener.plates3Click();
             }
         });
         this.binding.xt1Nanites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.item4Click();
+                listener.nanites1Click();
             }
         });
         this.binding.xt3Nanites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.item5Click();
+                listener.nanites2Click();
             }
         });
         this.binding.xtpNanites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.item6Click();
+                listener.nanites3Click();
             }
         });
         this.binding.mechaGauntlets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.item7Click();
+                listener.gauntlets1Click();
             }
         });
         this.binding.cbaImplants.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.item8Click();
+                listener.implants1CLick();
             }
         });
         this.binding.ice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.item9Click();
+                listener.illegal1Click();
             }
         });
 
@@ -74,7 +74,14 @@ public class Inventory implements IInventory {
 
     public void buttonClickable(boolean clickable) {
         Inventory.this.binding.steelPlates.setClickable(clickable);
-        Inventory.this.binding.tunstenPlates.setClickable(clickable);
+        Inventory.this.binding.tungstenPlates.setClickable(clickable);
+        Inventory.this.binding.chromiumPlates.setClickable(clickable);
+        Inventory.this.binding.xt1Nanites.setClickable(clickable);
+        Inventory.this.binding.xt3Nanites.setClickable(clickable);
+        Inventory.this.binding.xtpNanites.setClickable(clickable);
+        Inventory.this.binding.mechaGauntlets.setClickable(clickable);
+        Inventory.this.binding.cbaImplants.setClickable(clickable);
+        Inventory.this.binding.ice.setClickable(clickable);
     }
 
     public View getRootView() {
