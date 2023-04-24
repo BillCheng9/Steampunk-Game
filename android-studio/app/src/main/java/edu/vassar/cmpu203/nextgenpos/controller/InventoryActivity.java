@@ -33,4 +33,44 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
 
     }
 
+    @Override
+    public void item2Click() {
+
+    }
+
+    @Override
+    public void item3Click() {
+
+    }
+
+    @Override
+    public void item4Click() {
+
+    }
+
+    @Override
+    public void item5Click() {
+
+    }
+
+    @Override
+    public void item6Click() {
+
+    }
+
+    @Override
+    public void item7Click() {
+
+    }
+
+    @Override
+    public void item8Click() {
+
+    }
+
+    @Override
+    public void item9Click() {
+
+    }
+
 }
