@@ -1,7 +1,13 @@
 package edu.vassar.cmpu203.nextgenpos.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Player {
+import androidx.annotation.NonNull;
+
+import edu.vassar.cmpu203.nextgenpos.model.PetTypes.Drone;
+
+public class Player implements Parcelable {
     public int experience, gears, health, defense, damage, maxHealth, trueDefense;
 
     /**
@@ -17,6 +23,40 @@ public class Player {
         this.damage = damage;
         this.experience = experience;
     }
+
+
+    protected Player(Parcel in) {
+        experience = in.readInt();
+        gears = in.readInt();
+        health = in.readInt();
+        defense = in.readInt();
+        damage = in.readInt();
+        maxHealth = in.readInt();
+        trueDefense = in.readInt();
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeInt(experience);
+        parcel.writeInt(gears);
+        parcel.writeInt(health);
+        parcel.writeInt(defense);
+        parcel.writeInt(damage);
+        parcel.writeInt(maxHealth);
+        parcel.writeInt(trueDefense);
+    }
+
+    public static final Creator<Player> CREATOR = new Creator<Player>() {
+        @Override
+        public Player createFromParcel(Parcel in) {
+            return new Player(in);
+        }
+
+        @Override
+        public Player[] newArray(int size) {
+            return new Player[size];
+        }
+    };
 
     /**
      * Calculates whether or not the Player hits a light attack
@@ -53,6 +93,7 @@ public class Player {
      */
     public void accessInv() {
     }
+
 
     /**
      * Calculates whether or not the Player successfully flees
@@ -97,4 +138,10 @@ public class Player {
         gears += gear;
         experience += exp;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
 }

@@ -2,6 +2,8 @@ package edu.vassar.cmpu203.nextgenpos.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
+import android.provider.SyncStateContract.Constants;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,15 +21,15 @@ import edu.vassar.cmpu203.nextgenpos.view.IMainMenu;
 import edu.vassar.cmpu203.nextgenpos.view.PlayerDialogue;
 import edu.vassar.cmpu203.nextgenpos.view.StartScreen;
 
-public class MainActivity extends AppCompatActivity implements ICombatScreen.Listener, IMainMenu.Listener {
+public class MainActivity extends AppCompatActivity implements ICombatScreen.Listener{
     DialogueBar dialogueBar;
     Player p;
     CombatDialogue combatDialogue;
     PlayerDialogue playerDialogue;
     Enemy e;
-    ICombatScreen combatScreen;
     CombatScreen cScreen;
-    StartScreen sScreen;
+
+    boolean end = false;
 
     /**
      * onCreate method that dictates the rootview and all functions to be started on start
@@ -48,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         this.dialogueBar = new DialogueBar();
         cScreen = new CombatScreen(this, this, p, enemyPicker());
 
-        //this.setContentView(sScreen.getRootView());
         this.setContentView(cScreen.getRootView());
         }
 
@@ -89,12 +90,13 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             int exp = e.getExp();
             p.onEnd(e.getGear(), e.getExp());
             cScreen.renewExpGear(p);
-            cScreen.displayEndWin(gear, exp);
             cScreen.buttonClickable(false);
+            cScreen.displayEndWin(gear, exp);
+            winCombat();
         }
         else if ( !p.healthCheck() ) {
-            cScreen.displayEndLose();
             cScreen.buttonClickable(false);
+            endCombat();
         }
     }
 
@@ -102,6 +104,9 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      * Logic for Enemy turn, and sets buttonClickable to true
      */
     private void enemyTurn() {
+        if (end) {
+            switchActivitiesContinue();
+        }
         cScreen.dialogueClickable(false);
         cScreen.removeContinueText();
         int eAtkChoice = e.pickAttack();
@@ -212,11 +217,14 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         cScreen.displayContinueText();
     }
 
-    /**
-     *
-     */
-    @Override
-    public void workshopClick() {
+    public void endCombat(){
+        cScreen.dialogueClickable(true);
+        cScreen.displayEndLose();
+    }
+
+    public void winCombat(){
+        cScreen.dialogueClickable(true);
+        end = true;
     }
 
     /**
@@ -227,13 +235,25 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         enemyTurn();
     }
 
-    public void startClick(){
+    private void switchActivitiesInventory() {
+        Intent i = new Intent(this, InventoryActivity.class);
+        i.putExtra("curPlayer", p);
+        startActivity(i);
     }
 
-    public void helpClick(){}
+    private void switchActivitiesContinue() {
+        Intent i = new Intent(this, ContinueActivity.class);
+        i.putExtra("curPlayer", p);
+        startActivity(i);
+    }
 
-    private void switchActivitiesInventory() {
-        Intent switchActivityIntent = new Intent(this, InventoryActivity.class);
-        startActivity(switchActivityIntent);
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
     }
 }
