@@ -4,22 +4,19 @@ import edu.vassar.cmpu203.nextgenpos.model.PetTypes.Drone;
 
 public class Player {
     public int experience, gears, health, defense, damage, maxHealth, trueDefense;
-    public String petAbility, pet;
 
     /**
      * Creates a Player entity with (temporary) numbers for stats
      */
-    public Player(int maxHealth, int trueDefense, int damage, int experience, int gears, String pet){
+    public Player(int maxHealth, int trueDefense, int damage, int experience, int gears){
         //Placeholder values for first iteration
         this.health = maxHealth;
         this.maxHealth = maxHealth;
         this.gears = gears;
         this.defense = trueDefense;
         this.trueDefense = trueDefense;
-        this.petAbility = null;
         this.damage = damage;
         this.experience = experience;
-        this.pet = "F.A.S. Drone";
     }
 
     Pet p = new Drone();
@@ -58,13 +55,6 @@ public class Player {
      * Opens up the Player inventory and allows the User to equip/unequip different items and pets
      */
     public void accessInv() {
-    }
-
-    /**
-     * Activate the Player's Pet Ability corresponding to the Pet currently equipped
-     */
-    public void triggerPet() {
-        petAbility = p.petAbility();
     }
 
     /**

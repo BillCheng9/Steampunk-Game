@@ -26,23 +26,16 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
 
         getSupportActionBar().hide();
         startScreen = new StartScreen(this, this);
-        //mp = MediaPlayer.create(this, R.raw.start_menu_music);
 
         this.setContentView(startScreen.getRootView());
     }
-
-    /*@Override
-    protected void onResume() {
-        super.onResume();
-        mp.start();
-    }*/
 
     /**
      * Continues on to the combat screen
      */
     @Override
     public void startClick() {
-        switchActivities();
+        switchActivities("START");
     }
 
     /**
@@ -50,11 +43,17 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
      */
     @Override
     public void helpClick() {
-
+        switchActivities("HELP");
     }
 
-    private void switchActivities() {
-        Intent switchActivityIntent = new Intent(this, MainActivity.class);
-        startActivity(switchActivityIntent);
+    private void switchActivities(String activity) {
+        if (activity.equals("START")) {
+            Intent switchActivityIntent = new Intent(this, MainActivity.class);
+            startActivity(switchActivityIntent);
+        }
+        else if (activity.equals("HELP")) {
+            Intent switchActivityIntent = new Intent(this, HelpActivity.class);
+            startActivity(switchActivityIntent);
+        }
     }
 }
