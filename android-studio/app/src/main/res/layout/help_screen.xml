@@ -3,16 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/steampunkBlueFade"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/itemScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
         android:gravity="center"
+        android:orientation="vertical"
         android:paddingStart="8sp"
         android:paddingEnd="8sp"
-        android:layout_width="match_parent"
-        android:layout_height="630dp"
-        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/buttonSection"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,44 +26,56 @@
             android:id="@+id/armorPlating1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textArmorPlating1"
-                android:gravity="center"
-                android:textSize="18sp"
+                android:textColor="@color/steampunkRed"
+                android:fontFamily="@font/trade_winds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/item_armorPlate1" />
+                android:gravity="center"
+                android:text="@string/item_armorPlate1"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/defArmorPlating1"
-                android:textSize="14sp"
+                android:textColor="@color/steampunkRedFade"
+                android:gravity="center"
+                android:fontFamily="@font/trade_winds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/desc_armorPlate1" />
+                android:text="@string/desc_armorPlate1"
+                android:textSize="11sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/armorPlating2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textArmorPlating2"
-                android:textSize="18sp"
-                android:gravity="center"
+                android:fontFamily="@font/trade_winds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/item_armorPlate2" />
+                android:textColor="@color/steampunkRed"
+                android:gravity="center"
+                android:text="@string/item_armorPlate2"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/defArmorPlating2"
-                android:textSize="14sp"
+                android:fontFamily="@font/trade_winds"
                 android:layout_width="match_parent"
+                android:gravity="center"
                 android:layout_height="wrap_content"
-                android:text="@string/desc_armorPlate2" />
+                android:textColor="@color/steampunkRedFade"
+                android:text="@string/desc_armorPlate2"
+                android:textSize="11sp" />
         </LinearLayout>
 
 
@@ -67,154 +83,196 @@
             android:id="@+id/armorPlating3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textArmorPlating3"
-                android:textSize="18sp"
-                android:gravity="center"
+                android:fontFamily="@font/trade_winds"
+                android:textColor="@color/steampunkRed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/item_armorPlate3" />
+                android:gravity="center"
+                android:text="@string/item_armorPlate3"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/defArmorPlating3"
-                android:textSize="14sp"
+                android:fontFamily="@font/trade_winds"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/desc_armorPlate3" />
+                android:textColor="@color/steampunkRedFade"
+                android:text="@string/desc_armorPlate3"
+                android:textSize="11sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/gauntlets1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textGauntlets1"
-                android:textSize="18sp"
-                android:gravity="center"
+                android:fontFamily="@font/trade_winds"
                 android:layout_width="match_parent"
+                android:textColor="@color/steampunkRed"
                 android:layout_height="wrap_content"
-                android:text="@string/item_gauntlets1" />
+                android:gravity="center"
+                android:text="@string/item_gauntlets1"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/defGauntlets1"
-                android:textSize="14sp"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/trade_winds"
                 android:layout_height="wrap_content"
-                android:text="@string/desc_gauntlets1" />
+                android:textColor="@color/steampunkRedFade"
+                android:gravity="center"
+                android:text="@string/desc_gauntlets1"
+                android:textSize="11sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/gauntlets2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textGauntlets2"
-                android:textSize="18sp"
-                android:gravity="center"
+                android:fontFamily="@font/trade_winds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/item_gauntlets2" />
+                android:textColor="@color/steampunkRed"
+                android:gravity="center"
+                android:text="@string/item_gauntlets2"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/defGauntlets2"
-                android:textSize="14sp"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/trade_winds"
                 android:layout_height="wrap_content"
-                android:text="@string/desc_gauntlets2" />
+                android:textColor="@color/steampunkRedFade"
+                android:gravity="center"
+                android:text="@string/desc_gauntlets2"
+                android:textSize="11sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/nanites1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textNanites1"
-                android:textSize="18sp"
-                android:gravity="center"
+                android:fontFamily="@font/trade_winds"
                 android:layout_width="match_parent"
+                android:textColor="@color/steampunkRed"
                 android:layout_height="wrap_content"
-                android:text="@string/item_nanites1" />
+                android:gravity="center"
+                android:text="@string/item_nanites1"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/defNanites1"
-                android:textSize="14sp"
                 android:layout_width="match_parent"
+                android:textColor="@color/steampunkRedFade"
+                android:gravity="center"
+                android:fontFamily="@font/trade_winds"
                 android:layout_height="wrap_content"
-                android:text="@string/desc_nanites1" />
+                android:text="@string/desc_nanites1"
+                android:textSize="11sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/nanites2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textNanites2"
-                android:textSize="18sp"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/item_nanites2" />
+                android:textColor="@color/steampunkRed"
+                android:fontFamily="@font/trade_winds"
+                android:gravity="center"
+                android:text="@string/item_nanites2"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/defNanites2"
-                android:textSize="14sp"
                 android:layout_width="match_parent"
+                android:textColor="@color/steampunkRedFade"
+                android:gravity="center"
                 android:layout_height="wrap_content"
-                android:text="@string/desc_nanites2" />
+                android:fontFamily="@font/trade_winds"
+                android:text="@string/desc_nanites2"
+                android:textSize="11sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/nanites3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textNanites3"
-                android:textSize="18sp"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/item_nanites3" />
+                android:fontFamily="@font/trade_winds"
+                android:textColor="@color/steampunkRed"
+                android:gravity="center"
+                android:text="@string/item_nanites3"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/defNanites3"
-                android:textSize="14sp"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/trade_winds"
                 android:layout_height="wrap_content"
-                android:text="@string/desc_nanites3" />
+                android:gravity="center"
+                android:textColor="@color/steampunkRedFade"
+                android:text="@string/desc_nanites3"
+                android:textSize="11sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/illegal1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8sp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textIllegal1"
-                android:textSize="18sp"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/item_illegal1" />
+                android:fontFamily="@font/trade_winds"
+                android:textColor="@color/steampunkRed"
+                android:gravity="center"
+                android:text="@string/item_illegal1"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/defIllegal1"
-                android:textSize="14sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/desc_illegal1" />
+                android:textColor="@color/steampunkRedFade"
+                android:fontFamily="@font/trade_winds"
+                android:gravity="center"
+                android:text="@string/desc_illegal1"
+                android:textSize="11sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -223,14 +281,21 @@
         android:layout_width="match_parent"
         android:layout_height="102dp"
         android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginEnd="64sp"
+        android:layout_marginStart="64sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/backButton"
+            android:textSize="36sp"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@color/steampunkRed"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:fontFamily="@font/trade_winds"
+            android:layout_height="wrap_content"
             android:text="@string/backBTN" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
