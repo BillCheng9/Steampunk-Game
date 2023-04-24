@@ -2,8 +2,6 @@ package edu.vassar.cmpu203.nextgenpos.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.SyncStateContract;
-import android.provider.SyncStateContract.Constants;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,9 +15,7 @@ import edu.vassar.cmpu203.nextgenpos.model.UI.DialogueBar;
 import edu.vassar.cmpu203.nextgenpos.view.CombatDialogue;
 import edu.vassar.cmpu203.nextgenpos.view.CombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.ICombatScreen;
-import edu.vassar.cmpu203.nextgenpos.view.IMainMenu;
 import edu.vassar.cmpu203.nextgenpos.view.PlayerDialogue;
-import edu.vassar.cmpu203.nextgenpos.view.StartScreen;
 
 public class MainActivity extends AppCompatActivity implements ICombatScreen.Listener{
     DialogueBar dialogueBar;
@@ -177,14 +173,6 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         cScreen.buttonClickable(false);
         healthChecker();
         continueClick();
-    }
-
-    /**
-     * petClick method that calls Player's pet ability
-     */
-    @Override
-    public void petClick() {
-        cScreen.displayPet("NONE", -1);
     }
 
     /**

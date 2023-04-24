@@ -15,54 +15,69 @@ public class Inventory implements IInventory {
         this.listener = listener;
         this.binding = InventoryBinding.inflate(LayoutInflater.from(context));
 
+        this.binding.goBackBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.backClick();
+            }
+        });
+
         this.binding.steelPlates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.plates1Click();
             }
         });
+
         this.binding.tungstenPlates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.plates2Click();
             }
         });
+
         this.binding.chromiumPlates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.plates3Click();
             }
         });
+
         this.binding.xt1Nanites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.nanites1Click();
             }
         });
+
         this.binding.xt3Nanites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.nanites2Click();
             }
         });
+
         this.binding.xtpNanites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.nanites3Click();
             }
         });
+
         this.binding.mechaGauntlets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.gauntlets1Click();
             }
         });
+
         this.binding.cbaImplants.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.implants1CLick();
             }
         });
+
         this.binding.ice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

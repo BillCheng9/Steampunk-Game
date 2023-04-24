@@ -21,11 +21,6 @@ public class MainMenu implements IMainMenu{
     ExpStat expBar;
     GearStat gearBar;
 
-
-    public MainMenu() {
-        // Required empty public constructor
-    }
-
     public MainMenu(Context context, Listener listener, Player p) {
 
         // instantiate
@@ -57,8 +52,8 @@ public class MainMenu implements IMainMenu{
         });
     }
 
-    /**
-     * @return 
+    /** Gets root view
+     * @return root view
      */
     @Override
     public View getRootView() {

@@ -1,7 +1,5 @@
 package edu.vassar.cmpu203.nextgenpos.view;
 
-import android.view.View;
-
 public interface IStartScreen {
 
     interface Listener{

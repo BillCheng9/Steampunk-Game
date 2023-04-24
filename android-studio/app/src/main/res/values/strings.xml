@@ -59,4 +59,12 @@
 
     <string name="item_illegal1">ILLEGAL CYBERNETIC ENHANCEMENTS</string>
     <string name="desc_illegal1">ILLEGAL ENHANCEMENTS FOUND ON THE BLACK MARKET. OFFERS 10% INCREASE IN LOOTED GEARS.</string>
+
+    <!-- inventory screen -->
+    <string name="goBackBTN">GO BACK</string>
+    <string name="itemInfo">CLICK AN ITEM TO VIEW ITS STATS</string>
+    <string name="itemName" />
+    <string name="statBoost" />
+    <string name="numberItems" />
+
    </resources>

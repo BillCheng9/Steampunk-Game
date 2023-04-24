@@ -82,4 +82,22 @@ public class Plate3 implements Item {
     public int getDamageChange() {
         return 0;
     }
+
+    /**
+     * Display stats boost
+     * @return String representation of stats boosts
+     */
+    public String displayStats() {
+        String x = "ARMOR +" + getDefenseChange();
+        return x;
+    }
+
+    /**
+     * Display numbers of items
+     * @return String representation of number of items
+     */
+    public String displayNumbers() {
+        String s = "YOU HAVE " + getNumberItems() + " OF THESE.";
+        return s;
+    }
 }

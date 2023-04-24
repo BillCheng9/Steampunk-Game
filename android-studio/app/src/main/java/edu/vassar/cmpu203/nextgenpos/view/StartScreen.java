@@ -4,8 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import androidx.fragment.app.Fragment;
-
 import edu.vassar.cmpu203.nextgenpos.databinding.StartScreenBinding;
 
 public class StartScreen implements IStartScreen{

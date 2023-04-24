@@ -15,10 +15,6 @@ public class HelpScreen implements IHelpScreen {
         this.binding = HelpScreenBinding.inflate(LayoutInflater.from(context));
 
         this.binding.backButton.setOnClickListener(new View.OnClickListener() {
-
-            /**
-             * @param view
-             */
             @Override
             public void onClick(View view) {
                 listener.backClick();

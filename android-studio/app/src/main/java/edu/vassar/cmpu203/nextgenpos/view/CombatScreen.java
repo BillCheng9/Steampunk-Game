@@ -70,7 +70,6 @@ public class CombatScreen implements ICombatScreen {
         this.binding.dialogueArea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int dmg;
                 listener.dialogueClick();}
         });
 
@@ -97,12 +96,6 @@ public class CombatScreen implements ICombatScreen {
             @Override
             public void onClick(View view) {
                 CombatScreen.this.listener.invClick();
-            }
-        });
-        this.binding.petBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CombatScreen.this.listener.petClick();
             }
         });
 
@@ -160,26 +153,6 @@ public class CombatScreen implements ICombatScreen {
                 text += damageDialogue.displayDamage();
             }
         }
-        this.binding.dialogueText.setText(text);
-    }
-
-    /**
-     * Sets dialogueText to Pet (not implemented)
-     * @param type Pet type
-     * @param dmg damage
-     */
-    public void displayPet(String type, int dmg) {
-        String text ="";
-        text += "NOT IMPLEMENTED YET. TOO BAD TOO SAD!";
-        this.binding.dialogueText.setText(text);
-    }
-
-    /**
-     * Sets dialogueText to Inventory (not implemented)
-     */
-    public void displayInv() {
-        String text ="";
-        text += "NOT IMPLEMENTED YET. TOO BAD TOO SAD!";
         this.binding.dialogueText.setText(text);
     }
 
@@ -288,7 +261,6 @@ public class CombatScreen implements ICombatScreen {
         CombatScreen.this.binding.lightAttackBTN.setClickable(clickable);
         CombatScreen.this.binding.heavyAttackBTN.setClickable(clickable);
         CombatScreen.this.binding.fleeBTN.setClickable(clickable);
-        CombatScreen.this.binding.petBTN.setClickable(clickable);
         CombatScreen.this.binding.invBTN.setClickable(clickable);
     }
 

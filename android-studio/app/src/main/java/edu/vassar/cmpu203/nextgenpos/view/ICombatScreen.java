@@ -1,10 +1,5 @@
 package edu.vassar.cmpu203.nextgenpos.view;
 
-import android.view.View;
-
-import edu.vassar.cmpu203.nextgenpos.model.Enemy;
-import edu.vassar.cmpu203.nextgenpos.model.Player;
-
 public interface ICombatScreen {
 
     interface Listener {
@@ -17,11 +12,6 @@ public interface ICombatScreen {
          * heavy attack button onClick method
          */
         void heavyClick();
-
-        /**
-         * pet button onClick method
-         */
-        void petClick();
 
         /**
          * inventory button onClick method

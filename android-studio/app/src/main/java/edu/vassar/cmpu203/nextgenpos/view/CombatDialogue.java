@@ -1,13 +1,9 @@
 package edu.vassar.cmpu203.nextgenpos.view;
 
-
-import edu.vassar.cmpu203.nextgenpos.Input;
 import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 /**
  * User interface for the entire game. Contains dialogue maps for both enemy and system messages. Current iteration

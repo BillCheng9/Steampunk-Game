@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-import edu.vassar.cmpu203.nextgenpos.R;
 import edu.vassar.cmpu203.nextgenpos.view.IInventory;
 import edu.vassar.cmpu203.nextgenpos.view.Inventory;
 
@@ -25,6 +24,19 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
         this.setContentView(inventory.getRootView());
     }
 
+    private void switchActivities() {
+            Intent switchActivityIntent = new Intent(this, MainActivity.class);
+            startActivity(switchActivityIntent);
+    }
+
+    /**
+     * Go back to combat menu
+     */
+    @Override
+    public void backClick() {
+        switchActivities();
+    }
+
     /**
      * Brings up steel armor plates details
      */
@@ -34,7 +46,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
     }
 
     /**
-     *
+     * Brings up tungsten-steel armor plates details
      */
     @Override
     public void plates2Click() {
@@ -42,7 +54,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
     }
 
     /**
-     *
+     * Brings up Chromium-Titanium armor plates details
      */
     @Override
     public void plates3Click() {
@@ -50,7 +62,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
     }
 
     /**
-     *
+     * Brings up XT-1 Nanites details
      */
     @Override
     public void nanites1Click() {
@@ -58,7 +70,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
     }
 
     /**
-     *
+     * Brings up XT-3 Nanites details
      */
     @Override
     public void nanites2Click() {
@@ -66,7 +78,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
     }
 
     /**
-     *
+     * Brings up XT-PROTO Nanites details
      */
     @Override
     public void nanites3Click() {
@@ -74,7 +86,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
     }
 
     /**
-     *
+     * Brings up Mecha-Gauntlets details
      */
     @Override
     public void gauntlets1Click() {
@@ -82,7 +94,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
     }
 
     /**
-     *
+     * Brings up CBA Implants details
      */
     @Override
     public void implants1CLick() {
@@ -90,7 +102,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
     }
 
     /**
-     *
+     * Brings up Illegal Cybernetic Enhancements details
      */
     @Override
     public void illegal1Click() {

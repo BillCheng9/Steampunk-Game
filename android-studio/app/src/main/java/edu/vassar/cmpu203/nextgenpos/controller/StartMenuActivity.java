@@ -1,12 +1,10 @@
 package edu.vassar.cmpu203.nextgenpos.controller;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import edu.vassar.cmpu203.nextgenpos.R;
 import edu.vassar.cmpu203.nextgenpos.view.IStartScreen;
 import edu.vassar.cmpu203.nextgenpos.view.StartScreen;
 

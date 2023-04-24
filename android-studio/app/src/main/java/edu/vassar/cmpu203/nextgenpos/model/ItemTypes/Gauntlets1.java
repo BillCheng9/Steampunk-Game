@@ -82,4 +82,22 @@ public class Gauntlets1 implements Item {
     public int getDamageChange() {
         return getDamageChange() * damageChange;
     }
+
+    /**
+     * Display stats boost
+     * @return String representation of stats boosts
+     */
+    public String displayStats() {
+        String x = "DAMAGE +" + getDamageChange();
+        return x;
+    }
+
+    /**
+     * Display numbers of items
+     * @return String representation of number of items
+     */
+    public String displayNumbers() {
+        String s = "YOU HAVE " + getNumberItems() + " OF THESE.";
+        return s;
+    }
 }

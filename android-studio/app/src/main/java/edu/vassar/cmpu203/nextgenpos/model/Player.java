@@ -5,8 +5,6 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
-import edu.vassar.cmpu203.nextgenpos.model.PetTypes.Drone;
-
 public class Player implements Parcelable {
     public int experience, gears, health, defense, damage, maxHealth, trueDefense;
 
