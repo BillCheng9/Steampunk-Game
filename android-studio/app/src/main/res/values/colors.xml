@@ -13,4 +13,5 @@
     <color name="steampunkBlueFade">#A6153551</color>
     <color name="steampunkBlueFadeFade">#33153551</color>
     <color name="steampunkRed">#662400</color>
+    <color name="steampunkRedFade">#CA662400</color>
 </resources>
