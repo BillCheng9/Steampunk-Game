@@ -6,49 +6,72 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 public class Player implements Parcelable {
-    public int gears, health, defense, damage, maxHealth;
-    public Item[] inventory = new Item[9];
+    public int experience, gears, health, defense, damage, maxHealth, trueDefense;
+    public boolean steel, tung, chrom, xt1, xt3, xtp, gaunt1, gaunt2, illegal;
+    public Item[] inventory;
 
     /**
-     * Creates a Player entity with initial stats
+     * Creates a Player entity with (temporary) numbers for stats
      */
-    public Player(int health, int maxHealth, int defense, int damage, int gears, Item[] inventory){
-        // numerical stats
-        this.health = health;
+    public Player(int maxHealth, int trueDefense, int damage, int experience, int gears, Item[] inventory){
+        //Placeholder values for first iteration
+        this.health = maxHealth;
         this.maxHealth = maxHealth;
         this.gears = gears;
-        this.defense = defense;
+        this.defense = trueDefense;
+        this.trueDefense = trueDefense;
         this.damage = damage;
-
-        // inventory
+        this.experience = experience;
         this.inventory = inventory;
-        // 0 = steel plates, DEF + 1
-        // 1 = tungsten-steel plates, DEF + 2
-        // 2 = chromium-titanium plates, DEF + 3
-        // 3 = xt-1 nanites, HP + 2
-        // 4 = xt-3 nanites, HP + 5
-        // 5 = xt-proto nanites, HP + 9
-        // 6 = mecha-gauntlets, ATK + 1
-        // 7 = cba implants, ATK + 2
-        // 8 = illegal cybernetic enhancements, gearBoost + 10%
+        this.steel = false;
+        this.tung = false;
+        this.chrom = false;
+        this.xt1 = false;
+        this.xt3 = false;
+        this.xtp = false;
+        this.gaunt1 = false;
+        this.gaunt2 = false;
+        this.illegal = false;
     }
 
 
     protected Player(Parcel in) {
+        experience = in.readInt();
         gears = in.readInt();
         health = in.readInt();
         defense = in.readInt();
         damage = in.readInt();
         maxHealth = in.readInt();
+        trueDefense = in.readInt();
+        steel = in.readBoolean();
+        tung = in.readBoolean();
+        chrom = in.readBoolean();
+        xt1 = in.readBoolean();
+        xt3 = in.readBoolean();
+        xtp = in.readBoolean();
+        gaunt1 = in.readBoolean();
+        gaunt2 = in.readBoolean();
+        illegal = in.readBoolean();
     }
 
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeInt(experience);
         parcel.writeInt(gears);
         parcel.writeInt(health);
         parcel.writeInt(defense);
         parcel.writeInt(damage);
         parcel.writeInt(maxHealth);
+        parcel.writeInt(trueDefense);
+        parcel.writeBoolean(steel);
+        parcel.writeBoolean(tung);
+        parcel.writeBoolean(chrom);
+        parcel.writeBoolean(xt1);
+        parcel.writeBoolean(xt3);
+        parcel.writeBoolean(xtp);
+        parcel.writeBoolean(gaunt1);
+        parcel.writeBoolean(gaunt2);
+        parcel.writeBoolean(illegal);
     }
 
     public static final Creator<Player> CREATOR = new Creator<Player>() {
@@ -94,6 +117,13 @@ public class Player implements Parcelable {
     }
 
     /**
+     * Opens up the Player inventory and allows the User to equip/unequip different items and pets
+     */
+    public void accessInv() {
+    }
+
+
+    /**
      * Calculates whether or not the Player successfully flees
      *
      * @return True if the player successfully flees, False if not
@@ -132,8 +162,9 @@ public class Player implements Parcelable {
         else return 0;
     }
 
-    public void onEnd(int gear) {
+    public void onEnd(int gear, int exp) {
         gears += gear;
+        experience += exp;
     }
 
     @Override

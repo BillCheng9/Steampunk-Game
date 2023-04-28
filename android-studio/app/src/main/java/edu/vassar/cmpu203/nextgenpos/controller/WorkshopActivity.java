@@ -39,7 +39,8 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
 
     @Override
     public void plates1Click() {
-
+        p.defense += 1;
+        p.gears -= 1;
     }
 
     @Override
