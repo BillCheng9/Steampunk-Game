@@ -6,22 +6,32 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 public class Player implements Parcelable {
-    public int experience, gears, health, defense, damage, maxHealth, trueDefense;
-    public Item[] inventory;
+    public int experience, gears, health, defense, damage, maxHealth;
+    public Item[] inventory = new Item[9];
 
     /**
-     * Creates a Player entity with (temporary) numbers for stats
+     * Creates a Player entity with initial stats
      */
-    public Player(int maxHealth, int trueDefense, int damage, int experience, int gears, Item[] inventory){
-        //Placeholder values for first iteration
-        this.health = maxHealth;
+    public Player(int health, int maxHealth, int defense, int damage, int experience, int gears, Item[] inventory){
+        // numerical stats
+        this.health = health;
         this.maxHealth = maxHealth;
         this.gears = gears;
-        this.defense = trueDefense;
-        this.trueDefense = trueDefense;
+        this.defense = defense;
         this.damage = damage;
         this.experience = experience;
+
+        // inventory
         this.inventory = inventory;
+        // 0 = steel plates, DEF + 1
+        // 1 = tungsten-steel plates, DEF + 2
+        // 2 = chromium-titanium plates, DEF + 3
+        // 3 = xt-1 nanites, HP + 1
+        // 4 = xt-3 nanites, HP + 3
+        // 5 = xt-proto nanites, HP + 5
+        // 6 = mecha-gauntlets, ATK + 1
+        // 7 = cba implants, ATK + 2
+        // 8 = illegal cybernetic enhancements, gearBoost + 10%
     }
 
 
@@ -32,7 +42,6 @@ public class Player implements Parcelable {
         defense = in.readInt();
         damage = in.readInt();
         maxHealth = in.readInt();
-        trueDefense = in.readInt();
     }
 
     @Override
@@ -43,7 +52,6 @@ public class Player implements Parcelable {
         parcel.writeInt(defense);
         parcel.writeInt(damage);
         parcel.writeInt(maxHealth);
-        parcel.writeInt(trueDefense);
     }
 
     public static final Creator<Player> CREATOR = new Creator<Player>() {
@@ -57,6 +65,35 @@ public class Player implements Parcelable {
             return new Player[size];
         }
     };
+
+    /**
+     * Changes total amount of gears
+     */
+    public void renewGear(int newGear){
+        double mult = .10 * inventory[8].getNumberItems();
+        gears = (int) (gears + (newGear * mult));
+    }
+
+    /**
+     * Changes total maxHealth
+     */
+    public void renewHealth() {
+        maxHealth = maxHealth + (inventory[3].getNumberItems()) + (3 * inventory[4].getNumberItems()) + (5 * inventory[5].getNumberItems());
+    }
+
+    /**
+     * Changes total defense
+     */
+    public void renewDefense() {
+        maxHealth = defense + (inventory[0].getNumberItems()) + (2 * inventory[1].getNumberItems()) + (3 * inventory[2].getNumberItems());
+    }
+
+    /**
+     * Changes total attack
+     */
+    public void renewAttack() {
+        maxHealth = maxHealth + (inventory[6].getNumberItems()) + (2 * inventory[7].getNumberItems());
+    }
 
     /**
      * Calculates whether or not the Player hits a light attack

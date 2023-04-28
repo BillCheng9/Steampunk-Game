@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         getSupportActionBar().hide();
         // instantiate player: maxHealth, trueDefense, damage, experience, gears, pet
         Item[] inventory = new Item[9];
-        this.p = new Player(10, 5, 3, 0, 25, inventory);
+        this.p = new Player(10,10, 5, 3, 0, 25, inventory);
         // instantiate combat and player dialogue
         this.combatDialogue = new CombatDialogue();
         this.playerDialogue = new PlayerDialogue();
