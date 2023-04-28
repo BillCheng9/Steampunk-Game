@@ -8,6 +8,7 @@ public class Nanites3 implements Item {
     String desc = "A SET OF STATE-OF-THE-ART NANITES THAT PROVIDES OVERCLOCKING CAPABILITY FOR THE STANDARD CORES";
     int numberItems;
     int healthChange = 9;
+    int cost = 15;
 
     public Nanites3(int numberItems) {
         this.numberItems = numberItems;
@@ -21,6 +22,16 @@ public class Nanites3 implements Item {
     @Override
     public String getName() {
         return name;
+    }
+
+    /**
+     * Getter method for item cost
+     *
+     * @return cost
+     */
+    @Override
+    public int getCost() {
+        return cost;
     }
 
     /**

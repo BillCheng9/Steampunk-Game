@@ -6,29 +6,28 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 public class Player implements Parcelable {
-    public int experience, gears, health, defense, damage, maxHealth;
+    public int gears, health, defense, damage, maxHealth;
     public Item[] inventory = new Item[9];
 
     /**
      * Creates a Player entity with initial stats
      */
-    public Player(int health, int maxHealth, int defense, int damage, int experience, int gears, Item[] inventory){
+    public Player(int health, int maxHealth, int defense, int damage, int gears, Item[] inventory){
         // numerical stats
         this.health = health;
         this.maxHealth = maxHealth;
         this.gears = gears;
         this.defense = defense;
         this.damage = damage;
-        this.experience = experience;
 
         // inventory
         this.inventory = inventory;
         // 0 = steel plates, DEF + 1
         // 1 = tungsten-steel plates, DEF + 2
         // 2 = chromium-titanium plates, DEF + 3
-        // 3 = xt-1 nanites, HP + 1
-        // 4 = xt-3 nanites, HP + 3
-        // 5 = xt-proto nanites, HP + 5
+        // 3 = xt-1 nanites, HP + 2
+        // 4 = xt-3 nanites, HP + 5
+        // 5 = xt-proto nanites, HP + 9
         // 6 = mecha-gauntlets, ATK + 1
         // 7 = cba implants, ATK + 2
         // 8 = illegal cybernetic enhancements, gearBoost + 10%
@@ -36,7 +35,6 @@ public class Player implements Parcelable {
 
 
     protected Player(Parcel in) {
-        experience = in.readInt();
         gears = in.readInt();
         health = in.readInt();
         defense = in.readInt();
@@ -46,7 +44,6 @@ public class Player implements Parcelable {
 
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int i) {
-        parcel.writeInt(experience);
         parcel.writeInt(gears);
         parcel.writeInt(health);
         parcel.writeInt(defense);
@@ -65,35 +62,6 @@ public class Player implements Parcelable {
             return new Player[size];
         }
     };
-
-    /**
-     * Changes total amount of gears
-     */
-    public void renewGear(int newGear){
-        double mult = .10 * inventory[8].getNumberItems();
-        gears = (int) (gears + (newGear * mult));
-    }
-
-    /**
-     * Changes total maxHealth
-     */
-    public void renewHealth() {
-        maxHealth = maxHealth + (inventory[3].getNumberItems()) + (3 * inventory[4].getNumberItems()) + (5 * inventory[5].getNumberItems());
-    }
-
-    /**
-     * Changes total defense
-     */
-    public void renewDefense() {
-        maxHealth = defense + (inventory[0].getNumberItems()) + (2 * inventory[1].getNumberItems()) + (3 * inventory[2].getNumberItems());
-    }
-
-    /**
-     * Changes total attack
-     */
-    public void renewAttack() {
-        maxHealth = maxHealth + (inventory[6].getNumberItems()) + (2 * inventory[7].getNumberItems());
-    }
 
     /**
      * Calculates whether or not the Player hits a light attack
@@ -124,13 +92,6 @@ public class Player implements Parcelable {
             return (int)(damage * 1.5);
         }
     }
-
-    /**
-     * Opens up the Player inventory and allows the User to equip/unequip different items and pets
-     */
-    public void accessInv() {
-    }
-
 
     /**
      * Calculates whether or not the Player successfully flees
@@ -171,9 +132,8 @@ public class Player implements Parcelable {
         else return 0;
     }
 
-    public void onEnd(int gear, int exp) {
+    public void onEnd(int gear) {
         gears += gear;
-        experience += exp;
     }
 
     @Override

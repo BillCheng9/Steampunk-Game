@@ -8,7 +8,6 @@ import edu.vassar.cmpu203.nextgenpos.databinding.ActivityMainBinding;
 import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.ArmorStat;
-import edu.vassar.cmpu203.nextgenpos.model.StatTypes.ExpStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.GearStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.HealthStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.eArmorStat;
@@ -22,7 +21,6 @@ public class CombatScreen implements ICombatScreen {
     PlayerDialogue dialogue;
     HealthStat healthBar;
     ArmorStat armorBar;
-    ExpStat expBar;
     GearStat gearBar;
     eHealthStat eHealthBar;
     eArmorStat eArmorBar;
@@ -46,8 +44,7 @@ public class CombatScreen implements ICombatScreen {
 
         dialogue = new PlayerDialogue();
         healthBar = new HealthStat(p.health, p.maxHealth);
-        armorBar = new ArmorStat(p.defense, p.trueDefense);
-        expBar = new ExpStat(p.experience);
+        armorBar = new ArmorStat(p.defense);
         gearBar = new GearStat(p.gears);
         eHealthBar = new eHealthStat(e.getName() + " HEALTH", e.getHealth());
         eArmorBar = new eArmorStat(e.getName() + " ARMOR", e.getDefense());
@@ -59,7 +56,6 @@ public class CombatScreen implements ICombatScreen {
         // initiate stat bar
         this.binding.healthText.setText(healthBar.toString());
         this.binding.armorText.setText(armorBar.toString());
-        this.binding.expText.setText(expBar.toString());
         this.binding.gearText.setText(gearBar.toString());
         this.binding.enemyHealthText.setText(eHealthBar.toString());
         this.binding.enemyArmorText.setText(eArmorBar.toString());
@@ -296,10 +292,8 @@ public class CombatScreen implements ICombatScreen {
      * @param p Player
      */
     public void renewExpGear(Player p) {
-        expBar = new ExpStat(p.experience);
         gearBar = new GearStat(p.gears);
         this.binding.gearText.setText(gearBar.toString());
-        this.binding.expText.setText(expBar.toString());
     }
 
     public View getRootView() {

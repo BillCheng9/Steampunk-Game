@@ -8,6 +8,7 @@ public class Gauntlets1 implements Item {
     String desc = "GAUNTLETS MADE WITH SHARPENED STEEL TO ENHANCE FIGHTING CAPABILITIES";
     int numberItems;
     int damageChange = 1;
+    int cost = 3;
 
     public Gauntlets1(int numberItems) {
         this.numberItems = numberItems;
@@ -21,6 +22,16 @@ public class Gauntlets1 implements Item {
     @Override
     public String getName() {
         return name;
+    }
+
+    /**
+     * Getter method for item cost
+     *
+     * @return cost
+     */
+    @Override
+    public int getCost() {
+        return cost;
     }
 
     /**

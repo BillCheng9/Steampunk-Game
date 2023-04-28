@@ -8,6 +8,7 @@ public class Illegal1 implements Item {
     String desc = "ILLEGAL ENHANCEMENTS FOUND ON THE BLACK MARKET";
     int numberItems;
     double gearsChange = .10;
+    int cost = 15;
 
     public Illegal1(int numberItems) {
         this.numberItems = numberItems;
@@ -21,6 +22,16 @@ public class Illegal1 implements Item {
     @Override
     public String getName() {
         return name;
+    }
+
+    /**
+     * Getter method for item cost
+     *
+     * @return cost
+     */
+    @Override
+    public int getCost() {
+        return cost;
     }
 
     /**

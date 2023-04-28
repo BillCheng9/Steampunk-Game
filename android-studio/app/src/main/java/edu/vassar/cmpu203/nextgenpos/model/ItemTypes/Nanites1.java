@@ -8,7 +8,7 @@ public class Nanites1 implements Item {
     String desc = "A SET OF NANITES THAT INCREASES CORE EFFICIENCY";
     int numberItems;
     int healthChange = 2;
-
+    int cost = 3;
     public Nanites1(int numberItems) {
         this.numberItems = numberItems;
     }
@@ -21,6 +21,16 @@ public class Nanites1 implements Item {
     @Override
     public String getName() {
         return name;
+    }
+
+    /**
+     * Getter method for item cost
+     *
+     * @return cost
+     */
+    @Override
+    public int getCost() {
+        return cost;
     }
 
     /**

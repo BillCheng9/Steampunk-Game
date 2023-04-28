@@ -8,6 +8,7 @@ public class Plate2 implements Item {
     String desc = "ADVANCED ARMOR PLATING MADE FROM STRONG TUNGSTEN-STEEL ALLOY";
     int numberItems;
     int defenseChange = 2;
+    int cost = 4;
 
     public Plate2(int numberItems) {
         this.numberItems = numberItems;
@@ -21,6 +22,16 @@ public class Plate2 implements Item {
     @Override
     public String getName() {
         return name;
+    }
+
+    /**
+     * Getter method for item cost
+     *
+     * @return cost
+     */
+    @Override
+    public int getCost() {
+        return cost;
     }
 
     /**

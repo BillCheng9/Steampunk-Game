@@ -4,17 +4,14 @@ import edu.vassar.cmpu203.nextgenpos.model.StatBar;
 
 public class ArmorStat implements StatBar {
     String name;
-    int cur;
     int max;
 
     /**
      * Constructor for ArmorStat
-     * @param cur the current number
      * @param max the max number
      */
-    public ArmorStat(int cur, int max) {
+    public ArmorStat(int max) {
         this.name = "DEFENSE";
-        this.cur = cur;
         this.max = max;
     }
 
@@ -28,10 +25,12 @@ public class ArmorStat implements StatBar {
 
     /**
      * Getter method for cur
+     *
      * @return cur
      */
+    @Override
     public int getCur() {
-        return cur;
+        return 0;
     }
 
     /**

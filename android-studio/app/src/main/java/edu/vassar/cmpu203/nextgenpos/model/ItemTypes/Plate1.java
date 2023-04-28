@@ -8,6 +8,7 @@ public class Plate1 implements Item {
     String desc = "SIMPLE ARMOR PLATING MADE FROM STEEL";
     int numberItems;
     int defenseChange = 1;
+    int cost = 3;
 
     public Plate1(int numberItems) {
         this.numberItems = numberItems;
@@ -21,6 +22,16 @@ public class Plate1 implements Item {
     @Override
     public String getName() {
         return name;
+    }
+
+    /**
+     * Getter method for item cost
+     *
+     * @return cost
+     */
+    @Override
+    public int getCost() {
+        return cost;
     }
 
     /**

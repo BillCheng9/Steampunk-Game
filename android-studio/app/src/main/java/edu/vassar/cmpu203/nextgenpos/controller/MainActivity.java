@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         getSupportActionBar().hide();
         // instantiate player: maxHealth, trueDefense, damage, experience, gears, pet
         Item[] inventory = new Item[9];
-        this.p = new Player(10,10, 5, 3, 0, 25, inventory);
+        this.p = new Player(10,10, 5, 3, 0, inventory);
         // instantiate combat and player dialogue
         this.combatDialogue = new CombatDialogue();
         this.playerDialogue = new PlayerDialogue();
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             cScreen.removeContinueText();
             int gear = e.getGear();
             int exp = e.getExp();
-            p.onEnd(e.getGear(), e.getExp());
+            p.onEnd(e.getGear());
             cScreen.renewExpGear(p);
             cScreen.buttonClickable(false);
             cScreen.displayEndWin(gear, exp);

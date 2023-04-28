@@ -8,6 +8,7 @@ public class Implants1 implements Item {
     String desc = "IMPLANTS THAT PROVIDE AN EXTRA BOOST OF STRENGTH TO THE GAUNTLETS BY IMPLEMENTING GAS PISTONS";
     int numberItems;
     int damageChange = 2;
+    int cost = 5;
 
     public Implants1(int numberItems) {
         this.numberItems = numberItems;
@@ -21,6 +22,16 @@ public class Implants1 implements Item {
     @Override
     public String getName() {
         return name;
+    }
+
+    /**
+     * Getter method for item cost
+     *
+     * @return cost
+     */
+    @Override
+    public int getCost() {
+        return cost;
     }
 
     /**
