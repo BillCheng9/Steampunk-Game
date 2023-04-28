@@ -12,7 +12,7 @@
         tools:layout_editor_absoluteY="-351dp">
 
         <Button
-            android:id="@+id/button12"
+            android:id="@+id/xt1Nanites"
             android:layout_width="97dp"
             android:layout_height="65dp"
             android:text="Button"
@@ -20,15 +20,7 @@
             tools:layout_editor_absoluteY="287dp" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="97dp"
-            android:layout_height="65dp"
-            android:text="Button"
-            tools:layout_editor_absoluteX="18dp"
-            tools:layout_editor_absoluteY="92dp" />
-
-        <Button
-            android:id="@+id/button10"
+            android:id="@+id/tungstenPlates"
             android:layout_width="97dp"
             android:layout_height="65dp"
             android:text="Button"
@@ -36,7 +28,7 @@
             tools:layout_editor_absoluteY="157dp" />
 
         <Button
-            android:id="@+id/button11"
+            android:id="@+id/chromiumPlates"
             android:layout_width="97dp"
             android:layout_height="65dp"
             android:text="Button"
@@ -44,7 +36,7 @@
             tools:layout_editor_absoluteY="222dp" />
 
         <Button
-            android:id="@+id/button14"
+            android:id="@+id/xtpNanites"
             android:layout_width="97dp"
             android:layout_height="65dp"
             android:text="Button"
@@ -52,7 +44,7 @@
             tools:layout_editor_absoluteY="417dp" />
 
         <Button
-            android:id="@+id/button15"
+            android:id="@+id/gauntlets1"
             android:layout_width="97dp"
             android:layout_height="65dp"
             android:text="Button"
@@ -60,7 +52,7 @@
             tools:layout_editor_absoluteY="482dp" />
 
         <Button
-            android:id="@+id/button16"
+            android:id="@+id/gauntlets2"
             android:layout_width="97dp"
             android:layout_height="65dp"
             android:text="Button"
@@ -68,7 +60,7 @@
             tools:layout_editor_absoluteY="547dp" />
 
         <Button
-            android:id="@+id/button17"
+            android:id="@+id/illegal1"
             android:layout_width="97dp"
             android:layout_height="65dp"
             android:text="Button"
@@ -76,7 +68,7 @@
             tools:layout_editor_absoluteY="612dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/steelPlates"
             android:layout_width="97dp"
             android:layout_height="65dp"
             android:text="Button"
@@ -84,15 +76,7 @@
             tools:layout_editor_absoluteY="92dp" />
 
         <Button
-            android:id="@+id/button10"
-            android:layout_width="97dp"
-            android:layout_height="65dp"
-            android:text="Button"
-            tools:layout_editor_absoluteX="18dp"
-            tools:layout_editor_absoluteY="92dp" />
-
-        <Button
-            android:id="@+id/button13"
+            android:id="@+id/xt3Nanites"
             android:layout_width="97dp"
             android:layout_height="65dp"
             android:text="Button"
@@ -100,7 +84,7 @@
             tools:layout_editor_absoluteY="352dp" />
 
         <TextView
-            android:id="@+id/steelPlates"
+            android:id="@+id/defArmorPlating1"
             android:layout_width="281dp"
             android:layout_height="49dp"
             android:fontFamily="@font/trade_winds"
@@ -112,7 +96,7 @@
             tools:layout_editor_absoluteY="99dp" />
 
         <TextView
-            android:id="@+id/tungstenPlates"
+            android:id="@+id/defArmorPlating2"
             android:layout_width="281dp"
             android:layout_height="49dp"
             android:fontFamily="@font/trade_winds"
@@ -124,7 +108,7 @@
             tools:layout_editor_absoluteY="166dp" />
 
         <TextView
-            android:id="@+id/chromiumPlates"
+            android:id="@+id/defArmorPlating3"
             android:layout_width="281dp"
             android:layout_height="49dp"
             android:fontFamily="@font/trade_winds"
@@ -220,54 +204,5 @@
             tools:layout_editor_absoluteY="5dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/armorPlating2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
-
-
-    <LinearLayout
-        android:id="@+id/armorPlating3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
-
-    <LinearLayout
-        android:id="@+id/gauntlets1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
-
-    <LinearLayout
-        android:id="@+id/gauntlets2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
-
-    <LinearLayout
-        android:id="@+id/nanites1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
-
-    <LinearLayout
-        android:id="@+id/nanites2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
-
-    <LinearLayout
-        android:id="@+id/nanites3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
-
-    <LinearLayout
-        android:id="@+id/illegal1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
