@@ -100,7 +100,7 @@
             tools:layout_editor_absoluteY="352dp" />
 
         <TextView
-            android:id="@+id/steelPlates"
+            android:id="@+id/defArmorPlating1"
             android:layout_width="281dp"
             android:layout_height="49dp"
             android:fontFamily="@font/trade_winds"
@@ -112,7 +112,7 @@
             tools:layout_editor_absoluteY="99dp" />
 
         <TextView
-            android:id="@+id/tungstenPlates"
+            android:id="@+id/defArmorPlating2"
             android:layout_width="281dp"
             android:layout_height="49dp"
             android:fontFamily="@font/trade_winds"
@@ -124,7 +124,7 @@
             tools:layout_editor_absoluteY="166dp" />
 
         <TextView
-            android:id="@+id/chromiumPlates"
+            android:id="@+id/defArmorPlating3"
             android:layout_width="281dp"
             android:layout_height="49dp"
             android:fontFamily="@font/trade_winds"
