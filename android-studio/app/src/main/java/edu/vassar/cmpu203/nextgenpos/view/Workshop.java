@@ -69,25 +69,41 @@ public class Workshop implements IWorkshop{
             }
         });
 
-        this.binding.mechaGauntlets.setOnClickListener(new View.OnClickListener() {
+        this.binding.gauntlets1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.gauntlets1Click();
             }
         });
 
-        this.binding.cbaImplants.setOnClickListener(new View.OnClickListener() {
+        this.binding.gauntlets2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.implants1CLick();
             }
         });
 
-        this.binding.ice.setOnClickListener(new View.OnClickListener() {
+        this.binding.illegal1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.illegal1Click();
             }
         });
+    }
+
+    public void buttonClickable(boolean clickable) {
+        Workshop.this.binding.steelPlates.setClickable(clickable);
+        Workshop.this.binding.tungstenPlates.setClickable(clickable);
+        Workshop.this.binding.chromiumPlates.setClickable(clickable);
+        Workshop.this.binding.xt1Nanites.setClickable(clickable);
+        Workshop.this.binding.xt3Nanites.setClickable(clickable);
+        Workshop.this.binding.xtpNanites.setClickable(clickable);
+        Workshop.this.binding.gauntlets1.setClickable(clickable);
+        Workshop.this.binding.gauntlets2.setClickable(clickable);
+        Workshop.this.binding.illegal1.setClickable(clickable);
+    }
+
+    public View getRootView() {
+        return this.binding.getRoot();
     }
 }

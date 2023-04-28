@@ -40,13 +40,15 @@ public class ContinueActivity extends AppCompatActivity implements IMainMenu.Lis
     }
 
     private void switchActivitiesContinue() {
-        Intent switchActivityIntent = new Intent(this, MainActivity.class);
-        startActivity(switchActivityIntent);
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("curPlayer", p);
+        startActivity(i);
     }
 
     //Fix
     private void switchActivitiesWorkshop() {
-        Intent switchActivityIntent = new Intent(this, InventoryActivity.class);
-        startActivity(switchActivityIntent);
+        Intent i = new Intent(this, WorkshopActivity.class);
+        i.putExtra("curPlayer", p);
+        startActivity(i);
     }
 }
