@@ -7,11 +7,12 @@ import androidx.annotation.NonNull;
 
 public class Player implements Parcelable {
     public int experience, gears, health, defense, damage, maxHealth, trueDefense;
+    public Item[] inventory;
 
     /**
      * Creates a Player entity with (temporary) numbers for stats
      */
-    public Player(int maxHealth, int trueDefense, int damage, int experience, int gears){
+    public Player(int maxHealth, int trueDefense, int damage, int experience, int gears, Item[] inventory){
         //Placeholder values for first iteration
         this.health = maxHealth;
         this.maxHealth = maxHealth;
@@ -20,6 +21,7 @@ public class Player implements Parcelable {
         this.trueDefense = trueDefense;
         this.damage = damage;
         this.experience = experience;
+        this.inventory = inventory;
     }
 
 
@@ -61,7 +63,7 @@ public class Player implements Parcelable {
      *
      * @return A 0 if the attack misses or any number > 0 indicating a hit and the hit damage
      */
-    public int attack1() {
+    public int lightAttack() {
         int value = (int)(Math.random() * 100);
         if (value > 84) {
             return 0;
@@ -76,7 +78,7 @@ public class Player implements Parcelable {
      *
      * @return A 0 if the attack misses or any number > 0 indicating a hit and the hit damage
      */
-    public int attack2() {
+    public int heavyAttack() {
         int value = (int)(Math.random() * 100);
         if (value > 74) {
             return 0;

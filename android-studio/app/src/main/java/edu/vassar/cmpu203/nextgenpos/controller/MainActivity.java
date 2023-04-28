@@ -10,6 +10,7 @@ import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Bug;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Golem;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Rock;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Worker;
+import edu.vassar.cmpu203.nextgenpos.model.Item;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.model.UI.DialogueBar;
 import edu.vassar.cmpu203.nextgenpos.view.CombatDialogue;
@@ -37,7 +38,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
 
         getSupportActionBar().hide();
         // instantiate player: maxHealth, trueDefense, damage, experience, gears, pet
-        this.p = new Player(10, 5, 3, 0, 25);
+        Item[] inventory = new Item[9];
+        this.p = new Player(10, 5, 3, 0, 25, inventory);
         // instantiate combat and player dialogue
         this.combatDialogue = new CombatDialogue();
         this.playerDialogue = new PlayerDialogue();
@@ -142,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      */
     @Override
     public void lightClick() {
-        int val = p.attack1();
+        int val = p.lightAttack();
         if (val > 0) {
             int dmg = e.attacked(val);
             cScreen.displayPlayerAttack("LIGHT", dmg, val);
@@ -161,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      */
     @Override
     public void heavyClick() {
-        int val = p.attack2();
+        int val = p.heavyAttack();
         if (val > 0) {
             int dmg = e.attacked(val);
             cScreen.displayPlayerAttack("HEAVY", dmg, val);
