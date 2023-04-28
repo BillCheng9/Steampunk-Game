@@ -5,13 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import edu.vassar.cmpu203.nextgenpos.databinding.InventoryBinding;
+import edu.vassar.cmpu203.nextgenpos.model.Player;
 
 public class Inventory implements IInventory {
 
     InventoryBinding binding;
     Listener listener;
 
-    public Inventory(Context context, Listener listener){
+    Player p;
+
+    public Inventory(Context context, Listener listener, Player p){
         this.listener = listener;
         this.binding = InventoryBinding.inflate(LayoutInflater.from(context));
 

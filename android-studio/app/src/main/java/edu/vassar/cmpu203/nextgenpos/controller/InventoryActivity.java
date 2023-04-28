@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.view.IInventory;
 import edu.vassar.cmpu203.nextgenpos.view.Inventory;
 
 public class InventoryActivity extends AppCompatActivity implements IInventory.Listener {
     Inventory inventory;
+
+    Player p;
 
     /**
      * onCreate method that dictates the rootview and all functions to be started on start
@@ -17,16 +20,18 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        p = (Player) getIntent().getParcelableExtra("curPlayer");
 
         getSupportActionBar().hide();
-        inventory = new Inventory(this, this);
+        inventory = new Inventory(this, this, p);
 
         this.setContentView(inventory.getRootView());
     }
 
     private void switchActivities() {
-            Intent switchActivityIntent = new Intent(this, MainActivity.class);
-            startActivity(switchActivityIntent);
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("curPlayer", p);
+        startActivity(i);
     }
 
     /**
