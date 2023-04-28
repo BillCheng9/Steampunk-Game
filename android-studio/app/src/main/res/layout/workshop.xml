@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-114dp"
+        tools:layout_editor_absoluteY="-351dp">
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="97dp"
+            android:layout_height="65dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="287dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="97dp"
+            android:layout_height="65dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="92dp" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="97dp"
+            android:layout_height="65dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="97dp"
+            android:layout_height="65dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="222dp" />
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="97dp"
+            android:layout_height="65dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="417dp" />
+
+        <Button
+            android:id="@+id/button15"
+            android:layout_width="97dp"
+            android:layout_height="65dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="482dp" />
+
+        <Button
+            android:id="@+id/button16"
+            android:layout_width="97dp"
+            android:layout_height="65dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="547dp" />
+
+        <Button
+            android:id="@+id/button17"
+            android:layout_width="97dp"
+            android:layout_height="65dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="612dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="97dp"
+            android:layout_height="65dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="92dp" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="97dp"
+            android:layout_height="65dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="92dp" />
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="97dp"
+            android:layout_height="65dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="352dp" />
+
+        <TextView
+            android:id="@+id/steelPlates"
+            android:layout_width="281dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/trade_winds"
+            android:gravity="center"
+            android:text="@string/desc_armorPlate1"
+            android:textColor="@color/steampunkRedFade"
+            android:textSize="11sp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="99dp" />
+
+        <TextView
+            android:id="@+id/tungstenPlates"
+            android:layout_width="281dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/trade_winds"
+            android:gravity="center"
+            android:text="@string/desc_armorPlate2"
+            android:textColor="@color/steampunkRedFade"
+            android:textSize="11sp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="166dp" />
+
+        <TextView
+            android:id="@+id/chromiumPlates"
+            android:layout_width="281dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/trade_winds"
+            android:gravity="center"
+            android:text="@string/desc_armorPlate3"
+            android:textColor="@color/steampunkRedFade"
+            android:textSize="11sp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="229dp" />
+
+        <TextView
+            android:id="@+id/defNanites1"
+            android:layout_width="281dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/trade_winds"
+            android:gravity="center"
+            android:text="@string/desc_nanites1"
+            android:textColor="@color/steampunkRedFade"
+            android:textSize="11sp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="296dp" />
+
+        <TextView
+            android:id="@+id/defNanites2"
+            android:layout_width="281dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/trade_winds"
+            android:gravity="center"
+            android:text="@string/desc_nanites2"
+            android:textColor="@color/steampunkRedFade"
+            android:textSize="11sp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="360dp" />
+
+        <TextView
+            android:id="@+id/defNanites3"
+            android:layout_width="281dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/trade_winds"
+            android:gravity="center"
+            android:text="@string/desc_nanites3"
+            android:textColor="@color/steampunkRedFade"
+            android:textSize="11sp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="425dp" />
+
+        <TextView
+            android:id="@+id/defGauntlets1"
+            android:layout_width="281dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/trade_winds"
+            android:gravity="center"
+            android:text="@string/desc_gauntlets1"
+            android:textColor="@color/steampunkRedFade"
+            android:textSize="11sp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="489dp" />
+
+        <TextView
+            android:id="@+id/defGauntlets2"
+            android:layout_width="281dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/trade_winds"
+            android:gravity="center"
+            android:text="@string/desc_gauntlets2"
+            android:textColor="@color/steampunkRedFade"
+            android:textSize="11sp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="555dp" />
+
+        <TextView
+            android:id="@+id/defIllegal1"
+            android:layout_width="281dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/trade_winds"
+            android:gravity="center"
+            android:text="@string/desc_illegal1"
+            android:textColor="@color/steampunkRedFade"
+            android:textSize="11sp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="620dp" />
+
+        <Button
+            android:id="@+id/goBackBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/steampunkBlueFade"
+            android:fontFamily="@font/trade_winds"
+            android:text="@string/goBackBTN"
+            android:textColor="@color/steampunkYellow"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="5dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/armorPlating2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+
+    <LinearLayout
+        android:id="@+id/armorPlating3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <LinearLayout
+        android:id="@+id/gauntlets1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <LinearLayout
+        android:id="@+id/gauntlets2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <LinearLayout
+        android:id="@+id/nanites1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <LinearLayout
+        android:id="@+id/nanites2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <LinearLayout
+        android:id="@+id/nanites3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <LinearLayout
+        android:id="@+id/illegal1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

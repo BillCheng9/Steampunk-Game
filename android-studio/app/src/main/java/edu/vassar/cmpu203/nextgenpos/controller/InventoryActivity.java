@@ -20,7 +20,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        p = (Player) getIntent().getParcelableExtra("curPlayer");
+        p = getIntent().getParcelableExtra("curPlayer");
 
         getSupportActionBar().hide();
         inventory = new Inventory(this, this, p);
