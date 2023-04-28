@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 
 public class Player implements Parcelable {
     public int experience, gears, health, defense, damage, maxHealth, trueDefense;
+    public boolean steel, tung, chrom, xt1, xt3, xtp, gaunt1, gaunt2, illegal;
     public Item[] inventory;
 
     /**
@@ -22,6 +23,15 @@ public class Player implements Parcelable {
         this.damage = damage;
         this.experience = experience;
         this.inventory = inventory;
+        this.steel = false;
+        this.tung = false;
+        this.chrom = false;
+        this.xt1 = false;
+        this.xt3 = false;
+        this.xtp = false;
+        this.gaunt1 = false;
+        this.gaunt2 = false;
+        this.illegal = false;
     }
 
 
@@ -33,6 +43,15 @@ public class Player implements Parcelable {
         damage = in.readInt();
         maxHealth = in.readInt();
         trueDefense = in.readInt();
+        steel = in.readBoolean();
+        tung = in.readBoolean();
+        chrom = in.readBoolean();
+        xt1 = in.readBoolean();
+        xt3 = in.readBoolean();
+        xtp = in.readBoolean();
+        gaunt1 = in.readBoolean();
+        gaunt2 = in.readBoolean();
+        illegal = in.readBoolean();
     }
 
     @Override
@@ -44,6 +63,15 @@ public class Player implements Parcelable {
         parcel.writeInt(damage);
         parcel.writeInt(maxHealth);
         parcel.writeInt(trueDefense);
+        parcel.writeBoolean(steel);
+        parcel.writeBoolean(tung);
+        parcel.writeBoolean(chrom);
+        parcel.writeBoolean(xt1);
+        parcel.writeBoolean(xt3);
+        parcel.writeBoolean(xtp);
+        parcel.writeBoolean(gaunt1);
+        parcel.writeBoolean(gaunt2);
+        parcel.writeBoolean(illegal);
     }
 
     public static final Creator<Player> CREATOR = new Creator<Player>() {
