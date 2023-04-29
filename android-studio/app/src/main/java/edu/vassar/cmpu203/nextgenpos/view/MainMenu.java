@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import edu.vassar.cmpu203.nextgenpos.databinding.FragmentMainMenuBinding;
+import edu.vassar.cmpu203.nextgenpos.databinding.MainMenuBinding;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.ArmorStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.GearStat;
@@ -13,7 +13,7 @@ import edu.vassar.cmpu203.nextgenpos.model.StatTypes.HealthStat;
 
 public class MainMenu implements IMainMenu{
 
-    FragmentMainMenuBinding binding;
+    MainMenuBinding binding;
     Listener listener;
     HealthStat healthBar;
     ArmorStat armorBar;
@@ -23,7 +23,7 @@ public class MainMenu implements IMainMenu{
 
         // instantiate
         this.listener = listener;
-        this.binding = FragmentMainMenuBinding.inflate(LayoutInflater.from(context));
+        this.binding = MainMenuBinding.inflate(LayoutInflater.from(context));
         healthBar = new HealthStat(p.health, p.maxHealth);
         armorBar = new ArmorStat(p.defense);
         gearBar = new GearStat(p.gears);

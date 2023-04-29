@@ -6,23 +6,21 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 public class Player implements Parcelable {
-    public int experience, gears, health, defense, damage, maxHealth, trueDefense;
+    public int experience, gears, health, defense, damage, maxHealth, gearMult;
     public boolean steel, tung, chrom, xt1, xt3, xtp, gaunt1, gaunt2, illegal;
     public Item[] inventory;
 
     /**
      * Creates a Player entity with (temporary) numbers for stats
      */
-    public Player(int maxHealth, int trueDefense, int damage, int experience, int gears, Item[] inventory){
+    public Player(int health, int maxHealth, int defense, int damage, int gears, int gearMult){
         //Placeholder values for first iteration
-        this.health = maxHealth;
+        this.health = health;
         this.maxHealth = maxHealth;
         this.gears = gears;
-        this.defense = trueDefense;
-        this.trueDefense = trueDefense;
+        this.defense = defense;
         this.damage = damage;
-        this.experience = experience;
-        this.inventory = inventory;
+        this.gearMult = gearMult;
         this.steel = false;
         this.tung = false;
         this.chrom = false;
@@ -42,7 +40,6 @@ public class Player implements Parcelable {
         defense = in.readInt();
         damage = in.readInt();
         maxHealth = in.readInt();
-        trueDefense = in.readInt();
         steel = in.readBoolean();
         tung = in.readBoolean();
         chrom = in.readBoolean();
@@ -62,7 +59,6 @@ public class Player implements Parcelable {
         parcel.writeInt(defense);
         parcel.writeInt(damage);
         parcel.writeInt(maxHealth);
-        parcel.writeInt(trueDefense);
         parcel.writeBoolean(steel);
         parcel.writeBoolean(tung);
         parcel.writeBoolean(chrom);
@@ -117,13 +113,6 @@ public class Player implements Parcelable {
     }
 
     /**
-     * Opens up the Player inventory and allows the User to equip/unequip different items and pets
-     */
-    public void accessInv() {
-    }
-
-
-    /**
      * Calculates whether or not the Player successfully flees
      *
      * @return True if the player successfully flees, False if not
@@ -162,10 +151,10 @@ public class Player implements Parcelable {
         else return 0;
     }
 
-    public void onEnd(int gear, int exp) {
-        gears += gear;
-        experience += exp;
+    public void onEnd(int gear) {
+        gears += gear * gearMult;
     }
+
 
     @Override
     public int describeContents() {

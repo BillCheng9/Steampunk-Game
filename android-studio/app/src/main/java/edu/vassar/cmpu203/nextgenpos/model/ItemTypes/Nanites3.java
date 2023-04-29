@@ -6,12 +6,11 @@ public class Nanites3 implements Item {
 
     String name = "XT-PROTO NANITES";
     String desc = "A SET OF STATE-OF-THE-ART NANITES THAT PROVIDES OVERCLOCKING CAPABILITY FOR THE STANDARD CORES";
-    int numberItems;
     int healthChange = 9;
     int cost = 15;
 
-    public Nanites3(int numberItems) {
-        this.numberItems = numberItems;
+    public Nanites3() {
+
     }
 
     /**
@@ -45,23 +44,13 @@ public class Nanites3 implements Item {
     }
 
     /**
-     * Getter method for number of items
-     *
-     * @return numberItems
-     */
-    @Override
-    public int getNumberItems() {
-        return numberItems;
-    }
-
-    /**
      * Getter method for health change
      *
      * @return healthChange
      */
     @Override
     public int getHealthChange() {
-        return getNumberItems() * healthChange;
+        return healthChange;
     }
 
     /**
@@ -101,14 +90,5 @@ public class Nanites3 implements Item {
     public String displayStats() {
         String x = "HEALTH +" + getHealthChange();
         return x;
-    }
-
-    /**
-     * Display numbers of items
-     * @return String representation of number of items
-     */
-    public String displayNumbers() {
-        String s = "YOU HAVE " + getNumberItems() + " OF THESE.";
-        return s;
     }
 }

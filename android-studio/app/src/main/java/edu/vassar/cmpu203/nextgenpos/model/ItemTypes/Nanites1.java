@@ -6,11 +6,10 @@ public class Nanites1 implements Item {
 
     String name = "XT-1 NANITES";
     String desc = "A SET OF NANITES THAT INCREASES CORE EFFICIENCY";
-    int numberItems;
     int healthChange = 2;
     int cost = 3;
-    public Nanites1(int numberItems) {
-        this.numberItems = numberItems;
+    public Nanites1() {
+
     }
 
     /**
@@ -44,23 +43,13 @@ public class Nanites1 implements Item {
     }
 
     /**
-     * Getter method for number of items
-     *
-     * @return numberItems
-     */
-    @Override
-    public int getNumberItems() {
-        return numberItems;
-    }
-
-    /**
      * Getter method for health change
      *
      * @return healthChange
      */
     @Override
     public int getHealthChange() {
-        return getNumberItems() * healthChange;
+        return healthChange;
     }
 
     /**
@@ -100,14 +89,5 @@ public class Nanites1 implements Item {
     public String displayStats() {
         String x = "HEALTH +" + getHealthChange();
         return x;
-    }
-
-    /**
-     * Display numbers of items
-     * @return String representation of number of items
-     */
-    public String displayNumbers() {
-        String s = "YOU HAVE " + getNumberItems() + " OF THESE.";
-        return s;
     }
 }

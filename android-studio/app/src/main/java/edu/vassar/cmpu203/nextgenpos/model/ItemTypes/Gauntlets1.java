@@ -6,12 +6,10 @@ public class Gauntlets1 implements Item {
 
     String name = "MECHA-GAUNTLETS";
     String desc = "GAUNTLETS MADE WITH SHARPENED STEEL TO ENHANCE FIGHTING CAPABILITIES";
-    int numberItems;
     int damageChange = 1;
     int cost = 3;
 
-    public Gauntlets1(int numberItems) {
-        this.numberItems = numberItems;
+    public Gauntlets1() {
     }
 
     /**
@@ -42,16 +40,6 @@ public class Gauntlets1 implements Item {
     @Override
     public String getDesc() {
         return desc;
-    }
-
-    /**
-     * Getter method for number of items
-     *
-     * @return numberItems
-     */
-    @Override
-    public int getNumberItems() {
-        return numberItems;
     }
 
     /**
@@ -91,7 +79,7 @@ public class Gauntlets1 implements Item {
      */
     @Override
     public int getDamageChange() {
-        return getDamageChange() * damageChange;
+        return damageChange;
     }
 
     /**
@@ -101,14 +89,5 @@ public class Gauntlets1 implements Item {
     public String displayStats() {
         String x = "DAMAGE +" + getDamageChange();
         return x;
-    }
-
-    /**
-     * Display numbers of items
-     * @return String representation of number of items
-     */
-    public String displayNumbers() {
-        String s = "YOU HAVE " + getNumberItems() + " OF THESE.";
-        return s;
     }
 }

@@ -10,8 +10,7 @@ public class Plate1 implements Item {
     int defenseChange = 1;
     int cost = 3;
 
-    public Plate1(int numberItems) {
-        this.numberItems = numberItems;
+    public Plate1() {
     }
 
     /**
@@ -45,16 +44,6 @@ public class Plate1 implements Item {
     }
 
     /**
-     * Getter method for number of items
-     *
-     * @return numberItems
-     */
-    @Override
-    public int getNumberItems() {
-        return numberItems;
-    }
-
-    /**
      * Getter method for health change
      *
      * @return healthChange
@@ -71,7 +60,7 @@ public class Plate1 implements Item {
      */
     @Override
     public int getDefenseChange() {
-        return getNumberItems() * defenseChange;
+        return defenseChange;
     }
 
     /**
@@ -101,14 +90,5 @@ public class Plate1 implements Item {
     public String displayStats() {
         String x = "ARMOR +" + getDefenseChange();
         return x;
-    }
-
-    /**
-     * Display numbers of items
-     * @return String representation of number of items
-     */
-    public String displayNumbers() {
-        String s = "YOU HAVE " + getNumberItems() + " OF THESE.";
-        return s;
     }
 }

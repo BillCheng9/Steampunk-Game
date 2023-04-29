@@ -6,12 +6,10 @@ public class Implants1 implements Item {
 
     String name = "CBA IMPLANTS";
     String desc = "IMPLANTS THAT PROVIDE AN EXTRA BOOST OF STRENGTH TO THE GAUNTLETS BY IMPLEMENTING GAS PISTONS";
-    int numberItems;
     int damageChange = 2;
     int cost = 5;
 
-    public Implants1(int numberItems) {
-        this.numberItems = numberItems;
+    public Implants1(){
     }
 
     /**
@@ -42,16 +40,6 @@ public class Implants1 implements Item {
     @Override
     public String getDesc() {
         return desc;
-    }
-
-    /**
-     * Getter method for number of items
-     *
-     * @return numberItems
-     */
-    @Override
-    public int getNumberItems() {
-        return numberItems;
     }
 
     /**
@@ -91,7 +79,7 @@ public class Implants1 implements Item {
      */
     @Override
     public int getDamageChange() {
-        return getNumberItems() * damageChange;
+        return damageChange;
     }
 
     /**
@@ -101,14 +89,5 @@ public class Implants1 implements Item {
     public String displayStats() {
         String x = "DAMAGE +" + getDamageChange();
         return x;
-    }
-
-    /**
-     * Display numbers of items
-     * @return String representation of number of items
-     */
-    public String displayNumbers() {
-        String s = "YOU HAVE " + getNumberItems() + " OF THESE.";
-        return s;
     }
 }

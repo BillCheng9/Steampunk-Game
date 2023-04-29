@@ -51,5 +51,15 @@ public interface IWorkshop {
          * Buys item 9
          */
         void illegal1Click();
+
+        /**
+         * Heals player
+         */
+        void healClick();
+
+        /**
+         * Finalizes buying action
+         */
+        void buyClick(String type);
     }
 }

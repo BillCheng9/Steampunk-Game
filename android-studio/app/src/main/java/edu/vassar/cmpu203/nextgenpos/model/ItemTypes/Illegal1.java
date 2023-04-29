@@ -6,12 +6,10 @@ public class Illegal1 implements Item {
 
     String name = "ILLEGAL CYBERNETIC ENHANCEMENTS";
     String desc = "ILLEGAL ENHANCEMENTS FOUND ON THE BLACK MARKET";
-    int numberItems;
-    double gearsChange = .10;
+    int gearsChange = 2;
     int cost = 15;
 
-    public Illegal1(int numberItems) {
-        this.numberItems = numberItems;
+    public Illegal1() {
     }
 
     /**
@@ -45,16 +43,6 @@ public class Illegal1 implements Item {
     }
 
     /**
-     * Getter method for number of items
-     *
-     * @return numberItems
-     */
-    @Override
-    public int getNumberItems() {
-        return numberItems;
-    }
-
-    /**
      * Getter method for health change
      *
      * @return healthChange
@@ -81,7 +69,7 @@ public class Illegal1 implements Item {
      */
     @Override
     public int getGearChange() {
-        return (int) (getNumberItems() * gearsChange);
+        return  gearsChange;
     }
 
     /**
@@ -101,14 +89,5 @@ public class Illegal1 implements Item {
     public String displayStats() {
         String x = "GEARS BOOST +" + getGearChange();
         return x;
-    }
-
-    /**
-     * Display numbers of items
-     * @return String representation of number of items
-     */
-    public String displayNumbers() {
-        String s = "YOU HAVE " + getNumberItems() + " OF THESE.";
-        return s;
     }
 }

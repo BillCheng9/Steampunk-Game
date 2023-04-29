@@ -38,8 +38,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
 
         getSupportActionBar().hide();
         // instantiate player: maxHealth, trueDefense, damage, experience, gears, pet
-        Item[] inventory = new Item[9];
-        this.p = new Player(10,10, 5, 3, 0, inventory);
+        this.p = new Player(10,10, 5, 3, 0, 1);
         // instantiate combat and player dialogue
         this.combatDialogue = new CombatDialogue();
         this.playerDialogue = new PlayerDialogue();
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      * @return Enemy type
      */
     private Enemy enemyPicker() {
-        int eVal = (int) (Math.random() * 4);
+        int eVal = (int)(Math.random() * 4);
         switch (eVal) {
             // iron ant
             case 1:

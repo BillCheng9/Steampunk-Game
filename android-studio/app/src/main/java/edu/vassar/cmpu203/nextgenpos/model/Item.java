@@ -5,7 +5,6 @@ public interface Item {
     String name = null;
     String desc = null;
     int cost = 0;
-    int numberItems = 0;
     int healthChange = 0;
     int defenseChange = 0;
     int gearChange = 0;
@@ -28,12 +27,6 @@ public interface Item {
      * @return desc
      */
     String getDesc();
-
-    /**
-     * Getter method for number of items
-     * @return numberItems
-     */
-    int getNumberItems();
 
     /**
      * Getter method for health change

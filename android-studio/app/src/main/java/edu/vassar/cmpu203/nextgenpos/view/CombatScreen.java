@@ -144,7 +144,7 @@ public class CombatScreen implements ICombatScreen {
                 text += playerDialogue.displayPMH();
             }
             else if (hit > 0) {
-                text += playerDialogue.displayPHL() + " ";
+                text += playerDialogue.displayPHH() + " ";
                 damageDialogue = new CombatDialogue(dmg);
                 text += damageDialogue.displayDamage();
             }

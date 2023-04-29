@@ -6,12 +6,11 @@ public class Plate3 implements Item {
 
     String name = "CHROMIUM-TITANIUM PLATES";
     String desc = "ADVANCED ARMOR PLATING MADE FROM STRONG CHROMIUM-TITANIUM ALLOY";
-    int numberItems;
     int defenseChange = 3;
     int cost = 5;
 
-    public Plate3(int numberItems) {
-        this.numberItems = numberItems;
+    public Plate3() {
+
     }
 
     /**
@@ -45,16 +44,6 @@ public class Plate3 implements Item {
     }
 
     /**
-     * Getter method for number of items
-     *
-     * @return numberItems
-     */
-    @Override
-    public int getNumberItems() {
-        return numberItems;
-    }
-
-    /**
      * Getter method for health change
      *
      * @return healthChange
@@ -71,7 +60,7 @@ public class Plate3 implements Item {
      */
     @Override
     public int getDefenseChange() {
-        return getNumberItems() * defenseChange;
+        return defenseChange;
     }
 
     /**
@@ -101,14 +90,5 @@ public class Plate3 implements Item {
     public String displayStats() {
         String x = "ARMOR +" + getDefenseChange();
         return x;
-    }
-
-    /**
-     * Display numbers of items
-     * @return String representation of number of items
-     */
-    public String displayNumbers() {
-        String s = "YOU HAVE " + getNumberItems() + " OF THESE.";
-        return s;
     }
 }
