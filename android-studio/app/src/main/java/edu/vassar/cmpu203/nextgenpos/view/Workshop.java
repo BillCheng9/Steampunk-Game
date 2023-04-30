@@ -106,34 +106,49 @@ public class Workshop implements IWorkshop{
     }
 
     public void displayPlate1() {
-        Workshop.this.binding.shopText.setText("THESE ARE SIMPLE ARMOR PLATING MADE FROM STEEL. THEY'LL PROVIDE YOU WITH +1 DEF");
+        Workshop.this.binding.shopText.setText("THESE ARE SIMPLE ARMOR PLATING MADE FROM STEEL. THEY'LL PROVIDE YOU WITH +1 DEF FOR 3 GEARS.");
     }
     public void displayPlate2() {
-        Workshop.this.binding.shopText.setText("THESE ARE ADVANCED TUNGSTEN-STEEL PLATING. THEY'LL PROVIDE YOU WITH +2 DEF");
+        Workshop.this.binding.shopText.setText("THESE ARE ADVANCED TUNGSTEN-STEEL PLATING. THEY'LL PROVIDE YOU WITH +2 DEF FOR 4 GEARS.");
     }
     public void displayPlate3() {
-        Workshop.this.binding.shopText.setText("THESE ARE STRONG CHROMIUM-TITANIUM PLATING. THEY'LL PROVIDE YOU WITH +3 DEF");
+        Workshop.this.binding.shopText.setText("THESE ARE STRONG CHROMIUM-TITANIUM PLATING. THEY'LL PROVIDE YOU WITH +3 DEF FOR 5 GEARS.");
     }
     public void displayNanite1() {
-        Workshop.this.binding.shopText.setText("THESE ARE SIMPLE CORE NANITES. THEY'LL PROVIDE YOU WITH +2 MAX HEALTH");
+        Workshop.this.binding.shopText.setText("THESE ARE SIMPLE CORE NANITES. THEY'LL PROVIDE YOU WITH +2 MAX HEALTH FOR 3 GEARS.");
     }
     public void displayNanite2() {
-        Workshop.this.binding.shopText.setText("THESE ARE ADVANCED CORE NANITES. THEY'LL PROVIDE YOU WITH +5 MAX HEALTH");
+        Workshop.this.binding.shopText.setText("THESE ARE ADVANCED CORE NANITES. THEY'LL PROVIDE YOU WITH +5 MAX HEALTH FOR 7 GEARS.");
     }
     public void displayNanite3() {
-        Workshop.this.binding.shopText.setText("THESE ARE STATE OF THE ART PROTOTYPE CORE NANITES. THEY'LL PROVIDE YOU WITH +9 MAX HEALTH");
+        Workshop.this.binding.shopText.setText("THESE ARE STATE OF THE ART PROTOTYPE CORE NANITES. THEY'LL PROVIDE YOU WITH +9 MAX HEALTH FOR 15 GEARS.");
     }
     public void displayGauntlet() {
-        Workshop.this.binding.shopText.setText("THESE ARE STEEL BOXING GAUNTLETS. THEY'LL PROVIDE YOU WITH +1 DAMAGE");
+        Workshop.this.binding.shopText.setText("THESE ARE STEEL BOXING GAUNTLETS. THEY'LL PROVIDE YOU WITH +1 DAMAGE FOR 3 GEARS.");
     }
     public void displayImplant() {
-        Workshop.this.binding.shopText.setText("THESE ARE MILITARY GRADE CQB FIGHTING IMPLANTS. THEY'LL PROVIDE YOU WITH +2 DAMAGE");
+        Workshop.this.binding.shopText.setText("THESE ARE MILITARY GRADE CQB FIGHTING IMPLANTS. THEY'LL PROVIDE YOU WITH +2 DAMAGE FOR 5 GEARS.");
     }
     public void displayIllegal() {
-        Workshop.this.binding.shopText.setText("THESE ARE BLACK MARKET ENHANCEMENTS. I'LL BE HONEST, I DON'T KNOW WHAT THEY DO. BE CAREFUL.");
+        Workshop.this.binding.shopText.setText("THESE ARE BLACK MARKET ENHANCEMENTS. I'LL BE HONEST, I DON'T KNOW WHAT THEY DO. BE CAREFUL FOR 15 GEARS.");
     }
     public void displayWelcome() {
-        Workshop.this.binding.shopText.setText("WELCOME FRIEND! TAKE YOUR TIME TO SHOP, OR IF YOU NEED, WE GOT A MECHANIC ON DUTY.");
+        int textVal = (int)(Math.random() * 4);
+        String text;
+        switch (textVal) {
+            case 1:
+                text = "WELCOME FRIEND! TAKE YOUR TIME TO SHOP, OR IF YOU NEED, WE GOT A MECHANIC ON DUTY.";
+                break;
+            case 2:
+                text = "BIG MAN WALKING IN. WHAT CAN WE DO FOR YOU, FRIEND?";
+                break;
+            case 3:
+                text = "LOOKING TO PROTECT YOURSELF OR DEAL SOME DAMAGE?";
+                break;
+            default:
+                text = "LET ME KNOW IF ANYTHING CATCHES YOUR EYE, I'M ON MY BREAK RIGHT NOW.";
+        }
+        Workshop.this.binding.shopText.setText(text);
     }
     public void displayBuyATK(){
         Workshop.this.binding.shopText.setText("THANK YOU! CRACK SOME METAL WITH THOSE FOR US!");
@@ -158,6 +173,10 @@ public class Workshop implements IWorkshop{
     }
     public void displayCantBuy() {
         Workshop.this.binding.shopText.setText("AH! SORRY, WE ARE OUT OF STOCK OF THIS ITEM.");
+    }
+    public void displayGears() {
+        String text = "GEARS: " + p.gears;
+        Workshop.this.binding.shopText.setText(text);
     }
 
     public void btnVisibility(boolean state, String itemType){

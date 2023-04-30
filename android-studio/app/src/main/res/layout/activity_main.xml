@@ -129,12 +129,6 @@
             android:text="@string/armorText" />
 
         <TextView
-            android:id="@+id/expText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/expText" />
-
-        <TextView
             android:id="@+id/gearText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

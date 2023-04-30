@@ -5,14 +5,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import edu.vassar.cmpu203.nextgenpos.databinding.InventoryBinding;
+import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Gauntlets1;
+import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Illegal1;
+import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Implants1;
+import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Nanites1;
+import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Nanites2;
+import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Nanites3;
+import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Plate1;
+import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Plate2;
+import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Plate3;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
 
 public class Inventory implements IInventory {
 
     InventoryBinding binding;
     Listener listener;
-
     Player p;
+    Plate1 plate1 = new Plate1();
+    Plate2 plate2 = new Plate2();
+    Plate3 plate3 = new Plate3();
+    Nanites1 nanites1 = new Nanites1();
+    Nanites2 nanites2 = new Nanites2();
+    Nanites3 nanites3 = new Nanites3();
+    Gauntlets1 gauntlets1 = new Gauntlets1();
+    Implants1 implants1 = new Implants1();
+    Illegal1 illegal1 = new Illegal1();
 
     public Inventory(Context context, Listener listener, Player p){
         this.listener = listener;
@@ -89,6 +106,107 @@ public class Inventory implements IInventory {
         });
 
     }
+
+    public void displayPlate1() {
+        Inventory.this.binding.nameText.setText(plate1.getName());
+        Inventory.this.binding.descText.setText(plate1.getDesc());
+        Inventory.this.binding.statText.setText(plate1.displayStats());
+        if (p.steel) {
+            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        }
+        else {
+            Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
+        }
+    }
+    public void displayPlate2() {
+        Inventory.this.binding.nameText.setText(plate2.getName());
+        Inventory.this.binding.descText.setText(plate2.getDesc());
+        Inventory.this.binding.statText.setText(plate2.displayStats());
+        if (p.tung) {
+            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        }
+        else {
+            Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
+        }
+    }
+    public void displayPlate3() {
+        Inventory.this.binding.nameText.setText(plate3.getName());
+        Inventory.this.binding.descText.setText(plate3.getDesc());
+        Inventory.this.binding.statText.setText(plate3.displayStats());
+        if (p.chrom) {
+            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        }
+        else {
+            Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
+        }
+    }
+    public void displayNanites1() {
+        Inventory.this.binding.nameText.setText(nanites1.getName());
+        Inventory.this.binding.descText.setText(nanites1.getDesc());
+        Inventory.this.binding.statText.setText(nanites1.displayStats());
+        if (p.xt1) {
+            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        }
+        else {
+            Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
+        }
+    }
+    public void displayNanites2() {
+        Inventory.this.binding.nameText.setText(nanites2.getName());
+        Inventory.this.binding.descText.setText(nanites2.getDesc());
+        Inventory.this.binding.statText.setText(nanites2.displayStats());
+        if (p.xt3) {
+            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        }
+        else {
+            Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
+        }
+    }
+    public void displayNanites3() {
+        Inventory.this.binding.nameText.setText(nanites3.getName());
+        Inventory.this.binding.descText.setText(nanites3.getDesc());
+        Inventory.this.binding.statText.setText(nanites3.displayStats());
+        if (p.xtp) {
+            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        }
+        else {
+            Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
+        }
+    }
+    public void displayGauntlets() {
+        Inventory.this.binding.nameText.setText(gauntlets1.getName());
+        Inventory.this.binding.descText.setText(gauntlets1.getDesc());
+        Inventory.this.binding.statText.setText(gauntlets1.displayStats());
+        if (p.gaunt1) {
+            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        }
+        else {
+            Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
+        }
+    }
+    public void displayImplants() {
+        Inventory.this.binding.nameText.setText(implants1.getName());
+        Inventory.this.binding.descText.setText(implants1.getDesc());
+        Inventory.this.binding.statText.setText(implants1.displayStats());
+        if (p.gaunt2) {
+            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        }
+        else {
+            Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
+        }
+    }
+    public void displayIllegal() {
+        Inventory.this.binding.nameText.setText(illegal1.getName());
+        Inventory.this.binding.descText.setText(illegal1.getDesc());
+        Inventory.this.binding.statText.setText(illegal1.displayStats());
+        if (p.illegal) {
+            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        }
+        else {
+            Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
+        }
+    }
+
 
     public void buttonClickable(boolean clickable) {
         Inventory.this.binding.steelPlates.setClickable(clickable);

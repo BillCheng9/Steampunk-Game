@@ -59,15 +59,6 @@ public class CombatDialogue {
     }
 
     /**
-     * HashMap for onEnd dialogue
-     * @param gear gear value
-     * @param exp exp value
-     */
-    public CombatDialogue (int gear, int exp) {
-        dialogue.put("onEnd", "YOU GAIN " + gear + " GEARS AND " + exp + " EXPERIENCE!");
-    }
-
-    /**
      * Start dialogue
      *
      * @return dialogue corresponding to start

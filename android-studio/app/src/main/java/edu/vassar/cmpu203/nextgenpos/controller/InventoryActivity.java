@@ -47,7 +47,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
      */
     @Override
     public void plates1Click() {
-
+        inventory.displayPlate1();
     }
 
     /**
@@ -55,7 +55,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
      */
     @Override
     public void plates2Click() {
-
+        inventory.displayPlate2();
     }
 
     /**
@@ -63,7 +63,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
      */
     @Override
     public void plates3Click() {
-
+        inventory.displayPlate3();
     }
 
     /**
@@ -71,7 +71,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
      */
     @Override
     public void nanites1Click() {
-
+        inventory.displayNanites1();
     }
 
     /**
@@ -79,7 +79,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
      */
     @Override
     public void nanites2Click() {
-
+        inventory.displayNanites2();
     }
 
     /**
@@ -87,7 +87,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
      */
     @Override
     public void nanites3Click() {
-
+        inventory.displayNanites3();
     }
 
     /**
@@ -95,7 +95,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
      */
     @Override
     public void gauntlets1Click() {
-
+        inventory.displayGauntlets();
     }
 
     /**
@@ -103,7 +103,7 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
      */
     @Override
     public void implants1CLick() {
-
+        inventory.displayImplants();
     }
 
     /**
@@ -111,6 +111,6 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
      */
     @Override
     public void illegal1Click() {
-
+        inventory.displayIllegal();
     }
 }

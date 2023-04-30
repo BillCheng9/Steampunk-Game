@@ -235,9 +235,8 @@ public class CombatScreen implements ICombatScreen {
     /**
      * Sets dialogueText to Win
      */
-    public void displayEndWin(int gear, int exp) {
-        CombatDialogue endDialogue = new CombatDialogue(gear, exp);
-        String text = combatDialogue.displayWin() + " " + endDialogue.displayOnEnd();
+    public void displayEndWin(int gear) {
+        String text = combatDialogue.displayWin() + " YOU GAIN " + gear + " GEARS!";
         this.binding.dialogueText.setText(text);
     }
 

@@ -41,6 +41,12 @@
             android:name=".controller.ContinueActivity"
             android:exported="true">
         </activity>
+
+        <activity
+            android:name=".controller.WorkshopActivity"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

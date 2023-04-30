@@ -68,7 +68,7 @@
 
             <ImageView
                 android:id="@+id/steelPlates"
-                android:src="@drawable/Steel_Plate"
+                android:src="@drawable/steel_plate"
                 android:layout_width="50sp"
                 android:layout_height="90sp"
                 android:padding="10dp"
@@ -80,7 +80,7 @@
 
             <ImageView
                 android:id="@+id/tungstenPlates"
-                android:src="@drawable/Tungsten_Steel_Plate"
+                android:src="@drawable/tungsten_steel_plate"
                 android:layout_width="50sp"
                 android:layout_height="90sp"
                 android:padding="10dp"
@@ -92,7 +92,7 @@
 
             <ImageView
                 android:id="@+id/chromiumPlates"
-                android:src="@drawable/Chromium_Titanium_Plate"
+                android:src="@drawable/chromium_titanium_plate"
                 android:layout_width="50sp"
                 android:layout_height="90sp"
                 android:padding="10dp"
@@ -111,7 +111,7 @@
 
             <ImageView
                 android:id="@+id/xt1Nanites"
-                android:src="@drawable/XT_1_Nanites"
+                android:src="@drawable/xt1_nanites"
                 android:layout_width="50sp"
                 android:layout_height="90sp"
                 android:padding="10dp"
@@ -123,7 +123,7 @@
 
             <ImageView
                 android:id="@+id/xt3Nanites"
-                android:src="@drawable/XT_3_Nanites"
+                android:src="@drawable/xt3_nanites"
                 android:layout_width="50sp"
                 android:layout_height="90sp"
                 android:padding="10dp"
@@ -135,7 +135,7 @@
 
             <ImageView
                 android:id="@+id/xtpNanites"
-                android:src="@drawable/XT_Proto_Nanites"
+                android:src="@drawable/xtproto_nanites"
                 android:layout_width="50sp"
                 android:layout_height="90sp"
                 android:padding="10dp"
@@ -154,7 +154,7 @@
 
             <ImageView
                 android:id="@+id/gauntlets1"
-                android:src="@drawable/Mecha_Gauntlet"
+                android:src="@drawable/mecha_gauntlet"
                 android:layout_width="50sp"
                 android:layout_height="90sp"
                 android:padding="10dp"
@@ -166,7 +166,7 @@
 
             <ImageView
                 android:id="@+id/gauntlets2"
-                android:src="@drawable/CBA_Implants"
+                android:src="@drawable/cba_implants"
                 android:layout_width="50sp"
                 android:layout_height="90sp"
                 android:padding="10dp"
@@ -178,7 +178,7 @@
 
             <ImageView
                 android:id="@+id/illegal1"
-                android:src="@drawable/Illegal_Cybernetic_Implants"
+                android:src="@drawable/illegal_cybernetic_enhancement"
                 android:layout_width="50sp"
                 android:layout_height="90sp"
                 android:padding="10dp"
@@ -210,8 +210,8 @@
 
         <ImageView
             android:id="@+id/shopIcon"
-            android:layout_width="150sp"
-            android:layout_height="275sp"
+            android:layout_width="140sp"
+            android:layout_height="260sp"
             android:layout_weight="1"
             android:scaleType="center"
             android:src="@drawable/shop_owner2" />
@@ -226,21 +226,32 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/gearsText"
+                android:layout_width="match_parent"
+                android:layout_height="10sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:fontFamily="@font/trade_winds"
+                android:textColor="@color/steampunkBlue"
+                android:text="@string/gearsText" />
+
+            <TextView
                 android:id="@+id/shopText"
-                android:layout_width="130sp"
+                android:layout_width="150sp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4sp"
                 android:gravity="center"
                 android:layout_weight="3"
+                android:textSize="11sp"
                 android:fontFamily="@font/trade_winds"
+                android:textColor="@color/steampunkBlue"
                 android:text="@string/shop" />
 
             <Button
                 android:id="@+id/buyBTN"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12sp"
-                android:layout_marginEnd="12sp"
+                android:layout_marginStart="24sp"
+                android:layout_marginEnd="24sp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/steampunkBlueFade"
                 android:fontFamily="@font/trade_winds"

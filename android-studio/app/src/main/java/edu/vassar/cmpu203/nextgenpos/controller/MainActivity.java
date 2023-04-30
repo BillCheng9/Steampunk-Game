@@ -84,11 +84,10 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         if ( !e.healthCheck()) {
             cScreen.removeContinueText();
             int gear = e.getGear();
-            int exp = e.getExp();
             p.onEnd(e.getGear());
             cScreen.renewExpGear(p);
             cScreen.buttonClickable(false);
-            cScreen.displayEndWin(gear, exp);
+            cScreen.displayEndWin(gear);
             winCombat();
         }
         else if ( !p.healthCheck() ) {
@@ -154,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         }
         cScreen.buttonClickable(false);
         healthChecker();
-        continueClick();
+        continueClick("false");
     }
 
     /**
@@ -173,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         }
         cScreen.buttonClickable(false);
         healthChecker();
-        continueClick();
+        continueClick("false");
     }
 
     /**
@@ -190,25 +189,35 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     @Override
     public void fleeClick() {
         boolean check = p.flee();
-        if (check) {
-            cScreen.buttonClickable(false);
-        }
-        cScreen.displayFlee(check);
         cScreen.buttonClickable(false);
-        continueClick();
+        if (check) {
+            cScreen.displayFlee(true);
+            continueClick("flee");
+        }
+        else {
+            cScreen.displayFlee(false);
+            continueClick("false");
+        }
     }
 
     /**
      * makes dialogueCLickable true and displays the continue text
      */
-    public void continueClick() {
+    public void continueClick(String state) {
         cScreen.dialogueClickable(true);
         cScreen.displayContinueText();
+        if (state.equals("flee")) {
+            switchActivitiesContinue();
+        }
+        else if (state.equals("lost")) {
+            switchActivitiesMenu();
+        }
     }
 
     public void endCombat(){
         cScreen.dialogueClickable(true);
         cScreen.displayEndLose();
+        continueClick("lost");
     }
 
     public void winCombat(){
@@ -233,6 +242,10 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     private void switchActivitiesContinue() {
         Intent i = new Intent(this, ContinueActivity.class);
         i.putExtra("curPlayer", p);
+        startActivity(i);
+    }
+    private void switchActivitiesMenu() {
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
 

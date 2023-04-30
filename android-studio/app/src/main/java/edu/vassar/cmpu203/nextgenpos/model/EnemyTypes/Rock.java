@@ -4,7 +4,7 @@ import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 public class Rock implements Enemy{
     String name = "LITERAL ROCK";
     int defense = 1;
-    int health = 23;
+    int health = 20;
     int damage = 0;
     int gear = 0;
     int exp = 1;
@@ -26,10 +26,10 @@ public class Rock implements Enemy{
     }
 
     /**
-     * Increase Enemy's health by 5
+     * Increase Enemy's health by 4
      */
     public void increase_stat() {
-        health += 5;
+        health += 4;
     }
 
     /**
