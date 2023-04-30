@@ -6,6 +6,7 @@ import android.view.View;
 
 import edu.vassar.cmpu203.nextgenpos.databinding.WorkshopBinding;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
+import edu.vassar.cmpu203.nextgenpos.model.StatTypes.GearStat;
 
 public class Workshop implements IWorkshop{
 
@@ -15,10 +16,14 @@ public class Workshop implements IWorkshop{
 
     Player p;
     String type;
+    GearStat gearBar;
 
     public Workshop(Context context, Listener listener, Player p){
         this.listener = listener;
         this.binding = WorkshopBinding.inflate(LayoutInflater.from(context));
+        gearBar = new GearStat(p.gears);
+
+        this.binding.gearsText.setText(gearBar.toString());
 
         this.binding.goBackBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,8 +180,8 @@ public class Workshop implements IWorkshop{
         Workshop.this.binding.shopText.setText("AH! SORRY, WE ARE OUT OF STOCK OF THIS ITEM.");
     }
     public void displayGears() {
-        String text = "GEARS: " + p.gears;
-        Workshop.this.binding.shopText.setText(text);
+        gearBar = new GearStat(p.gears);
+        Workshop.this.binding.shopText.setText(gearBar.toString());
     }
 
     public void btnVisibility(boolean state, String itemType){

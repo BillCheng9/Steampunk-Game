@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         if ( !e.healthCheck()) {
             cScreen.removeContinueText();
             int gear = e.getGear();
-            p.onEnd(e.getGear());
+            p.onEnd(25);
             cScreen.renewExpGear(p);
             cScreen.buttonClickable(false);
             cScreen.displayEndWin(gear);
@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         boolean check = p.flee();
         cScreen.buttonClickable(false);
         if (check) {
-            cScreen.displayFlee(true);
+            //cScreen.displayFlee(true);
             continueClick("flee");
         }
         else {

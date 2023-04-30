@@ -15,6 +15,7 @@ import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Plate1;
 import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Plate2;
 import edu.vassar.cmpu203.nextgenpos.model.ItemTypes.Plate3;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
+import edu.vassar.cmpu203.nextgenpos.model.StatTypes.GearStat;
 import edu.vassar.cmpu203.nextgenpos.view.IWorkshop;
 import edu.vassar.cmpu203.nextgenpos.view.Workshop;
 
@@ -35,14 +36,13 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        p = getIntent().getParcelableExtra("curPlayer");
+        p = (Player) getIntent().getParcelableExtra("curPlayer");
 
         getSupportActionBar().hide();
 
         workshop = new Workshop(this, this, p);
         workshop.onStartBTN();
         workshop.displayWelcome();
-        workshop.displayGears();
 
         this.setContentView(workshop.getRootView());
     }
