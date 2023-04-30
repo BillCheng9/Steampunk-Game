@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.view.IStartScreen;
 import edu.vassar.cmpu203.nextgenpos.view.StartScreen;
 
@@ -12,6 +13,8 @@ import edu.vassar.cmpu203.nextgenpos.view.StartScreen;
 public class StartMenuActivity extends AppCompatActivity implements IStartScreen.Listener {
 
     StartScreen startScreen;
+
+    Player p;
     //MediaPlayer mp;
 
     /**
@@ -24,6 +27,8 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
 
         getSupportActionBar().hide();
         startScreen = new StartScreen(this, this);
+
+        this.p = new Player(10,10, 5, 3, 0, 1);
 
         this.setContentView(startScreen.getRootView());
     }
@@ -46,8 +51,9 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
 
     private void switchActivities(String activity) {
         if (activity.equals("START")) {
-            Intent switchActivityIntent = new Intent(this, MainActivity.class);
-            startActivity(switchActivityIntent);
+            Intent i = new Intent(this, MainActivity.class);
+            i.putExtra("curPlayer", p);
+            startActivity(i);
         }
         else if (activity.equals("HELP")) {
             Intent switchActivityIntent = new Intent(this, HelpActivity.class);
