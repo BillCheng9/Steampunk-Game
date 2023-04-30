@@ -75,21 +75,26 @@
     <LinearLayout
         android:id="@+id/dialogueArea"
         android:layout_width="404dp"
-        android:layout_height="118dp"
+        android:layout_height="275dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
         android:clickable="true"
         android:orientation="vertical"
         android:textAlignment="center"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/buttonSelection"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="@id/statArea">
 
         <TextView
             android:id="@+id/dialogueText"
             android:layout_width="match_parent"
-            android:layout_height="97dp"
+            android:textColor="@color/steampunkBlue"
+            android:fontFamily="@font/trade_winds"
+            android:layout_height="225dp"
+            android:textSize="20sp"
             android:gravity="center"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -98,7 +103,9 @@
         <TextView
             android:id="@+id/dialogueContinue"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:textColor="@color/steampunkBlue"
+            android:fontFamily="@font/trade_winds"
+            android:layout_height="45sp"
             android:gravity="end"
             android:text="@string/dialogueContinue" />
     </LinearLayout>
@@ -120,18 +127,24 @@
             android:id="@+id/healthText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/steampunkBlue"
+            android:fontFamily="@font/trade_winds"
             android:text="@string/healthText" />
 
         <TextView
             android:id="@+id/armorText"
             android:layout_width="wrap_content"
+            android:textColor="@color/steampunkBlue"
+            android:fontFamily="@font/trade_winds"
             android:layout_height="wrap_content"
             android:text="@string/armorText" />
 
         <TextView
             android:id="@+id/gearText"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/trade_winds"
             android:layout_height="wrap_content"
+            android:textColor="@color/steampunkBlue"
             android:text="@string/gearText" />
 
     </LinearLayout>
@@ -152,12 +165,16 @@
         <TextView
             android:id="@+id/enemyHealthText"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/trade_winds"
+            android:textColor="@color/steampunkBlue"
             android:layout_height="wrap_content"
             android:text="@string/enemyHealthText" />
 
         <TextView
             android:id="@+id/enemyArmorText"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/trade_winds"
+            android:textColor="@color/steampunkBlue"
             android:layout_height="wrap_content"
             android:text="@string/enemyArmorText" />
     </LinearLayout>

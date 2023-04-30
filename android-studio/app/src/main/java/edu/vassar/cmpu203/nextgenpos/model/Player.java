@@ -152,7 +152,7 @@ public class Player implements Parcelable {
     }
 
     public void onEnd(int gear) {
-        gears = gears + (gear * gearMult);
+        this.gears = gears + (gear * gearMult);
     }
 
 

@@ -28,7 +28,7 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
         getSupportActionBar().hide();
         startScreen = new StartScreen(this, this);
 
-        this.p = new Player(10,10, 5, 3, 0, 1);
+        this.p = new Player(10,10, 5, 3, 3, 1);
 
         this.setContentView(startScreen.getRootView());
     }

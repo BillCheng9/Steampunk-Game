@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     CombatScreen cScreen;
 
     boolean end = false;
+    boolean die = false;
+    boolean flee = false;
 
     /**
      * onCreate method that dictates the rootview and all functions to be started on start
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      * @return Enemy type
      */
     private Enemy enemyPicker() {
-        int eVal = (int)(Math.random() * 4);
+        int eVal = (int)(Math.random() * 5);
         switch (eVal) {
             // iron ant
             case 1:
@@ -83,12 +85,12 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     private void healthChecker() {
         // check for health
         if ( !e.healthCheck()) {
-            cScreen.removeContinueText();
             int gear = e.getGear();
             p.onEnd(25);
             cScreen.renewExpGear(p);
+            cScreen.removeContinueText();
             cScreen.buttonClickable(false);
-            cScreen.displayEndWin(gear);
+            cScreen.displayEndWin(25);
             winCombat();
         }
         else if ( !p.healthCheck() ) {
@@ -101,41 +103,36 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      * Logic for Enemy turn, and sets buttonClickable to true
      */
     private void enemyTurn() {
-        if (end) {
-            switchActivitiesContinue();
-        }
-        cScreen.dialogueClickable(false);
-        cScreen.removeContinueText();
-        int eAtkChoice = e.pickAttack();
-        if (eAtkChoice == 0) {
-            int hit = e.short_attack();
-            if (hit > 0) {
-                int dmg = p.attacked(hit);
-                cScreen.displayEnemyAttack("LIGHT", dmg, hit, e);
-                cScreen.renewHealth(p);
+        if (!end && !flee && !die) {
+            cScreen.dialogueClickable(false);
+            cScreen.removeContinueText();
+            int eAtkChoice = e.pickAttack();
+            if (eAtkChoice == 0) {
+                int hit = e.short_attack();
+                if (hit > 0) {
+                    int dmg = p.attacked(hit);
+                    cScreen.displayEnemyAttack("LIGHT", dmg, hit, e);
+                    cScreen.renewHealth(p);
+                } else if (hit == 0) {
+                    cScreen.displayEnemyAttack("LIGHT", 0, 0, e);
+                }
+            } else if (eAtkChoice == 1) {
+                int hit = e.charge_attack();
+                if (hit > 0) {
+                    int dmg = p.attacked(hit);
+                    cScreen.displayEnemyAttack("HEAVY", dmg, hit, e);
+                    cScreen.renewHealth(p);
+                } else if (hit == 0) {
+                    cScreen.displayEnemyAttack("HEAVY", 0, 0, e);
+                }
+            } else if (eAtkChoice == -1) {
+                cScreen.displayEnemyAttack("CHARGE", 0, 0, e);
+                cScreen.renewEHealth(e);
+                cScreen.renewEArmor(e);
             }
-            else if (hit == 0) {
-                cScreen.displayEnemyAttack("LIGHT", 0, 0, e);
-            }
+            cScreen.buttonClickable(true);
+            healthChecker();
         }
-        else if (eAtkChoice == 1) {
-            int hit = e.charge_attack();
-            if (hit > 0) {
-                int dmg = p.attacked(hit);
-                cScreen.displayEnemyAttack("HEAVY", dmg, hit, e);
-                cScreen.renewHealth(p);
-            }
-            else if (hit == 0) {
-                cScreen.displayEnemyAttack("HEAVY", 0, 0, e);
-            }
-        }
-        else if (eAtkChoice == -1) {
-            cScreen.displayEnemyAttack("CHARGE", 0, 0, e);
-            cScreen.renewEHealth(e);
-            cScreen.renewEArmor(e);
-        }
-        cScreen.buttonClickable(true);
-        healthChecker();
     }
 
     /**
@@ -154,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         }
         cScreen.buttonClickable(false);
         healthChecker();
-        continueClick("false");
+        continueClick();
     }
 
     /**
@@ -173,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         }
         cScreen.buttonClickable(false);
         healthChecker();
-        continueClick("false");
+        continueClick();
     }
 
     /**
@@ -192,33 +189,29 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         boolean check = p.flee();
         cScreen.buttonClickable(false);
         if (check) {
-            //cScreen.displayFlee(true);
-            continueClick("flee");
+            flee = true;
+            cScreen.displayFlee(true);
+            continueClick();
         }
         else {
             cScreen.displayFlee(false);
-            continueClick("false");
+            continueClick();
         }
     }
 
     /**
      * makes dialogueCLickable true and displays the continue text
      */
-    public void continueClick(String state) {
+    public void continueClick() {
         cScreen.dialogueClickable(true);
         cScreen.displayContinueText();
-        if (state.equals("flee")) {
-            switchActivitiesContinue();
-        }
-        else if (state.equals("lost")) {
-            switchActivitiesMenu();
-        }
     }
 
     public void endCombat(){
         cScreen.dialogueClickable(true);
         cScreen.displayEndLose();
-        continueClick("lost");
+        die = true;
+        continueClick();
     }
 
     public void winCombat(){
@@ -231,6 +224,15 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      */
     @Override
     public void dialogueClick() {
+        if (flee) {
+            switchActivitiesContinue();
+        }
+        else if (die) {
+            switchActivitiesMenu();
+        }
+        else if (end) {
+            switchActivitiesContinue();
+        }
         enemyTurn();
     }
 
@@ -246,7 +248,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         startActivity(i);
     }
     private void switchActivitiesMenu() {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, StartMenuActivity.class);
         startActivity(i);
     }
 
