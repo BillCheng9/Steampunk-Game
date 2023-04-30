@@ -40,6 +40,7 @@ public class Player implements Parcelable {
         defense = in.readInt();
         damage = in.readInt();
         maxHealth = in.readInt();
+        gearMult = in.readInt();
         steel = in.readBoolean();
         tung = in.readBoolean();
         chrom = in.readBoolean();
@@ -59,6 +60,7 @@ public class Player implements Parcelable {
         parcel.writeInt(defense);
         parcel.writeInt(damage);
         parcel.writeInt(maxHealth);
+        parcel.writeInt(gearMult);
         parcel.writeBoolean(steel);
         parcel.writeBoolean(tung);
         parcel.writeBoolean(chrom);

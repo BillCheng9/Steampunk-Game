@@ -30,6 +30,7 @@
             <TextView
                 android:id="@+id/healthText2"
                 android:layout_width="match_parent"
+                android:textColor="@color/steampunkBlue"
                 android:layout_height="22dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/trade_winds"
@@ -40,6 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
                 android:layout_marginBottom="8dp"
+                android:textColor="@color/steampunkBlue"
                 android:fontFamily="@font/trade_winds"
                 android:text="@string/armorText" />
 
@@ -48,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
                 android:layout_marginBottom="8dp"
+                android:textColor="@color/steampunkBlue"
                 android:fontFamily="@font/trade_winds"
                 android:text="@string/gearText" />
 

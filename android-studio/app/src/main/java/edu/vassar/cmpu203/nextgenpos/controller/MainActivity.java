@@ -86,11 +86,12 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         // check for health
         if ( !e.healthCheck()) {
             int gear = e.getGear();
-            p.onEnd(25);
+            p.onEnd(gear);
+
             cScreen.renewExpGear(p);
             cScreen.removeContinueText();
             cScreen.buttonClickable(false);
-            cScreen.displayEndWin(25);
+            cScreen.displayEndWin(gear);
             winCombat();
         }
         else if ( !p.healthCheck() ) {
