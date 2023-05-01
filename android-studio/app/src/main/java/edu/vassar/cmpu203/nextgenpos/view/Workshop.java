@@ -135,7 +135,7 @@ public class Workshop implements IWorkshop{
         Workshop.this.binding.shopText.setText("THESE ARE MILITARY GRADE CQB FIGHTING IMPLANTS. THEY'LL PROVIDE YOU WITH +2 DAMAGE FOR 5 GEARS.");
     }
     public void displayIllegal() {
-        Workshop.this.binding.shopText.setText("THESE ARE BLACK MARKET ENHANCEMENTS. I'LL BE HONEST, I DON'T KNOW WHAT THEY DO. BE CAREFUL FOR 15 GEARS.");
+        Workshop.this.binding.shopText.setText("THESE ARE BLACK MARKET ENHANCEMENTS. I'LL BE HONEST, I DON'T KNOW WHAT THEY DO, SO BE CAREFUL. I'LL GIVE IT TO YOU FOR 15 GEARS?");
     }
     public void displayWelcome() {
         int textVal = (int)(Math.random() * 4);
@@ -182,6 +182,9 @@ public class Workshop implements IWorkshop{
     public void displayGears() {
         gearBar = new GearStat(p.gears);
         Workshop.this.binding.shopText.setText(gearBar.toString());
+    }
+    public void displayHealBuy() {
+        Workshop.this.binding.shopText.setText("IF YOU'RE LOOKING FOR A QUICK TUNE-UP, OUR MECHANIC WILL TAKE A LOOK FOR 2 GEARS.");
     }
 
     public void btnVisibility(boolean state, String itemType){
