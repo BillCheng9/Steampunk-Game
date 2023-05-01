@@ -118,6 +118,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
     @Override
     public void healClick() {
         workshop.btnVisibility(true, "HEAL");
+        workshop.displayHealBuy();
     }
 
     /**
@@ -137,7 +138,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
                     workshop.displayHeal();
                     p.health = p.maxHealth;
                     p.gears -= 2;
-                    workshop.displayGears();
+                    workshop.displayGears(p);
                 }
                 break;
             case "PLATES2":
@@ -149,7 +150,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
                         p.gears -= tungPlate.getCost();
                         p.defense += tungPlate.getDefenseChange();
                         p.tung = true;
-                        workshop.displayGears();
+                        workshop.displayGears(p);
                     }
                 }
                 else {
@@ -165,7 +166,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
                         p.gears -= chromPlate.getCost();
                         p.defense += chromPlate.getDefenseChange();
                         p.chrom = true;
-                        workshop.displayGears();
+                        workshop.displayGears(p);
                     }
                 }
                 else {
@@ -182,7 +183,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
                         p.maxHealth += xt1.getHealthChange();
                         p.health += xt1.getHealthChange();
                         p.xt1 = true;
-                        workshop.displayGears();
+                        workshop.displayGears(p);
                     }
                 }
                 else {
@@ -199,7 +200,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
                         p.maxHealth += xt3.getHealthChange();
                         p.health += xt3.getHealthChange();
                         p.xt3 = true;
-                        workshop.displayGears();
+                        workshop.displayGears(p);
                     }
                 }
                 else {
@@ -216,7 +217,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
                         p.maxHealth += xtp.getHealthChange();
                         p.health += xtp.getHealthChange();
                         p.xtp = true;
-                        workshop.displayGears();
+                        workshop.displayGears(p);
                     }
                 }
                 else {
@@ -232,7 +233,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
                         p.gears -= gauntlet.getCost();
                         p.damage += gauntlet.getDamageChange();
                         p.gaunt1 = true;
-                        workshop.displayGears();
+                        workshop.displayGears(p);
                     }
                 }
                 else {
@@ -248,7 +249,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
                         p.gears -= implants.getCost();
                         p.damage += implants.getDamageChange();
                         p.gaunt2 = true;
-                        workshop.displayGears();
+                        workshop.displayGears(p);
                     }
                 }
                 else {
@@ -264,7 +265,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
                         p.gears -= illegal.getCost();
                         p.gearMult = illegal.getGearChange();
                         p.illegal = true;
-                        workshop.displayGears();
+                        workshop.displayGears(p);
                     }
                 }
                 else {
@@ -280,7 +281,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
                         p.gears -= steelPlate.getCost();
                         p.defense += steelPlate.getDefenseChange();
                         p.steel = true;
-                        workshop.displayGears();
+                        workshop.displayGears(p);
                     }
                 }
                 else {

@@ -11,10 +11,7 @@ import edu.vassar.cmpu203.nextgenpos.model.StatTypes.GearStat;
 public class Workshop implements IWorkshop{
 
     WorkshopBinding binding;
-
     Listener listener;
-
-    Player p;
     String type;
     GearStat gearBar;
 
@@ -179,9 +176,9 @@ public class Workshop implements IWorkshop{
     public void displayCantBuy() {
         Workshop.this.binding.shopText.setText("AH! SORRY, WE ARE OUT OF STOCK OF THIS ITEM.");
     }
-    public void displayGears() {
+    public void displayGears(Player p) {
         gearBar = new GearStat(p.gears);
-        Workshop.this.binding.shopText.setText(gearBar.toString());
+        Workshop.this.binding.gearsText.setText(gearBar.toString());
     }
     public void displayHealBuy() {
         Workshop.this.binding.shopText.setText("IF YOU'RE LOOKING FOR A QUICK TUNE-UP, OUR MECHANIC WILL TAKE A LOOK FOR 2 GEARS.");

@@ -89,7 +89,7 @@
                 android:textColor="@color/steampunkBlue"
                 android:textSize="12sp"
                 android:fontFamily="@font/trade_winds"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:text="@string/numberItems" />
         </LinearLayout>
 
