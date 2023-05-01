@@ -3,11 +3,9 @@ import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 
 public class Rock implements Enemy{
     String name = "LITERAL ROCK";
-    int defense = 1;
-    int health = 20;
-    int damage = 0;
-    int gear = 0;
-    int exp = 1;
+    int defense = (int)(Math.random() * 1) + 1;
+    int health = (int)(Math.random() * 10) + 9;
+    int gear = (int)(Math.random() * 1) + 1;
 
     /**
      * Returns 0
@@ -59,16 +57,6 @@ public class Rock implements Enemy{
      */
     public boolean healthCheck() {
         return health > 0;
-    }
-
-    /**
-     * Getter method for exp
-     *
-     * @return exp
-     */
-    @Override
-    public int getExp() {
-        return exp;
     }
 
     /**

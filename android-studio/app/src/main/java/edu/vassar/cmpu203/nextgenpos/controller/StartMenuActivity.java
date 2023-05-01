@@ -1,10 +1,12 @@
 package edu.vassar.cmpu203.nextgenpos.controller;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.vassar.cmpu203.nextgenpos.R;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.view.IStartScreen;
 import edu.vassar.cmpu203.nextgenpos.view.StartScreen;
@@ -15,7 +17,7 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
     StartScreen startScreen;
 
     Player p;
-    //MediaPlayer mp;
+    MediaPlayer mp;
 
     /**
      * onCreate method that dictates the rootview and all functions to be started on start
@@ -25,6 +27,8 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        this.mp = MediaPlayer.create(this, R.raw.button_onclick);
+
         getSupportActionBar().hide();
         startScreen = new StartScreen(this, this);
 
@@ -33,11 +37,22 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
         this.setContentView(startScreen.getRootView());
     }
 
+    public void onDestroy() {
+        super.onDestroy();
+        mp.release();
+    }
+
     /**
      * Continues on to the combat screen
      */
     @Override
     public void startClick() {
+        if (this.mp.isPlaying()) {
+            this.mp.seekTo(0);
+        }
+        else {
+            this.mp.start();
+        }
         switchActivities("START");
     }
 
@@ -46,6 +61,12 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
      */
     @Override
     public void helpClick() {
+        if (this.mp.isPlaying()) {
+            this.mp.seekTo(0);
+        }
+        else {
+            this.mp.start();
+        }
         switchActivities("HELP");
     }
 

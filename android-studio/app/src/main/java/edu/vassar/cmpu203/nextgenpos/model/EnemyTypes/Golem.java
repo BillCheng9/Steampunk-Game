@@ -3,11 +3,10 @@ import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 
 public class Golem implements Enemy{
     String name = "STEAM GOLEM";
-    int defense = 8;
-    int health = 15;
-    int damage = 4;
-    int gear = 6;
-    int exp = 15;
+    int defense = (int)(Math.random() * 8) + 2;
+    int health = (int)(Math.random() * 13) + 5;
+    int damage = (int)(Math.random() * 3) + 2;
+    int gear = (int)(Math.random() * 6) + 4;
 
     /**
      * Calculates chance of hitting Player with an Enemy's light attack and the damage it does
@@ -33,16 +32,16 @@ public class Golem implements Enemy{
             return 0;
         }
         else {
-            return damage * 2;
+            return (int) (damage * 1.5);
         }
     }
 
     /**
-     * Increase Enemy's damage by 5, defense by -5 with a minimum defense of 0
+     * Increase Enemy's damage by 2, defense by -3 with a minimum defense of 0
      */
     public void increase_stat() {
-        damage += 5;
-        defense -= 5;
+        damage += 2;
+        defense -= 3;
         if (defense < 0) {
             defense = 0;
         }
@@ -54,16 +53,6 @@ public class Golem implements Enemy{
      */
     public boolean healthCheck() {
         return health > 0;
-    }
-
-    /**
-     * Getter method for exp
-     *
-     * @return exp
-     */
-    @Override
-    public int getExp() {
-        return exp;
     }
 
     /**

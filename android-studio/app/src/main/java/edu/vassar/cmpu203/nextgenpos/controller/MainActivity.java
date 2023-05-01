@@ -6,11 +6,16 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import edu.vassar.cmpu203.nextgenpos.model.Enemy;
+import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Bot;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Bug;
+import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Drone;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Golem;
+import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Protectron;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Rock;
+import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Sentry;
+import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.TGolem;
+import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Watcher;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Worker;
-import edu.vassar.cmpu203.nextgenpos.model.Item;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.model.UI.DialogueBar;
 import edu.vassar.cmpu203.nextgenpos.view.CombatDialogue;
@@ -58,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      * @return Enemy type
      */
     private Enemy enemyPicker() {
-        int eVal = (int)(Math.random() * 5);
+        int eVal = (int)(Math.random() * 10);
         switch (eVal) {
             // iron ant
             case 1:
@@ -71,6 +76,24 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             // golem
             case 3:
                 e = new Golem();
+                break;
+            case 4:
+                e = new Bot();
+                break;
+            case 5:
+                e = new Drone();
+                break;
+            case 6:
+                e = new Protectron();
+                break;
+            case 7:
+                e = new Sentry();
+                break;
+            case 8:
+                e = new TGolem();
+                break;
+            case 9:
+                e = new Watcher();
                 break;
             // default-worker bot
             default:

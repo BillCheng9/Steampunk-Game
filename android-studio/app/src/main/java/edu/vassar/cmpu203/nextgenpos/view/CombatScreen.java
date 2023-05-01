@@ -219,6 +219,21 @@ public class CombatScreen implements ICombatScreen {
                 else if (name.equals("IRON ANT")) {
                     text += combatEnemyDialogue.displayBug_S();
                 }
+                else if (name.equals("STEEL SENTRY")) {
+                    text += combatEnemyDialogue.displaySentry_S();
+                }
+                else if (name.equals("XT-D PROTECTRON")) {
+                    text += combatEnemyDialogue.displayProtectron_S();
+                }
+                else if (name.equals("LURKING_WATCHER")) {
+                    text += combatEnemyDialogue.displayWatcher_S();
+                }
+                else if (name.equals("MECHA-BOT")) {
+                    text += combatEnemyDialogue.displayBot_S();
+                }
+                else if (name.equals("TITANIUM GOLEM")) {
+                    text += combatEnemyDialogue.displayTGolem_S();
+                }
             }
         }
         text += " " + combatDialogue.displayPrompt();

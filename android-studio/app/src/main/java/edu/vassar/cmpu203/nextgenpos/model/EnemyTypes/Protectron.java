@@ -1,12 +1,12 @@
 package edu.vassar.cmpu203.nextgenpos.model.EnemyTypes;
 import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 
-public class Worker implements Enemy {
-    String name = "WORKER BOT";
-    int defense = (int)(Math.random() * 3) + 1;
-    int health = (int)(Math.random() * 5) + 4;
-    int damage = (int)(Math.random() * 2) + 2;
-    int gear = (int)(Math.random() * 4) + 1;
+public class Protectron implements Enemy{
+    String name = "XT-D Protectron";
+    int defense = (int)(Math.random() * 3) + 4;
+    int health = (int)(Math.random() * 3) + 2;
+    int damage = (int)(Math.random() * 1) + 1;
+    int gear = (int)(Math.random() * 3) + 1;
 
     /**
      * Calculates chance of hitting Player with an Enemy's light attack and the damage it does
@@ -14,7 +14,7 @@ public class Worker implements Enemy {
      */
     public int short_attack() {
         int value = (int)(Math.random() * 100);
-        if (value > 70) {
+        if (value > 50) {
             return 0;
         }
         else {
@@ -28,7 +28,7 @@ public class Worker implements Enemy {
      */
     public int charge_attack() {
         int value = (int)(Math.random() * 100);
-        if (value > 49) {
+        if (value > 69) {
             return 0;
         }
         else {
@@ -37,18 +37,19 @@ public class Worker implements Enemy {
     }
 
     /**
-     * Increase Enemy's damage and health by 1
+     * Increase Enemy's defense by 2
      */
     public void increase_stat() {
-        damage++;
-        health++;
+        defense += 2;
     }
 
     /**
      * Checks Enemy's health
      * @return True if health>0, False if not
      */
-    public boolean healthCheck() { return health > 0; }
+    public boolean healthCheck() {
+        return health > 0;
+    }
 
     /**
      * Getter method for gear
@@ -58,6 +59,14 @@ public class Worker implements Enemy {
     @Override
     public int getGear() {
         return gear;
+    }
+
+    /**
+     * Returns Enemy's name
+     * @return Enemy's name
+     */
+    public String getName(){
+        return name;
     }
 
     /**
@@ -86,7 +95,8 @@ public class Worker implements Enemy {
      * @param value Player's attack value
      * @return the damage done to Enemy
      */
-    public int attacked(int value){
+    @Override
+    public int attacked(int value) {
         if (value > 0) {
             int dmgValue = value - defense;
             if (dmgValue <= 1) {
@@ -97,7 +107,9 @@ public class Worker implements Enemy {
                 return dmgValue;
             }
         }
-        else return 0;
+        else {
+            return 0;
+        }
     }
 
     /**
@@ -114,13 +126,5 @@ public class Worker implements Enemy {
             this.increase_stat();
             return -1;
         }
-    }
-
-    /**
-     * Returns Enemy's name
-     * @return Enemy's name
-     */
-    public String getName() {
-        return name;
     }
 }

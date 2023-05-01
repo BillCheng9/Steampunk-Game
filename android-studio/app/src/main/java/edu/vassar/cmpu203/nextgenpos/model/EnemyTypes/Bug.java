@@ -3,11 +3,10 @@ import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 
 public class Bug implements Enemy {
     String name = "IRON ANT";
-    int defense = 1;
-    int health = 3;
-    int damage = 2;
-    int exp = 5;
-    int gear = 3;
+    int defense = (int)(Math.random() * 2) + 1;
+    int health = (int)(Math.random() * 2) + 3;
+    int damage = (int)(Math.random() * 1) + 1;
+    int gear = (int)(Math.random() * 2) + 1;
 
     /**
      * Calculates chance of hitting Player with an Enemy's light attack and the damage it does
@@ -19,7 +18,7 @@ public class Bug implements Enemy {
             return 0;
         }
         else {
-            return damage / 2;
+            return damage;
         }
     }
 
@@ -50,16 +49,6 @@ public class Bug implements Enemy {
      */
     public boolean healthCheck() {
         return health > 0;
-    }
-
-    /**
-     * Getter method for exp
-     *
-     * @return exp
-     */
-    @Override
-    public int getExp() {
-        return exp;
     }
 
     /**

@@ -33,6 +33,11 @@ public class CombatDialogue {
         dialogue.put("golem_special", "STEAM GOLEM SHIFTS ITS METALLIC ARMOR TO ITS FISTS!");
         dialogue.put("rock_special", "THE ROCK SOMEHOW GROWS LARGER?!");
         dialogue.put("rock_move", "IT'S A LITERAL ROCK. IT CAN'T HURT YOU...");
+        dialogue.put("sentry_special", "THE STEEL SENTRY PREPARES ITSELF FOR COMBAT!");
+        dialogue.put("protectron_special", "THE XT-D PROTECTRON STARTS PUMPING NANITES IN!");
+        dialogue.put("watcher_special", "THE LURKING WATCHER COATS ITSELF IN HEALING ALGAE");
+        dialogue.put("bot_special", "THE MECHA-BOT STRIPS ITS ARMOR TO STRENGTHEN ITS FISTS!");
+        dialogue.put("tgolem_special", "THE TITANIUM GOLEM LETS OUT A METALLIC SCREECH AND ITS INFERNAL CORES GROW BRIGHTER");
     }
 
     /**
@@ -164,6 +169,46 @@ public class CombatDialogue {
      */
     public String displayGolem_S() {
         return dialogue.get("golem_special");
+    }
+
+    /**
+     * Steel Sentry's charge move dialogue
+     * @return dialogue corresponding to sentry special
+     */
+    public String displaySentry_S() {
+        return dialogue.get("sentry_special");
+    }
+
+    /**
+     * XT-D Protectron's charge move dialogue
+     * @return dialogue corresponding to protectron special
+     */
+    public String displayProtectron_S() {
+        return dialogue.get("protectron_special");
+    }
+
+    /**
+     * Lurking Watcher's charge move dialogue
+     * @return dialogue corresponding to watcher special
+     */
+    public String displayWatcher_S() {
+        return dialogue.get("watcher_special");
+    }
+
+    /**
+     * Mecha-Bot's charge move dialogue
+     * @return dialogue corresponding to bot special
+     */
+    public String displayBot_S() {
+        return dialogue.get("bot_special");
+    }
+
+    /**
+     * Titanium Golem's charge move dialogue
+     * @return dialogue corresponding to titanium golem special
+     */
+    public String displayTGolem_S() {
+        return dialogue.get("tgolem_special");
     }
 
     /**
