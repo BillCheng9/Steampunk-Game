@@ -6,14 +6,17 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 public class Player implements Parcelable {
-    public int experience, gears, health, defense, damage, maxHealth, gearMult;
-    public boolean steel, tung, chrom, xt1, xt3, xtp, gaunt1, gaunt2, illegal;
+    public int experience, gears, health, defense, damage, maxHealth, gearMult, gearScore;
+    public int steel, tung, chrom, xt1, xt3, xtp, gaunt1, gaunt2, illegal;
+    public String enemyFight;
+    public int enemyHealth, enemyDefense, enemyDamage;
+    //public boolean steel, tung, chrom, xt1, xt3, xtp, gaunt1, gaunt2, illegal;
     public Item[] inventory;
 
     /**
      * Creates a Player entity with (temporary) numbers for stats
      */
-    public Player(int health, int maxHealth, int defense, int damage, int gears, int gearMult){
+    public Player(int health, int maxHealth, int defense, int damage, int gears, int gearMult, int gearScore){
         //Placeholder values for first iteration
         this.health = health;
         this.maxHealth = maxHealth;
@@ -21,7 +24,21 @@ public class Player implements Parcelable {
         this.defense = defense;
         this.damage = damage;
         this.gearMult = gearMult;
-        this.steel = false;
+        this.gearScore = 0;
+        this.steel = 0;
+        this.tung = 0;
+        this.chrom = 0;
+        this.xt1 = 0;
+        this.xt3 = 0;
+        this.xtp = 0;
+        this.gaunt1 = 0;
+        this.gaunt2 = 0;
+        this.illegal = 0;
+        this.enemyFight = "NONE";
+        this.enemyHealth = 0;
+        this.enemyDamage = 0;
+        this.enemyDefense = 0;
+        /*this.steel = false;
         this.tung = false;
         this.chrom = false;
         this.xt1 = false;
@@ -29,7 +46,7 @@ public class Player implements Parcelable {
         this.xtp = false;
         this.gaunt1 = false;
         this.gaunt2 = false;
-        this.illegal = false;
+        this.illegal = false;*/
     }
 
 
@@ -41,7 +58,21 @@ public class Player implements Parcelable {
         damage = in.readInt();
         maxHealth = in.readInt();
         gearMult = in.readInt();
-        steel = in.readBoolean();
+        gearScore = in.readInt();
+        enemyFight = in.readString();
+        enemyHealth = in.readInt();
+        enemyDamage = in.readInt();
+        enemyDefense = in.readInt();
+        steel = in.readInt();
+        tung = in.readInt();
+        chrom = in.readInt();
+        xt1 = in.readInt();
+        xt3 = in.readInt();
+        xtp = in.readInt();
+        gaunt1 = in.readInt();
+        gaunt2 = in.readInt();
+        illegal = in.readInt();
+        /*steel = in.readBoolean();
         tung = in.readBoolean();
         chrom = in.readBoolean();
         xt1 = in.readBoolean();
@@ -49,7 +80,7 @@ public class Player implements Parcelable {
         xtp = in.readBoolean();
         gaunt1 = in.readBoolean();
         gaunt2 = in.readBoolean();
-        illegal = in.readBoolean();
+        illegal = in.readBoolean();*/
     }
 
     @Override
@@ -61,7 +92,21 @@ public class Player implements Parcelable {
         parcel.writeInt(damage);
         parcel.writeInt(maxHealth);
         parcel.writeInt(gearMult);
-        parcel.writeBoolean(steel);
+        parcel.writeInt(gearScore);
+        parcel.writeString(enemyFight);
+        parcel.writeInt(enemyHealth);
+        parcel.writeInt(enemyDamage);
+        parcel.writeInt(enemyDefense);
+        parcel.writeInt(steel);
+        parcel.writeInt(chrom);
+        parcel.writeInt(tung);
+        parcel.writeInt(xt1);
+        parcel.writeInt(xt3);
+        parcel.writeInt(xtp);
+        parcel.writeInt(gaunt1);
+        parcel.writeInt(gaunt2);
+        parcel.writeInt(illegal);
+        /*parcel.writeBoolean(steel);
         parcel.writeBoolean(tung);
         parcel.writeBoolean(chrom);
         parcel.writeBoolean(xt1);
@@ -69,7 +114,7 @@ public class Player implements Parcelable {
         parcel.writeBoolean(xtp);
         parcel.writeBoolean(gaunt1);
         parcel.writeBoolean(gaunt2);
-        parcel.writeBoolean(illegal);
+        parcel.writeBoolean(illegal);*/
     }
 
     public static final Creator<Player> CREATOR = new Creator<Player>() {

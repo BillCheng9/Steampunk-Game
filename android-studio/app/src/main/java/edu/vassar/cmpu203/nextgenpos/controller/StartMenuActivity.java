@@ -27,12 +27,13 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        this.mp = MediaPlayer.create(this, R.raw.button_onclick);
+        mp = MediaPlayer.create(this, R.raw.start_menu_music);
 
         getSupportActionBar().hide();
+        mp.start();
         startScreen = new StartScreen(this, this);
 
-        this.p = new Player(10,10, 5, 3, 3, 1);
+        this.p = new Player(10,10, 5, 3, 3, 1, 0);
 
         this.setContentView(startScreen.getRootView());
     }
@@ -47,12 +48,12 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
      */
     @Override
     public void startClick() {
-        if (this.mp.isPlaying()) {
+        /*if (this.mp.isPlaying()) {
             this.mp.seekTo(0);
         }
         else {
             this.mp.start();
-        }
+        }*/
         switchActivities("START");
     }
 
@@ -61,12 +62,12 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
      */
     @Override
     public void helpClick() {
-        if (this.mp.isPlaying()) {
+        /*if (this.mp.isPlaying()) {
             this.mp.seekTo(0);
         }
         else {
             this.mp.start();
-        }
+        }*/
         switchActivities("HELP");
     }
 

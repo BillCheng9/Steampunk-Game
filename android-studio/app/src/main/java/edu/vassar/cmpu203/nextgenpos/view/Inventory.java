@@ -110,8 +110,8 @@ public class Inventory implements IInventory {
         Inventory.this.binding.nameText.setText(plate1.getName());
         Inventory.this.binding.descText.setText(plate1.getDesc());
         Inventory.this.binding.statText.setText(plate1.displayStats());
-        if (p.steel) {
-            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        if (p.steel > 0) {
+            Inventory.this.binding.numberText.setText("YOU HAVE " + p.steel + " OF THIS ITEM.");
         }
         else {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
@@ -121,8 +121,8 @@ public class Inventory implements IInventory {
         Inventory.this.binding.nameText.setText(plate2.getName());
         Inventory.this.binding.descText.setText(plate2.getDesc());
         Inventory.this.binding.statText.setText(plate2.displayStats());
-        if (p.tung) {
-            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        if (p.tung > 0) {
+            Inventory.this.binding.numberText.setText("YOU HAVE " + p.tung + " THIS ITEM.");
         }
         else {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
@@ -132,8 +132,8 @@ public class Inventory implements IInventory {
         Inventory.this.binding.nameText.setText(plate3.getName());
         Inventory.this.binding.descText.setText(plate3.getDesc());
         Inventory.this.binding.statText.setText(plate3.displayStats());
-        if (p.chrom) {
-            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        if (p.chrom > 0) {
+            Inventory.this.binding.numberText.setText("YOU HAVE "+ p.chrom + " THIS ITEM.");
         }
         else {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
@@ -143,8 +143,8 @@ public class Inventory implements IInventory {
         Inventory.this.binding.nameText.setText(nanites1.getName());
         Inventory.this.binding.descText.setText(nanites1.getDesc());
         Inventory.this.binding.statText.setText(nanites1.displayStats());
-        if (p.xt1) {
-            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        if (p.xt1 > 0) {
+            Inventory.this.binding.numberText.setText("YOU HAVE " + p.xt1 + " THIS ITEM.");
         }
         else {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
@@ -154,8 +154,8 @@ public class Inventory implements IInventory {
         Inventory.this.binding.nameText.setText(nanites2.getName());
         Inventory.this.binding.descText.setText(nanites2.getDesc());
         Inventory.this.binding.statText.setText(nanites2.displayStats());
-        if (p.xt3) {
-            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        if (p.xt3 > 0) {
+            Inventory.this.binding.numberText.setText("YOU HAVE " + p.xt3 + " THIS ITEM.");
         }
         else {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
@@ -165,8 +165,8 @@ public class Inventory implements IInventory {
         Inventory.this.binding.nameText.setText(nanites3.getName());
         Inventory.this.binding.descText.setText(nanites3.getDesc());
         Inventory.this.binding.statText.setText(nanites3.displayStats());
-        if (p.xtp) {
-            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        if (p.xtp > 0) {
+            Inventory.this.binding.numberText.setText("YOU HAVE " + p.xtp + " THIS ITEM.");
         }
         else {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
@@ -176,8 +176,8 @@ public class Inventory implements IInventory {
         Inventory.this.binding.nameText.setText(gauntlets1.getName());
         Inventory.this.binding.descText.setText(gauntlets1.getDesc());
         Inventory.this.binding.statText.setText(gauntlets1.displayStats());
-        if (p.gaunt1) {
-            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        if (p.gaunt1 > 0) {
+            Inventory.this.binding.numberText.setText("YOU HAVE " + p.gaunt1 + " THIS ITEM.");
         }
         else {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
@@ -187,8 +187,8 @@ public class Inventory implements IInventory {
         Inventory.this.binding.nameText.setText(implants1.getName());
         Inventory.this.binding.descText.setText(implants1.getDesc());
         Inventory.this.binding.statText.setText(implants1.displayStats());
-        if (p.gaunt2) {
-            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        if (p.gaunt2 > 0) {
+            Inventory.this.binding.numberText.setText("YOU HAVE " + p.gaunt2 + " THIS ITEM.");
         }
         else {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
@@ -198,8 +198,8 @@ public class Inventory implements IInventory {
         Inventory.this.binding.nameText.setText(illegal1.getName());
         Inventory.this.binding.descText.setText(illegal1.getDesc());
         Inventory.this.binding.statText.setText(illegal1.displayStats());
-        if (p.illegal) {
-            Inventory.this.binding.numberText.setText("YOU HAVE THIS ITEM.");
+        if (p.illegal > 0) {
+            Inventory.this.binding.numberText.setText("YOU HAVE " + p.illegal + " THIS ITEM.");
         }
         else {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");

@@ -3,9 +3,37 @@ import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 
 public class Rock implements Enemy{
     String name = "LITERAL ROCK";
+    int damage = 0;
     int defense = (int)(Math.random() * 1) + 1;
     int health = (int)(Math.random() * 10) + 9;
     int gear = (int)(Math.random() * 1) + 1;
+
+    public Rock(int health, int damage, int defense) {
+        this.health = health;
+        this.damage = damage;
+        this.defense = defense;
+    }
+
+    public Rock(int gearScore) {
+        if (gearScore > 16) {
+            defense = defense * (gearScore / 3);
+            health = (int) (health * (gearScore/2.7));
+            damage = (int) (damage * (gearScore / 2.9));
+            gear = gear * (gearScore / 3);
+        }
+        else if (gearScore > 10) {
+            defense = defense * 2;
+            health = (int) (health * 2.5);
+            damage = damage * 2;
+            gear = gearScore * 2;
+        }
+        else if (gearScore > 5) {
+            defense = (int)(defense * 1.5);
+            health = health * 2;
+            damage = (int)(damage * 1.75);
+            gear = (int)(gearScore * 1.5);
+        }
+    }
 
     /**
      * Returns 0
@@ -67,6 +95,16 @@ public class Rock implements Enemy{
     @Override
     public int getGear() {
         return gear;
+    }
+
+    /**
+     * Getter method for damage
+     *
+     * @return damage
+     */
+    @Override
+    public int getDamage() {
+        return damage;
     }
 
     /**

@@ -2,11 +2,38 @@ package edu.vassar.cmpu203.nextgenpos.model.EnemyTypes;
 import edu.vassar.cmpu203.nextgenpos.model.Enemy;
 
 public class TGolem implements Enemy{
-    String name = "STEAM GOLEM";
+    String name = "TITANIUM GOLEM";
     int defense = (int)(Math.random() * 5) + 7;
     int health = (int)(Math.random() * 13) + 8;
     int damage = (int)(Math.random() * 2) + 1;
     int gear = (int)(Math.random() * 6) + 8;
+
+    public TGolem(int health, int damage, int defense) {
+        this.health = health;
+        this.damage = damage;
+        this.defense = defense;
+    }
+
+    public TGolem(int gearScore) {
+        if (gearScore > 16) {
+            defense = defense * (gearScore / 3);
+            health = (int) (health * (gearScore/2.7));
+            damage = (int) (damage * (gearScore / 2.9));
+            gear = gear * (gearScore / 3);
+        }
+        else if (gearScore > 10) {
+            defense = defense * 2;
+            health = (int) (health * 2.5);
+            damage = damage * 2;
+            gear = gearScore * 2;
+        }
+        else if (gearScore > 5) {
+            defense = (int)(defense * 1.5);
+            health = health * 2;
+            damage = (int)(damage * 1.75);
+            gear = (int)(gearScore * 1.5);
+        }
+    }
 
     /**
      * Calculates chance of hitting Player with an Enemy's light attack and the damage it does
@@ -73,6 +100,16 @@ public class TGolem implements Enemy{
     @Override
     public int getGear() {
         return gear;
+    }
+
+    /**
+     * Getter method for damage
+     *
+     * @return damage
+     */
+    @Override
+    public int getDamage() {
+        return damage;
     }
 
     /**

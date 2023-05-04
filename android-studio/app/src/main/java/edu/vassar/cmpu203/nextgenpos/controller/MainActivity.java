@@ -53,10 +53,55 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
 
         // instantiate dialogue bar
         this.dialogueBar = new DialogueBar();
-        cScreen = new CombatScreen(this, this, p, enemyPicker());
+        if (p.enemyFight.equals("NONE")) {
+            cScreen = new CombatScreen(this, this, p, enemyPicker());
+        }
+        else {
+            cScreen = new CombatScreen(this, this, p, enemyRecon());
+        }
 
         this.setContentView(cScreen.getRootView());
         }
+
+    private Enemy enemyRecon() {
+        String eName = p.enemyFight;
+        switch (eName) {
+            // iron ant
+            case "IRON ANT":
+                e = new Bug(p.enemyHealth, p.enemyDamage, p.enemyDefense);
+                break;
+            // rock
+            case "LITERAL ROCK":
+                e = new Rock(p.enemyHealth, p.enemyDamage, p.enemyDefense);
+                break;
+            // golem
+            case "STEAM GOLEM":
+                e = new Golem(p.enemyHealth, p.enemyDamage, p.enemyDefense);
+                break;
+            case "XT-D PROTECTRON":
+                e = new Protectron(p.enemyHealth, p.enemyDamage, p.enemyDefense);
+                break;
+            case "STEEL SENTRY":
+                e = new Sentry(p.enemyHealth, p.enemyDamage, p.enemyDefense);
+                break;
+            case "TITANIUM GOLEM":
+                e = new TGolem(p.enemyHealth, p.enemyDamage, p.enemyDefense);
+                break;
+            case "LURKING WATCHER":
+                e = new Watcher(p.enemyHealth, p.enemyDamage, p.enemyDefense);
+                break;
+            case "ANCIENT MILITARY STEAM DRONE":
+                e = new Drone(p.enemyHealth, p.enemyDamage, p.enemyDefense);
+                break;
+            case "MECHA-BOT":
+                e = new Bot(p.enemyHealth, p.enemyDamage, p.enemyDefense);
+                break;
+            // default-worker bot
+            default:
+                e = new Worker(p.enemyHealth, p.enemyDamage, p.enemyDefense);
+        }
+        return e;
+    }
 
     /**
      * Picks a random enemy
@@ -67,37 +112,37 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         switch (eVal) {
             // iron ant
             case 1:
-                e = new Bug();
+                e = new Bug(p.gearScore);
                 break;
             // rock
             case 2:
-                e = new Rock();
+                e = new Rock(p.gearScore);
                 break;
             // golem
             case 3:
-                e = new Golem();
+                e = new Golem(p.gearScore);
                 break;
             case 4:
-                e = new Bot();
+                e = new Bot(p.gearScore);
                 break;
             case 5:
-                e = new Drone();
+                e = new Drone(p.gearScore);
                 break;
             case 6:
-                e = new Protectron();
+                e = new Protectron(p.gearScore);
                 break;
             case 7:
-                e = new Sentry();
+                e = new Sentry(p.gearScore);
                 break;
             case 8:
-                e = new TGolem();
+                e = new TGolem(p.gearScore);
                 break;
             case 9:
-                e = new Watcher();
+                e = new Watcher(p.gearScore);
                 break;
             // default-worker bot
             default:
-                e = new Worker();
+                e = new Worker(p.gearScore);
         }
         return e;
     }
@@ -202,6 +247,10 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      */
     @Override
     public void invClick() {
+        p.enemyFight = e.getName();
+        p.enemyHealth = e.getHealth();
+        p.enemyDamage = e.getDamage();
+        p.enemyDefense = e.getDefense();
         switchActivitiesInventory();
     }
 

@@ -68,4 +68,10 @@ public interface Enemy {
      * @return gear
      */
     int getGear();
+
+    /**
+     * Getter method for damage
+     * @return damage
+     */
+    int getDamage();
 }

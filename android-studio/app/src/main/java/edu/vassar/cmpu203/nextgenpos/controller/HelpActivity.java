@@ -27,6 +27,7 @@ public class HelpActivity extends AppCompatActivity implements IHelpScreen.Liste
         helpScreen = new HelpScreen(this, this);
 
         this.mp = MediaPlayer.create(this, R.raw.button_onclick);
+        this.mp.start();
 
         this.setContentView(helpScreen.getRootView());
     }
@@ -41,12 +42,12 @@ public class HelpActivity extends AppCompatActivity implements IHelpScreen.Liste
      */
     @Override
     public void backClick() {
-        if (this.mp.isPlaying()) {
+        /*if (this.mp.isPlaying()) {
             this.mp.seekTo(0);
         }
         else {
             this.mp.start();
-        }
+        }*/
         switchActivities();
     }
 

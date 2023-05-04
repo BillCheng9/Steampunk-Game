@@ -34,7 +34,7 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
     Illegal1 illegal = new Illegal1();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         p = (Player) getIntent().getParcelableExtra("curPlayer");
 
@@ -126,15 +126,13 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
      */
     @Override
     public void buyClick(String type) {
-        switch(type) {
+        switch (type) {
             case "HEAL":
                 if (p.gears < 2) {
                     workshop.displayBroke();
-                }
-                else if (p.health == p.maxHealth) {
+                } else if (p.health == p.maxHealth) {
                     workshop.displayCantHeal();
-                }
-                else if (p.gears >= 2) {
+                } else if (p.gears >= 2) {
                     workshop.displayHeal();
                     p.health = p.maxHealth;
                     p.gears -= 2;
@@ -142,150 +140,114 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
                 }
                 break;
             case "PLATES2":
-                if (!p.tung) {
-                    if (p.gears < tungPlate.getCost()) {
-                        workshop.displayBroke();
-                    } else if (p.gears >= tungPlate.getCost()) {
-                        workshop.displayBuyDEF();
-                        p.gears -= tungPlate.getCost();
-                        p.defense += tungPlate.getDefenseChange();
-                        p.tung = true;
-                        workshop.displayGears(p);
-                    }
-                }
-                else {
-                    workshop.displayCantBuy();
+                if (p.gears < tungPlate.getCost()) {
+                    workshop.displayBroke();
+                } else if (p.gears >= tungPlate.getCost()) {
+                    workshop.displayBuyDEF();
+                    p.gears -= tungPlate.getCost();
+                    p.defense += tungPlate.getDefenseChange();
+                    p.tung += 1;
+                    p.gearScore += 1;
+                    workshop.displayGears(p);
                 }
                 break;
             case "PLATES3":
-                if (!p.chrom) {
-                    if (p.gears < chromPlate.getCost()) {
-                        workshop.displayBroke();
-                    } else if (p.gears >= chromPlate.getCost()) {
-                        workshop.displayBuyDEF();
-                        p.gears -= chromPlate.getCost();
-                        p.defense += chromPlate.getDefenseChange();
-                        p.chrom = true;
-                        workshop.displayGears(p);
-                    }
-                }
-                else {
-                    workshop.displayCantBuy();
+                if (p.gears < chromPlate.getCost()) {
+                    workshop.displayBroke();
+                } else if (p.gears >= chromPlate.getCost()) {
+                    workshop.displayBuyDEF();
+                    p.gears -= chromPlate.getCost();
+                    p.defense += chromPlate.getDefenseChange();
+                    p.chrom += 1;
+                    p.gearScore += 1;
+                    workshop.displayGears(p);
                 }
                 break;
             case "NANITES1":
-                if (!p.xt1) {
-                    if (p.gears < xt1.getCost()) {
-                        workshop.displayBroke();
-                    } else if (p.gears >= xt1.getCost()) {
-                        workshop.displayBuyHP();
-                        p.gears -= xt1.getCost();
-                        p.maxHealth += xt1.getHealthChange();
-                        p.health += xt1.getHealthChange();
-                        p.xt1 = true;
-                        workshop.displayGears(p);
-                    }
-                }
-                else {
-                    workshop.displayCantBuy();
+                if (p.gears < xt1.getCost()) {
+                    workshop.displayBroke();
+                } else if (p.gears >= xt1.getCost()) {
+                    workshop.displayBuyHP();
+                    p.gears -= xt1.getCost();
+                    p.maxHealth += xt1.getHealthChange();
+                    p.health += xt1.getHealthChange();
+                    p.xt1 += 1;
+                    p.gearScore += 1;
+                    workshop.displayGears(p);
                 }
                 break;
             case "NANITES2":
-                if (!p.xt3) {
-                    if (p.gears < xt3.getCost()) {
-                        workshop.displayBroke();
-                    } else if (p.gears >= xt3.getCost()) {
-                        workshop.displayBuyHP();
-                        p.gears -= xt3.getCost();
-                        p.maxHealth += xt3.getHealthChange();
-                        p.health += xt3.getHealthChange();
-                        p.xt3 = true;
-                        workshop.displayGears(p);
-                    }
-                }
-                else {
-                    workshop.displayCantBuy();
+                if (p.gears < xt3.getCost()) {
+                    workshop.displayBroke();
+                } else if (p.gears >= xt3.getCost()) {
+                    workshop.displayBuyHP();
+                    p.gears -= xt3.getCost();
+                    p.maxHealth += xt3.getHealthChange();
+                    p.health += xt3.getHealthChange();
+                    p.xt3 += 1;
+                    p.gearScore += 1;
+                    workshop.displayGears(p);
                 }
                 break;
             case "NANITES3":
-                if (!p.xtp) {
-                    if (p.gears < xtp.getCost()) {
-                        workshop.displayBroke();
-                    } else if (p.gears >= xtp.getCost()) {
-                        workshop.displayBuyHP();
-                        p.gears -= xtp.getCost();
-                        p.maxHealth += xtp.getHealthChange();
-                        p.health += xtp.getHealthChange();
-                        p.xtp = true;
-                        workshop.displayGears(p);
-                    }
-                }
-                else {
-                    workshop.displayCantBuy();
+                if (p.gears < xtp.getCost()) {
+                    workshop.displayBroke();
+                } else if (p.gears >= xtp.getCost()) {
+                    workshop.displayBuyHP();
+                    p.gears -= xtp.getCost();
+                    p.maxHealth += xtp.getHealthChange();
+                    p.health += xtp.getHealthChange();
+                    p.xtp += 1;
+                    p.gearScore += 1;
+                    workshop.displayGears(p);
                 }
                 break;
             case "GAUNTLETS":
-                if (!p.gaunt1) {
-                    if (p.gears < gauntlet.getCost()) {
-                        workshop.displayBroke();
-                    } else if (p.gears >= gauntlet.getCost()) {
-                        workshop.displayBuyATK();
-                        p.gears -= gauntlet.getCost();
-                        p.damage += gauntlet.getDamageChange();
-                        p.gaunt1 = true;
-                        workshop.displayGears(p);
-                    }
-                }
-                else {
-                    workshop.displayCantBuy();
+                if (p.gears < gauntlet.getCost()) {
+                    workshop.displayBroke();
+                } else if (p.gears >= gauntlet.getCost()) {
+                    workshop.displayBuyATK();
+                    p.gears -= gauntlet.getCost();
+                    p.damage += gauntlet.getDamageChange();
+                    p.gaunt1 += 1;
+                    p.gearScore += 1;
+                    workshop.displayGears(p);
                 }
                 break;
             case "IMPLANTS":
-                if (!p.gaunt2) {
-                    if (p.gears < implants.getCost()) {
-                        workshop.displayBroke();
-                    } else if (p.gears >= implants.getCost()) {
-                        workshop.displayBuyATK();
-                        p.gears -= implants.getCost();
-                        p.damage += implants.getDamageChange();
-                        p.gaunt2 = true;
-                        workshop.displayGears(p);
-                    }
-                }
-                else {
-                    workshop.displayCantBuy();
+                if (p.gears < implants.getCost()) {
+                    workshop.displayBroke();
+                } else if (p.gears >= implants.getCost()) {
+                    workshop.displayBuyATK();
+                    p.gears -= implants.getCost();
+                    p.damage += implants.getDamageChange();
+                    p.gaunt2 += 1;
+                    p.gearScore += 1;
+                    workshop.displayGears(p);
                 }
                 break;
             case "ILLEGAL":
-                if (!p.illegal) {
-                    if (p.gears < illegal.getCost()) {
-                        workshop.displayBroke();
-                    } else if (p.gears >= illegal.getCost()) {
-                        workshop.displayBuyILLEGAL();
-                        p.gears -= illegal.getCost();
-                        p.gearMult = illegal.getGearChange();
-                        p.illegal = true;
-                        workshop.displayGears(p);
-                    }
-                }
-                else {
-                    workshop.displayCantBuy();
+                if (p.gears < illegal.getCost()) {
+                    workshop.displayBroke();
+                } else if (p.gears >= illegal.getCost()) {
+                    workshop.displayBuyILLEGAL();
+                    p.gears -= illegal.getCost();
+                    p.gearMult = illegal.getGearChange();
+                    p.illegal += 1;
+                    p.gearScore += 1;
+                    workshop.displayGears(p);
                 }
                 break;
             default:
-                if (!p.steel) {
-                    if (p.gears < steelPlate.getCost()) {
-                        workshop.displayBroke();
-                    } else if (p.gears >= steelPlate.getCost()) {
-                        workshop.displayBuyDEF();
-                        p.gears -= steelPlate.getCost();
-                        p.defense += steelPlate.getDefenseChange();
-                        p.steel = true;
-                        workshop.displayGears(p);
-                    }
-                }
-                else {
-                    workshop.displayCantBuy();
+                if (p.gears < steelPlate.getCost()) {
+                    workshop.displayBroke();
+                } else if (p.gears >= steelPlate.getCost()) {
+                    workshop.displayBuyDEF();
+                    p.gears -= steelPlate.getCost();
+                    p.defense += steelPlate.getDefenseChange();
+                    p.steel += 1;
+                    p.gearScore += 1;
+                    workshop.displayGears(p);
                 }
         }
     }
