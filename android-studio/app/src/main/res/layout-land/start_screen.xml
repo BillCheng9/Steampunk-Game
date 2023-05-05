@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/start_menu"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/startTitle"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="33dp"
+        android:fontFamily="@font/trade_winds"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="@string/startTitle"
+        android:textAlignment="center"
+        android:textColor="@color/steampunkRed"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/buttonSelection"
+        android:layout_width="290dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startTitle">
+
+        <Button
+            android:id="@+id/startBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/steampunkBlue"
+            android:fontFamily="@font/trade_winds"
+            android:padding="8sp"
+            android:text="@string/startBTN"
+            android:textAlignment="center"
+            android:textColor="@color/steampunkYellow"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/helpBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/steampunkBlue"
+            android:fontFamily="@font/trade_winds"
+            android:padding="8sp"
+            android:text="@string/helpBTN"
+            android:textAlignment="center"
+            android:textColor="@color/steampunkYellow"
+            android:textSize="28sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
