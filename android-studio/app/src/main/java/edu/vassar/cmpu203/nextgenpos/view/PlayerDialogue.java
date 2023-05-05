@@ -77,24 +77,6 @@ public class PlayerDialogue {
     }
 
     /**
-     * Player uses inventory dialogue
-     *
-     * @return
-     */
-    public String displayInv() {
-        return dialogue.get("inventory");
-    }
-
-    /**
-     * Player uses Pet ability dialogue
-     *
-     * @return
-     */
-    public String displayPet() {
-        return dialogue.get("pet");
-    }
-
-    /**
      * Player tries to flee dialogue
      *
      * @return

@@ -272,11 +272,4 @@ public class CombatDialogue {
         return dialogue.get("enemy");
     }
 
-    /**
-     * Show onEnd dialogue
-     * @return dialogue corresponding to onEnd
-     */
-    public String displayOnEnd() {
-        return dialogue.get("onEnd");
-    }
 }

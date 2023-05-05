@@ -6,12 +6,10 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 public class Player implements Parcelable {
-    public int experience, gears, health, defense, damage, maxHealth, gearMult, gearScore;
+    public int gears, health, defense, damage, maxHealth, gearMult, gearScore;
     public int steel, tung, chrom, xt1, xt3, xtp, gaunt1, gaunt2, illegal;
     public String enemyFight;
     public int enemyHealth, enemyDefense, enemyDamage;
-    //public boolean steel, tung, chrom, xt1, xt3, xtp, gaunt1, gaunt2, illegal;
-    public Item[] inventory;
 
     /**
      * Creates a Player entity with (temporary) numbers for stats
@@ -38,20 +36,10 @@ public class Player implements Parcelable {
         this.enemyHealth = 0;
         this.enemyDamage = 0;
         this.enemyDefense = 0;
-        /*this.steel = false;
-        this.tung = false;
-        this.chrom = false;
-        this.xt1 = false;
-        this.xt3 = false;
-        this.xtp = false;
-        this.gaunt1 = false;
-        this.gaunt2 = false;
-        this.illegal = false;*/
     }
 
 
     protected Player(Parcel in) {
-        experience = in.readInt();
         gears = in.readInt();
         health = in.readInt();
         defense = in.readInt();
@@ -72,20 +60,10 @@ public class Player implements Parcelable {
         gaunt1 = in.readInt();
         gaunt2 = in.readInt();
         illegal = in.readInt();
-        /*steel = in.readBoolean();
-        tung = in.readBoolean();
-        chrom = in.readBoolean();
-        xt1 = in.readBoolean();
-        xt3 = in.readBoolean();
-        xtp = in.readBoolean();
-        gaunt1 = in.readBoolean();
-        gaunt2 = in.readBoolean();
-        illegal = in.readBoolean();*/
     }
 
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int i) {
-        parcel.writeInt(experience);
         parcel.writeInt(gears);
         parcel.writeInt(health);
         parcel.writeInt(defense);
