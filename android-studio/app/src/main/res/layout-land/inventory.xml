@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="0dp"
+    android:background="@color/steampunkYellow"
+    tools:layout_editor_absoluteY="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/itemArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="4sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4sp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="16sp"
+            android:layout_weight="1"
+            android:paddingTop="8sp"
+            android:paddingEnd="16sp"
+            android:paddingBottom="8sp">
+
+            <LinearLayout
+                android:id="@+id/row1"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/steelPlates"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/steel_plate"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/tungstenPlates"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/tungsten_steel_plate"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/chromiumPlates"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/chromium_titanium_plate"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/xt1Nanites"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/xt1_nanites"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/xt3Nanites"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/xt3_nanites"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/xtpNanites"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/xtproto_nanites"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/mechaGauntlets"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/mecha_gauntlet"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/cbaImplants"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/cba_implants"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/ice"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/illegal_cybernetic_enhancement"
+                    tools:ignore="MissingConstraints" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/goBackBTN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="80sp"
+                android:backgroundTint="@color/steampunkBlueFade"
+                android:fontFamily="@font/trade_winds"
+                android:text="@string/goBackBTN"
+                android:textColor="@color/steampunkYellow"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/textArea"
+                android:layout_width="match_parent"
+                android:layout_height="355dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="4sp">
+
+                <TextView
+                    android:id="@+id/nameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/trade_winds"
+                    android:gravity="center"
+                    android:text="@string/itemName"
+                    android:textColor="@color/steampunkBlue"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/descText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16sp"
+                    android:fontFamily="@font/trade_winds"
+                    android:gravity="center"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="@string/itemInfo"
+                    android:textColor="@color/steampunkBlue"
+                    android:textSize="16sp"
+                    tools:ignore="MissingConstraints" />
+
+                <LinearLayout
+                    android:id="@+id/infoArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/statText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/trade_winds"
+                        android:gravity="center"
+                        android:text="@string/statBoost"
+                        android:textColor="@color/steampunkBlue"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/numberText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/trade_winds"
+                        android:gravity="center"
+                        android:text="@string/numberItems"
+                        android:textColor="@color/steampunkBlue"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

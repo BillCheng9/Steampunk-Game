@@ -1,12 +1,10 @@
 package edu.vassar.cmpu203.nextgenpos.controller;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import edu.vassar.cmpu203.nextgenpos.R;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
 import edu.vassar.cmpu203.nextgenpos.view.IStartScreen;
 import edu.vassar.cmpu203.nextgenpos.view.StartScreen;
@@ -29,7 +27,7 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
         getSupportActionBar().hide();
         startScreen = new StartScreen(this, this);
 
-        this.p = new Player(10,10, 5, 3, 3, 1, 0);
+        this.p = new Player(10,10, 5, 3, 3, 1);
 
         this.setContentView(startScreen.getRootView());
     }

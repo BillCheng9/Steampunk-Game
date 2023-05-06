@@ -18,7 +18,9 @@ public class ContinueActivity extends AppCompatActivity implements IMainMenu.Lis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        p = (Player) getIntent().getParcelableExtra("curPlayer");
+        p = getIntent().getParcelableExtra("curPlayer");
+
+        p.enemyFight = "NONE";
 
         getSupportActionBar().hide();
         menu = new MainMenu(this, this, p);

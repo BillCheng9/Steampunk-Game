@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
 
         getSupportActionBar().hide();
         // instantiate player: maxHealth, trueDefense, damage, experience, gears, pet
-        p = (Player) getIntent().getParcelableExtra("curPlayer");
+        p = getIntent().getParcelableExtra("curPlayer");
 
         // instantiate combat and player dialogue
         this.combatDialogue = new CombatDialogue();
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         this.dialogueBar = new DialogueBar();
         if (p.enemyFight.equals("NONE")) {
             cScreen = new CombatScreen(this, this, p, enemyPicker());
+            cScreen.displayStart();
         }
         else {
             cScreen = new CombatScreen(this, this, p, enemyRecon());
@@ -219,6 +220,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             cScreen.displayPlayerAttack("LIGHT", 0, 0);
         }
         cScreen.buttonClickable(false);
+        p.gameClick = false;
         healthChecker();
         continueClick();
     }
@@ -238,6 +240,7 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             cScreen.displayPlayerAttack("HEAVY", 0, 0);
         }
         cScreen.buttonClickable(false);
+        p.gameClick = false;
         healthChecker();
         continueClick();
     }
@@ -277,7 +280,9 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      */
     public void continueClick() {
         cScreen.dialogueClickable(true);
+        p.gameClick = true;
         cScreen.displayContinueText();
+        p.gameContinue = true;
     }
 
     public void endCombat(){
@@ -328,10 +333,27 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        p.enemyFight = e.getName();
+        p.enemyHealth = e.getHealth();
+        p.enemyDamage = e.getDamage();
+        p.enemyDefense = e.getDefense();
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
+        cScreen = new CombatScreen(this, this, p, enemyRecon());
+        if (p.gameClick) {
+            cScreen.buttonClickable(true);
+        }
+        else {
+            cScreen.buttonClickable(false);
+        }
+        if (p.gameContinue) {
+            cScreen.displayContinueText();
+        }
+        else {
+            cScreen.removeContinueText();
+        }
     }
 }
