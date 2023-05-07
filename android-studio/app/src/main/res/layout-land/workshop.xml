@@ -19,7 +19,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="4sp"
             android:gravity="center"
-            android:layout_weight="1.5"
+            android:layout_weight="1.7"
             android:orientation="vertical"
             android:paddingStart="16sp"
             android:paddingTop="8sp"
@@ -168,15 +168,16 @@
             <LinearLayout
                 android:id="@+id/buttonArea"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_weight="2.2"
                 android:orientation="vertical"
                 android:padding="10sp">
 
                 <Button
                     android:id="@+id/goBackBTN"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:layout_marginStart="80sp"
                     android:layout_marginEnd="80sp"
                     android:backgroundTint="@color/steampunkBlueFade"
@@ -188,9 +189,9 @@
                 <Button
                     android:id="@+id/healBTN"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:layout_marginStart="80sp"
-                    android:layout_marginTop="10sp"
                     android:layout_marginEnd="80sp"
                     android:backgroundTint="@color/steampunkBlueFade"
                     android:fontFamily="@font/trade_winds"
@@ -202,7 +203,7 @@
             <LinearLayout
                 android:id="@+id/ownerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="8sp"
                 android:layout_marginTop="8sp"
                 android:layout_marginEnd="8sp"
