@@ -23,7 +23,6 @@ public class CombatScreen implements ICombatScreen {
     GearStat gearBar;
     eHealthStat eHealthBar;
     eArmorStat eArmorBar;
-    DialogueBar dialogueBar;
     CombatDialogue combatDialogue;
     PlayerDialogue playerDialogue;
     CombatDialogue combatEnemyDialogue;
@@ -47,7 +46,6 @@ public class CombatScreen implements ICombatScreen {
         gearBar = new GearStat(p.gears);
         eHealthBar = new eHealthStat(e.getName() + " HEALTH", e.getHealth());
         eArmorBar = new eArmorStat(e.getName() + " ARMOR", e.getDefense());
-        dialogueBar = new DialogueBar();
         combatDialogue = new CombatDialogue();
         combatEnemyDialogue = new CombatDialogue(e);
         playerDialogue = new PlayerDialogue();
