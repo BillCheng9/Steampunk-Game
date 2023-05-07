@@ -12,7 +12,6 @@ import edu.vassar.cmpu203.nextgenpos.model.StatTypes.GearStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.HealthStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.eArmorStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.eHealthStat;
-import edu.vassar.cmpu203.nextgenpos.model.UI.DialogueBar;
 
 public class CombatScreen implements ICombatScreen {
 

@@ -206,19 +206,6 @@ public class Inventory implements IInventory {
         }
     }
 
-
-    public void buttonClickable(boolean clickable) {
-        Inventory.this.binding.steelPlates.setClickable(clickable);
-        Inventory.this.binding.tungstenPlates.setClickable(clickable);
-        Inventory.this.binding.chromiumPlates.setClickable(clickable);
-        Inventory.this.binding.xt1Nanites.setClickable(clickable);
-        Inventory.this.binding.xt3Nanites.setClickable(clickable);
-        Inventory.this.binding.xtpNanites.setClickable(clickable);
-        Inventory.this.binding.mechaGauntlets.setClickable(clickable);
-        Inventory.this.binding.cbaImplants.setClickable(clickable);
-        Inventory.this.binding.ice.setClickable(clickable);
-    }
-
     public View getRootView() {
         return this.binding.getRoot();
     }

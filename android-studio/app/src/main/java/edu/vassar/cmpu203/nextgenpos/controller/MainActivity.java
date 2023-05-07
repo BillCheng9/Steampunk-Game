@@ -17,7 +17,6 @@ import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.TGolem;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Watcher;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Worker;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
-import edu.vassar.cmpu203.nextgenpos.model.UI.DialogueBar;
 import edu.vassar.cmpu203.nextgenpos.view.CombatDialogue;
 import edu.vassar.cmpu203.nextgenpos.view.CombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.ICombatScreen;
