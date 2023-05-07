@@ -10,11 +10,13 @@ public class Player implements Parcelable {
     public int steel, tung, chrom, xt1, xt3, xtp, gaunt1, gaunt2, illegal;
     public String enemyFight;
     public int enemyHealth, enemyDefense, enemyDamage;
+    public boolean gameClick, gameContinue;
+    public String gameText;
 
     /**
      * Creates a Player entity with (temporary) numbers for stats
      */
-    public Player(int health, int maxHealth, int defense, int damage, int gears, int gearMult, int gearScore){
+    public Player(int health, int maxHealth, int defense, int damage, int gears, int gearMult){
         //Placeholder values for first iteration
         this.health = health;
         this.maxHealth = maxHealth;
@@ -36,6 +38,9 @@ public class Player implements Parcelable {
         this.enemyHealth = 0;
         this.enemyDamage = 0;
         this.enemyDefense = 0;
+        this.gameClick = gameClick;
+        this.gameContinue = gameContinue;
+        this.gameText = gameText;
     }
 
 
@@ -60,6 +65,9 @@ public class Player implements Parcelable {
         gaunt1 = in.readInt();
         gaunt2 = in.readInt();
         illegal = in.readInt();
+        gameClick = in.readBoolean();
+        gameContinue = in.readBoolean();
+        gameText = in.readString();
     }
 
     @Override
@@ -84,15 +92,9 @@ public class Player implements Parcelable {
         parcel.writeInt(gaunt1);
         parcel.writeInt(gaunt2);
         parcel.writeInt(illegal);
-        /*parcel.writeBoolean(steel);
-        parcel.writeBoolean(tung);
-        parcel.writeBoolean(chrom);
-        parcel.writeBoolean(xt1);
-        parcel.writeBoolean(xt3);
-        parcel.writeBoolean(xtp);
-        parcel.writeBoolean(gaunt1);
-        parcel.writeBoolean(gaunt2);
-        parcel.writeBoolean(illegal);*/
+        parcel.writeBoolean(gameClick);
+        parcel.writeBoolean(gameContinue);
+        parcel.writeString(gameText);
     }
 
     public static final Creator<Player> CREATOR = new Creator<Player>() {

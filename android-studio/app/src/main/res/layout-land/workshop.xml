@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/steampunkYellow"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/buyArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="4sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4sp"
+            android:gravity="center"
+            android:layout_weight="1.7"
+            android:orientation="vertical"
+            android:paddingStart="16sp"
+            android:paddingTop="8sp"
+            android:paddingEnd="16sp"
+            android:paddingBottom="8sp">
+
+            <LinearLayout
+                android:id="@+id/row1"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/steelPlates"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/steel_plate" />
+
+                <ImageView
+                    android:id="@+id/tungstenPlates"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/tungsten_steel_plate" />
+
+                <ImageView
+                    android:id="@+id/chromiumPlates"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/chromium_titanium_plate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row2"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/xt1Nanites"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/xt1_nanites" />
+
+                <ImageView
+                    android:id="@+id/xt3Nanites"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/xt3_nanites" />
+
+                <ImageView
+                    android:id="@+id/xtpNanites"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/xtproto_nanites" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/gauntlets1"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/mecha_gauntlet" />
+
+                <ImageView
+                    android:id="@+id/gauntlets2"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/cba_implants" />
+
+                <ImageView
+                    android:id="@+id/illegal1"
+                    android:layout_width="50sp"
+                    android:layout_height="90sp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:src="@drawable/illegal_cybernetic_enhancement" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/buttonArea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.2"
+                android:orientation="vertical"
+                android:padding="10sp">
+
+                <Button
+                    android:id="@+id/goBackBTN"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="80sp"
+                    android:layout_marginEnd="80sp"
+                    android:backgroundTint="@color/steampunkBlueFade"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/goBackBTN"
+                    android:textColor="@color/steampunkYellow"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/healBTN"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="80sp"
+                    android:layout_marginEnd="80sp"
+                    android:backgroundTint="@color/steampunkBlueFade"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/heal"
+                    android:textColor="@color/steampunkYellow"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ownerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginEnd="8sp"
+                android:layout_weight="1"
+                android:layout_marginBottom="16sp"
+                android:orientation="horizontal"
+                android:paddingStart="4sp"
+                android:paddingTop="4sp"
+                android:paddingEnd="4sp"
+                android:paddingBottom="4sp">
+
+                <ImageView
+                    android:id="@+id/shopIcon"
+                    android:layout_width="140sp"
+                    android:layout_height="260sp"
+                    android:layout_weight="1"
+                    android:scaleType="center"
+                    android:src="@drawable/shop_owner2" />
+
+                <LinearLayout
+                    android:id="@+id/shopTextArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="4sp">
+
+                    <TextView
+                        android:id="@+id/gearsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="10sp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/trade_winds"
+                        android:gravity="center"
+                        android:text="@string/gearsText"
+                        android:textColor="@color/steampunkBlue" />
+
+                    <TextView
+                        android:id="@+id/shopText"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="@font/trade_winds"
+                        android:gravity="center"
+                        android:text="@string/shop"
+                        android:textColor="@color/steampunkBlue"
+                        android:textSize="9sp" />
+
+                    <Button
+                        android:id="@+id/buyBTN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24sp"
+                        android:layout_marginEnd="24sp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/steampunkBlueFade"
+                        android:fontFamily="@font/trade_winds"
+                        android:text="@string/buyBTN"
+                        android:textColor="@color/steampunkYellow"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

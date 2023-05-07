@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/steampunkYellow">
+
+    <LinearLayout
+        android:baselineAligned="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/leftSide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/statArea"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingStart="10sp">
+
+                <TextView
+                    android:id="@+id/healthText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/healthText"
+                    android:textColor="@color/steampunkBlue" />
+
+                <TextView
+                    android:id="@+id/armorText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/armorText"
+                    android:textColor="@color/steampunkBlue" />
+
+                <TextView
+                    android:id="@+id/gearText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/gearText"
+                    android:textColor="@color/steampunkBlue" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buttonSelectionL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16sp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/lightAttackBTN"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="150sp"
+                    android:layout_height="125sp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/light"
+                    android:scaleType="center"
+                    android:clickable="true"
+                    android:scaleY="1"
+                    android:scaleX="1"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/heavyAttackBTN"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="150sp"
+                    android:layout_height="125sp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/heavy_swing"
+                    android:scaleType="center"
+                    android:clickable="true"
+                    android:scaleY="1"
+                    android:scaleX="1"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialogueArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dialogueText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/trade_winds"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_weight="1"
+                android:text="@string/dialogueText"
+                android:textColor="@color/steampunkBlue"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/dialogueContinue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/trade_winds"
+                android:gravity="center"
+                android:layout_weight="5"
+                android:text="@string/dialogueContinue"
+                android:textColor="@color/steampunkRed" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rightSide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/enemyStatArea"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingEnd="10sp">
+
+                <TextView
+                    android:id="@+id/enemyHealthText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/enemyHealthText"
+                    android:textColor="@color/steampunkBlue" />
+
+                <TextView
+                    android:id="@+id/enemyArmorText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/enemyArmorText"
+                    android:textColor="@color/steampunkBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buttonSelectionR"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16sp">
+
+                <ImageView
+                    android:id="@+id/invBTN"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="150sp"
+                    android:layout_height="125sp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/backpack"
+                    android:scaleType="center"
+                    android:clickable="true"
+                    android:scaleY="1"
+                    android:scaleX="1"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/fleeBTN"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="150sp"
+                    android:layout_height="125sp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/flee"
+                    android:scaleType="center"
+                    android:clickable="true"
+                    android:scaleY="1"
+                    android:scaleX=".8"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

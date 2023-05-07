@@ -59,8 +59,6 @@ public class CombatScreen implements ICombatScreen {
         this.binding.enemyHealthText.setText(eHealthBar.toString());
         this.binding.enemyArmorText.setText(eArmorBar.toString());
 
-        displayStart();
-
         // dialogue onclick
         this.binding.dialogueArea.setOnClickListener(new View.OnClickListener() {
             @Override
