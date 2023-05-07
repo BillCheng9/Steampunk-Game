@@ -23,7 +23,6 @@ import edu.vassar.cmpu203.nextgenpos.view.ICombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.PlayerDialogue;
 
 public class MainActivity extends AppCompatActivity implements ICombatScreen.Listener{
-    DialogueBar dialogueBar;
     Player p;
     CombatDialogue combatDialogue;
     PlayerDialogue playerDialogue;
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         this.playerDialogue = new PlayerDialogue();
 
         // instantiate dialogue bar
-        this.dialogueBar = new DialogueBar();
         if (p.enemyFight.equals("NONE")) {
             cScreen = new CombatScreen(this, this, p, enemyPicker());
             cScreen.displayStart();
