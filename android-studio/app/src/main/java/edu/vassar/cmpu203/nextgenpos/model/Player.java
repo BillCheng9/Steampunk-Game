@@ -11,7 +11,7 @@ public class Player implements Parcelable {
     public String enemyFight;
     public int enemyHealth, enemyDefense, enemyDamage;
     public boolean gameClick, gameContinue;
-    public String gameText;
+    public String gameText, contText;
 
     /**
      * Creates a Player entity with (temporary) numbers for stats
@@ -41,6 +41,7 @@ public class Player implements Parcelable {
         this.gameClick = gameClick;
         this.gameContinue = gameContinue;
         this.gameText = gameText;
+        this.contText = contText;
     }
 
 
@@ -68,6 +69,7 @@ public class Player implements Parcelable {
         gameClick = in.readBoolean();
         gameContinue = in.readBoolean();
         gameText = in.readString();
+        contText = in.readString();
     }
 
     @Override
@@ -95,6 +97,7 @@ public class Player implements Parcelable {
         parcel.writeBoolean(gameClick);
         parcel.writeBoolean(gameContinue);
         parcel.writeString(gameText);
+        parcel.writeString(contText);
     }
 
     public static final Creator<Player> CREATOR = new Creator<Player>() {

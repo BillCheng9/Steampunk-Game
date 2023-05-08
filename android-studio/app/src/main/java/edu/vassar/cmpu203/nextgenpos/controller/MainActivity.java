@@ -17,20 +17,17 @@ import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.TGolem;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Watcher;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Worker;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
-import edu.vassar.cmpu203.nextgenpos.model.UI.DialogueBar;
 import edu.vassar.cmpu203.nextgenpos.view.CombatDialogue;
 import edu.vassar.cmpu203.nextgenpos.view.CombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.ICombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.PlayerDialogue;
 
 public class MainActivity extends AppCompatActivity implements ICombatScreen.Listener{
-    DialogueBar dialogueBar;
     Player p;
     CombatDialogue combatDialogue;
     PlayerDialogue playerDialogue;
     Enemy e;
     CombatScreen cScreen;
-
     boolean end = false;
     boolean die = false;
     boolean flee = false;
@@ -52,15 +49,14 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         this.playerDialogue = new PlayerDialogue();
 
         // instantiate dialogue bar
-        this.dialogueBar = new DialogueBar();
         if (p.enemyFight.equals("NONE")) {
             cScreen = new CombatScreen(this, this, p, enemyPicker());
             cScreen.displayStart();
         }
         else {
             cScreen = new CombatScreen(this, this, p, enemyRecon());
+            cScreen.displayText(p.gameText, p.contText);
         }
-
         this.setContentView(cScreen.getRootView());
         }
 
@@ -156,15 +152,17 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         if ( !e.healthCheck()) {
             int gear = e.getGear();
             p.onEnd(gear);
-
             cScreen.renewExpGear(p);
             cScreen.removeContinueText();
             cScreen.buttonClickable(false);
             cScreen.displayEndWin(gear);
+            p.contText = cScreen.getContText();
+            p.gameClick = cScreen.getButtonClick();
             winCombat();
         }
         else if ( !p.healthCheck() ) {
             cScreen.buttonClickable(false);
+            p.gameClick = cScreen.getButtonClick();
             endCombat();
         }
     }
@@ -201,6 +199,10 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
                 cScreen.renewEArmor(e);
             }
             cScreen.buttonClickable(true);
+            p.gameText = cScreen.getText();
+            p.contText = cScreen.getContText();
+            p.gameContinue = cScreen.getDialClick();
+            p.gameClick = cScreen.getButtonClick();
             healthChecker();
         }
     }
@@ -220,7 +222,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             cScreen.displayPlayerAttack("LIGHT", 0, 0);
         }
         cScreen.buttonClickable(false);
-        p.gameClick = false;
+        p.gameText = cScreen.getText();
+        p.gameClick = cScreen.getButtonClick();
         healthChecker();
         continueClick();
     }
@@ -240,7 +243,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             cScreen.displayPlayerAttack("HEAVY", 0, 0);
         }
         cScreen.buttonClickable(false);
-        p.gameClick = false;
+        p.gameText = cScreen.getText();
+        p.gameClick = cScreen.getButtonClick();
         healthChecker();
         continueClick();
     }
@@ -273,6 +277,10 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
             cScreen.displayFlee(false);
             continueClick();
         }
+
+        p.gameText = cScreen.getText();
+        p.gameClick = cScreen.getButtonClick();
+
     }
 
     /**
@@ -280,14 +288,18 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
      */
     public void continueClick() {
         cScreen.dialogueClickable(true);
-        p.gameClick = true;
         cScreen.displayContinueText();
-        p.gameContinue = true;
+        p.gameContinue = cScreen.getDialClick();
+        p.contText = cScreen.getContText();
     }
 
     public void endCombat(){
         cScreen.dialogueClickable(true);
         cScreen.displayEndLose();
+
+        p.gameText = cScreen.getText();
+        p.gameClick = cScreen.getButtonClick();
+
         die = true;
         continueClick();
     }
@@ -295,6 +307,8 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
     public void winCombat(){
         cScreen.dialogueClickable(true);
         end = true;
+
+        p.gameContinue = cScreen.getDialClick();
     }
 
     /**
@@ -320,6 +334,12 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         startActivity(i);
     }
 
+    private void switchActivitesReturn() {
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("curPlayer", p);
+        startActivity(i);
+    }
+
     private void switchActivitiesContinue() {
         Intent i = new Intent(this, ContinueActivity.class);
         i.putExtra("curPlayer", p);
@@ -337,23 +357,15 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         p.enemyHealth = e.getHealth();
         p.enemyDamage = e.getDamage();
         p.enemyDefense = e.getDefense();
+        p.gameText = cScreen.getText();
+        p.gameClick = cScreen.getButtonClick();
+        p.gameContinue = cScreen.getDialClick();
+        p.contText = cScreen.getContText();
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        cScreen = new CombatScreen(this, this, p, enemyRecon());
-        if (p.gameClick) {
-            cScreen.buttonClickable(true);
-        }
-        else {
-            cScreen.buttonClickable(false);
-        }
-        if (p.gameContinue) {
-            cScreen.displayContinueText();
-        }
-        else {
-            cScreen.removeContinueText();
-        }
+        switchActivitesReturn();
     }
 }

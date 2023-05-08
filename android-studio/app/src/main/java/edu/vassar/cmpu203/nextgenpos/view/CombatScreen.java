@@ -12,7 +12,6 @@ import edu.vassar.cmpu203.nextgenpos.model.StatTypes.GearStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.HealthStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.eArmorStat;
 import edu.vassar.cmpu203.nextgenpos.model.StatTypes.eHealthStat;
-import edu.vassar.cmpu203.nextgenpos.model.UI.DialogueBar;
 
 public class CombatScreen implements ICombatScreen {
 
@@ -24,11 +23,12 @@ public class CombatScreen implements ICombatScreen {
     GearStat gearBar;
     eHealthStat eHealthBar;
     eArmorStat eArmorBar;
-    DialogueBar dialogueBar;
     CombatDialogue combatDialogue;
     PlayerDialogue playerDialogue;
     CombatDialogue combatEnemyDialogue;
     CombatDialogue damageDialogue;
+    String gameText, contText;
+    boolean dialClick, buttonClick;
 
     /**
      * Constructor for CombatScreen
@@ -48,7 +48,6 @@ public class CombatScreen implements ICombatScreen {
         gearBar = new GearStat(p.gears);
         eHealthBar = new eHealthStat(e.getName() + " HEALTH", e.getHealth());
         eArmorBar = new eArmorStat(e.getName() + " ARMOR", e.getDefense());
-        dialogueBar = new DialogueBar();
         combatDialogue = new CombatDialogue();
         combatEnemyDialogue = new CombatDialogue(e);
         playerDialogue = new PlayerDialogue();
@@ -101,13 +100,16 @@ public class CombatScreen implements ICombatScreen {
     public void displayStart() {
         String text = combatEnemyDialogue.displayStart() + " " + combatDialogue.displayPrompt();
         this.binding.dialogueText.setText(text);
+        gameText = text;
     }
 
     /**
      * Sets dialogueContinue to continue text
      */
     public void displayContinueText() {
-        this.binding.dialogueContinue.setText("CLICK TO CONTINUE!");
+        String text = "CLICK TO CONTINUE!";
+        this.binding.dialogueContinue.setText(text);
+        contText = text;
     }
 
     /**
@@ -115,6 +117,7 @@ public class CombatScreen implements ICombatScreen {
      */
     public void removeContinueText() {
         this.binding.dialogueContinue.setText("");
+        contText = "";
     }
 
     /**
@@ -148,6 +151,7 @@ public class CombatScreen implements ICombatScreen {
             }
         }
         this.binding.dialogueText.setText(text);
+        gameText = text;
     }
 
     /**
@@ -164,6 +168,7 @@ public class CombatScreen implements ICombatScreen {
             text += combatDialogue.displayFlee_F();
         }
         this.binding.dialogueText.setText(text);
+        gameText = text;
     }
 
     /**
@@ -236,13 +241,16 @@ public class CombatScreen implements ICombatScreen {
         }
         text += " " + combatDialogue.displayPrompt();
         this.binding.dialogueText.setText(text);
+        gameText = text;
     }
 
     /**
      * Sets dialogueText to Lose
      */
     public void displayEndLose() {
+        String text = combatDialogue.displayLose();
         this.binding.dialogueText.setText(combatDialogue.displayLose());
+        gameText = text;
     }
 
     /**
@@ -251,6 +259,12 @@ public class CombatScreen implements ICombatScreen {
     public void displayEndWin(int gear) {
         String text = combatDialogue.displayWin() + " YOU GAIN " + gear + " GEARS!";
         this.binding.dialogueText.setText(text);
+        gameText = text;
+    }
+
+    public void displayText(String text, String contText) {
+        this.binding.dialogueText.setText(text);
+        this.binding.dialogueContinue.setText(contText);
     }
 
     /**
@@ -259,6 +273,7 @@ public class CombatScreen implements ICombatScreen {
      */
     public void dialogueClickable(boolean clickable) {
         CombatScreen.this.binding.dialogueArea.setClickable(clickable);
+        dialClick = clickable;
     }
 
     /**
@@ -270,6 +285,7 @@ public class CombatScreen implements ICombatScreen {
         CombatScreen.this.binding.heavyAttackBTN.setClickable(clickable);
         CombatScreen.this.binding.fleeBTN.setClickable(clickable);
         CombatScreen.this.binding.invBTN.setClickable(clickable);
+        buttonClick = clickable;
     }
 
     /**
@@ -306,6 +322,22 @@ public class CombatScreen implements ICombatScreen {
     public void renewExpGear(Player p) {
         gearBar = new GearStat(p.gears);
         this.binding.gearText.setText(gearBar.toString());
+    }
+
+    public String getText() {
+        return gameText;
+    }
+
+    public boolean getButtonClick() {
+        return buttonClick;
+    }
+
+    public boolean getDialClick() {
+        return dialClick;
+    }
+
+    public String getContText() {
+        return contText;
     }
 
     public View getRootView() {
