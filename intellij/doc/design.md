@@ -350,54 +350,153 @@ WorkshopActivity "0" -up- "1" Item : Contains
 ## SEQUENCE DIAGRAM
 ```plantuml
 
+!theme spacelab
 participant "User" as user
 participant "View" as view
 participant "Controller" as control
 participant "Enemy" as enemy
 participant "Player" as player
+participant "Item" as item
 
-control -> view : dialogueClickable(false)
-control -> view : displayStart()
+group #gray Start Activity
+control -> view : setContentView(startScreen)
+view -> user : Display Start Menu
+user -> view : Click help button
+view -> control : helpClick()
+end
+
+group #gray Help Activity
+control -> view : setContentView(helpScreen)
+view -> user : Display Help Menu
+user -> view : Click back button
+view -> control : backClick()
+end
+
+group #gray Start Activity
+control -> view : setContentView(startScreen)
+view -> user : Display Start Menu
+user -> view : Click start button
+view -> control : startClick()
+end
+
+group #gray Main Activity
+control -> view : setContentView(combatScreen)
+control -> enemy : enemyRecon()
 view -> user : Display Combat Menu
-user -> view : Clicks Action Button
 
-group Light Attack
-view -> control : lightAttackBTN
+group #gray Player Attack
+user -> view : Click attack
+view -> control : lightAttackClick()
 control -> player : p.attack1()
-group Hit
+
+group #gray Hit
 control -> enemy : e.attacked()
 control -> view : displayPlayerAttack()
 control -> view : renewEHealth()
 end
-group Miss
+
+group #gray Miss
 control -> view : displayPlayerAttack()
 end
+
 control -> enemy : e.healthCheck()
 control -> player : p.healthCheck()
 end
 
-group Heavy Attack
-view -> control : heavyAttackBTN
-control -> player : p.attack2()
-group Hit
-control -> enemy : e.attacked()
-control -> view : displayPlayerAttack()
-control -> view : renewEHealth()
-end
-group Miss
-control -> view : displayPlayerAttack()
-end
-control -> enemy : e.healthCheck()
-control -> player : p.healthCheck()
+view -> user : Show attack results
+user -> view : Click dialogue
+view -> control : continueClick()
+
+group #gray Enemy Attack
+control -> enemy : e.pickAttack()
+
+group #gray Hit
+control -> enemy : p.attacked()
+control -> view : displayEnemyAttack()
+control -> view : renewHealth(p)
 end
 
-group Flee
-view -> control : fleeBTN
-control -> player : p.flee(0
+group #gray Miss
+control -> view : displayEnemyAttack()
+end
+
+control -> enemy : e.healthCheck()
+control -> player : p.healthCheck()
+
+end
+view -> user : Show attack results
+
+user -> view : Click inventory button
+view -> control : switchActivitiesInventory()
+end
+
+group #gray Inventory Activity
+control -> view : setContentView(inventory)
+view -> user : Display inventory
+user -> view : Click steel plates button
+view -> control : plates1Click()
+control -> player : p.steel
+control -> item : plate1.displayStats()
+control -> view : displayPlate1(p)
+view -> user : Display plate stats
+user -> view : Click back button
+view -> control : backClick()
+end
+
+group #gray Main Activity
+control -> view : setContentView(combatScreen)
+view -> user : Display combat menu
+user -> view : Click flee button
+view -> control : fleeClick()
+
+group #gray Flee
+control -> player : p.flee()
 control -> view : DisplayFlee(boolean)
 view -> user : Displays Flee Result
 end
 
-control -> view : displayEndWin()
-view -> user : Displays End Screen
+user -> view : Click dialogue
+view -> control : switchActivitiesContinue()
+
+end
+
+group #gray Continue Activity
+control -> view : setContentView(menu)
+view -> user : Display Continue Menu
+user -> view : Click workshop button
+view -> control : switchActivitiesWorkshop()
+end
+
+group #gray Workshop Activity
+control -> view : setContentView(workshop)
+view -> user : Display Workshop Menu
+user -> view : Click tungsten plates
+view -> control : plates2Click()
+control -> view : displayPlate2()
+view -> user : Displays Tungsten Plate Information
+user -> view : Click buy button
+view -> control : buyClick()
+
+group #gray Can't Afford
+control -> view : displayBroke()
+view -> user : Can't afford message
+end
+
+group #gray Can Afford
+control -> item : getCost()
+control -> item : getDefenseChange()
+control -> view : displayBuyDEF()
+view -> user : Displays success
+end
+
+user -> view : Click back button
+view -> control : backClick()
+end
+
+group #gray Continue Activity
+control -> view : setContentView(menu)
+view -> user : Display Continue Menu
+user -> view : Click continue button
+view -> control : switchActivitiesContinue()
+end
 ```
