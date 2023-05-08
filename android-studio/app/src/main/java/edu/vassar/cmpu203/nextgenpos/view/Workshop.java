@@ -173,9 +173,6 @@ public class Workshop implements IWorkshop{
     public void displayCantHeal() {
         Workshop.this.binding.shopText.setText("WE WOULD LOVE TO FIX YOU UP, BUT IT LOOKS LIKE YOU'RE ALREADY PRETTY FIXED UP.");
     }
-    public void displayCantBuy() {
-        Workshop.this.binding.shopText.setText("AH! SORRY, WE ARE OUT OF STOCK OF THIS ITEM.");
-    }
     public void displayGears(Player p) {
         gearBar = new GearStat(p.gears);
         Workshop.this.binding.gearsText.setText(gearBar.toString());

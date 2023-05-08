@@ -30,11 +30,6 @@ public class StartScreen implements IStartScreen{
         });
     }
 
-    public void buttonClickable(boolean clickable) {
-        StartScreen.this.binding.startBTN.setClickable(clickable);
-        StartScreen.this.binding.helpBTN.setClickable(clickable);
-    }
-
 
     public View getRootView() {
         return this.binding.getRoot();
