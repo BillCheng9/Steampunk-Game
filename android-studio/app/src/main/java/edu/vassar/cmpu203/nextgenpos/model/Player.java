@@ -44,7 +44,10 @@ public class Player implements Parcelable {
         this.contText = contText;
     }
 
-
+    /**
+     * Player parcel
+     * @param in
+     */
     protected Player(Parcel in) {
         gears = in.readInt();
         health = in.readInt();
@@ -72,6 +75,11 @@ public class Player implements Parcelable {
         contText = in.readString();
     }
 
+    /**
+     * writes to parcel
+     * @param parcel
+     * @param i
+     */
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int i) {
         parcel.writeInt(gears);
@@ -100,6 +108,9 @@ public class Player implements Parcelable {
         parcel.writeString(contText);
     }
 
+    /**
+     * creates player
+     */
     public static final Creator<Player> CREATOR = new Creator<Player>() {
         @Override
         public Player createFromParcel(Parcel in) {
@@ -181,11 +192,18 @@ public class Player implements Parcelable {
         else return 0;
     }
 
+    /**
+     * changes player gears on end
+     * @param gear
+     */
     public void onEnd(int gear) {
         this.gears = gears + (gear * gearMult);
     }
 
-
+    /**
+     * describes contents
+     * @return 0
+     */
     @Override
     public int describeContents() {
         return 0;

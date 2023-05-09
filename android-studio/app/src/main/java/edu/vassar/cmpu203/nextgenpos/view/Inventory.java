@@ -30,6 +30,12 @@ public class Inventory implements IInventory {
     Implants1 implants1 = new Implants1();
     Illegal1 illegal1 = new Illegal1();
 
+    /**
+     * Constructor for inventory
+     * @param context inventory binding
+     * @param listener listener
+     * @param p Player
+     */
     public Inventory(Context context, Listener listener, Player p){
         this.listener = listener;
         this.binding = InventoryBinding.inflate(LayoutInflater.from(context));
@@ -106,6 +112,10 @@ public class Inventory implements IInventory {
 
     }
 
+    /**
+     * displays plate 1 info
+     * @param p Player
+     */
     public void displayPlate1(Player p) {
         Inventory.this.binding.nameText.setText(plate1.getName());
         Inventory.this.binding.descText.setText(plate1.getDesc());
@@ -117,6 +127,11 @@ public class Inventory implements IInventory {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
         }
     }
+
+    /**
+     * displays plate 2 info
+     * @param p Player
+     */
     public void displayPlate2(Player p) {
         Inventory.this.binding.nameText.setText(plate2.getName());
         Inventory.this.binding.descText.setText(plate2.getDesc());
@@ -128,6 +143,11 @@ public class Inventory implements IInventory {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
         }
     }
+
+    /**
+     * displays plate 3 info
+     * @param p Player
+     */
     public void displayPlate3(Player p) {
         Inventory.this.binding.nameText.setText(plate3.getName());
         Inventory.this.binding.descText.setText(plate3.getDesc());
@@ -139,6 +159,11 @@ public class Inventory implements IInventory {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
         }
     }
+
+    /**
+     * displays nanite 1 info
+     * @param p Player
+     */
     public void displayNanites1(Player p) {
         Inventory.this.binding.nameText.setText(nanites1.getName());
         Inventory.this.binding.descText.setText(nanites1.getDesc());
@@ -150,6 +175,11 @@ public class Inventory implements IInventory {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
         }
     }
+
+    /**
+     * displays nanite 2 info
+     * @param p Player
+     */
     public void displayNanites2(Player p) {
         Inventory.this.binding.nameText.setText(nanites2.getName());
         Inventory.this.binding.descText.setText(nanites2.getDesc());
@@ -161,6 +191,11 @@ public class Inventory implements IInventory {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
         }
     }
+
+    /**
+     * displays nanite 3 info
+     * @param p Player
+     */
     public void displayNanites3(Player p) {
         Inventory.this.binding.nameText.setText(nanites3.getName());
         Inventory.this.binding.descText.setText(nanites3.getDesc());
@@ -172,6 +207,11 @@ public class Inventory implements IInventory {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
         }
     }
+
+    /**
+     * displays gauntlet info
+     * @param p Player
+     */
     public void displayGauntlets(Player p) {
         Inventory.this.binding.nameText.setText(gauntlets1.getName());
         Inventory.this.binding.descText.setText(gauntlets1.getDesc());
@@ -183,6 +223,11 @@ public class Inventory implements IInventory {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
         }
     }
+
+    /**
+     * displays implants info
+     * @param p Player
+     */
     public void displayImplants(Player p) {
         Inventory.this.binding.nameText.setText(implants1.getName());
         Inventory.this.binding.descText.setText(implants1.getDesc());
@@ -194,6 +239,11 @@ public class Inventory implements IInventory {
             Inventory.this.binding.numberText.setText("YOU DON'T HAVE THIS YET, BUY IT AT THE WORKSHOP!");
         }
     }
+
+    /**
+     * displays illegal info
+     * @param p Player
+     */
     public void displayIllegal(Player p) {
         Inventory.this.binding.nameText.setText(illegal1.getName());
         Inventory.this.binding.descText.setText(illegal1.getDesc());
@@ -206,6 +256,10 @@ public class Inventory implements IInventory {
         }
     }
 
+    /**
+     * getter method for root view
+     * @return root view
+     */
     public View getRootView() {
         return this.binding.getRoot();
     }

@@ -262,6 +262,11 @@ public class CombatScreen implements ICombatScreen {
         gameText = text;
     }
 
+    /**
+     * Helper method to display texts when called
+     * @param text previous text
+     * @param contText previous continue text
+     */
     public void displayText(String text, String contText) {
         this.binding.dialogueText.setText(text);
         this.binding.dialogueContinue.setText(contText);
@@ -324,22 +329,42 @@ public class CombatScreen implements ICombatScreen {
         this.binding.gearText.setText(gearBar.toString());
     }
 
+    /**
+     * getter method for gameText
+     * @return gameText
+     */
     public String getText() {
         return gameText;
     }
 
+    /**
+     * getter method for buttonClick
+     * @return buttonClick
+     */
     public boolean getButtonClick() {
         return buttonClick;
     }
 
+    /**
+     * getter method for dialClick
+     * @return dialClick
+     */
     public boolean getDialClick() {
         return dialClick;
     }
 
+    /**
+     * getter method for contText
+     * @return contText
+     */
     public String getContText() {
         return contText;
     }
 
+    /**
+     * get root view
+     * @return root view
+     */
     public View getRootView() {
         return this.binding.getRoot();
     }

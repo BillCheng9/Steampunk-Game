@@ -10,6 +10,11 @@ public class HelpScreen implements IHelpScreen {
     HelpScreenBinding binding;
     Listener listener;
 
+    /**
+     * constructor for HelpScreen
+     * @param context help activity
+     * @param listener listener
+     */
     public HelpScreen(Context context, Listener listener) {
         this.listener = listener;
         this.binding = HelpScreenBinding.inflate(LayoutInflater.from(context));
@@ -22,6 +27,10 @@ public class HelpScreen implements IHelpScreen {
         });
     }
 
+    /**
+     * getter method for root view
+     * @return root view
+     */
     public View getRootView() {
         return this.binding.getRoot();
     }
