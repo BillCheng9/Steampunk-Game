@@ -28,6 +28,9 @@ public class InventoryActivity extends AppCompatActivity implements IInventory.L
         this.setContentView(inventory.getRootView());
     }
 
+    /**
+     * Creates intent of switching activities
+     */
     private void switchActivities() {
         Intent i = new Intent(this, MainActivity.class);
         i.putExtra("curPlayer", p);

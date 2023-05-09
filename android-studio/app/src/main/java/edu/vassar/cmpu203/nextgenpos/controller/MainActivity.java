@@ -17,15 +17,11 @@ import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.TGolem;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Watcher;
 import edu.vassar.cmpu203.nextgenpos.model.EnemyTypes.Worker;
 import edu.vassar.cmpu203.nextgenpos.model.Player;
-import edu.vassar.cmpu203.nextgenpos.view.CombatDialogue;
 import edu.vassar.cmpu203.nextgenpos.view.CombatScreen;
 import edu.vassar.cmpu203.nextgenpos.view.ICombatScreen;
-import edu.vassar.cmpu203.nextgenpos.view.PlayerDialogue;
 
 public class MainActivity extends AppCompatActivity implements ICombatScreen.Listener{
     Player p;
-    CombatDialogue combatDialogue;
-    PlayerDialogue playerDialogue;
     Enemy e;
     CombatScreen cScreen;
     boolean end = false;
@@ -44,10 +40,6 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         // instantiate player: maxHealth, trueDefense, damage, experience, gears, pet
         p = getIntent().getParcelableExtra("curPlayer");
 
-        // instantiate combat and player dialogue
-        this.combatDialogue = new CombatDialogue();
-        this.playerDialogue = new PlayerDialogue();
-
         // instantiate dialogue bar
         if (p.enemyFight.equals("NONE")) {
             cScreen = new CombatScreen(this, this, p, enemyPicker());
@@ -60,6 +52,10 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         this.setContentView(cScreen.getRootView());
         }
 
+    /**
+     * creates an enemy with the previous stats
+     * @return enemy with the previous stats
+     */
     private Enemy enemyRecon() {
         String eName = p.enemyFight;
         switch (eName) {
@@ -293,6 +289,9 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         p.contText = cScreen.getContText();
     }
 
+    /**
+     * ends combat and displays lose message
+     */
     public void endCombat(){
         cScreen.dialogueClickable(true);
         cScreen.displayEndLose();
@@ -304,6 +303,9 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         continueClick();
     }
 
+    /**
+     * ends combat and displays win message
+     */
     public void winCombat(){
         cScreen.dialogueClickable(true);
         end = true;
@@ -328,28 +330,45 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         enemyTurn();
     }
 
+    /**
+     * Creates intent of switching activities
+     */
     private void switchActivitiesInventory() {
         Intent i = new Intent(this, InventoryActivity.class);
         i.putExtra("curPlayer", p);
         startActivity(i);
     }
 
+    /**
+     * Creates intent of switching activities
+     */
     private void switchActivitesReturn() {
         Intent i = new Intent(this, MainActivity.class);
         i.putExtra("curPlayer", p);
         startActivity(i);
     }
 
+    /**
+     * Creates intent of switching activities
+     */
     private void switchActivitiesContinue() {
         Intent i = new Intent(this, ContinueActivity.class);
         i.putExtra("curPlayer", p);
         startActivity(i);
     }
+
+    /**
+     * Creates intent of switching activities
+     */
     private void switchActivitiesMenu() {
         Intent i = new Intent(this, StartMenuActivity.class);
         startActivity(i);
     }
 
+    /**
+     * saves information each time activity is destroyed
+     * @param outState bundle where information is to be stored
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -363,6 +382,10 @@ public class MainActivity extends AppCompatActivity implements ICombatScreen.Lis
         p.contText = cScreen.getContText();
     }
 
+    /**
+     * restores information and recreates activity with correct information
+     * @param savedInstanceState saved information
+     */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);

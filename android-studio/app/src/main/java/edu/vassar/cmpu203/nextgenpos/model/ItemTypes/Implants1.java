@@ -9,6 +9,9 @@ public class Implants1 implements Item {
     int damageChange = 2;
     int cost = 5;
 
+    /**
+     * Constructor
+     */
     public Implants1(){
     }
 

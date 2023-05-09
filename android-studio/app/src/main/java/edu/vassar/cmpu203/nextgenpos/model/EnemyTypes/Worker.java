@@ -8,12 +8,22 @@ public class Worker implements Enemy {
     int damage = (int)(Math.random() * 2) + 2;
     int gear = (int)(Math.random() * 4) + 1;
 
+    /**
+     * Constructor with pre-determined stats
+     * @param health health
+     * @param damage damage
+     * @param defense defense
+     */
     public Worker(int health, int damage, int defense) {
         this.health = health;
         this.damage = damage;
         this.defense = defense;
     }
 
+    /**
+     * Constructor that scales
+     * @param gearScore player gear score that affects enemy stats
+     */
     public Worker(int gearScore) {
         if (gearScore > 16) {
             defense = defense * (gearScore / 3);

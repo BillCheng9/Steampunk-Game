@@ -48,6 +48,9 @@ public class StartMenuActivity extends AppCompatActivity implements IStartScreen
         switchActivities("HELP");
     }
 
+    /**
+     * Creates intent of switching activities
+     */
     private void switchActivities(String activity) {
         if (activity.equals("START")) {
             Intent i = new Intent(this, MainActivity.class);

@@ -8,12 +8,22 @@ public class Protectron implements Enemy{
     int damage = (int)(Math.random() * 1) + 1;
     int gear = (int)(Math.random() * 3) + 1;
 
+    /**
+     * Constructor with pre-determined stats
+     * @param health health
+     * @param damage damage
+     * @param defense defense
+     */
     public Protectron(int health, int damage, int defense) {
         this.health = health;
         this.damage = damage;
         this.defense = defense;
     }
 
+    /**
+     * Constructor that scales
+     * @param gearScore player gear score that affects enemy stats
+     */
     public Protectron(int gearScore) {
         if (gearScore > 16) {
             defense = defense * (gearScore / 3);

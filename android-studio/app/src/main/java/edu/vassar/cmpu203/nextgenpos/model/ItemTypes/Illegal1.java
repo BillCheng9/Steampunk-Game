@@ -9,6 +9,9 @@ public class Illegal1 implements Item {
     int gearsChange = 2;
     int cost = 15;
 
+    /**
+     * Constructor
+     */
     public Illegal1() {
     }
 

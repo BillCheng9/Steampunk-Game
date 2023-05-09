@@ -9,6 +9,9 @@ public class Gauntlets1 implements Item {
     int damageChange = 1;
     int cost = 3;
 
+    /**
+     * Constructor
+     */
     public Gauntlets1() {
     }
 

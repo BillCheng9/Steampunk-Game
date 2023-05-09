@@ -8,12 +8,22 @@ public class Rock implements Enemy{
     int health = (int)(Math.random() * 10) + 9;
     int gear = (int)(Math.random() * 1) + 1;
 
+    /**
+     * Constructor with pre-determined stats
+     * @param health health
+     * @param damage damage
+     * @param defense defense
+     */
     public Rock(int health, int damage, int defense) {
         this.health = health;
         this.damage = damage;
         this.defense = defense;
     }
 
+    /**
+     * Constructor that scales
+     * @param gearScore player gear score that affects enemy stats
+     */
     public Rock(int gearScore) {
         if (gearScore > 16) {
             defense = defense * (gearScore / 3);

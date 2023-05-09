@@ -15,6 +15,10 @@ public class ContinueActivity extends AppCompatActivity implements IMainMenu.Lis
 
     Player p;
 
+    /**
+     * on create method
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +32,9 @@ public class ContinueActivity extends AppCompatActivity implements IMainMenu.Lis
         this.setContentView(menu.getRootView());
     }
 
+    /**
+     * Starts a new MainActivity
+     */
     @Override
     public void continueClick() {
         switchActivitiesContinue();
@@ -41,13 +48,18 @@ public class ContinueActivity extends AppCompatActivity implements IMainMenu.Lis
         switchActivitiesWorkshop();
     }
 
+    /**
+     * Creates intent of switching activities
+     */
     private void switchActivitiesContinue() {
         Intent i = new Intent(this, MainActivity.class);
         i.putExtra("curPlayer", p);
         startActivity(i);
     }
 
-    //Fix
+    /**
+     * Creates intent of switching activities
+     */
     private void switchActivitiesWorkshop() {
         Intent i = new Intent(this, WorkshopActivity.class);
         i.putExtra("curPlayer", p);

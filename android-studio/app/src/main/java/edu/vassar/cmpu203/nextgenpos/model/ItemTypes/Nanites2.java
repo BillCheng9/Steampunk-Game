@@ -9,6 +9,9 @@ public class Nanites2 implements Item {
     int healthChange = 5;
     int cost = 7;
 
+    /**
+     * Constructor
+     */
     public Nanites2() {
 
     }

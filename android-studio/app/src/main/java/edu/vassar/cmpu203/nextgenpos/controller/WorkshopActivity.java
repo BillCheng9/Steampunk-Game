@@ -33,6 +33,10 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
     Implants1 implants = new Implants1();
     Illegal1 illegal = new Illegal1();
 
+    /**
+     * onCreate method that sets up the root view
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,65 +51,98 @@ public class WorkshopActivity extends AppCompatActivity implements IWorkshop.Lis
         this.setContentView(workshop.getRootView());
     }
 
+    /**
+     * switch back to ContinueActivity
+     */
     @Override
     public void backClick() {
         switchActivities();
     }
 
+    /**
+     * Creates intent of switching activities
+     */
     private void switchActivities() {
         Intent i = new Intent(this, ContinueActivity.class);
         i.putExtra("curPlayer", p);
         startActivity(i);
     }
 
+    /**
+     * sets visibility of the buy button and displays corresponding item info
+     */
     @Override
     public void plates1Click() {
         workshop.btnVisibility(true, "PLATES1");
         workshop.displayPlate1();
     }
 
+    /**
+     * sets visibility of the buy button and displays corresponding item info
+     */
     @Override
     public void plates2Click() {
         workshop.btnVisibility(true, "PLATES2");
         workshop.displayPlate2();
     }
 
+    /**
+     * sets visibility of the buy button and displays corresponding item info
+     */
     @Override
     public void plates3Click() {
         workshop.btnVisibility(true, "PLATES3");
         workshop.displayPlate3();
     }
 
+    /**
+     * sets visibility of the buy button and displays corresponding item info
+     */
     @Override
     public void nanites1Click() {
         workshop.btnVisibility(true, "NANITES1");
         workshop.displayNanite1();
     }
 
+    /**
+     * sets visibility of the buy button and displays corresponding item info
+     */
     @Override
     public void nanites2Click() {
         workshop.btnVisibility(true, "NANITES2");
         workshop.displayNanite2();
     }
 
+    /**
+     * sets visibility of the buy button and displays corresponding item info
+     */
     @Override
     public void nanites3Click() {
         workshop.btnVisibility(true, "NANITES3");
         workshop.displayNanite3();
     }
 
+    /**
+     * sets visibility of the buy button and displays corresponding item info
+     */
     @Override
     public void gauntlets1Click() {
         workshop.btnVisibility(true, "GAUNTLETS");
         workshop.displayGauntlet();
     }
 
+    /**
+     * sets visibility of the buy button and displays corresponding item info
+     */
     @Override
     public void implants1CLick() {
         workshop.btnVisibility(true, "IMPLANTS");
         workshop.displayImplant();
     }
 
+    /**
+     * sets visibility of the buy button and displays corresponding item info
+     */
     @Override
     public void illegal1Click() {
         workshop.btnVisibility(true, "ILLEGAL");

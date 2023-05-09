@@ -9,6 +9,9 @@ public class Plate3 implements Item {
     int defenseChange = 3;
     int cost = 5;
 
+    /**
+     * Constructor
+     */
     public Plate3() {
 
     }

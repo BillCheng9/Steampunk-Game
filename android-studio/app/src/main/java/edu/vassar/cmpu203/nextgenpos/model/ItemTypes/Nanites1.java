@@ -8,6 +8,10 @@ public class Nanites1 implements Item {
     String desc = "A SET OF NANITES THAT INCREASES CORE EFFICIENCY";
     int healthChange = 2;
     int cost = 3;
+
+    /**
+     * Constructor
+     */
     public Nanites1() {
 
     }
